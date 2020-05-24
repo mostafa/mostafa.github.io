@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Story of gREST, A Graph-based Restful API Development Framework</title>
+    <meta name="description"
+        content="More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom ...">
+
+    
+    
+    <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="canonical" href="https://mostafa.dev/blog/the-story-of-grest-a-graph-based-restful-api-development-framework">
+    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
+        href="https://mostafa.dev/feed.xml">
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The Story of gREST, A Graph-based Restful API Development Framework | Welcome To My Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="The Story of gREST, A Graph-based Restful API Development Framework" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) Python, I tried to look for frameworks written in Python. Many options came to mind, including Django, Flask, Tornado and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships." />
+<meta property="og:description" content="More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) Python, I tried to look for frameworks written in Python. Many options came to mind, including Django, Flask, Tornado and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships." />
+<link rel="canonical" href="https://mostafa.dev/blog/the-story-of-grest-a-graph-based-restful-api-development-framework" />
+<meta property="og:url" content="https://mostafa.dev/blog/the-story-of-grest-a-graph-based-restful-api-development-framework" />
+<meta property="og:site_name" content="Welcome To My Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-27T00:00:00+02:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://mostafa.dev/blog/the-story-of-grest-a-graph-based-restful-api-development-framework","headline":"The Story of gREST, A Graph-based Restful API Development Framework","dateModified":"2018-04-27T00:00:00+02:00","datePublished":"2018-04-27T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/the-story-of-grest-a-graph-based-restful-api-development-framework"},"description":"More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) Python, I tried to look for frameworks written in Python. Many options came to mind, including Django, Flask, Tornado and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+            line-height: 2;
+            color: #181818;
+            background-color: #fff;
+        }
+
+        .subtitle {
+            color: rgba(0, 0, 0, 0.54) !important;
+        }
+    </style>
+</head>
+
+  <body>
+
+    <header class="border-bottom-thick px-2 clearfix">
+  <div class="left sm-width-full py-1 mt-1 mt-lg-0">
+    <a class="align-middle link-primary text-accent" href="/">
+      Welcome To My Blog
+    </a>
+  </div>
+  <div class="right sm-width-full">
+    <ul class="list-reset mt-lg-1 mb-2 mb-lg-1">
+      
+        
+      
+        
+        <li class="inline-block">
+          <a class="align-middle link-primary mr-2 mr-lg-0 ml-lg-2" href="/about/">
+            About
+          </a>
+        </li>
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+    <div>
+      <article class="container px-2 mx-auto mb4" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="h1 col-9 sm-width-full mt-3 mb-0 pb-0 inline-block" itemprop="name headline">The Story of gREST, A Graph-based Restful API Development Framework</h1>
+    
+    
+    <div class="col-3 sm-width-full mt-1 border-top-thin ">
+        <p class="mb-3 py-2 h4">
+            <time datetime="2018-04-27T00:00:00+02:00" itemprop="datePublished">Apr 27, 2018</time>
+        </p>
+    </div>
+
+    <div class="prose" itemprop="articleBody">
+        <p>More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely <a href="http://neo4j.com/">Neo4j</a>, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) <a href="http://python.org/">Python</a>, I tried to look for frameworks written in Python. Many options came to mind, including <a href="https://www.djangoproject.com/">Django</a>, <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://www.tornadoweb.org/en/stable/">Tornado</a> and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships.</p>
+
+<p>After struggling to find such a framework, I decided to write my own set of functions as views to handle different endpoints I needed to get the job done.</p>
+
+<p>As I have used and worked with Flask in other projects, I decided to go the path of using a micro-framework and develop what I needed and use available extensions. To quickly get up and running I used <a href="https://github.com/apiguy/flask-classy">Flask-Classy</a> which is an extension of the Flask framework that supports class-based views for each endpoint supporting various HTTP verbs. It has been deprecated and I have replaced it with <a href="https://github.com/teracyhq/flask-classful">Flask-Classful</a>, which is a fork of the same project, but is actively developed.</p>
+
+<p>My OGM of choice was (and still is) <a href="https://github.com/robinedwards/neomodel">Neomodel</a>, a very-well documented, feature-rich OGM for the Neo4j database. Neomodel had all the abstraction I wanted to quickly develop a set of models for nodes and their relations.</p>
+
+<p>Mixing Flask, Flask-Classy, Neomodel allowed me to write a big class containing all the methods to expose views of my database models. I named the class generic_view, so that I can subclass it for each view and use it to serve each endpoint.</p>
+
+<p>Everything was fine until I thought that I should pay back to the FOSS community. So I decided to extract that piece of code from the project and make it a separate project that can be used as a simple extension to the Flask framework.</p>
+
+<p>So, I created <a href="https://github.com/mostafa/grest">gREST</a>, a restful API development framework on top of Python, Flask, Neo4j and Neomodel. Its primary purpose is to ease development of restful APIs with little effort and minimum amount of code.</p>
+
+<p>I used to make it a python package and distribute it on <a href="https://pypi.org/project/pygrest/">PYPI</a>. I wrote unit-tests, a simple README and two simple examples to help developers know more about the workings of gREST.</p>
+
+<p>I also used <a href="https://docs.pytest.org/en/latest/">pytest</a> for my unit-tests, <a href="https://travis-ci.org/mostafa/grest">Travis-CI</a> for continuous integration and running tests, <a href="https://coveralls.io/github/mostafa/grest">Coveralls</a> for code coverage and <a href="https://gitter.im/pygrest/Lobby">Gitter</a> for a place to answer developers’ questions. As I was concerned about the licensing of the project, I have released it under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> license and used the <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fmostafa%2Fgrest/refs/branch/master">FOSSA</a> license check services to know if there are licensing mismatches. The FOSSA team deserves a medal for its service.</p>
+
+<p>It’s more than a year from the time I created my initial commit of the project and as per analytics, it has been downloaded more than 36,000 times and growing.</p>
+
+<p><img src="/img/1*AWJ2K9fdgc8sIhaCeopOqg.png" alt="" />Download count of the gREST framework according to the Google BigQuery results on the the-psf:pypi datasetAs I have twitted about it when I’ve made the project public, it has also been featured on the <a href="https://neo4j.com/blog/this-week-neo4j-29-april-2017/">Neo4j’s blog</a>.</p>
+
+<p>Last but not least, I tried my best to fix bugs and make improvements to the initial idea of gREST, but it needs the help of the community to be further developed. I also hope that it continues to serve the community well. My next article would be a tutorial on making a simple restful API using gREST.</p>
+
+<p><strong>Update:</strong> <em>At the time of writing this article, there was  only 36k downloads, while now, June 24 2020, it’s almost 120k, according to <a href="https://pepy.tech/project/pygrest">PePy</a>, which, I think, is impressive.</em></p>
+
+    </div>
+
+</article>
+
+<div class="container mx-auto px-2 py-2 clearfix">
+    <!-- Use if you want to show previous and next for all posts. -->
+
+
+
+  
+  <div class="col-4 sm-width-full left mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/the-story-of-farhang-a-bilingual-dictionary-production-system">
+      <span class="h5 bold text-accent">Next</span>
+      <p class="bold h3 link-primary mb-1">The Story of Farhang, A Bilingual Dictionary Production System</p>
+      <p>More than 9 years ago, when I was studying towards a B.A. degree in German Language Translation Studies, I used...</p>
+    </a>
+  </div>
+
+
+</div>
+    </div>
+
+    <div class="border-top-thin clearfix mt-2 mt-lg-4">
+  <div class="container mx-auto px-2">
+    <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
+    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
+      <li class="inline-block mr-1">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li class="inline-block">
+        <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  </body>
+
+</html>

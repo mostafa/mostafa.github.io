@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Load Testing Your API with Swagger/OpenAPI and k6</title>
+    <meta name="description"
+        content="Overview">
+
+    
+    
+    <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">
+    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
+        href="https://mostafa.dev/feed.xml">
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Load Testing Your API with Swagger/OpenAPI and k6 | Welcome To My Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Load Testing Your API with Swagger/OpenAPI and k6" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?" />
+<meta property="og:description" content="How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?" />
+<link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6" />
+<meta property="og:url" content="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6" />
+<meta property="og:site_name" content="Welcome To My Blog" />
+<meta property="og:image" content="https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-23T00:00:00+01:00" />
+<script type="application/ld+json">
+{"image":"https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6","headline":"Load Testing Your API with Swagger/OpenAPI and k6","dateModified":"2020-03-23T00:00:00+01:00","datePublished":"2020-03-23T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6"},"description":"How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+            line-height: 2;
+            color: #181818;
+            background-color: #fff;
+        }
+
+        .subtitle {
+            color: rgba(0, 0, 0, 0.54) !important;
+        }
+    </style>
+</head>
+
+  <body>
+
+    <header class="border-bottom-thick px-2 clearfix">
+  <div class="left sm-width-full py-1 mt-1 mt-lg-0">
+    <a class="align-middle link-primary text-accent" href="/">
+      Welcome To My Blog
+    </a>
+  </div>
+  <div class="right sm-width-full">
+    <ul class="list-reset mt-lg-1 mb-2 mb-lg-1">
+      
+        
+      
+        
+        <li class="inline-block">
+          <a class="align-middle link-primary mr-2 mr-lg-0 ml-lg-2" href="/about/">
+            About
+          </a>
+        </li>
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+    <div>
+      <article class="container px-2 mx-auto mb4" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="h1 col-9 sm-width-full mt-3 mb-0 pb-0 inline-block" itemprop="name headline">Load Testing Your API with Swagger/OpenAPI and k6</h1>
+    
+        <h3 class="h3 col-9 sm-width-full mb-0 mt-0 inline-block subtitle" itemprop="name headline">How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?
+        </h3>
+    
+    
+        <img class="col-12" src=/img/0*2_0U-DPmTzBEJspg.png/>
+    
+    <div class="col-3 sm-width-full mt-1 border-top-thin ">
+        <p class="mb-3 py-2 h4">
+            <time datetime="2020-03-23T00:00:00+01:00" itemprop="datePublished">Mar 23, 2020</time>
+        </p>
+    </div>
+
+    <div class="prose" itemprop="articleBody">
+        <h4 id="overview">Overview</h4>
+
+<p>Throughout the years, there has been many attempts to devise <a href="https://en.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages">a universal format for defining Web API specifications</a>. The objective was (and still is) to help stakeholders of the system to work with those APIs, without having access to the source code. Each new “universal” format came with the promise of being ubiquitous and all-encompassing, but eventually faded away due to various reasons, like <a href="https://en.wikipedia.org/wiki/Open_Data_Protocol">OData</a> and <a href="https://en.wikipedia.org/wiki/Web_Services_Description_Language">WSDL</a>.</p>
+
+<p>One of the major players in this field is <a href="https://en.wikipedia.org/wiki/Swagger_%28software%29">Swagger</a>, developed by Tony Tam in 2011, which later was hired by the SmartBear Software, effectively <a href="https://smartbear.com/news/news-releases/swagger-creator-tony-tam-joins-smartbear-software/">acquiring the rights to the software</a>. In 2015, the same company created a new organization under the sponsorship of the Linux Foundation and called it the OpenAPI Initiative. The new initiative has renamed the Swagger specification to <a href="https://en.wikipedia.org/wiki/OpenAPI_Specification">OpenAPI Specification (OAS)</a> in 2016. This specification is generally used for developing, interacting and documenting APIs.</p>
+
+<p>There are many uses-cases to OpenAPI. The first is to use it as a documentation for your APIs. Usually it is generated from the request handlers along with the schema for your database models and fields. The second is to use it as a means to generate server-side code, that is the actual API. This is particularly useful for those who want to go spec-first, rather than code-first. The third is to use as a means to generate client-side code. With this method, you’ll have stubs generated for all your requests, which can be used to make use of or even test your APIs.</p>
+
+<p>Overall, the OpenAPI specification and the <a href="https://github.com/OpenAPITools/openapi-generator">openapi-generator project</a> can help you generate a lot of integrations out of the box from your API specification. Imagine you could have a specification document that can help you generate your server-side code to serve API endpoints, your client-side code for testing and the documentation of your API for developers and testers.</p>
+
+<h4 id="swaggeropenapi-load-testing">Swagger/OpenAPI load testing</h4>
+
+<p>Formerly, the idea of Swagger/OpenAPI load testing was taken less seriously by the developer community. It was due to the fact that only QA people used to work on performance testing. k6 takes load testing to a whole another level by letting <strong>developers</strong> write their own load test scripts in JavaScript. With the introduction of new tools, like k6, and then the widespread use of Swagger/OpenAPI for API design and documentation, we felt the need that tools for transforming Swagger/OpenAPI specifications to scripts to be used for performance testing should exist.</p>
+
+<p>We thought it would be a good idea to have a tool to generate a load test script out of an OpenAPI specification document. This new generator will then help you easily integrate load testing in your infrastructure. Therefore, we have added a <a href="https://github.com/OpenAPITools/openapi-generator/pull/5300">new k6 generator</a> to the openapi-generator project.</p>
+
+<p>By using this tool, as a Swagger/OpenAPI test generator, you can now generate your k6 load test scripts using the same specification documents you used for your APIs. We tried our best to convert <em>almost</em> all the specification to k6 script, but the generated script should still be modified to make it runnable and suitable for your use case.</p>
+
+<p>Once you have a working script, you can easily use it in your Continuous Integration (CI) platform to automate load testing. You can also use our SaaS offering, <a href="https://k6.io/cloud">k6 Cloud</a>, that gives you the ability to run your load tests in a distributed environment from various regions, plus giving you detailed insights on the results of your test(s).</p>
+
+<h4 id="api-load-testing-with-swaggeropenapi-specification">API load testing with Swagger/OpenAPI specification</h4>
+
+<p>We have written a guide for <a href="https://k6.io/docs/testing-guides/api-load-testing">API load testing</a> and since OpenAPI is concerned with APIs, we advise you to take a look at the guide. It will help you understand why you should load test your APIs. The guide gives you an overview of different approaches to API load testing. It includes various ways to create load test scripts, from writing one yourself, to using your existing Postman collections or HAR files and converting them to load test scripts. It also provides you with considerations you need to know while load testing your APIs.</p>
+
+<h4 id="generating-load-test-script-from-swaggeropenapi-specification">Generating load test script from Swagger/OpenAPI specification</h4>
+
+<p>There are various ways to install the <a href="https://github.com/OpenAPITools/openapi-generator#1---installation">openapi-generator</a>. It is distributed in source code, so that you can build it yourself. You have lots of options to use binaries for your operating system. We recommend using the <a href="https://hub.docker.com/r/openapitools/openapi-generator-cli/">Docker image</a>, which is going to be explained in this article.</p>
+
+<p>I assume you have docker installed, otherwise have a look at the <a href="https://docs.docker.com/install/">installation</a> instructions for your operating system. The following commands pulls the Docker image for you. You can also omit this command in favor of the next one, because it pulls the latest image for you, if you don’t have it on your machine.</p>
+
+<p>$ docker pull openapitools/openapi-generator-cliThe next step is to run the command inside a container to convert the OpenAPI specification file for you. Assuming you are running Docker on Linux-based operating systems, the following command mounts your present working directory (e.g. /home/user/Desktop) to /local on the container. Also note that after conversion, the container is removed. The container runs the command inside it with the generate option, along with its parameters.</p>
+
+<p>$ docker run –rm -v ${PWD}:/local openapitools/openapi-generator-cli generate-i http://httpbin.test.loadimpact.com/spec.json -g k6 -o /local/k6-test/ –skip-validate-specWith the above command, we’ve converted the API specification document of the <a href="https://httpbin.org/">httpbin.org</a> instance, that is hosted on our servers. The parameters are:</p>
+
+<ul>
+  <li>The -i parameter is used to feed the specification document to the generator. You can use a file for that purpose. This way you should make sure that it resides in the same directory on your host (/home/user/Desktop/myspec.json), and you address it from the container side: /local/myspec.json. You also have the option to specify a URL that points to a file. Note that the file can be in either JSON or YAML format.</li>
+  <li>The -g parameter specifies the generator to use, that is k6.</li>
+  <li>The -o parameter specifies the directory to store the generated files. After conversion, the files can be accessed from /home/user/Desktop/k6-test/ on your host.</li>
+  <li>In case you get a lot of errors from validation, just skip them with –skip-validate-spec. These errors are often related to differences between Swagger and OpenAPI specification.
+    <h4 id="load-testing-using-the-generated-script">Load testing using the generated script</h4>
+  </li>
+</ul>
+
+<p>The script should definitely be cleaned up after conversion. The original script is too long to fit into this article, thus the following example is an snippet of the generated script. Extra comments and unneeded code has been removed for demonstration purposes and the n variable is initialized.</p>
+
+<p>Running the above script has produced the following output:</p>
+
+<p><img src="/img/0*LB9Sr2Mt7bMEdiuy.png" alt="" />#### Considerations for the generated script</p>
+
+<p>Take these into consideration while converting your OpenAPI specification documents to k6 scripts:</p>
+
+<ul>
+  <li>The order of the requests follow the order in the specification document and may not always be correct. Replace them to match your request/response flow. For example, you first create a resource with POST, then you read it with GET.</li>
+  <li>All requests belonging to the same path are grouped together with the k6 <a href="https://k6.io/docs/using-k6/tags-and-groups">group</a> feature.</li>
+  <li>A global sleep duration is defined with the SLEEP_DURATION variable and for each request, the value is applied using the k6 <a href="https://k6.io/docs/javascript-api/k6/sleep-t">sleep</a> function. Change them to match the delay you need between the requests.</li>
+  <li>Make sure the BASE_URL is correct.</li>
+  <li>Initialize all variables that their value starts with “TODO_EDIT_THE_…”.</li>
+  <li>Body parameters are in the form of { variable: “datatype” }. Change the datatype to the desired value. Nested body parameters follow the same pattern.</li>
+  <li>For file upload endpoints that use <a href="https://k6.io/docs/using-k6/multipart-requests-file-uploads">multipart requests</a>, replace the file name with your own.</li>
+  <li>You <em>may</em> encounter undefined variables being used. Just add them manually. It may be due to differences between OpenAPI and Swagger specifications.</li>
+  <li>We only use <a href="https://k6.io/docs/using-k6/checks">checks</a> for the default and 200 OK responses for now. It is up to you to check for the rest.</li>
+  <li>If you found any issues, please file it on <a href="https://github.com/loadimpact/openapi-generator/issues">issues</a>.
+    <h4 id="conclusion">Conclusion</h4>
+  </li>
+</ul>
+
+<p>The k6 generator for OpenAPI was written to onboard users to k6. The tool is going to help users quickly generate a load test script out of their existing Swagger/OpenAPI specification documents. This auto-generation of the load test script will help streamline the API testing process, keeping on par with the latest changes to their APIs and specifications.</p>
+
+<p><em>Originally published at <a href="https://k6.io/blog/load-testing-your-api-with-swagger-openapi-and-k6">https://k6.io</a></em></p>
+
+    </div>
+
+</article>
+
+<div class="container mx-auto px-2 py-2 clearfix">
+    <!-- Use if you want to show previous and next for all posts. -->
+
+
+
+  <div class="col-4 sm-width-full left mr-lg-4 mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing">
+      <span class="h5 bold text-accent">Previous</span>
+      <p class="bold h3 link-primary mb-1">microVM: Another Level of Abstraction for Serverless Computing</p>
+      <p>For years, cloud computing was a way to convince users and business to spend their money hosting their services on...</p>
+    </a>
+  </div>
+  
+  
+  <div class="col-4 sm-width-full left mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/load-testing-your-api-with-postman">
+      <span class="h5 bold text-accent">Next</span>
+      <p class="bold h3 link-primary mb-1">Load Testing Your API with Postman</p>
+      <p>In this article, I’ll explain how to use a Postman collection I have created to load test our instance of...</p>
+    </a>
+  </div>
+
+
+</div>
+    </div>
+
+    <div class="border-top-thin clearfix mt-2 mt-lg-4">
+  <div class="container mx-auto px-2">
+    <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
+    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
+      <li class="inline-block mr-1">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li class="inline-block">
+        <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  </body>
+
+</html>

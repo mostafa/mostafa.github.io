@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>API &amp; Backend Security</title>
+    <meta name="description"
+        content="In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old...">
+
+    
+    
+    <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="canonical" href="https://mostafa.dev/blog/api-backend-security">
+    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
+        href="https://mostafa.dev/feed.xml">
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>API &amp; Backend Security | Welcome To My Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="API &amp; Backend Security" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Raising awareness about threats and defense mechanisms introduced by OWASP API Security Top 10 2019" />
+<meta property="og:description" content="Raising awareness about threats and defense mechanisms introduced by OWASP API Security Top 10 2019" />
+<link rel="canonical" href="https://mostafa.dev/blog/api-backend-security" />
+<meta property="og:url" content="https://mostafa.dev/blog/api-backend-security" />
+<meta property="og:site_name" content="Welcome To My Blog" />
+<meta property="og:image" content="https://mostafa.dev/img/1*ALeWhQ2N6rbL3TPAtmKeRQ.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-09T00:00:00+01:00" />
+<script type="application/ld+json">
+{"image":"https://mostafa.dev/img/1*ALeWhQ2N6rbL3TPAtmKeRQ.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/api-backend-security","headline":"API &amp; Backend Security","dateModified":"2019-12-09T00:00:00+01:00","datePublished":"2019-12-09T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/api-backend-security"},"description":"Raising awareness about threats and defense mechanisms introduced by OWASP API Security Top 10 2019","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+            line-height: 2;
+            color: #181818;
+            background-color: #fff;
+        }
+
+        .subtitle {
+            color: rgba(0, 0, 0, 0.54) !important;
+        }
+    </style>
+</head>
+
+  <body>
+
+    <header class="border-bottom-thick px-2 clearfix">
+  <div class="left sm-width-full py-1 mt-1 mt-lg-0">
+    <a class="align-middle link-primary text-accent" href="/">
+      Welcome To My Blog
+    </a>
+  </div>
+  <div class="right sm-width-full">
+    <ul class="list-reset mt-lg-1 mb-2 mb-lg-1">
+      
+        
+      
+        
+        <li class="inline-block">
+          <a class="align-middle link-primary mr-2 mr-lg-0 ml-lg-2" href="/about/">
+            About
+          </a>
+        </li>
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+    <div>
+      <article class="container px-2 mx-auto mb4" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="h1 col-9 sm-width-full mt-3 mb-0 pb-0 inline-block" itemprop="name headline">API & Backend Security</h1>
+    
+        <h3 class="h3 col-9 sm-width-full mb-0 mt-0 inline-block subtitle" itemprop="name headline">Raising awareness about threats and defense mechanisms introduced by OWASP API Security Top 10 2019
+        </h3>
+    
+    
+        <img class="col-12" src=/img/1*ALeWhQ2N6rbL3TPAtmKeRQ.png/>
+    
+    <div class="col-3 sm-width-full mt-1 border-top-thin ">
+        <p class="mb-3 py-2 h4">
+            <time datetime="2019-12-09T00:00:00+01:00" itemprop="datePublished">Dec 9, 2019</time>
+        </p>
+    </div>
+
+    <div class="prose" itemprop="articleBody">
+        <p>In my <a href="https://medium.com/swlh/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps-41485b1a9518">previous article</a> about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old, but gold, <a href="https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project">OWASP Code Review Project</a> and the <a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10 Project</a> and to mention the tools of the trade using the simplest approach possible.</p>
+
+<p>Recently the new <a href="https://www.owasp.org/index.php/OWASP_API_Security_Project">OWASP API Security Top 10 2019</a> is released, as a release candidate, which is a breath of fresh air into the field of security and penetration testing. It is a tribute to its old pal, <a href="https://www.owasp.org/index.php/Category:OWASP_Backend_Security_Project">OWASP Backend Security Project</a>, which was released in 2008, or at least, I see it so, as the naming suggests. But deep down, they are two different guides and two different approaches to security. This new one deals with the Top 10 approach using scenarios, while the old one tries to present a multi-phase approach, with phases being development, hardening and testing.</p>
+
+<p>In this article I will try to present the new one using all the current tools and techniques available to <em>defend</em> against threats to your APIs. I will focus on Python, since it is my area of expertise, and would present packages and tools either directly or generally related to it.</p>
+
+<p>It is really interesting to see how the Top 10 list of software vulnerabilities of an API is different from the original Top 10 list, priority-wise. This sheds a light on the importance of different measures to take.</p>
+
+<p>The following is the current Top 10 list of vulnerabilities presented in the <a href="https://github.com/OWASP/API-Security/raw/master/2019/en/dist/owasp-api-security-top-10.pdf">document</a>, which I will go through one by one afterwards:</p>
+
+<blockquote>
+  <p>API1:2019-Broken Object Level Authorization<br />
+API2:2019-Broken Authentication<br />
+API3:2019-Excessive Data Exposure<br />
+API4:2019-Lack of Resources &amp; Rate Limiting<br />
+API5:2019-Broken Function Level Authorization<br />
+API6:2019-Mass Assignment<br />
+API7:2019-Security Misconfiguration<br />
+API8:2019-Injection<br />
+API9:2019-Improper Assets Management<br />
+API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Level Authorization</p>
+</blockquote>
+
+<p>As the title implies, it is all about giving unwanted parties or attackers extra unnecessary access to information. The <strong>AAA</strong> <em>(Authentication, Authorization and Accounting)</em> of network protocols also apply to high-level applications sitting on top of the <a href="https://en.wikipedia.org/wiki/Application_layer">Application Layer</a> (L7) in the TCP/IP network protocol stack, in which, in this case, the <em>Access</em> would be interchangeably used instead of <em>Accounting</em>. Although the vulnerability only mentions authorization, I think that other things, like authentication that precedes and access that succeeds it, should also be explored, which I’ll do below.</p>
+
+<h4 id="-authentication">✅ Authentication</h4>
+
+<p>Authentication is a mechanism by which one’s identity is verified. This means that they have been either identified or unidentified, in advance. This ensures that no one can or will take anyone else’s identity. In applications, identity management is easily described by user management, in which, each user/actor of the system is considered an identity known to the system, which therefore can be verified through a mechanism or a protocol.</p>
+
+<p>Usually authentication happens via a mechanism or protocol, either application-based or protocol-based, working in different networking stack layers. An example of application-based authentication is the <a href="https://docs.djangoproject.com/en/2.2/topics/auth/">user authentication module in Django</a>, which usually uses a <a href="https://docs.djangoproject.com/en/2.2/ref/contrib/auth/#django.contrib.auth.backends.ModelBackend">ModelBackend</a>* *to filter through a list of users (by username or email) and their matching password existing in a database or a data store. Authentication protocols are either application-layer based ones, like <a href="https://en.wikipedia.org/wiki/Digest_access_authentication">digest access authentication</a>, or they operate on lower layers in the stack, e.g. <a href="https://en.wikipedia.org/wiki/IEEE_802.1X">IEEE 802.1X</a>, though all of which are considered and categorized under <a href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer">SASL framework</a>.</p>
+
+<p>These are the things to consider while performing any kind of authentication and authorization and granting access:</p>
+
+<ul>
+  <li><strong>NEVER EVER TRUST USER INPUT! **</strong>’ or ‘1’=’1**
+<a href="https://github.com/marshmallow-code/marshmallow" title="https://github.com/marshmallow-code/marshmallow"><strong>marshmallow-code/marshmallow</strong><br />
+<em>marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from…</em>github.com</a><a href="https://github.com/marshmallow-code/marshmallow"></a><a href="https://github.com/marshmallow-code/webargs" title="https://github.com/marshmallow-code/webargs"><strong>marshmallow-code/webargs</strong><br />
+<em>Homepage: https://webargs.readthedocs.io/ webargs is a Python library for parsing and validating HTTP request objects…</em>github.com</a><a href="https://github.com/marshmallow-code/webargs"></a><a href="https://github.com/samuelcolvin/pydantic/" title="https://github.com/samuelcolvin/pydantic/"><strong>samuelcolvin/pydantic</strong><br />
+<em>Data validation and settings management using Python type hinting. Fast and extensible, pydantic plays nicely with your…</em>github.com</a><a href="https://github.com/samuelcolvin/pydantic/"></a><a href="https://github.com/pyeve/cerberus" title="https://github.com/pyeve/cerberus"><strong>pyeve/cerberus</strong><br />
+<em>Cerberus is a lightweight and extensible data validation library for Python. Cerberus provides type checking and other…</em>github.com</a><a href="https://github.com/pyeve/cerberus"></a><a href="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects" title="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects"><strong>Model instance reference | Django documentation | Django</strong><br />
+<em>This document describes the details of the API. It builds on the material presented in the and database query guides…</em>docs.djangoproject.com</a><a href="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects"></a><a href="https://github.com/Pylons/colander" title="https://github.com/Pylons/colander"><strong>Pylons/colander</strong><br />
+<em>An extensible package which can be used to: deserialize and validate a data structure composed of strings, mappings…</em>github.com</a><a href="https://github.com/Pylons/colander"></a><a href="https://github.com/keleshev/schema" title="https://github.com/keleshev/schema"><strong>keleshev/schema</strong><br />
+<em>schema is a library for validating Python data structures, such as those obtained from config-files, forms, external…</em>github.com</a><a href="https://github.com/keleshev/schema"></a><a href="https://github.com/schematics/schematics" title="https://github.com/schematics/schematics"><strong>schematics/schematics</strong><br />
+<em>Python Data Structures for Humans™. Project documentation: https://schematics.readthedocs.io/en/latest/ Schematics is a…</em>github.com</a><a href="https://github.com/schematics/schematics"></a><a href="https://github.com/podio/valideer" title="https://github.com/podio/valideer"><strong>podio/valideer</strong><br />
+<em>Lightweight data validation and adaptation Python library. - podio/valideer</em>github.com</a><a href="https://github.com/podio/valideer"></a><a href="https://github.com/alecthomas/voluptuous" title="https://github.com/alecthomas/voluptuous"><strong>alecthomas/voluptuous</strong><br />
+<em>Voluptuous, despite the name, is a Python data validation library. It is primarily intended for validating data coming…</em>github.com</a><a href="https://github.com/alecthomas/voluptuous"></a><a href="https://github.com/Julian/jsonschema" title="https://github.com/Julian/jsonschema"><strong>Julian/jsonschema</strong><br />
+<em>jsonschema is an implementation of JSON Schema for Python (supporting 2.7+ including Python 3). It can also be used…</em>github.com</a><a href="https://github.com/Julian/jsonschema"></a><a href="https://github.com/wesbos/burner-email-providers" title="https://github.com/wesbos/burner-email-providers"><strong>wesbos/burner-email-providers</strong><br />
+<em>Throw away email addresses (burner emails) are great for single use signups where you would like the content but rather…</em>github.com</a><a href="https://github.com/wesbos/burner-email-providers"></a>* Authenticate properly, either via SSO, SAML, social authentication or whatever method you choose to authenticate against!
+<a href="https://github.com/python-social-auth/social-core" title="https://github.com/python-social-auth/social-core"><strong>python-social-auth/social-core</strong><br />
+<em>Python Social Auth is an easy to setup social authentication/registration mechanism with support for several frameworks…</em>github.com</a><a href="https://github.com/python-social-auth/social-core"></a><a href="https://github.com/davesque/django-rest-framework-simplejwt" title="https://github.com/davesque/django-rest-framework-simplejwt"><strong>davesque/django-rest-framework-simplejwt</strong><br />
+<em>A JSON Web Token authentication plugin for the Django REST Framework. Simple JWT provides a JSON Web Token…</em>github.com</a><a href="https://github.com/davesque/django-rest-framework-simplejwt"></a><a href="https://github.com/pennersr/django-allauth" title="https://github.com/pennersr/django-allauth"><strong>pennersr/django-allauth</strong><br />
+<em>Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party…</em>github.com</a><a href="https://github.com/pennersr/django-allauth"></a><a href="https://github.com/IdentityPython/pysaml2" title="https://github.com/IdentityPython/pysaml2"><strong>IdentityPython/pysaml2</strong><br />
+<em>PySAML2 is a pure python implementation of SAML Version 2 Standard. It contains all necessary pieces for building a…</em>github.com</a><a href="https://github.com/IdentityPython/pysaml2"></a><a href="https://github.com/onelogin/python-saml" title="https://github.com/onelogin/python-saml"><strong>onelogin/python-saml</strong><br />
+<em>Add SAML support to your Python software using this library. Forget those complicated libraries and use the open source…</em>github.com</a><a href="https://github.com/onelogin/python-saml"></a>* Always use a rate limiting mechanism to disallow users from using a single pair of username and password to authenticate multiple time in a row. This helps prevent brute-force attacks and <a href="https://www.owasp.org/index.php/Credential_stuffing">credential stuffing</a>.
+<a href="https://github.com/tomasbasham/ratelimit" title="https://github.com/tomasbasham/ratelimit"><strong>tomasbasham/ratelimit</strong><br />
+<em>APIs are a very common way to interact with web services. As the need to consume data grows, so does the number of API…</em>github.com</a><a href="https://github.com/tomasbasham/ratelimit"></a><a href="https://github.com/RazerM/ratelimiter" title="https://github.com/RazerM/ratelimiter"><strong>RazerM/ratelimiter</strong><br />
+<em>Simple Python module providing rate limiting. This package provides the ratelimiter module, which ensures that an…</em>github.com</a><a href="https://github.com/RazerM/ratelimiter"></a><a href="https://github.com/alisaifee/flask-limiter" title="https://github.com/alisaifee/flask-limiter"><strong>alisaifee/flask-limiter</strong><br />
+<em>Flask-Limiter provides rate limiting features to flask routes. It has support for a configurable backend for storage…</em>github.com</a><a href="https://github.com/alisaifee/flask-limiter"></a><a href="https://github.com/jsocol/django-ratelimit" title="https://github.com/jsocol/django-ratelimit"><strong>jsocol/django-ratelimit</strong><br />
+<em>Cache-based rate-limiting for Django. Contribute to jsocol/django-ratelimit development by creating an account on…</em>github.com</a><a href="https://github.com/jsocol/django-ratelimit"></a><a href="https://www.django-rest-framework.org/api-guide/throttling/" title="https://www.django-rest-framework.org/api-guide/throttling/"><strong>Throttling</strong><br />
+<em>HTTP/1.1 420 Enhance Your Calm Twitter API rate limiting response Throttling is similar to permissions, in that it…</em>www.django-rest-framework.org</a><a href="https://www.django-rest-framework.org/api-guide/throttling/"></a><a href="https://github.com/jazzband/django-axes" title="https://github.com/jazzband/django-axes"><strong>jazzband/django-axes</strong><br />
+<em>Axes is a very simple way for you to keep track of failed login attempts for your login and administration views. The…</em>github.com</a><a href="https://github.com/jazzband/django-axes"></a><a href="https://github.com/jazzband/django-defender" title="https://github.com/jazzband/django-defender"><strong>jazzband/django-defender</strong><br />
+<em>A simple Django reusable app that blocks people from brute forcing login attempts. The goal is to make this as fast as…</em>github.com</a><a href="https://github.com/jazzband/django-defender"></a><a href="https://github.com/brutasse/django-ratelimit-backend" title="https://github.com/brutasse/django-ratelimit-backend"><strong>brutasse/django-ratelimit-backend</strong><br />
+<em>Rate-limit your login attempts at the authentication backend level. Login attempts are stored in the cache for 5…</em>github.com</a><a href="https://github.com/brutasse/django-ratelimit-backend"></a>* Make sure you keep track of IP address users are authenticating from, and limit users authenticating numerous times via the same IP address, thus preventing the same brute-force attack and also preventing man-in-the-middle attacks.</li>
+  <li>Always use the most secure protocol or mechanism to authenticate users. There is always a trade-off between security and usability, so beware!</li>
+  <li>Authentication tokens are not as secure as they seem to be, since stolen tokens are the key to everything. So, always use some sort of expiry, like refreshing the token every once in a while.
+<a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" title="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/"><strong>Critical vulnerabilities in JSON Web Token libraries</strong><br />
+<em>TL;DR: If you are using node-jsonwebtoken, pyjwt, namshi/jose, php-jwt or jsjwt with asymmetric keys (RS256, RS384…</em>auth0.com</a><a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/"></a><a href="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities" title="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities"><strong>Common JWT security vulnerabilities and how to prevent them</strong><br />
+<em>The JSON Web Token has received a number of security reviews at the IETF and OIDF and is deemed sufficiently secure by…</em>connect2id.com</a><a href="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities"></a><a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/" title="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/"><strong>JWT Attack Walk-Through</strong><br />
+<em>There’s a well-known defect [1] with older versions of certain libraries where you can trick a JSON Web Token (JWT)…</em>www.nccgroup.trust</a><a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/"></a>* Use end-to-end encryption.
+<a href="https://github.com/pyca/cryptography" title="https://github.com/pyca/cryptography"><strong>pyca/cryptography</strong><br />
+<em>cryptography is a package which provides cryptographic recipes and primitives to Python developers. Our goal is for it…</em>github.com</a><a href="https://github.com/pyca/cryptography"></a><a href="https://github.com/dlitz/pycrypto" title="https://github.com/dlitz/pycrypto"><strong>dlitz/pycrypto</strong><br />
+<em>You can’t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…</em>github.com</a><a href="https://github.com/dlitz/pycrypto"></a>* Use strong hashing mechanism that support better randomness and salt.</li>
+  <li>Firewalls are dumb. Use them, but don’t trust them fully. The same applies for other defensive mechanisms.</li>
+  <li>Misconfigurations are the root of all evil. Take it seriously!</li>
+  <li>Use captcha and account lockout mechanisms, which is also mentioned above.</li>
+  <li>Never permit weak passwords!</li>
+  <li>Never send authentication details in URL!</li>
+  <li>Always verify tokens, in terms of validity, expiry, etc!</li>
+  <li>Never reply with meaningful sensitive information. For example, replying whether a user exists or not to a forget password request will help the attacker enumerate users existing on your API or website. Ambiguous messages and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204">204 No Content</a> status code help prevent this issue.</li>
+  <li>Follow the guidelines in <a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html">OWASP Authentication Cheatsheet</a>.</li>
+  <li><a href="https://cloud.google.com/endpoints/docs/openapi/when-why-api-key">API keys are for projects, authentication is for users</a>.</li>
+  <li>Use multi-factor authentication (MFA), where possible, but also beware of SIM swap attack which may cause issues:
+<a href="https://www.wired.com/story/sim-swap-attack-defend-phone/" title="https://www.wired.com/story/sim-swap-attack-defend-phone/"><strong>How to Protect Your Phone Against a SIM Swap Attack</strong><br />
+<em>Yes, remembering another PIN is a pain, especially when you’ll likely only need it every couple of years. But it’s…</em>www.wired.com</a><a href="https://www.wired.com/story/sim-swap-attack-defend-phone/"></a><a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju" title="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju"><strong>My SIM swap attack: How I almost lost $71K, and how to prevent it</strong><br />
+<em>On June 25th, I became a victim of SIM swapping, targeted along with dozens of other leaders in the blockchain…</em>hackernoon.com</a><a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju"></a>#### ✅ Authorization</li>
+</ul>
+
+<p>The second step is authorization, in which, the system decides whether the <em>authenticated user</em> is authorized to access a resource. Imagine you have a website selling stuff. You don’t want each user to be able to see what other users have ordered, well, for privacy reasons. So the object of concern here is the order history and only the <em>owner</em> of the order(s) can view it. If by some mechanism, other users can view each others’ order history, this makes your website insecure and untrustable.</p>
+
+<p>In terms of an API, you should disallow unauthorized access to resources via some authorization mechanism. As is practiced, it is best to authorize users based on their access to objects, and hence models. I have mentioned models, just because nowadays it is widely accepted to use an OxM (Object-to-X-Mapper, like ORM, OGM, ODM, etc.) to access your database tables, rows, nodes, relations, documents or the like. Since models are the single source of truth, it would be good to authorize users based on them, not the routes, since a users may access a route they are not authorized to, hence jeopardizing the security of your API. This may seem a little bit complicated, but just keep it mind that authorizing based on models are easier and safer. You can do both, but it easily gets messy and hard to manage.</p>
+
+<p>The usual method is to have a “<strong>User ↔ Role ↔ Permission</strong>” set of models, in which authentication and user profile management is managed by the user object, and each user can have one or multiple role(s), which in turn, can have certain permissions granted to it. This is usually referred to as <a href="https://en.wikipedia.org/wiki/Role-based_access_control">role-based access controls (RBAC)</a>.</p>
+
+<p>Another method is to have a “<strong>User ↔ Group ↔ Permission</strong>” set of models, in which a user belongs to one or more group(s) that may have a certain number of permissions. In this method, the group may have an arbitrary set of permissions, completely unrelated to the concept of its designation or role.</p>
+
+<p>The hardest part is when one has more than one role or belongs to more than one group. In this case, the best approach is to take advantage of the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of least privilege (PLoP)</a>, meaning that the lowest permission(s) always win, or simply put, a user doesn’t need to have administrative access to view his order history. Also, make sure that you understand the <a href="https://en.wikipedia.org/wiki/Object-capability_model">object capability model</a> to its fullest.</p>
+
+<p><a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege" title="https://www.beyondtrust.com/blog/entry/what-is-least-privilege"><strong>What Is Least Privilege &amp; Why Do You Need It? | BeyondTrust</strong><br />
+<em>Least privilege is the concept and practice of restricting access rights for users, accounts, and computing processes…</em>www.beyondtrust.com</a><a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege"></a><a href="https://github.com/casbin/pycasbin" title="https://github.com/casbin/pycasbin"><strong>casbin/pycasbin</strong><br />
+<em>News: still worry about how to write the correct Casbin policy? Casbin online editor is coming to help! Try it at…</em>github.com</a><a href="https://github.com/casbin/pycasbin"></a><a href="https://github.com/YosaiProject/yosai" title="https://github.com/YosaiProject/yosai"><strong>YosaiProject/yosai</strong><br />
+<em>Yosai is a “security framework” that features authentication, authorization, and session management from a common…</em>github.com</a><a href="https://github.com/YosaiProject/yosai"></a><a href="https://github.com/shonenada/flask-rbac" title="https://github.com/shonenada/flask-rbac"><strong>shonenada/flask-rbac</strong><br />
+<em>You can’t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…</em>github.com</a><a href="https://github.com/shonenada/flask-rbac"></a><a href="https://github.com/dimagi/django-prbac" title="https://github.com/dimagi/django-prbac"><strong>dimagi/django-prbac</strong><br />
+<em>(Parameterized Role-Based Access Control) https://github.com/dimagi/django-prbac Role-based access control (RBAC) is…</em>github.com</a><a href="https://github.com/dimagi/django-prbac"></a><a href="https://github.com/klada/django-auth-rbac" title="https://github.com/klada/django-auth-rbac"><strong>klada/django-auth-rbac</strong><br />
+<em>An attempt of implementing role-based access control (ANSI/INCITS 359-2004) for Django Supported RBAC features: Core…</em>github.com</a><a href="https://github.com/klada/django-auth-rbac"></a><a href="https://github.com/django-guardian/django-guardian" title="https://github.com/django-guardian/django-guardian"><strong>django-guardian/django-guardian</strong><br />
+<em>django-guardian is an implementation of per object permissions [1] on top of Django’s authorization backend Online…</em>github.com</a><a href="https://github.com/django-guardian/django-guardian"></a><a href="https://github.com/sunscrapers/djoser" title="https://github.com/sunscrapers/djoser"><strong>sunscrapers/djoser</strong><br />
+<em>REST implementation of Django authentication system. djoser library provides a set of Django Rest Framework views to…</em>github.com</a><a href="https://github.com/sunscrapers/djoser"></a><a href="https://github.com/dfunckt/django-rules" title="https://github.com/dfunckt/django-rules"><strong>dfunckt/django-rules</strong><br />
+<em>rules is a tiny but powerful app providing object-level permissions to Django, without requiring a database. At its…</em>github.com</a><a href="https://github.com/dfunckt/django-rules"></a><a href="https://github.com/mgrouchy/django-stronghold" title="https://github.com/mgrouchy/django-stronghold"><strong>mgrouchy/django-stronghold</strong><br />
+<em>Get inside your stronghold and make all your Django views default login_required Stronghold is a very small and easy to…</em>github.com</a><a href="https://github.com/mgrouchy/django-stronghold"></a><a href="https://github.com/jazzband/django-authority" title="https://github.com/jazzband/django-authority"><strong>jazzband/django-authority</strong><br />
+<em>This is a Django app for per-object-permissions that includes a bunch of helpers to create custom permission checks…</em>github.com</a><a href="https://github.com/jazzband/django-authority"></a>#### ✅ Access</p>
+
+<p>Sometimes you have the user authenticated and authorized to access a resource, but the resouce itself needs some special permissions, like delete permissions. Users may be able to view their order history, but may (or should) not be able to change them. This boils down to the specific object-level permissions one resource may have.</p>
+
+<p>So, authorization is the permission(s) the user has, while access is the permission(s) a resource needs, for the system to be able to grant access to it.</p>
+
+<p>This subtle difference is usually disregarded or misinterpreted, which leads to the topic of the current vulnerability I am talking about, broken object level authorization. From the user’s perspective, when they are in, they are in, but from the system’s and security perspective, this may not be the case. So, try to implement fine-grained access controls to restrict users and attackers from gaining access to your valuable resources.</p>
+
+<h4 id="api22019-broken-authentication">API2:2019-Broken Authentication</h4>
+
+<p>This topic is well discussed above, so if you want to know more about this vulnerability, make sure you read the first section, <em>API1:2019-Broken Object Level Authorization</em>.</p>
+
+<h4 id="api32019-excessive-data-exposure">API3:2019-Excessive Data Exposure</h4>
+
+<p>It is considered a bad design decision, security-wise, to rely on client to filter out data returned by API, since an attacker can sit in between and hear all the communications (requests and responses) and sniff out sensitive information that should not be normally present.</p>
+
+<p>Always review all response data returned by all endpoints and try to validate all returned data against a schema to prevent exposure. Examples of this is returning all user objects data to the client, like password hashes and other sensitive data.</p>
+
+<h4 id="api42019-lack-of-resources--rate-limiting">API4:2019-Lack of Resources &amp; Rate Limiting</h4>
+
+<p>Rate limiting is already discussed in <em>API1:2019-Broken Object Level Authorization</em> to prevent brute-force attacks. It also applies to other system resources like CPU, memory, etc., which is always scarce, no matter how much you have and it can be easily saturated by overuse. Scarcity makes for different strategies for resource management. Rate limiting is one of those strategies. Another is to limit resource usage using something like <a href="https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/Docker_Security_Cheat_Sheet.md#rule-7---limit-resources-memory-cpu-file-descriptors-processes-restarts">docker</a> that can control resource usage.</p>
+
+<p>Relying on the client for data validation is a true mistake and should be prevented at all costs, meaning that client- and server-side validation should accompany each other. This also includes enforcing incoming data size to a specific amount.</p>
+
+<p>There are cases like zip bombs that can explode your resources on the server, so just verify compression ratio of compressed files before accepting and extracting the file:</p>
+
+<p><a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life" title="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life"><strong>Ancient ZIP bomb attack given new lease of life</strong><br />
+<em>John Leyden 23 August 2019 at 15:46 UTC Decompression could give modern web apps a touch of the bends Researchers have…</em>portswigger.net</a><a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life"></a><a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes" title="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes"><strong>The Most Clever ‘Zip Bomb’ Ever Made Explodes a 46MB File to 4.5 Petabytes</strong><br />
+<em>In the roughly three decades since the Zip file format debuted, compressed files have been subject to widespread…</em>www.vice.com</a><a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes"></a><a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs" title="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs"><strong>danielmiessler/SecLists</strong><br />
+<em>SecLists is the security tester’s companion. It’s a collection of multiple types of lists used during security…</em>github.com</a><a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs"></a><a href="https://github.com/twbgc/sunzip" title="https://github.com/twbgc/sunzip"><strong>twbgc/sunzip</strong><br />
+<em>According to Cara Marie, an archive bomb a.k.a. A zip bomb is often employed to disable antivirus software, in order to…</em>github.com</a><a href="https://github.com/twbgc/sunzip"></a>#### API5:2019-Broken Function Level Authorization</p>
+
+<p>We have already discussed object level authorization in <em>API1:2019-Broken Object Level Authorization</em>, which deal with unauthorized access to objects. Current vulnerability discusses a method by which the attacker is already authorized or is using a malicious input against an endpoint that requires little or no authorization, like anonymous users’ endpoints.</p>
+
+<p>A small change to a HTTP request method would make the endpoint vulnerable. For example, changing a GET request to POST would make the endpoint create or update a record with the same anonymous access rights. This also applies to the request URL, where you can simply change a /users to /admins and you’ll get all data relating to privileged admin users, which is horrible. Just keep in mind that almost everything in the request can be changed. Burp Suite is just one example, by which you can easily act as a proxy between client and the API and change the requests in between.</p>
+
+<p><a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite" title="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite"><strong>How to Use Burp Suite</strong><br />
+<em>Burp Suite is an integrated platform for performing security testing of web applications. It is designed to be used by…</em>support.portswigger.net</a><a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite"></a>The best mechanism to prevent most of these vulnerabilities is to tighten enforcement of authorization rules, by denying everything by default and then explicitly giving access rights to specific roles for access to every function. This is also one of the most important topics in firewall configuration, in which the last rule is to deny all, in case that no rule matches against the criteria of the packet, is is denied and obviously not passed through.</p>
+
+<h4 id="api62019-mass-assignment">API6:2019-Mass Assignment</h4>
+
+<p>As said before, **NEVER EVER TRUST USER INPUT! **I just can’t put more emphasis on this advice. Certain things in database and workflow of the API is managed by user input, like a user profile or metadata passed along with an upload request. Binding users’ input parameters to exact objects without any validation and filtering is a recipe for disaster. Imagine an attacker sets a simple is_admin flag to True while sending a request to update a user’s profile. If not taken seriously, it would make the attacker an admin in the system right away. Just take input validation seriously, so that the next attacker or curious user not be able to update his account’s balance by updating it via a legitimate request to the system. Also be aware of some fields, like created and updated fields, which should almost always be internally handled and not passed from the user directly.</p>
+
+<p>Use white- and black-list feature to prevent some fields from being updated via requests.</p>
+
+<p><a href="https://docs.djangoproject.com/en/2.2/ref/validators/" title="https://docs.djangoproject.com/en/2.2/ref/validators/"><strong>Validators | Django documentation | Django</strong><br />
+<em>A validator is a callable that takes a value and raises a if it doesn’t meet some criteria. Validators can be useful…</em>docs.djangoproject.com</a><a href="https://docs.djangoproject.com/en/2.2/ref/validators/"></a><a href="https://www.django-rest-framework.org/api-guide/permissions/" title="https://www.django-rest-framework.org/api-guide/permissions/"><strong>Permissions</strong><br />
+<em>Authentication or identification by itself is not usually sufficient to gain access to information or code. For that…</em>www.django-rest-framework.org</a><a href="https://www.django-rest-framework.org/api-guide/permissions/"></a><a href="https://github.com/dbrgn/drf-dynamic-fields" title="https://github.com/dbrgn/drf-dynamic-fields"><strong>dbrgn/drf-dynamic-fields</strong><br />
+<em>This package provides a mixin that allows the user to dynamically select only a subset of fields per resource. Official…</em>github.com</a><a href="https://github.com/dbrgn/drf-dynamic-fields"></a>#### API7:2019-Security Misconfiguration</p>
+
+<p>As I said above, misconfigurations, specially security misconfigurations, are the root of all evil. Taking security configurations as granted is a grave mistake. Since security is always considered as an afterthought, try to get rid of the temptation to forego implementing security recommendations, like encryption, hashing, rate-limiting, CORS, TLS, etc.</p>
+
+<p>There are some general pieces of advice:</p>
+
+<ul>
+  <li>Integrate hardening process in your workflow.</li>
+  <li>Regularly review and update configurations and packages on your projects and infrastructure. Always apply the latest security patches.</li>
+  <li>Use E2E encryption!</li>
+  <li>Try to integrate automated configuration analysis and vulnerability assessment in your workflow.</li>
+  <li>Never send stack traces produced by exceptions to the user (or potential attacker). Always validate the response against a schema.</li>
+  <li>Static analysis and linting will detect most of misconfigurations and bugs in the first place.
+<a href="https://docs.djangoproject.com/en/2.2/topics/security/" title="https://docs.djangoproject.com/en/2.2/topics/security/"><strong>Security in Django | Django documentation | Django</strong><br />
+<em>Edit description</em>docs.djangoproject.com</a><a href="https://docs.djangoproject.com/en/2.2/topics/security/"></a><a href="https://github.com/mattupstate/flask-security" title="https://github.com/mattupstate/flask-security"><strong>mattupstate/flask-security</strong><br />
+<em>You can’t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…</em>github.com</a><a href="https://github.com/mattupstate/flask-security"></a><a href="https://snyk.io/" title="https://snyk.io/"><strong>Snyk | Develop Fast. Stay Secure</strong><br />
+<em>Enabling more than 400,000 developers to continuously find and fix vulnerabilities in open source libraries and…</em>snyk.io</a><a href="https://snyk.io/"></a><a href="https://www.sqreen.com/" title="https://www.sqreen.com/"><strong>Application Security Management Platform | Sqreen</strong><br />
+<em>Ruby Node.js PHP Python Java Go .net $ echo “gem ‘sqreen’” » Gemfile $ bundle install $ echo “token: your token” &gt;…</em>www.sqreen.com</a><a href="https://www.sqreen.com/"></a><a href="https://detectify.com/" title="https://detectify.com/"><strong>Detectify: Leading Website Vulnerability Scanner</strong><br />
+<em>Detectify performs automated security tests on your web application and databases and scans your assets for…</em>detectify.com</a><a href="https://detectify.com/"></a><a href="https://arvan.cloud/" title="https://arvan.cloud/"><strong>ArvanCloud | Integrated Cloud Infrastructure</strong><br />
+<em>ArvanCloud offers integrated cloud services like CDN, Cloud DNS, Cloud Security, Cloud datacenter, Cloud storage, VoD…</em>arvan.cloud</a><a href="https://arvan.cloud/"></a><a href="https://semmle.com/" title="https://semmle.com/"><strong>Semmle - Code Analysis Platform for Securing Software</strong><br />
+<em>Automating variant analysis for product security CodeQL is a code analysis engine for product security teams to quickly…</em>semmle.com</a><a href="https://semmle.com/"></a>#### API8:2019-Injection</li>
+</ul>
+
+<p>Injection, injection, injection! It is almost 2020 and we have have this injection issue! Neither OxMs nor any other pieces of software today can fully prevent it from being exploited. Well, there has been some advances in IDSes and cloud services to inspect and prevent such attacks, but it can still be exploited in the wide. Just keep in mind that NoSQL is also vulnerable to injection attacks.</p>
+
+<p>Nowadays working without having any relation to a third-party API is just not feasible anymore. Things like payment service providers, authentication providers and the like are all examples of such services. We, as developers, usually tend to think that when we pay for something, is it to be trusted, but sometimes reverse proves to be the case! So, I suggest you not to trust any data coming from external systems and APIs and validate them, too! For example, an attack on a third-party API may propagate to those using it in their APIs.</p>
+
+<p>These are some resources to learn more about ways to prevent injection:</p>
+
+<p><a href="https://realpython.com/prevent-python-sql-injection/" title="https://realpython.com/prevent-python-sql-injection/"><strong>Preventing SQL Injection Attacks With Python - Real Python</strong><br />
+<em>SQL injection attacks are one of the most common web application security risks. In this step-by-step tutorial, you’ll…</em>realpython.com</a><a href="https://realpython.com/prevent-python-sql-injection/"></a><a href="https://blog.sqreen.com/preventing-sql-injections-in-python/" title="https://blog.sqreen.com/preventing-sql-injections-in-python/"><strong>Preventing SQL injections in Python (and other vulnerabilities) - Sqreen Blog</strong><br />
+<em>Python is a wonderful language, ideal for beginners, and easy to scale up from starter projects to complex applications…</em>blog.sqreen.com</a><a href="https://blog.sqreen.com/preventing-sql-injections-in-python/"></a><a href="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection" title="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection"><strong>Reviewing Code for OS Injection</strong><br />
+<em>Injection flaws allow attackers to pass malicious code through a web application to another subsystem. Depending on the…</em>www.owasp.org</a><a href="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection"></a><a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python" title="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python"><strong>OWASP/CheatSheetSeries</strong><br />
+<em>XML eXternal Entity injection (XXE), which is now part of the OWASP Top 10 via the point A4, is a type of attack…</em>github.com</a><a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python"></a>#### API9:2019-Improper Assets Management</p>
+
+<p>APIs do not usually exist as a separate isolated entity, without having any relation or connection to its environment and outside world. They are literally living beings that sit there and listen to requests and eventually return a response. Yet they can be seen as assets to a company, making enough money for it to survive and grow. APIs and their belongings, like environments, accesses, …, should be seen as an inventory and shoud all be well-documented and accounted for. In turn, roles in the system and its data flow should also be documented. Security policies also need their own documentation.</p>
+
+<p>Versioning is an important part of product development, which is concretely seen as an important aspect of API development, where the routes themselves contain version information, e.g. /v1/products or /v2/consumers. Along the lifecycle of the API, some endpoints are become obsolete or deprecated, so they should be somehow decommissioned. Keeping track of these endpoints in older versions of the API help reduce the attack surface of the API, in case there is a gem for attackers hidden inside. At the same time, some vulnerabilities are found in the new endpoints which needs to be ported the old ones. This specific backports should be taken seriously, by QAs, reviewers and testers and be labeled separately in any project management or ticketing solution to provide more visibility into the matter.</p>
+
+<h4 id="api102019-insufficient-logging--monitoring">API10:2019-Insufficient Logging &amp; Monitoring</h4>
+
+<p>With enough logging and monitoring all issues can be unearthed and examined before causing any severe damage to the system (API) and credibility of the company.</p>
+
+<p>It is really easy to saturate and overwhelm the log server with useless log messages. In terms of security, focus on special log messages, called security events, like failed authentication attempts, denied accesses and input validation errors and try to log enough data to help uncover the issue. Logs are considered as sensitive data, so handle it with care!</p>
+
+<p>Implement and configure a monitoring solution to continuously monitor every asset in your system and use a Security Information and Event Management (SIEM) solution to aggregate logs and provide meaningful insights out of them.</p>
+
+<p>Last but not least, do not stick with the default dashboards, customize them to show important security events first.</p>
+
+<p>These are some recommendations, but you know best!</p>
+
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" title="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"><strong>Logging</strong><br />
+<em>This cheat sheet is focused on providing developers with concentrated guidance on building application logging…</em>cheatsheetseries.owasp.org</a><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"></a><a href="https://grafana.com/" title="https://grafana.com/"><strong>Grafana: The open observability platform</strong><br />
+<em>The open observability platform Grafana is the open source analytics &amp; monitoring solution for every database Get…</em>grafana.com</a><a href="https://grafana.com/"></a><a href="https://www.elastic.co/what-is/elk-stack" title="https://www.elastic.co/what-is/elk-stack"><strong>ELK Stack: Elasticsearch, Logstash, Kibana | Elastic</strong><br />
+<em>What is the ELK Stack? The ELK Stack is an acronym for a combination of three widely used open source projects…</em>www.elastic.co</a><a href="https://www.elastic.co/what-is/elk-stack"></a><a href="https://www.datadoghq.com/" title="https://www.datadoghq.com/"><strong>Cloud Monitoring as a Service | Datadog</strong><br />
+<em>See metrics from all of your apps, tools &amp; services in one place with Datadog’s cloud monitoring as a service solution…</em>www.datadoghq.com</a><a href="https://www.datadoghq.com/"></a><a href="https://www.esecurityplanet.com/products/top-siem-products.html" title="https://www.esecurityplanet.com/products/top-siem-products.html"><strong>Top SIEM Products</strong><br />
+<em>Security Information and Event Management (SIEM) is a key enterprise security technology, with the ability to tie…</em>www.esecurityplanet.com</a><a href="https://www.esecurityplanet.com/products/top-siem-products.html"></a><a href="https://www.capterra.com/siem-software/" title="https://www.capterra.com/siem-software/"><strong>Best SIEM Software | 2019 Reviews of the Most Popular Tools &amp; Systems</strong><br />
+<em>Find and compare SIEM software. Free, interactive tool to quickly narrow your choices and contact multiple vendors.</em>www.capterra.com</a><a href="https://www.capterra.com/siem-software/"></a>#### Conclusion</p>
+
+<p>What I’ve tried to achieve in this long article was to inform you of the Top 10 list of vulnerabilities found in today’s APIs that threatens their existence. I’ve mentioned many Python packages, cheatsheets, related resources and software needed for the job. But the developer always knows best. Yeah, common sense can alleviate most of these.</p>
+
+<p>Try to take advice from experts in the field, specially those contributed to the making of the Top 10 list and <strong>NEVER EVER TRUST USER INPUT!</strong></p>
+
+<p>Cover image credits: <a href="https://github.com/OWASP/API-Security/blob/develop/2019/en/dist/owasp-api-security-top-10.pdf">OWASP API Security Top 10 2019 PDF cover</a></p>
+
+    </div>
+
+</article>
+
+<div class="container mx-auto px-2 py-2 clearfix">
+    <!-- Use if you want to show previous and next for all posts. -->
+
+
+
+  <div class="col-4 sm-width-full left mr-lg-4 mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/integrating-k6-with-apache-kafka">
+      <span class="h5 bold text-accent">Previous</span>
+      <p class="bold h3 link-primary mb-1">Integrating k6 with Apache Kafka</p>
+      <p>Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting...</p>
+    </a>
+  </div>
+  
+  
+  <div class="col-4 sm-width-full left mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing">
+      <span class="h5 bold text-accent">Next</span>
+      <p class="bold h3 link-primary mb-1">microVM: Another Level of Abstraction for Serverless Computing</p>
+      <p>For years, cloud computing was a way to convince users and business to spend their money hosting their services on...</p>
+    </a>
+  </div>
+
+
+</div>
+    </div>
+
+    <div class="border-top-thin clearfix mt-2 mt-lg-4">
+  <div class="container mx-auto px-2">
+    <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
+    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
+      <li class="inline-block mr-1">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li class="inline-block">
+        <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  </body>
+
+</html>

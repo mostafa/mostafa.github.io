@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>microVM: Another Level of Abstraction for Serverless Computing</title>
+    <meta name="description"
+        content="For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. ...">
+
+    
+    
+    <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="canonical" href="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing">
+    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
+        href="https://mostafa.dev/feed.xml">
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>microVM: Another Level of Abstraction for Serverless Computing | Welcome To My Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="microVM: Another Level of Abstraction for Serverless Computing" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to run a microVM in an unprivileged environment with Firefighter?" />
+<meta property="og:description" content="How to run a microVM in an unprivileged environment with Firefighter?" />
+<link rel="canonical" href="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing" />
+<meta property="og:url" content="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing" />
+<meta property="og:site_name" content="Welcome To My Blog" />
+<meta property="og:image" content="https://mostafa.dev/img/1*lNlcljTATMVw8oSloQT8tw.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-16T00:00:00+01:00" />
+<script type="application/ld+json">
+{"image":"https://mostafa.dev/img/1*lNlcljTATMVw8oSloQT8tw.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing","headline":"microVM: Another Level of Abstraction for Serverless Computing","dateModified":"2019-12-16T00:00:00+01:00","datePublished":"2019-12-16T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing"},"description":"How to run a microVM in an unprivileged environment with Firefighter?","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+            line-height: 2;
+            color: #181818;
+            background-color: #fff;
+        }
+
+        .subtitle {
+            color: rgba(0, 0, 0, 0.54) !important;
+        }
+    </style>
+</head>
+
+  <body>
+
+    <header class="border-bottom-thick px-2 clearfix">
+  <div class="left sm-width-full py-1 mt-1 mt-lg-0">
+    <a class="align-middle link-primary text-accent" href="/">
+      Welcome To My Blog
+    </a>
+  </div>
+  <div class="right sm-width-full">
+    <ul class="list-reset mt-lg-1 mb-2 mb-lg-1">
+      
+        
+      
+        
+        <li class="inline-block">
+          <a class="align-middle link-primary mr-2 mr-lg-0 ml-lg-2" href="/about/">
+            About
+          </a>
+        </li>
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+    <div>
+      <article class="container px-2 mx-auto mb4" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="h1 col-9 sm-width-full mt-3 mb-0 pb-0 inline-block" itemprop="name headline">microVM: Another Level of Abstraction for Serverless Computing</h1>
+    
+        <h3 class="h3 col-9 sm-width-full mb-0 mt-0 inline-block subtitle" itemprop="name headline">How to run a microVM in an unprivileged environment with Firefighter?
+        </h3>
+    
+    
+        <img class="col-12" src=/img/1*lNlcljTATMVw8oSloQT8tw.png/>
+    
+    <div class="col-3 sm-width-full mt-1 border-top-thin ">
+        <p class="mb-3 py-2 h4">
+            <time datetime="2019-12-16T00:00:00+01:00" itemprop="datePublished">Dec 16, 2019</time>
+        </p>
+    </div>
+
+    <div class="prose" itemprop="articleBody">
+        <p>For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. Things are changed and merely providing basic storage and processing power is a thing of the past. Cloud services are so complicated today that each one of them needs proper training to just be able to use them. Distributed data-stores, load-balancers, storages, serverless and container automation and orchestration services are just a few example of the vast number of cloud computing services.</p>
+
+<p>One can now have a software running on cloud services (Software-as-a-Service) with <a href="https://en.wikipedia.org/wiki/High_availability#Percentage_calculation">five-nine SLA</a> hosted on multiple cloud providers, effectively providing high-availability across the globe, all controlled from a central location, automated and orchestrated with the latest cutting-edge technologies on the market. And the number of these technologies are ever-growing.</p>
+
+<p>Most of the cloud providers today use open-source model to distribute their technologies and software. Examples of which are <a href="https://github.com/kubernetes/kubernetes">kubernetes</a>, <a href="https://github.com/docker/docker-ce">docker</a> and <a href="https://github.com/firecracker-microvm/firecracker">firecracker</a>. Containerization and light-weight virtual machines are just two of the various ways to deploy applications on cloud. Each has its own pros and cons. But in this article I am going to present firecrack, a light-weight virtual machine, or microVM, management tool created by Amazon to run their serverless platform. In contrast to containerization, specifically docker, which uses a single shared Linux kernel with cgroups, namespaces, etc., microVMs use a separate Linux kernel virtualized on top of kernel-based virtual machine (KVM). The advantages of microVM are less memory overhead (5 MB), very minimal optimized kernel and security. The most interesting part is that it is written in <a href="http://rust-lang.org/">Rust</a>, has an awesome <a href="http://golang.org/">Go</a> SDK and many tools are already developed for it:</p>
+
+<p><a href="https://github.com/firecracker-microvm/firecracker" title="https://github.com/firecracker-microvm/firecracker"><strong>firecracker-microvm/firecracker</strong><br />
+<em>Our mission is to enable secure, multi-tenant, minimal-overhead execution of container and function workloads. Read…</em>github.com</a><a href="https://github.com/firecracker-microvm/firecracker"></a><a href="https://github.com/firecracker-microvm/firecracker-containerd" title="https://github.com/firecracker-microvm/firecracker-containerd"><strong>firecracker-microvm/firecracker-containerd</strong><br />
+<em>Automation Status Tests Lint This repository enables the use of a container runtime, containerd, to manage Firecracker…</em>github.com</a><a href="https://github.com/firecracker-microvm/firecracker-containerd"></a><a href="https://github.com/firecracker-microvm/firecracker-go-sdk" title="https://github.com/firecracker-microvm/firecracker-go-sdk"><strong>firecracker-microvm/firecracker-go-sdk</strong><br />
+<em>This package is a Go library to interact with the Firecracker API. It is designed as an abstraction of the…</em>github.com</a><a href="https://github.com/firecracker-microvm/firecracker-go-sdk"></a><a href="https://github.com/firecracker-microvm/firectl" title="https://github.com/firecracker-microvm/firectl"><strong>firecracker-microvm/firectl</strong><br />
+<em>Firectl is a basic command-line tool that lets you run arbitrary Firecracker MicroVMs via the command line. This lets…</em>github.com</a><a href="https://github.com/firecracker-microvm/firectl"></a><a href="https://github.com/weaveworks/ignite" title="https://github.com/weaveworks/ignite"><strong>weaveworks/ignite</strong><br />
+<em>Weave Ignite is an open source Virtual Machine (VM) manager with a container UX and built-in GitOps management…</em>github.com</a><a href="https://github.com/weaveworks/ignite"></a>There is a demo project demonstrating the abilities and features of microVM by showing how quickly it can run 4k microVMs in less than a minute:</p>
+
+<p><a href="https://github.com/firecracker-microvm/firecracker-demo" title="https://github.com/firecracker-microvm/firecracker-demo"><strong>firecracker-microvm/firecracker-demo</strong><br />
+<em>This demo showcases Firecracker’s agility and high-density capabilities. It’s been run on an EC2 I3.metal host (the…</em>github.com</a><a href="https://github.com/firecracker-microvm/firecracker-demo"></a>Months ago, I’ve started experimenting with it and wrote a bunch of bash scripts and a simple README to be able to show how to download project binaries or build the project(s) from source and start using microVMs very quickly:</p>
+
+<p><a href="https://github.com/mostafa/firefighter" title="https://github.com/mostafa/firefighter"><strong>mostafa/firefighter</strong><br />
+<em>Firefighter is, for now, as set of scripts to download or build from source the firecracker and the firectl, download…</em>github.com</a><a href="https://github.com/mostafa/firefighter"></a>In order to use it, just clone the project somewhere on your disk and either run get_latest.sh or build_latest.sh. To get the latest binaries along with pre-built Debian and Alpine kernel and rootfs, you just need to have <a href="https://curl.haxx.se/">curl</a> installed. But in order to build it from source code, you should have Rust compiler installed. The easiest way to install Rust compiler and toolchain, just download and install <a href="https://rustup.rs/">rustup</a> installer to be able to easily install other things. A simple tutorial is present on Rust official website that provides instructions on how to do this. For building the latest version, I assume you have <a href="http://debian.org/">Debian GNU/Linux</a> installed, because of APT.</p>
+
+<p><a href="https://www.rust-lang.org/tools/install" title="https://www.rust-lang.org/tools/install"><strong>Install Rust</strong><br />
+<em>Using rustup (Recommended) It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and…</em>www.rust-lang.org</a><a href="https://www.rust-lang.org/tools/install"></a>Although building from source gives you full control and customizability, but for mere experimentation, just download the binaries and related files and you’re good to go!</p>
+
+<p>$ <strong>git clone **<a href="https://github.com/mostafa/firefighter">**https://github.com/mostafa/firefighter**</a><br />
+$ **cd firefighter</strong><br />
+$ <strong>./get_latest.sh</strong>This script downloads the latest firecracker, firectl and jailer binaries with a progress bar, along with Alpine and Debian kernel and rootfs in images directory.</p>
+
+<p>Running the following command with no option or with help would print usage instructions:</p>
+
+<p>$ <strong>./run_microvm.sh</strong><br />
+Usage:<br />
+run_microvm.sh start <distro-name> | <vmlinuz.bin> <rootfs.ext4>  
+run\_microvm.sh stop  
+run\_microvm.sh config  
+run\_microvm.sh status  
+run\_microvm.sh helpAvailable distros:</rootfs.ext4></vmlinuz.bin></distro-name></p>
+<ul>
+  <li>debian</li>
+  <li>alpineTo run an Alpine microVM, just run the following command, it needs root/sudo privilege:</li>
+</ul>
+
+<p>$ **./run_microvm.sh start alpine<br />
+**Giving read/write access to KVM to user<br />
+[sudo] password for user:<br />
+Booting kernel: images/alpine-vmlinuz.bin<br />
+Image: images/alpine.ext4<br />
+…<br />
+Enable routing from/to MicroVM<br />
+Run MicroVM<br />
+…<br />
+Welcome to Alpine Linux 3.8<br />
+Kernel 4.14.55-84.37.amzn2.x86_64 on an x86_64 (ttyS0)localhost login:Using root as username and password, you can login to the microVM. Run the following commands inside the microVM to enable internet access:</p>
+
+<p>$ <strong>ip addr add 172.16.0.2/24 dev eth0</strong><br />
+$ <strong>ip route add default via 172.16.0.1 dev eth0</strong><br />
+$ <strong>echo “nameserver 8.8.8.8” &gt; /etc/resolv.conf</strong><br />
+$ **ping -c 3 google.com<br />
+**PING google.com (172.217.20.46): 56 data bytes<br />
+64 bytes from 172.217.20.46: seq=0 ttl=54 time=4.270 ms<br />
+64 bytes from 172.217.20.46: seq=1 ttl=54 time=5.979 ms<br />
+64 bytes from 172.217.20.46: seq=2 ttl=54 time=6.455 ms— google.com ping statistics —<br />
+3 packets transmitted, 3 packets received, 0% packet loss<br />
+round-trip min/avg/max = 4.270/5.568/6.455 msNow you can stop the microVM with the following command on another terminal:</p>
+
+<p>$ <strong>./run_microvm.sh stop</strong>That was it for now. You should figure out how you can leverage this to your advantage.</p>
+
+<p>It’s a simple open-source project and any feedback and contribution is welcome.</p>
+
+<p>Cover image credits: <a href="https://firecracker-microvm.github.io/">https://firecracker-microvm.github.io/</a></p>
+
+    </div>
+
+</article>
+
+<div class="container mx-auto px-2 py-2 clearfix">
+    <!-- Use if you want to show previous and next for all posts. -->
+
+
+
+  <div class="col-4 sm-width-full left mr-lg-4 mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/api-backend-security">
+      <span class="h5 bold text-accent">Previous</span>
+      <p class="bold h3 link-primary mb-1">API & Backend Security</p>
+      <p>In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give...</p>
+    </a>
+  </div>
+  
+  
+  <div class="col-4 sm-width-full left mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">
+      <span class="h5 bold text-accent">Next</span>
+      <p class="bold h3 link-primary mb-1">Load Testing Your API with Swagger/OpenAPI and k6</p>
+      <p>#### Overview Throughout the years, there has been many attempts to devise [a universal format for defining Web API specifications](https://en.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages)....</p>
+    </a>
+  </div>
+
+
+</div>
+    </div>
+
+    <div class="border-top-thin clearfix mt-2 mt-lg-4">
+  <div class="container mx-auto px-2">
+    <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
+    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
+      <li class="inline-block mr-1">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li class="inline-block">
+        <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  </body>
+
+</html>
