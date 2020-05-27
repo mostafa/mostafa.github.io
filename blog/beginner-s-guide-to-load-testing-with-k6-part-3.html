@@ -2,39 +2,37 @@
 <html>
 
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Beginner’s Guide to Load Testing with k6</title>
-    <meta name="description"
-        content="Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can...">
+    <meta name="description" content="Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can...">
 
     
     
     <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
     <link rel="canonical" href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3">
-    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
-        href="https://mostafa.dev/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Mostafa's personal blog" href="https://mostafa.dev/feed.xml">
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Beginner’s Guide to Load Testing with k6 | Welcome To My Blog</title>
-<meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Beginner’s Guide to Load Testing with k6" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6" />
-<meta property="og:description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6" />
-<link rel="canonical" href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3" />
-<meta property="og:url" content="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3" />
-<meta property="og:site_name" content="Welcome To My Blog" />
-<meta property="og:image" content="https://mostafa.dev/img/1*yY9iJKP_KEcuweo78xfXfA.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-07-09T00:00:00+02:00" />
+<title>Beginner’s Guide to Load Testing with k6 | Mostafa’s personal blog</title>
+<meta name="generator" content="Jekyll v4.0.1">
+<meta property="og:title" content="Beginner’s Guide to Load Testing with k6">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6">
+<meta property="og:description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6">
+<link rel="canonical" href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3">
+<meta property="og:url" content="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3">
+<meta property="og:site_name" content="Mostafa’s personal blog">
+<meta property="og:image" content="https://mostafa.dev/img/1*yY9iJKP_KEcuweo78xfXfA.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-07-09T00:00:00+02:00">
 <script type="application/ld+json">
-{"image":"https://mostafa.dev/img/1*yY9iJKP_KEcuweo78xfXfA.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3","headline":"Beginner’s Guide to Load Testing with k6","dateModified":"2019-07-09T00:00:00+02:00","datePublished":"2019-07-09T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3"},"description":"Part 3 — How to Write &amp; Run a Basic Load Test Using k6","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3","headline":"Beginner’s Guide to Load Testing with k6","dateModified":"2019-07-09T00:00:00+02:00","datePublished":"2019-07-09T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3"},"image":"https://mostafa.dev/img/1*yY9iJKP_KEcuweo78xfXfA.png","description":"Part 3 — How to Write &amp; Run a Basic Load Test Using k6","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -58,7 +56,7 @@
     <header class="border-bottom-thick px-2 clearfix">
   <div class="left sm-width-full py-1 mt-1 mt-lg-0">
     <a class="align-middle link-primary text-accent" href="/">
-      Welcome To My Blog
+      Mostafa's personal blog
     </a>
   </div>
   <div class="right sm-width-full">
@@ -80,6 +78,10 @@
       
         
       
+        
+      
+        
+      
     </ul>
   </div>
 </header>
@@ -89,11 +91,11 @@
       <article class="container px-2 mx-auto mb4" itemscope itemtype="http://schema.org/BlogPosting">
     <h1 class="h1 col-9 sm-width-full mt-3 mb-0 pb-0 inline-block" itemprop="name headline">Beginner’s Guide to Load Testing with k6</h1>
     
-        <h3 class="h3 col-9 sm-width-full mb-0 mt-0 inline-block subtitle" itemprop="name headline">Part 3 — How to Write & Run a Basic Load Test Using k6
+        <h3 class="h3 col-9 sm-width-full mb-0 mt-0 inline-block subtitle" itemprop="name headline">Part 3 — How to Write &amp; Run a Basic Load Test Using k6
         </h3>
     
     
-        <img class="col-12" src=/img/1*yY9iJKP_KEcuweo78xfXfA.png/>
+        <img class="col-12" src="/img/1*yY9iJKP_KEcuweo78xfXfA.png">
     
     <div class="col-3 sm-width-full mt-1 border-top-thin ">
         <p class="mb-3 py-2 h4">
@@ -108,10 +110,12 @@
 
 <p>There are three parts in each test script (actually there is more), which is depicted in the below screenshot:</p>
 
-<p><img src="/img/1*KHnZgPqBbs0HYg_PWeNITA.png" alt="" />Different parts of the k6 script1. <strong><em>Imports</em></strong>: This is obviously where you can import <a href="https://docs.k6.io/docs/init-context">k6 Script API</a>, and other <a href="https://docs.k6.io/docs/modules">JavaScript modules</a> (libraries) that you desire to make use of. These modules can be loaded using various methods: <a href="https://docs.k6.io/docs/modules#section-npm-modules">bundled NPM modules</a> on your local machine (browserified, but browser APIs are not supported) and <a href="https://docs.k6.io/docs/modules#section-remote-modules">remote modules</a> (from a URL, even CDNJS and GitHub). <em>Hint</em>: Make sure to make the libraries available to the <a href="https://hub.docker.com/r/loadimpact/k6">dockerized version of k6</a> via mounted volumes, otherwise your script does not find the imports.</p>
+<p><img src="/img/1*KHnZgPqBbs0HYg_PWeNITA.png" alt="">Different parts of the k6 script1. <strong><em>Imports</em></strong>: This is obviously where you can import <a href="https://docs.k6.io/docs/init-context">k6 Script API</a>, and other <a href="https://docs.k6.io/docs/modules">JavaScript modules</a> (libraries) that you desire to make use of. These modules can be loaded using various methods: <a href="https://docs.k6.io/docs/modules#section-npm-modules">bundled NPM modules</a> on your local machine (browserified, but browser APIs are not supported) and <a href="https://docs.k6.io/docs/modules#section-remote-modules">remote modules</a> (from a URL, even CDNJS and GitHub). <em>Hint</em>: Make sure to make the libraries available to the <a href="https://hub.docker.com/r/loadimpact/k6">dockerized version of k6</a> via mounted volumes, otherwise your script does not find the imports.</p>
 <ol>
-  <li><strong><em>Init code</em></strong>: This is the part of the script that is outside the exported “<em>default</em>” function. It is usually used to provide options to the whole test, how to run the test, how to distribute it on the cloud, etc. Obviously, it is used for initialization of the whole test itself.</li>
-  <li><strong><em>VU code</em></strong>: k6 supports a feature called virtual users. This means that you can use <em>separate</em> “smart” virtual users to test your system. The code in this section which is inside the exported “<em>default</em>” function, is ran over and over inside each VU and the aggregated results of all these VUs are processed and reported by k6. This is where you define your test scenario, which is thoroughly explained further in this article.
+  <li>
+<strong><em>Init code</em></strong>: This is the part of the script that is outside the exported “<em>default</em>” function. It is usually used to provide options to the whole test, how to run the test, how to distribute it on the cloud, etc. Obviously, it is used for initialization of the whole test itself.</li>
+  <li>
+<strong><em>VU code</em></strong>: k6 supports a feature called virtual users. This means that you can use <em>separate</em> “smart” virtual users to test your system. The code in this section which is inside the exported “<em>default</em>” function, is ran over and over inside each VU and the aggregated results of all these VUs are processed and reported by k6. This is where you define your test scenario, which is thoroughly explained further in this article.
 There are other stages in <a href="https://docs.k6.io/docs/test-life-cycle">the life-cycle of a k6 test</a>, which includes <em>setup</em> and <em>tear-down</em>, which, clearly, are separate from the init and VU code.</li>
 </ol>
 
@@ -121,25 +125,36 @@ There are other stages in <a href="https://docs.k6.io/docs/test-life-cycle">the 
 
 <p>No matter where you run the k6, it provides you with the same experience. Here’s the help of the k6 command:</p>
 
-<p><img src="/img/1*VnQokWG3VNbPH_0Xj2YyBA.png" alt="" />k6 helpThe format of running k6 is like “k6 [command]”, which you can then pass your desired command and let it run by k6. Basic available commands, as of version 0.25.1, is as follows. Plus you can get help for each command with this combination:</p>
+<p><img src="/img/1*VnQokWG3VNbPH_0Xj2YyBA.png" alt="">k6 helpThe format of running k6 is like “k6 [command]”, which you can then pass your desired command and let it run by k6. Basic available commands, as of version 0.25.1, is as follows. Plus you can get help for each command with this combination:</p>
 
-<p>k6 <command /> –help* <strong>help</strong>: shows the above help, well, obviously.</p>
+<p>k6 <command></command> –help* <strong>help</strong>: shows the above help, well, obviously.</p>
 <ul>
-  <li><strong>pause</strong>: pause a running test.</li>
-  <li><strong>resume</strong>: resume a paused test.</li>
-  <li><strong>run</strong>: run a test with various flags, e.g.–*paused *to run a script in paused mode.</li>
-  <li><strong>stats</strong>: shows statistics about the currently running or paused test entailing number of VUs.</li>
-  <li><strong>status</strong>: show the status of current k6 instance, either running, paused, tainted and the number of VUs.</li>
+  <li>
+<strong>pause</strong>: pause a running test.</li>
+  <li>
+<strong>resume</strong>: resume a paused test.</li>
+  <li>
+<strong>run</strong>: run a test with various flags, e.g.–*paused *to run a script in paused mode.</li>
+  <li>
+<strong>stats</strong>: shows statistics about the currently running or paused test entailing number of VUs.</li>
+  <li>
+<strong>status</strong>: show the status of current k6 instance, either running, paused, tainted and the number of VUs.</li>
   <li>
     <p><strong>version</strong>: guess what?
 These are more advanced commands that I will try to cover in the coming articles:</p>
   </li>
-  <li><strong>archive</strong>: creates a bundled <em>tar</em> file of your script along with all the dependencies, which you can later use with “k6 run”.</li>
-  <li><strong>login</strong>: authenticates with <a href="https://loadimpact.com/insights/">Load Impact Insights</a> cloud service and provides an authentication token to be used by k6.</li>
-  <li><strong>cloud</strong>: runs your authenticated test on the k6 cloud service.</li>
-  <li><strong>convert</strong>: browsers can log requests/responses as HAR (HTTP Archive) files, which you can then convert the HAR file using k6. k6 creates a script from the HAR file, which you can edit and run locally or on the cloud.</li>
-  <li><strong>inspect</strong>: basically outputs the consolidated script options for that script or .tar bundle.</li>
-  <li><strong>scale</strong>: scale a paused/running test with a new number of virtual users (VUs). It can do this either for local or for cloud execution.
+  <li>
+<strong>archive</strong>: creates a bundled <em>tar</em> file of your script along with all the dependencies, which you can later use with “k6 run”.</li>
+  <li>
+<strong>login</strong>: authenticates with <a href="https://loadimpact.com/insights/">Load Impact Insights</a> cloud service and provides an authentication token to be used by k6.</li>
+  <li>
+<strong>cloud</strong>: runs your authenticated test on the k6 cloud service.</li>
+  <li>
+<strong>convert</strong>: browsers can log requests/responses as HAR (HTTP Archive) files, which you can then convert the HAR file using k6. k6 creates a script from the HAR file, which you can edit and run locally or on the cloud.</li>
+  <li>
+<strong>inspect</strong>: basically outputs the consolidated script options for that script or .tar bundle.</li>
+  <li>
+<strong>scale</strong>: scale a paused/running test with a new number of virtual users (VUs). It can do this either for local or for cloud execution.
 Each of these commands has a rich set of options/flags to pass in order to control the behavior of k6. I strongly recommend you to have a look at them, since sometimes you find gems inside.</li>
 </ul>
 
@@ -160,7 +175,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
 
 <p>Example of k6 scenario scriptI have used <a href="https://httpbin.org">httpbin.org</a> as a kitchen-sink for testing k6 with this script. The results of running test for five minutes is as follows:</p>
 
-<p><img src="/img/1*yY9iJKP_KEcuweo78xfXfA.png" alt="" />Output of k6 scenario scriptThe output start with the logo of the k6 being printed to the screen. After that comes the method of execution, being “local” in my case. The output is redirected to the terminal and the name of the script is “test.js”.</p>
+<p><img src="/img/1*yY9iJKP_KEcuweo78xfXfA.png" alt="">Output of k6 scenario scriptThe output start with the logo of the k6 being printed to the screen. After that comes the method of execution, being “local” in my case. The output is redirected to the terminal and the name of the script is “test.js”.</p>
 
 <p>Duration and iterations are empty, since they are automatically calculated from the stages. The number of (max) VUs are 100 and the progress bar shows that it is done in five minutes.</p>
 
@@ -217,7 +232,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
     <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
     <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
       <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Mostafa's personal blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </li>
       <li class="inline-block">
         <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>

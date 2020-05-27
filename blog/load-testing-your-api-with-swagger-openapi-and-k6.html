@@ -2,39 +2,37 @@
 <html>
 
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Load Testing Your API with Swagger/OpenAPI and k6</title>
-    <meta name="description"
-        content="Overview">
+    <meta name="description" content="Overview">
 
     
     
     <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
     <link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">
-    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
-        href="https://mostafa.dev/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Mostafa's personal blog" href="https://mostafa.dev/feed.xml">
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Load Testing Your API with Swagger/OpenAPI and k6 | Welcome To My Blog</title>
-<meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Load Testing Your API with Swagger/OpenAPI and k6" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?" />
-<meta property="og:description" content="How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?" />
-<link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6" />
-<meta property="og:url" content="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6" />
-<meta property="og:site_name" content="Welcome To My Blog" />
-<meta property="og:image" content="https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-23T00:00:00+01:00" />
+<title>Load Testing Your API with Swagger/OpenAPI and k6 | Mostafa’s personal blog</title>
+<meta name="generator" content="Jekyll v4.0.1">
+<meta property="og:title" content="Load Testing Your API with Swagger/OpenAPI and k6">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?">
+<meta property="og:description" content="How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?">
+<link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">
+<meta property="og:url" content="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">
+<meta property="og:site_name" content="Mostafa’s personal blog">
+<meta property="og:image" content="https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-03-23T00:00:00+01:00">
 <script type="application/ld+json">
-{"image":"https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6","headline":"Load Testing Your API with Swagger/OpenAPI and k6","dateModified":"2020-03-23T00:00:00+01:00","datePublished":"2020-03-23T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6"},"description":"How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6","headline":"Load Testing Your API with Swagger/OpenAPI and k6","dateModified":"2020-03-23T00:00:00+01:00","datePublished":"2020-03-23T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6"},"image":"https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png","description":"How to use our new k6 script generator in openapi-generator to convert OpenAPI/Swagger specifications to k6 scripts?","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -58,7 +56,7 @@
     <header class="border-bottom-thick px-2 clearfix">
   <div class="left sm-width-full py-1 mt-1 mt-lg-0">
     <a class="align-middle link-primary text-accent" href="/">
-      Welcome To My Blog
+      Mostafa's personal blog
     </a>
   </div>
   <div class="right sm-width-full">
@@ -80,6 +78,10 @@
       
         
       
+        
+      
+        
+      
     </ul>
   </div>
 </header>
@@ -93,7 +95,7 @@
         </h3>
     
     
-        <img class="col-12" src=/img/0*2_0U-DPmTzBEJspg.png/>
+        <img class="col-12" src="/img/0*2_0U-DPmTzBEJspg.png">
     
     <div class="col-3 sm-width-full mt-1 border-top-thin ">
         <p class="mb-3 py-2 h4">
@@ -134,7 +136,10 @@
 
 <p>$ docker pull openapitools/openapi-generator-cliThe next step is to run the command inside a container to convert the OpenAPI specification file for you. Assuming you are running Docker on Linux-based operating systems, the following command mounts your present working directory (e.g. /home/user/Desktop) to /local on the container. Also note that after conversion, the container is removed. The container runs the command inside it with the generate option, along with its parameters.</p>
 
-<p>$ docker run –rm -v ${PWD}:/local openapitools/openapi-generator-cli generate-i http://httpbin.test.loadimpact.com/spec.json -g k6 -o /local/k6-test/ –skip-validate-specWith the above command, we’ve converted the API specification document of the <a href="https://httpbin.org/">httpbin.org</a> instance, that is hosted on our servers. The parameters are:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="nt">-v</span> <span class="k">${</span><span class="nv">PWD</span><span class="k">}</span>:/local openapitools/openapi-generator-cli generate-i http://httpbin.test.loadimpact.com/spec.json <span class="nt">-g</span> k6 <span class="nt">-o</span> /local/k6-test/ <span class="nt">--skip-validate-spec</span>
+</code></pre></div></div>
+
+<p>With the above command, we’ve converted the API specification document of the <a href="https://httpbin.org/">httpbin.org</a> instance, that is hosted on our servers. The parameters are:</p>
 
 <ul>
   <li>The -i parameter is used to feed the specification document to the generator. You can use a file for that purpose. This way you should make sure that it resides in the same directory on your host (/home/user/Desktop/myspec.json), and you address it from the container side: /local/myspec.json. You also have the option to specify a URL that points to a file. Note that the file can be in either JSON or YAML format.</li>
@@ -149,7 +154,7 @@
 
 <p>Running the above script has produced the following output:</p>
 
-<p><img src="/img/0*LB9Sr2Mt7bMEdiuy.png" alt="" />#### Considerations for the generated script</p>
+<p><img src="/img/0*LB9Sr2Mt7bMEdiuy.png" alt="">#### Considerations for the generated script</p>
 
 <p>Take these into consideration while converting your OpenAPI specification documents to k6 scripts:</p>
 
@@ -207,7 +212,7 @@
     <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
     <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
       <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Mostafa's personal blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </li>
       <li class="inline-block">
         <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>

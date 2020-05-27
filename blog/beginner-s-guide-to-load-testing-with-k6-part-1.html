@@ -2,39 +2,37 @@
 <html>
 
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Beginner’s Guide to Load Testing with k6</title>
-    <meta name="description"
-        content="Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of content...">
+    <meta name="description" content="Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of content...">
 
     
     
     <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
     <link rel="canonical" href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1">
-    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
-        href="https://mostafa.dev/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Mostafa's personal blog" href="https://mostafa.dev/feed.xml">
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Beginner’s Guide to Load Testing with k6 | Welcome To My Blog</title>
-<meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Beginner’s Guide to Load Testing with k6" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Part 1 — The Prelude" />
-<meta property="og:description" content="Part 1 — The Prelude" />
-<link rel="canonical" href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1" />
-<meta property="og:url" content="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1" />
-<meta property="og:site_name" content="Welcome To My Blog" />
-<meta property="og:image" content="https://mostafa.dev/img/1*pOH0TCmxUt-jpDOpGPHL8A.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-06-17T00:00:00+02:00" />
+<title>Beginner’s Guide to Load Testing with k6 | Mostafa’s personal blog</title>
+<meta name="generator" content="Jekyll v4.0.1">
+<meta property="og:title" content="Beginner’s Guide to Load Testing with k6">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Part 1 — The Prelude">
+<meta property="og:description" content="Part 1 — The Prelude">
+<link rel="canonical" href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1">
+<meta property="og:url" content="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1">
+<meta property="og:site_name" content="Mostafa’s personal blog">
+<meta property="og:image" content="https://mostafa.dev/img/1*pOH0TCmxUt-jpDOpGPHL8A.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-06-17T00:00:00+02:00">
 <script type="application/ld+json">
-{"image":"https://mostafa.dev/img/1*pOH0TCmxUt-jpDOpGPHL8A.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1","headline":"Beginner’s Guide to Load Testing with k6","dateModified":"2019-06-17T00:00:00+02:00","datePublished":"2019-06-17T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1"},"description":"Part 1 — The Prelude","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1","headline":"Beginner’s Guide to Load Testing with k6","dateModified":"2019-06-17T00:00:00+02:00","datePublished":"2019-06-17T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-1"},"image":"https://mostafa.dev/img/1*pOH0TCmxUt-jpDOpGPHL8A.png","description":"Part 1 — The Prelude","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -58,7 +56,7 @@
     <header class="border-bottom-thick px-2 clearfix">
   <div class="left sm-width-full py-1 mt-1 mt-lg-0">
     <a class="align-middle link-primary text-accent" href="/">
-      Welcome To My Blog
+      Mostafa's personal blog
     </a>
   </div>
   <div class="right sm-width-full">
@@ -80,6 +78,10 @@
       
         
       
+        
+      
+        
+      
     </ul>
   </div>
 </header>
@@ -93,7 +95,7 @@
         </h3>
     
     
-        <img class="col-12" src=/img/1*pOH0TCmxUt-jpDOpGPHL8A.png/>
+        <img class="col-12" src="/img/1*pOH0TCmxUt-jpDOpGPHL8A.png">
     
     <div class="col-3 sm-width-full mt-1 border-top-thin ">
         <p class="mb-3 py-2 h4">
@@ -126,7 +128,7 @@ You are not alone in that. I remember days when I was the lead developer of a te
 
 <p>Now, I am working for a company, <a href="https://loadimpact.com/">Load Impact</a>, which deals with load and performance testing as their core business. They have a FOSS, easily scriptable tool (JavaScript), called <a href="https://k6.io/">k6</a>, which can be used for load testing. They also offer a cloud service on top of <em>the same exact tool</em>, for provisioning and running the tests, from different regions of the world (<a href="https://loadimpact.com/cloud-execution/">Cloud Execution</a>), and it finally give you a nice dashboard (<a href="https://loadimpact.com/insights/">Insights</a>) with analyzed results of the tests with shiny charts. It also has good <a href="https://loadimpact.com/integrations/">integrations</a> with CI/CD tools and platforms.</p>
 
-<p><img src="/img/1*DgpDE9wBwxVKtmTk_BLnzA.png" alt="" /><strong>Left</strong>: load test script written in JavaScript, <strong>Right</strong>: Cloud service of Load Impact (Insights), <strong>Credits</strong>: <a href="https://loadimpact.com/">https://loadimpact.com/</a>Enough said! Let’s dive deep into what load testing is and how we can use k6 for doing load testing on our infrastructure. I will try to write more about the cloud service in the future, too.</p>
+<p><img src="/img/1*DgpDE9wBwxVKtmTk_BLnzA.png" alt=""><strong>Left</strong>: load test script written in JavaScript, <strong>Right</strong>: Cloud service of Load Impact (Insights), <strong>Credits</strong>: <a href="https://loadimpact.com/">https://loadimpact.com/</a>Enough said! Let’s dive deep into what load testing is and how we can use k6 for doing load testing on our infrastructure. I will try to write more about the cloud service in the future, too.</p>
 
 <h4 id="what-is-loadperformance-testing">What is Load/Performance Testing?</h4>
 
@@ -135,14 +137,22 @@ You are not alone in that. I remember days when I was the lead developer of a te
 <p>There are many types of tests catered for different purposes in performance testing (Source: <a href="https://en.wikipedia.org/wiki/Software_performance_testing">https://en.wikipedia.org/wiki/Software_performance_testing</a>):</p>
 
 <ul>
-  <li><strong>Load testing</strong>: basically, putting load on the system to see how it behaves.</li>
-  <li><strong>Stress testing</strong>: load testing to find the maximum amount of load the system can handle.</li>
-  <li><strong>Soak testing</strong>: load testing a system continuously and monitoring for memory leaks and behavior of the system.</li>
-  <li><strong>Spike testing</strong>: load testing with sudden increase or decrease of the load.</li>
-  <li><strong>Breakpoint testing</strong>: like stress testing, but incremental load is put on the system over time to see how it behaves.</li>
-  <li><strong>Configuration testing</strong>: changing configuration to see how the system behaves under different configurations, under load.</li>
-  <li><strong>Isolation testing</strong>: Isolating a fault domain and repeating the test to confirm the failure.</li>
-  <li><strong>Internet testing</strong>: global load testing for big companies to see how to system behaves from different regions.
+  <li>
+<strong>Load testing</strong>: basically, putting load on the system to see how it behaves.</li>
+  <li>
+<strong>Stress testing</strong>: load testing to find the maximum amount of load the system can handle.</li>
+  <li>
+<strong>Soak testing</strong>: load testing a system continuously and monitoring for memory leaks and behavior of the system.</li>
+  <li>
+<strong>Spike testing</strong>: load testing with sudden increase or decrease of the load.</li>
+  <li>
+<strong>Breakpoint testing</strong>: like stress testing, but incremental load is put on the system over time to see how it behaves.</li>
+  <li>
+<strong>Configuration testing</strong>: changing configuration to see how the system behaves under different configurations, under load.</li>
+  <li>
+<strong>Isolation testing</strong>: Isolating a fault domain and repeating the test to confirm the failure.</li>
+  <li>
+<strong>Internet testing</strong>: global load testing for big companies to see how to system behaves from different regions.
 The most common purpose of performance testing is to find out how reliable, stable, performant and responsive the system is. Metrics like throughput and response time is a good measure of such a system.</li>
 </ul>
 
@@ -166,7 +176,7 @@ The most common purpose of performance testing is to find out how reliable, stab
 
 <p>The total data sent and received in 2775 requests is also present. For each HTTP requests, there is a <em>http_req_** metric (key) with 5 different values, each corresponding to the *average, minimum, median, maximum, 90th percentile and 95th percentile</em> of all the requests.</p>
 
-<p><img src="/img/1*aSlAqLfzEWVTy4j49n5QYg.png" alt="" />Terminal output of the sample test script for k6This was a very short introduction to performance/load testing and the k6 tool. I will try to write more advanced load testing articles to show you how to load test your website and/or API.</p>
+<p><img src="/img/1*aSlAqLfzEWVTy4j49n5QYg.png" alt="">Terminal output of the sample test script for k6This was a very short introduction to performance/load testing and the k6 tool. I will try to write more advanced load testing articles to show you how to load test your website and/or API.</p>
 
 <p>This series will continue with more in-depth performance/load testing articles assuming the readers don’t have previous experience on this topic.</p>
 
@@ -211,7 +221,7 @@ The most common purpose of performance testing is to find out how reliable, stab
     <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
     <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
       <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Mostafa's personal blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </li>
       <li class="inline-block">
         <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>

@@ -2,39 +2,37 @@
 <html>
 
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Load Testing Your API with Postman</title>
-    <meta name="description"
-        content="In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward...">
+    <meta name="description" content="In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward...">
 
     
     
     <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
     <link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-postman">
-    <link rel="alternate" type="application/rss+xml" title="Welcome To My Blog"
-        href="https://mostafa.dev/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Mostafa's personal blog" href="https://mostafa.dev/feed.xml">
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Load Testing Your API with Postman | Welcome To My Blog</title>
-<meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Load Testing Your API with Postman" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="How to load test your API using your existing Postman collections and k6?" />
-<meta property="og:description" content="How to load test your API using your existing Postman collections and k6?" />
-<link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-postman" />
-<meta property="og:url" content="https://mostafa.dev/blog/load-testing-your-api-with-postman" />
-<meta property="og:site_name" content="Welcome To My Blog" />
-<meta property="og:image" content="https://mostafa.dev/img/1*Qe-NONu2psPiePB_MX1RjA.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-21T00:00:00+02:00" />
+<title>Load Testing Your API with Postman | Mostafa’s personal blog</title>
+<meta name="generator" content="Jekyll v4.0.1">
+<meta property="og:title" content="Load Testing Your API with Postman">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="How to load test your API using your existing Postman collections and k6?">
+<meta property="og:description" content="How to load test your API using your existing Postman collections and k6?">
+<link rel="canonical" href="https://mostafa.dev/blog/load-testing-your-api-with-postman">
+<meta property="og:url" content="https://mostafa.dev/blog/load-testing-your-api-with-postman">
+<meta property="og:site_name" content="Mostafa’s personal blog">
+<meta property="og:image" content="https://mostafa.dev/img/1*Qe-NONu2psPiePB_MX1RjA.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-04-21T00:00:00+02:00">
 <script type="application/ld+json">
-{"image":"https://mostafa.dev/img/1*Qe-NONu2psPiePB_MX1RjA.png","@type":"BlogPosting","url":"https://mostafa.dev/blog/load-testing-your-api-with-postman","headline":"Load Testing Your API with Postman","dateModified":"2020-04-21T00:00:00+02:00","datePublished":"2020-04-21T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/load-testing-your-api-with-postman"},"description":"How to load test your API using your existing Postman collections and k6?","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://mostafa.dev/blog/load-testing-your-api-with-postman","headline":"Load Testing Your API with Postman","dateModified":"2020-04-21T00:00:00+02:00","datePublished":"2020-04-21T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mostafa.dev/blog/load-testing-your-api-with-postman"},"image":"https://mostafa.dev/img/1*Qe-NONu2psPiePB_MX1RjA.png","description":"How to load test your API using your existing Postman collections and k6?","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -58,7 +56,7 @@
     <header class="border-bottom-thick px-2 clearfix">
   <div class="left sm-width-full py-1 mt-1 mt-lg-0">
     <a class="align-middle link-primary text-accent" href="/">
-      Welcome To My Blog
+      Mostafa's personal blog
     </a>
   </div>
   <div class="right sm-width-full">
@@ -80,6 +78,10 @@
       
         
       
+        
+      
+        
+      
     </ul>
   </div>
 </header>
@@ -93,7 +95,7 @@
         </h3>
     
     
-        <img class="col-12" src=/img/1*Qe-NONu2psPiePB_MX1RjA.png/>
+        <img class="col-12" src="/img/1*Qe-NONu2psPiePB_MX1RjA.png">
     
     <div class="col-3 sm-width-full mt-1 border-top-thin ">
         <p class="mb-3 py-2 h4">
@@ -137,7 +139,7 @@ The scenario is to test all the public and private APIs. For the private APIs, a
 
 <p>To ease testing of our test API and demonstrate the usage of our Postman to k6 converter, I’ve created a Postman collection with almost all of our test API requests. You’ll see how you can access this Postman collection shortly.</p>
 
-<p><img src="/img/1*1IOClfhM1VmtqaSXUn4nzA.png" alt="" /></p>
+<p><img src="/img/1*1IOClfhM1VmtqaSXUn4nzA.png" alt=""></p>
 
 <p>This collection includes a set of collection variables, environment variables, pre-scripts, tests, authorization with two different mechanisms, and usages of the <a href="https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/">Postman Sandbox API</a>.</p>
 
@@ -208,7 +210,7 @@ The scenario is to test all the public and private APIs. For the private APIs, a
 
 <p>First, I removed the pre-script containing pm.sendRequest, because it is not supported by the converter. Then, I replaced the jsonData.hasOwnProperty syntax with the equivalent k6 syntax for <a href="https://k6.io/docs/javascript-api/k6-http/response-k6-http">extracting JSON response information</a>: response.json(“selector”).</p>
 
-<p><img src="/img/0*TWNwoEeJEr0z9YUb.png" alt="" />### Postman API vs. k6 API</p>
+<p><img src="/img/0*TWNwoEeJEr0z9YUb.png" alt="">### Postman API vs. k6 API</p>
 
 <p>Here’s a quick comparison of the <a href="https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/">Postman API</a> versus the <a href="https://k6.io/docs/javascript-api">k6 API</a>. To be fair, I have included features from Postman GUI application. Since k6 is scriptable from the start, you have the option to write the logic in JavaScript. Postman also supports javascript to do various tasks, but the focus is on exposing features via a richer set of GUI elements.</p>
 
@@ -281,7 +283,7 @@ The scenario is to test all the public and private APIs. For the private APIs, a
     <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
     <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
       <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Welcome To My Blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Mostafa's personal blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </li>
       <li class="inline-block">
         <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>
