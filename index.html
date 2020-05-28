@@ -1,299 +1,549 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mostafa's personal blog</title>
-    <meta name="description" content="Mostafa Moradian's personal website &amp; blog about software engineering, security and other related topics.">
+<!-- begin _includes/seo.html --><title>Mostafa's personal blog</title>
+<meta name="description" content="Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics. ">
 
-    
-    
-    <link rel="stylesheet" href="https://mostafa.dev/assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://mostafa.dev/">
-    <link rel="alternate" type="application/rss+xml" title="Mostafa's personal blog" href="https://mostafa.dev/feed.xml">
 
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Mostafa’s personal blog | Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics.</title>
-<meta name="generator" content="Jekyll v4.0.1">
-<meta property="og:title" content="Mostafa’s personal blog">
+  <meta name="author" content="Mostafa Moradian">
+
+
+<meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics.">
-<meta property="og:description" content="Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics.">
-<link rel="canonical" href="https://mostafa.dev/">
+<meta property="og:site_name" content="Mostafa's personal blog">
+<meta property="og:title" content="Mostafa’s personal blog">
 <meta property="og:url" content="https://mostafa.dev/">
-<meta property="og:site_name" content="Mostafa’s personal blog">
+
+
+  <meta property="og:description" content="Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics. ">
+
+
+
+
+
+  <meta name="twitter:site" content="@mosimoradian">
+  <meta name="twitter:title" content="Mostafa’s personal blog">
+  <meta name="twitter:description" content="Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics. ">
+  <meta name="twitter:url" content="https://mostafa.dev/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://mostafa.dev/">
+
+
+
+
 <script type="application/ld+json">
-{"@type":"WebSite","url":"https://mostafa.dev/","headline":"Mostafa’s personal blog","description":"Mostafa Moradian’s personal website &amp; blog about software engineering, security and other related topics.","name":"Mostafa’s personal blog","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Mostafa Moradian",
+      "url": "https://mostafa.dev/",
+      "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
+    
+  }
+</script>
 
 
-    <style>
-        body {
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 16px;
-            line-height: 2;
-            color: #181818;
-            background-color: #fff;
-        }
 
-        .subtitle {
-            color: rgba(0, 0, 0, 0.54) !important;
-        }
-    </style>
-</head>
 
-  <body>
 
-    <div>
 
-      <header class="header-background">
+<!-- end _includes/seo.html -->
 
-        <div class="clearfix border-bottom-thick header-border">
-          <ul class="list-reset right py-1 header-text font-smoothing">
-            
-              
-            
-              
-              <li class="inline-block">
-                <a class="align-middle link-primary header-link mr-2" href="/about/">About</a>
-              </li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          </ul>
-        </div>
 
-        <div class="container mx-auto px-2 mb-2 clearfix header-text">
-          <h1 class="h0 inline-block col-9 sm-width-full py-4 mt-3 header-title">Mostafa's personal blog</h1>
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mostafa's personal blog Feed">
 
-          <div class="clearfix mb-4 py-1">
-            <div class="col-4 sm-width-full left border-top-thin">
-              <div class="table">
-                <div class="inline-block mt-3 mr-1">
-                  <svg height="32" class="header-social-accent" version="1.1" width="32" viewbox="0 0 16 16" aria-hidden="true">
- <circle cx="8" cy="8" r="8"></circle>
-</svg>
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                </div>
-                <div class="inline-block mt-3 mr-1">
-                  <svg height="32" class="header-social-accent" version="1.1" width="32" viewbox="0 0 16 16" aria-hidden="true">
- <circle cx="8" cy="8" r="8"></circle>
-</svg>
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
 
-                </div>
-                <div class="inline-block mt-3">
-                  <a href="https://github.com/mostafa/" title="Fork me on GitHub" class="link-social block">
-<svg height="32" class="octicon octicon-mark-github header-social" viewbox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-</svg>
-</a>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
 
-                </div>
-              </div>
-              <!-- Set site description in config.yml -->
-              <p class="h4 lh-condensed font-smoothing mt-2 py-1">Mostafa Moradian's personal website &amp; blog about software engineering, security and other related topics.</p>
-            </div>
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
 
-            <div class="col-4 sm-width-full left border-top-thin mt-3 mt-lg-0 ml-lg-4 table">
-                <div class="inline-block mt-3 mr-1">
-                  <svg height="32" class="header-social" version="1.1" width="32" viewbox="0 0 16 16" aria-hidden="true">
- <circle cx="8" cy="8" r="8"></circle>
-</svg>
 
-                </div>
-                <div class="inline-block mt-3">
-                  <a href="https://twitter.com/mosimoradian" title="Follow me on twitter" class="link-social block">
-  <svg height="32" class="header-social" version="1.1" width="32" viewbox="0 0 16 16" aria-hidden="true">
-    <path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M12,6c0,0.1,0,0.2,0,0.3c0,2.7-2.1,5.8-5.8,5.8
-  	c-1.2,0-2.2-0.3-3.1-0.9c0.2,0,0.3,0,0.5,0c1,0,1.8-0.3,2.5-0.9c-0.9,0-1.7-0.6-1.9-1.4c0.1,0,0.3,0,0.4,0c0.2,0,0.4,0,0.5-0.1
-  	c-0.9-0.2-1.6-1-1.6-2v0C3.7,6.9,4,7,4.3,7.1c-0.5-0.4-0.9-1-0.9-1.7c0-0.4,0.1-0.7,0.3-1c1,1.2,2.5,2.1,4.2,2.1
-  	c0-0.2-0.1-0.3-0.1-0.5c0-1.1,0.9-2,2.1-2c0.6,0,1.1,0.2,1.5,0.6c0.5-0.1,0.9-0.3,1.3-0.5c-0.2,0.5-0.5,0.9-0.9,1.1
-  	c0.4,0,0.8-0.2,1.2-0.3h0C12.7,5.3,12.4,5.7,12,6z"></path>
-  </svg>
-</a>
 
-                </div>
-            </div>
-          </div>
+    <!-- start custom head snippets -->
 
-        </div>
-      </header>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
 
-      <div class="container mx-auto px-2 py-4">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--home">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
         
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/devrel-content-strategies" href="/blog/devrel-content-strategies">May 15, 2020</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/devrel-content-strategies" href="/blog/devrel-content-strategies">DevRel Content Strategies</a>
-  </h2>
-  <p>The very first developer relations online meetup of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who...</p>
-</div>
-
+          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
         
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/load-testing-your-api-with-postman" href="/blog/load-testing-your-api-with-postman">Apr 21, 2020</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/load-testing-your-api-with-postman" href="/blog/load-testing-your-api-with-postman">Load Testing Your API with Postman</a>
-  </h2>
-  <p>In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward, as is...</p>
-</div>
-
+        <a class="site-title" href="/">
+          Mostafa's personal blog
+          <span class="site-subtitle">Version 0.0.3</span>
+        </a>
+        <ul class="visible-links"></ul>
         
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/load-testing-your-api-with-swagger-openapi-and-k6" href="/blog/load-testing-your-api-with-swagger-openapi-and-k6">Mar 23, 2020</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/load-testing-your-api-with-swagger-openapi-and-k6" href="/blog/load-testing-your-api-with-swagger-openapi-and-k6">Load Testing Your API with Swagger/OpenAPI and k6</a>
-  </h2>
-  <p>Overview Throughout the years, there has been many attempts to devise a universal format for defining Web API specifications. The objective was (and still is) to help stakeholders of the...</p>
-</div>
-
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/microvm-another-level-of-abstraction-for-serverless-computing" href="/blog/microvm-another-level-of-abstraction-for-serverless-computing">Dec 16, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/microvm-another-level-of-abstraction-for-serverless-computing" href="/blog/microvm-another-level-of-abstraction-for-serverless-computing">microVM: Another Level of Abstraction for Serverless Computing</a>
-  </h2>
-  <p>For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. Things are changed and merely...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/api-backend-security" href="/blog/api-backend-security">Dec 9, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/api-backend-security" href="/blog/api-backend-security">API &amp; Backend Security</a>
-  </h2>
-  <p>In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old, but gold, OWASP...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/integrating-k6-with-apache-kafka" href="/blog/integrating-k6-with-apache-kafka">Nov 22, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/integrating-k6-with-apache-kafka" href="/blog/integrating-k6-with-apache-kafka">Integrating k6 with Apache Kafka</a>
-  </h2>
-  <p>Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it to on-premise setups. It can be used to store...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/migration-of-old-projects-to-python-3" href="/blog/migration-of-old-projects-to-python-3">Aug 3, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/migration-of-old-projects-to-python-3" href="/blog/migration-of-old-projects-to-python-3">Migration of Old Projects to Python 3</a>
-  </h2>
-  <p>A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Django 2.2. What...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/employment-contract" href="/blog/employment-contract">Jul 16, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/employment-contract" href="/blog/employment-contract">Employment Contract</a>
-  </h2>
-  <p>Disclaimer: I am not an attorney, a lawyer or an advocate whatsoever, so seek the help of a professional on your case before signing anything. I tried my best to...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3">Jul 9, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3">Beginner’s Guide to Load Testing with k6</a>
-  </h2>
-  <p>Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2">Jun 19, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2">Beginner’s Guide to Load Testing with k6</a>
-  </h2>
-  <p>Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in the first part of this series. Each test type tries...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1">Jun 17, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1">Beginner’s Guide to Load Testing with k6</a>
-  </h2>
-  <p>Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of contents on...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps" href="/blog/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps">Jun 4, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps" href="/blog/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps">Secure Code Review and Penetration Testing of Node.js and JavaScript Apps</a>
-  </h2>
-  <p>Security is an illusion and being secure is a relative matter. This means you should always have an eye on your security from any perspective: Physical, human, social, corporate and...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/the-story-of-farhang-a-bilingual-dictionary-production-system" href="/blog/the-story-of-farhang-a-bilingual-dictionary-production-system">Mar 8, 2019</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/the-story-of-farhang-a-bilingual-dictionary-production-system" href="/blog/the-story-of-farhang-a-bilingual-dictionary-production-system">The Story of Farhang, A Bilingual Dictionary Production System</a>
-  </h2>
-  <p>More than 9 years ago, when I was studying towards a B.A. degree in German Language Translation Studies, I used to know and be a student of a great professor,...</p>
-</div>
-
-        
-          <!-- Renders post date, title, and snippet of text. -->
-<div class="py-2 mb-2 prose">
-  <a class="no-underline h5 bold text-accent" title="/blog/the-story-of-grest-a-graph-based-restful-api-development-framework" href="/blog/the-story-of-grest-a-graph-based-restful-api-development-framework">Apr 27, 2018</a>
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" title="/blog/the-story-of-grest-a-graph-based-restful-api-development-framework" href="/blog/the-story-of-grest-a-graph-based-restful-api-development-framework">The Story of gREST, A Graph-based Restful API Development Framework</a>
-  </h2>
-  <p>More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize...</p>
-</div>
-
-        
-      </div>
-
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
     </div>
-
-    <div class="border-top-thin clearfix mt-2 mt-lg-4">
-  <div class="container mx-auto px-2">
-    <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/mostafa">mostafa</a></p>
-    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
-      <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Mostafa's personal blog">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </li>
-      <li class="inline-block">
-        <a class="github-button" href="https://github.com/mostafa/" data-icon="octicon-star" data-count-href="mostafa//stargazers" data-count-api="/repos/mostafa/#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mostafa/ on GitHub">Star</a>
-      </li>
-    </ul>
   </div>
 </div>
 
 
-  </body>
+    <div class="initial-content">
+      
 
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title"></h1>
+    
+    
+
+
+<h3 class="archive__subtitle">Recent Posts</h3>
+
+
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/devrel-content-strategies" rel="permalink">DevRel Content Strategies
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">The very first developer relations online meetup of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on Yo...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/load-testing-your-api-with-postman" rel="permalink">Load Testing Your API with Postman
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/load-testing-your-api-with-swagger-openapi-and-k6" rel="permalink">Load Testing Your API with Swagger/OpenAPI and k6
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Overview
+</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/microvm-another-level-of-abstraction-for-serverless-computing" rel="permalink">microVM: Another Level of Abstraction for Serverless Computing
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. ...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/api-backend-security" rel="permalink">API &amp; Backend Security
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/integrating-k6-with-apache-kafka" rel="permalink">Integrating k6 with Apache Kafka
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it t...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/migration-of-old-projects-to-python-3" rel="permalink">Migration of Old Projects to Python 3
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Dja...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/employment-contract" rel="permalink">Employment Contract
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
+</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in the first part of this series. Each test t...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of content...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps" rel="permalink">Secure Code Review and Penetration Testing of Node.js and JavaScript Apps
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Security is an illusion and being secure is a relative matter. This means you should always have an eye on your security from any perspective: Physical, huma...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/the-story-of-farhang-a-bilingual-dictionary-production-system" rel="permalink">The Story of Farhang, A Bilingual Dictionary Production System
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">More than 9 years ago, when I was studying towards a B.A. degree in German Language Translation Studies, I used to know and be a student of a great professor...</p>
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/the-story-of-grest-a-graph-based-restful-api-development-framework" rel="permalink">The Story of gREST, A Graph-based Restful API Development Framework
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom ...</p>
+  </article>
+</div>
+
+
+
+
+
+
+  </div>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://mostafa.dev" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Mostafa.DEV</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/mosimoradian" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/mostafa" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/mostafa_moradian" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/mostafa-moradian" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://www.medium.com/@mostafamoradian" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-medium" aria-hidden="true"></i> Medium</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167412694-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167412694-1', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+
+  </body>
 </html>
