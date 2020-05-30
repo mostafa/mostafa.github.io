@@ -13,8 +13,6 @@
 <meta name="description" content="How to load test your API using your existing Postman collections and k6? ">
 
 
-  <meta name="author" content="Mostafa Moradian">
-
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
@@ -27,6 +25,8 @@
 
 
 
+  <meta property="og:image" content="https://mostafa.dev/assets/images/load-testing-api-with-postman-cover-image.png">
+
 
 
   <meta name="twitter:site" content="@mosimoradian">
@@ -35,8 +35,8 @@
   <meta name="twitter:url" content="https://k6.io/blog/load-testing-with-postman-collections">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/load-testing-api-with-postman-cover-image.png">
   
 
   
@@ -137,7 +137,7 @@
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.3</span>
+          <span class="site-subtitle">Version 0.0.4</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -161,11 +161,116 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/load-testing-api-with-postman-cover-image.png" alt="Load Testing Your API with Postman" class="page__hero-image">
+  
+  
+    <span class="page__hero-caption">Credits: <a href="https://k6.io/blog/load-testing-with-postman-collections">Load Testing Your API with Postman</a>
+</span>
+  
+</div>
+
+
 
 
 
 <div id="main" role="main">
   
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
 
 
   <div class="archive">
@@ -174,12 +279,14 @@
     
     <p>In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward, as is shown below. You need to feed your exported Postman collection to our postman-to-k6 converter, and use the generated k6 script to load test your own API.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># convert postman collection to k6 test</span>
-<span class="nv">$ </span>postman-to-k6 test-api.json <span class="nt">-e</span> env.json <span class="nt">-o</span> k6-script.js
-<span class="c"># run load test  </span>
-<span class="nv">$ </span>k6 run <span class="nt">--vus</span> 100 <span class="nt">--duration</span> 5m k6-script.js
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># convert postman collection to k6 test</span>
+postman-to-k6 test-api.json <span class="nt">-e</span> env.json <span class="nt">-o</span> k6-script.js
+
+<span class="c"># run load test</span>
+k6 run <span class="nt">--vus</span> 100 <span class="nt">--duration</span> 5m k6-script.js
 </code></pre></div></div>
-<h3 id="our-test-api--its-testing-scenario">Our Test API &amp; Its Testing Scenario</h3>
+
+<h2 id="our-test-api--its-testing-scenario">Our Test API &amp; Its Testing Scenario</h2>
 
 <p>In order to demonstrate the power of k6 in different scenarios, we have created our test API with various example endpoints, which is available at <a href="https://test-api.k6.io">test-api.k6.io</a>. These endpoints are available in the Postman collection:</p>
 
@@ -210,15 +317,15 @@
 
 <p>The scenario is to test all the public and private APIs. For the private APIs, a user is created and its token is extracted. The extracted token is used to make other API calls. The order is very important in the private APIs, since you cannot delete a non-existing resource, for example. By the way, crocodile is our mascot.</p>
 
-<h3 id="our-test-api-postman-collection">Our Test API Postman Collection</h3>
+<h2 id="our-test-api-postman-collection">Our Test API Postman Collection</h2>
 
 <p>To ease testing of our test API and demonstrate the usage of our Postman to k6 converter, I’ve created a Postman collection with almost all of our test API requests. You’ll see how you can access this Postman collection shortly.</p>
 
-<p><img src="/img/1*1IOClfhM1VmtqaSXUn4nzA.png" alt="" /></p>
+<p><img src="/assets/images/test-api-postman-collection.png" alt="Test API Postman collection" /></p>
 
 <p>This collection includes a set of collection variables, environment variables, pre-scripts, tests, authorization with two different mechanisms, and usages of the <a href="https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/">Postman Sandbox API</a>.</p>
 
-<h3 id="load-testing-our-test-api-with-the-postman-collection">Load Testing Our Test API with The Postman Collection</h3>
+<h2 id="load-testing-our-test-api-with-the-postman-collection">Load Testing Our Test API with The Postman Collection</h2>
 
 <p>We have created a tool that converts your Postman collection to k6 script, which is called <a href="https://github.com/loadimpact/postman-to-k6">postman-to-k6</a>. You can read more about its features in its <a href="https://blog.loadimpact.com/new-postman-to-k6-converter-tool-with-support-for-pre-request-and-test-scripts">release notes</a>.</p>
 
@@ -226,11 +333,11 @@
 
 <p><strong>1. Optional: Clone the repository and skip to the step 5</strong>:</p>
 
-<p>I’ve created a repository for this article that contains the exported Postman collection, along with the converted script and related files. You can clone the repository and import the test-api.json and env.json files into the Postman application and possibly play with them if you want.</p>
+<p>I’ve created a repository for this article that contains the exported Postman collection, along with the converted script and related files. You can clone the repository and import the <code class="highlighter-rouge">test-api.json</code> and <code class="highlighter-rouge">env.json</code> files into the Postman application and possibly play with them if you want.</p>
 
 <p>This repository contains everything that is needed for load testing our test API, so you can skip to step 4. When using your own collection, you should take all the steps to be able to have a k6 script out of your Postman collection, and to be able to run your load test with it.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;https://github.com/k6io/example-postman-collection.git&gt;
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/k6io/example-postman-collection.git
 </code></pre></div></div>
 
 <p><strong>2. Install Node.js (if you haven’t already done so)</strong>:</p>
@@ -241,38 +348,131 @@
 
 <p>The <a href="https://github.com/loadimpact/postman-to-k6">postman-to-k6</a> tool is developed to help you convert the requests inside your Postman collections to k6 scripts, which are actually JavaScript code.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> postman-to-k6
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> postman-to-k6
 </code></pre></div></div>
 
 <p><strong>4. Convert your exported Postman collection to k6 script</strong>:</p>
 
-<p>Assuming your exported collection is named test-api.json, you can run this command to convert it to a k6 script. The env.json includes all your environment variables that are exported from Postman.</p>
+<p>Assuming your exported collection is named <code class="highlighter-rouge">test-api.json</code>, you can run this command to convert it to a k6 script. The <code class="highlighter-rouge">env.json</code> includes all your environment variables that are exported from Postman.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>postman-to-k6 test-api.json <span class="nt">-e</span> env.json <span class="nt">-o</span> k6-script.js
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>postman-to-k6 test-api.json <span class="nt">-e</span> env.json <span class="nt">-o</span> k6-script.js
 </code></pre></div></div>
 
 <p>If you need more fine-tuning of your test (like we did above), like adding data or changing environment variables inside your code, just take a look at the Options section of the <a href="https://github.com/loadimpact/postman-to-k6#options">postman-to-k6 README</a>.</p>
 
 <p>The script generated by the converter should look like below. As you see, I’ve manually added the <a href="https://k6.io/docs/using-k6/options#duration">duration</a> (of the test run) to be 1 minute and also added the <a href="https://k6.io/docs/using-k6/options#vus">virtual users (VU)</a> count. These two options let the script run for a minute with 100 virtual users. These 100 VUs try to make as many requests as they can to test the server, which you’ll see in the next screenshot.</p>
 
-<p>The generated script is a little bit different from normal k6 scripts, since it includes various abstractions to support different Postman functionality, but you can mix them with regular <a href="https://docs.k6.io/docs/http-requests">http requests</a> from k6. Also, there is a libs directory beside the script that includes shims and libraries needed for the Postman scripts to work correctly.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">./libs/shim/core.js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./libs/shim/urijs.js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">URI</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./libs/urijs.js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">group</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">k6</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">let</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">maxRedirects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="na">duration</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1m</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">vus</span><span class="p">:</span> <span class="mi">100</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">Request</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">postman</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="dl">"</span><span class="s2">initial</span><span class="dl">"</span><span class="p">)]({</span>
+    <span class="nx">options</span><span class="p">,</span>
+    <span class="na">collection</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">BASE_URL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://test-api.k6.io/</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="na">environment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">USERNAME</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test@example.com</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">PASSWORD</span><span class="p">:</span> <span class="dl">"</span><span class="s2">superCroc2020</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">FIRSTNAME</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">LASTNAME</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Doe</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">EMAIL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">test@example.com</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">ACCESS</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="na">REFRESH</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="na">CROCID</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">group</span><span class="p">(</span><span class="dl">"</span><span class="s2">Public APIs</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">postman</span><span class="p">[</span><span class="nx">Request</span><span class="p">]({</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">List all public crocodiles</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3ddd46c4-1618-4883-82ff-1b1e3a5f1091</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">address</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/public/crocodiles/</span><span class="dl">"</span>
+        <span class="p">});</span>
+
+        <span class="nx">postman</span><span class="p">[</span><span class="nx">Request</span><span class="p">]({</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Get a single public crocodile</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9625f17a-b739-4f91-af99-fba1d898953b</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">address</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/public/crocodiles/1/</span><span class="dl">"</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="c1">// NOTE: The rest of the requests can be accessed</span>
+    <span class="c1">// from the repository in step 1</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>The generated script is a little bit different from normal k6 scripts, since it includes various abstractions to support different Postman functionality, but you can mix them with regular <a href="https://docs.k6.io/docs/http-requests">http requests</a> from k6. Also, there is a <code class="highlighter-rouge">libs</code> directory beside the script that includes shims and libraries needed for the Postman scripts to work correctly.</p>
 
 <p><strong>5. Install k6</strong>:</p>
 
 <p>k6 supports various platforms, including Windows, Linux, macOS and docker. In order to <a href="https://docs.k6.io/docs/installation">install</a> it, just grab an <a href="https://dl.bintray.com/loadimpact/windows/k6-latest-amd64.msi">Windows installer</a> or a <a href="https://hub.docker.com/r/loadimpact/k6">docker image</a> and run it on your machine. On Linux distributions, you can use <a href="https://docs.k6.io/docs/installation#section-linux-deb-and-rpm-packages">APT or YUM</a>, and on macOS, you can use <a href="https://docs.k6.io/docs/installation#section-mac-brew">Homebrew</a>.</p>
 
-<p><em>NOTE:</em> Regarding installation on Windows, you can also use <a href="https://chocolatey.org/packages/k6">choco k6 package</a>.</p>
+<p>NOTE: Regarding installation on Windows, you can also use <a href="https://chocolatey.org/packages/k6">choco k6 package</a>.</p>
 
 <p><strong>6. Run k6 with the generated script</strong>:</p>
 
 <p>Now that you have your collections converted into a k6 script, you can invoke k6 like this:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>k6 run k6-script.js
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>k6 run k6-script.js
 </code></pre></div></div>
 
 <p>The result of running the script is shown in the following console output:</p>
 
-<h3 id="remarks-about-using-the-postman-to-k6-converter">Remarks about using the postman-to-k6 converter</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+          /<span class="se">\ </span>     |‾‾|  /‾‾/  /‾/   
+     /<span class="se">\ </span> /  <span class="se">\ </span>    |  |_/  /  / /    
+    /  <span class="se">\/</span>    <span class="se">\ </span>   |      |  /  ‾‾<span class="se">\ </span> 
+   /          <span class="se">\ </span>  |  |‾<span class="se">\ </span> <span class="se">\ </span>| <span class="o">(</span>_<span class="o">)</span> | 
+  / __________ <span class="se">\ </span> |__|  <span class="se">\_</span>_<span class="se">\ \_</span>__/ .io
+
+  execution: <span class="nb">local
+     </span>output: -
+     script: k6-script.js
+
+    duration: 1m0s, iterations: -
+         vus: 100,  max: 100
+
+    <span class="k">done</span> <span class="o">[==========================================================]</span> 1m0s / 1m0s
+
+    █ Public APIs
+
+    █ Registration and authentication
+
+    █ Private APIs
+
+    data_received..............: 8.8 MB 146 kB/s
+    data_sent..................: 4.8 MB 80 kB/s
+    group_duration.............: <span class="nv">avg</span><span class="o">=</span>753.07ms <span class="nv">min</span><span class="o">=</span>239.15ms <span class="nv">med</span><span class="o">=</span>495ms    <span class="nv">max</span><span class="o">=</span>4.06s    p<span class="o">(</span>90<span class="o">)=</span>1.37s    p<span class="o">(</span>95<span class="o">)=</span>1.73s
+    http_req_blocked...........: <span class="nv">avg</span><span class="o">=</span>12.31ms  <span class="nv">min</span><span class="o">=</span>362ns    <span class="nv">med</span><span class="o">=</span>1.52µs   <span class="nv">max</span><span class="o">=</span>3.47s    p<span class="o">(</span>90<span class="o">)=</span>1.83µs   p<span class="o">(</span>95<span class="o">)=</span>1.96µs
+    http_req_connecting........: <span class="nv">avg</span><span class="o">=</span>1.95ms   <span class="nv">min</span><span class="o">=</span>0s       <span class="nv">med</span><span class="o">=</span>0s       <span class="nv">max</span><span class="o">=</span>779.59ms p<span class="o">(</span>90<span class="o">)=</span>0s       p<span class="o">(</span>95<span class="o">)=</span>0s
+    http_req_duration..........: <span class="nv">avg</span><span class="o">=</span>211.11ms <span class="nv">min</span><span class="o">=</span>104.42ms <span class="nv">med</span><span class="o">=</span>183.12ms <span class="nv">max</span><span class="o">=</span>924.43ms p<span class="o">(</span>90<span class="o">)=</span>304.25ms p<span class="o">(</span>95<span class="o">)=</span>404.24ms
+    http_req_receiving.........: <span class="nv">avg</span><span class="o">=</span>1ms      <span class="nv">min</span><span class="o">=</span>41.14µs  <span class="nv">med</span><span class="o">=</span>169.38µs <span class="nv">max</span><span class="o">=</span>130.94ms p<span class="o">(</span>90<span class="o">)=</span>328.31µs p<span class="o">(</span>95<span class="o">)=</span>2.22ms
+    http_req_sending...........: <span class="nv">avg</span><span class="o">=</span>205.91µs <span class="nv">min</span><span class="o">=</span>38.06µs  <span class="nv">med</span><span class="o">=</span>163.76µs <span class="nv">max</span><span class="o">=</span>113.06ms p<span class="o">(</span>90<span class="o">)=</span>258.45µs p<span class="o">(</span>95<span class="o">)=</span>302.86µs
+    http_req_tls_handshaking...: <span class="nv">avg</span><span class="o">=</span>8.69ms   <span class="nv">min</span><span class="o">=</span>0s       <span class="nv">med</span><span class="o">=</span>0s       <span class="nv">max</span><span class="o">=</span>2.43s    p<span class="o">(</span>90<span class="o">)=</span>0s       p<span class="o">(</span>95<span class="o">)=</span>0s
+    http_req_waiting...........: <span class="nv">avg</span><span class="o">=</span>209.9ms  <span class="nv">min</span><span class="o">=</span>104.05ms <span class="nv">med</span><span class="o">=</span>182.22ms <span class="nv">max</span><span class="o">=</span>891.77ms p<span class="o">(</span>90<span class="o">)=</span>301.29ms p<span class="o">(</span>95<span class="o">)=</span>402.41ms
+    http_reqs..................: 26363  439.382653/s
+    iteration_duration.........: <span class="nv">avg</span><span class="o">=</span>2.28s    <span class="nv">min</span><span class="o">=</span>1.43s    <span class="nv">med</span><span class="o">=</span>2.01s    <span class="nv">max</span><span class="o">=</span>6.55s    p<span class="o">(</span>90<span class="o">)=</span>2.86s    p<span class="o">(</span>95<span class="o">)=</span>3.64s
+    iterations.................: 2588   43.133267/s
+    vus........................: 100    <span class="nv">min</span><span class="o">=</span>100 <span class="nv">max</span><span class="o">=</span>100
+    vus_max....................: 100    <span class="nv">min</span><span class="o">=</span>100 <span class="nv">max</span><span class="o">=</span>100
+
+</code></pre></div></div>
+
+<h1 id="remarks-about-using-the-postman-to-k6-converter">Remarks about using the postman-to-k6 converter</h1>
 
 <p><strong>1️. Should we base our load tests on the Postman converter and our Postman collections?</strong></p>
 
@@ -286,47 +486,132 @@
 
 <p><strong>3. What adjustments did you make to the script to make it work?</strong></p>
 
-<p>First, I removed the pre-script containing pm.sendRequest, because it is not supported by the converter. Then, I replaced the jsonData.hasOwnProperty syntax with the equivalent k6 syntax for <a href="https://k6.io/docs/javascript-api/k6-http/response-k6-http">extracting JSON response information</a>: response.json(“selector”).</p>
+<p>First, I removed the pre-script containing <code class="highlighter-rouge">pm.sendRequest</code>, because it is not supported by the converter. Then, I replaced the <code class="highlighter-rouge">jsonData.hasOwnProperty</code> syntax with the equivalent k6 syntax for <a href="https://k6.io/docs/javascript-api/k6-http/response-k6-http">extracting JSON response information</a>: <code class="highlighter-rouge">response.json("selector")</code>.</p>
 
-<p><img src="/img/0*TWNwoEeJEr0z9YUb.png" alt="" /></p>
+<p><img src="/assets/images/test-api-postman-pre-script.png" alt="Test API Postman collection pre-script" /></p>
 
-<h3 id="postman-api-vs-k6-api">Postman API vs. k6 API</h3>
+<h2 id="postman-api-vs-k6-api">Postman API vs. k6 API</h2>
 
 <p>Here’s a quick comparison of the <a href="https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/">Postman API</a> versus the <a href="https://k6.io/docs/javascript-api">k6 API</a>. To be fair, I have included features from Postman GUI application. Since k6 is scriptable from the start, you have the option to write the logic in JavaScript. Postman also supports javascript to do various tasks, but the focus is on exposing features via a richer set of GUI elements.</p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Postman API</th>
+      <th>k6 API</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Importing external libraries</td>
+      <td>Selected libraries</td>
+      <td>Selected libraries plus bundled ones<br />(non-browser, non-Node.js APIs)</td>
+    </tr>
+    <tr>
+      <td>Making requests</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Processing response</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Parametrization</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>REST</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>GraphQL</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Cookies</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Proxy</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>SSL</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>OpenAPI/Swagger</td>
+      <td>✅<br />(import directly)</td>
+      <td>✅<br />(via k6 generator in openapi-generator)</td>
+    </tr>
+    <tr>
+      <td>Checks</td>
+      <td>✅<br />(assertions)</td>
+      <td>✅<br />(Check API)</td>
+    </tr>
+    <tr>
+      <td>Groups</td>
+      <td>✅<br />(Collections)</td>
+      <td>✅<br />(Group API)</td>
+    </tr>
+    <tr>
+      <td>HTML parsing</td>
+      <td>✅<br />(needs library)</td>
+      <td>✅<br />(internal HTML API)</td>
+    </tr>
+    <tr>
+      <td>File upload</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Test Lifecycle</td>
+      <td>✅<br />(only with scripts)</td>
+      <td>✅<br />(internal)</td>
+    </tr>
+  </tbody>
+</table>
+
 <p>As you saw above, there are many features supported by each API, each to some extent. Some features needs external libraries, some are internal. Both APIs are scriptable in JavaScript, and not everything is supported by both, due to the various browser and Node.js APIs used in the libraries.</p>
 
-<p>Yet, there are some features only available on k6, which is partially due to the fact that the Postman is catered for API testing or API functional testing, but k6 is focused more on API load testing.</p>
+<p>Yet, there are some features only available on k6, which is partially due to the fact that the Postman is catered for API testing or API functional testing, but k6 is focused more on <a href="https://k6.io/docs/testing-guides/api-load-testing">API load testing</a>.</p>
 
-<h4 id="functional-testing-vs-load-testing">Functional testing vs. load testing</h4>
+<h3 id="functional-testing-vs-load-testing">Functional testing vs. load testing</h3>
 
 <p>Functional testing concerns with giving input to the system (as a black-box) via an API and examining the results, while load testing is basically doing the same thing as functional testing, but with additional <strong>load</strong> on the input to the system.</p>
 
 <p>Functional testing provides input on each endpoint, and the returned results are verified in terms of correctness against a set of specifications. In turn, load testing provides a huge amount of load on each endpoint, and rather tries to aggregate the metadata returned by all the responses.</p>
 
-<h4 id="load-testing-metrics-for-measuring-performance">Load testing metrics for measuring performance</h4>
+<h3 id="load-testing-metrics-for-measuring-performance">Load testing metrics for measuring performance</h3>
 
 <p>Concerning the measurements, the metadata will include the time it took for the request to settle and the response to return, which are measure by various <a href="https://k6.io/docs/using-k6/metrics">metrics</a>. For example you can measure the HTTP request duration of all requests and get their minimum, maximum, average, median, 90th and 95th percentiles.</p>
 
-<h4 id="passfail-a-test-with-thresholds">Pass/fail a test with thresholds</h4>
+<h3 id="passfail-a-test-with-thresholds">Pass/fail a test with thresholds</h3>
 
 <p>You also have the option to pass/fail a test if it does/doesn’t reach certain <a href="https://k6.io/docs/using-k6/thresholds">threshold(s)</a>. For example, you can specify that you want the average response time to be less than 500ms. If the average is below that, the test will fail, much like asserts in software testing.</p>
 
-<h4 id="filter-results-with-tags">Filter results with tags</h4>
+<h3 id="filter-results-with-tags">Filter results with tags</h3>
 
 <p>Since you’re dealing with lots of different results from different endpoints, your life would be easier if you could filter the results. <a href="https://k6.io/docs/using-k6/tags-and-groups#tags">Tags</a> are supported by k6 to fulfill this requirement.</p>
 
-<h4 id="load-testing-websocket-servers">Load testing WebSocket servers</h4>
+<h3 id="load-testing-websocket-servers">Load testing WebSocket servers</h3>
 
 <p>In terms of protocol implementation, <a href="https://k6.io/docs/using-k6/protocols/websockets">WebSocket</a> is one of the features available only in k6, compared to Postman, and you can load test your WebSocket server with it.</p>
 
-<h3 id="conclusion">Conclusion</h3>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>In this article I’ve tried to give a quick introduction to Postman, the postman-to-k6 converter and our k6 load testing tool. All these tools combined can help you turn your API requests in Postman into k6 script in order to load test your API. Many of the Postman features are supported by the postman-to-k6 tool.</p>
 
-<p>Our ultimate goal is to streamline the process of onboarding you to our load testing tool, k6. In doing so, we have created a bunch of <a href="https://k6.io/docs/integrations">tools</a> that can help you easily integrate load testing in your infrastructure.</p>
-
-<p><em>Originally published at <a href="https://k6.io/blog/load-testing-with-postman-collections">https://k6.io</a>.</em></p>
+<p>Our ultimate goal is to streamline the process of onboarding you to our load testing tool, k6. In doing so, we have created a bunch of <a href="https://k6.io/docs/integrations">integrations</a> that can help you start load testing in your infrastructure.</p>
 
 
 <ul class="taxonomy__index">
@@ -372,6 +657,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">The very first developer relations online meetup of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on Yo...</p>
   </article>
 </div>
@@ -390,6 +684,15 @@
 </a>
       
     </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  9 minute read
+
+</p>
     
     <p class="archive__item-excerpt" itemprop="description">In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward...</p>
   </article>
@@ -410,8 +713,16 @@
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Overview
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
 </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Generating k6 scripts from Swagger/OpenAPI specifications has never been easier. Using the newly built k6 generator, you can convert your API specification t...</p>
   </article>
 </div>
 
@@ -438,6 +749,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. ...</p>
   </article>
 </div>
@@ -456,6 +776,15 @@
 </a>
       
     </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  21 minute read
+
+</p>
     
     <p class="archive__item-excerpt" itemprop="description">In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old...</p>
   </article>
@@ -476,6 +805,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it t...</p>
   </article>
 </div>
@@ -495,6 +833,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  9 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Dja...</p>
   </article>
 </div>
@@ -513,6 +860,15 @@
 </a>
       
     </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  19 minute read
+
+</p>
     
     <p class="archive__item-excerpt" itemprop="description">Disclaimer:
 </p>
@@ -534,6 +890,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can...</p>
   </article>
 </div>
@@ -552,6 +917,15 @@
 </a>
       
     </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+
+</p>
     
     <p class="archive__item-excerpt" itemprop="description">Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in the first part of this series. Each test t...</p>
   </article>
@@ -572,6 +946,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of content...</p>
   </article>
 </div>
@@ -591,6 +974,15 @@
       
     </h2>
     
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  9 minute read
+
+</p>
+    
     <p class="archive__item-excerpt" itemprop="description">Security is an illusion and being secure is a relative matter. This means you should always have an eye on your security from any perspective: Physical, huma...</p>
   </article>
 </div>
@@ -609,6 +1001,15 @@
 </a>
       
     </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+
+</p>
     
     <p class="archive__item-excerpt" itemprop="description">More than 9 years ago, when I was studying towards a B.A. degree in German Language Translation Studies, I used to know and be a student of a great professor...</p>
   </article>
@@ -636,6 +1037,15 @@
 </a>
       
     </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
     
     <p class="archive__item-excerpt" itemprop="description">More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom ...</p>
   </article>
@@ -737,6 +1147,25 @@
 
 
 
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mostafa.dev/blog/load-testing-your-api-with-postman";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/load-testing-your-api-with-postman"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mostafa-dev.disqus.com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
 
 
 

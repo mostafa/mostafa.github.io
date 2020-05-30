@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://mostafa.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mostafa.dev/" rel="alternate" type="text/html" /><updated>2020-05-28T23:25:57+02:00</updated><id>https://mostafa.dev/feed.xml</id><title type="html">Mostafa’s personal blog</title><subtitle>Mostafa Moradian's personal website &amp; blog about software engineering, security and other related topics.</subtitle><author><name>Mostafa Moradian</name></author><entry><title type="html">DevRel Content Strategies</title><link href="https://mostafa.dev/blog/devrel-content-strategies" rel="alternate" type="text/html" title="DevRel Content Strategies" /><published>2020-05-15T00:00:00+02:00</published><updated>2020-05-15T00:00:00+02:00</updated><id>https://mostafa.dev/blog/devrel-content-strategies</id><content type="html" xml:base="https://mostafa.dev/blog/devrel-content-strategies">&lt;p&gt;The very first &lt;a href=&quot;https://devrel.events/developer-relations-online-event/&quot;&gt;developer relations online meetup&lt;/a&gt; of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who couldn’t attend.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://mostafa.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mostafa.dev/" rel="alternate" type="text/html" /><updated>2020-05-30T18:46:01+02:00</updated><id>https://mostafa.dev/feed.xml</id><title type="html">Mostafa’s personal blog</title><subtitle>Mostafa Moradian's personal website &amp; blog about software engineering, security and other related topics.</subtitle><author><name>Mostafa Moradian</name></author><entry><title type="html">DevRel Content Strategies</title><link href="https://mostafa.dev/blog/devrel-content-strategies" rel="alternate" type="text/html" title="DevRel Content Strategies" /><published>2020-05-15T00:00:00+02:00</published><updated>2020-05-15T00:00:00+02:00</updated><id>https://mostafa.dev/blog/devrel-content-strategies</id><content type="html" xml:base="https://mostafa.dev/blog/devrel-content-strategies">&lt;p&gt;The very first &lt;a href=&quot;https://devrel.events/developer-relations-online-event/&quot;&gt;developer relations online meetup&lt;/a&gt; of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who couldn’t attend.&lt;/p&gt;
 
 &lt;p&gt;The event was organized and streamed by &lt;a href=&quot;https://twitter.com/iWozik&quot;&gt;Oleg Pridiuksson&lt;/a&gt;, who is a decade-old experienced developer advocate who worked for great companies like King and Unity. He is now a developer relations program consultant and basically founded the &lt;a href=&quot;https://www.eventbrite.com/o/developer-relations-events-26740448969&quot;&gt;Developer Relations Sweden&lt;/a&gt; meetup group.&lt;/p&gt;
 
@@ -24,14 +24,16 @@
 
 &lt;p&gt;Although I have presented the talk on a DevRel event and it is named “DevRel Content Strategies”, it is still beneficial to anyone publishing content over the internet, no matter the area of interest.&lt;/p&gt;
 
-&lt;p&gt;I hope you’ll find it useful and I am happy to hear your feedback.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">The very first developer relations online meetup of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who couldn’t attend.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*hoKJNJyKPJEDwBw71pL-UQ.png" /><media:content medium="image" url="https://mostafa.dev/img/1*hoKJNJyKPJEDwBw71pL-UQ.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Load Testing Your API with Postman</title><link href="https://mostafa.dev/blog/load-testing-your-api-with-postman" rel="alternate" type="text/html" title="Load Testing Your API with Postman" /><published>2020-04-21T00:00:00+02:00</published><updated>2020-04-21T00:00:00+02:00</updated><id>https://mostafa.dev/blog/load-testing-your-api-with-postman</id><content type="html" xml:base="https://mostafa.dev/blog/load-testing-your-api-with-postman">&lt;p&gt;In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward, as is shown below. You need to feed your exported Postman collection to our postman-to-k6 converter, and use the generated k6 script to load test your own API.&lt;/p&gt;
+&lt;p&gt;I hope you’ll find it useful and I am happy to hear your feedback.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">The very first developer relations online meetup of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who couldn’t attend.</summary></entry><entry><title type="html">Load Testing Your API with Postman</title><link href="https://mostafa.dev/blog/load-testing-your-api-with-postman" rel="alternate" type="text/html" title="Load Testing Your API with Postman" /><published>2020-04-21T00:00:00+02:00</published><updated>2020-04-21T00:00:00+02:00</updated><id>https://mostafa.dev/blog/load-testing-your-api-with-postman</id><content type="html" xml:base="https://mostafa.dev/blog/load-testing-your-api-with-postman">&lt;p&gt;In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward, as is shown below. You need to feed your exported Postman collection to our postman-to-k6 converter, and use the generated k6 script to load test your own API.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# convert postman collection to k6 test&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;postman-to-k6 test-api.json &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; env.json &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; k6-script.js
-&lt;span class=&quot;c&quot;&gt;# run load test  &lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;k6 run &lt;span class=&quot;nt&quot;&gt;--vus&lt;/span&gt; 100 &lt;span class=&quot;nt&quot;&gt;--duration&lt;/span&gt; 5m k6-script.js
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# convert postman collection to k6 test&lt;/span&gt;
+postman-to-k6 test-api.json &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; env.json &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; k6-script.js
+
+&lt;span class=&quot;c&quot;&gt;# run load test&lt;/span&gt;
+k6 run &lt;span class=&quot;nt&quot;&gt;--vus&lt;/span&gt; 100 &lt;span class=&quot;nt&quot;&gt;--duration&lt;/span&gt; 5m k6-script.js
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;our-test-api--its-testing-scenario&quot;&gt;Our Test API &amp;amp; Its Testing Scenario&lt;/h3&gt;
+
+&lt;h2 id=&quot;our-test-api--its-testing-scenario&quot;&gt;Our Test API &amp;amp; Its Testing Scenario&lt;/h2&gt;
 
 &lt;p&gt;In order to demonstrate the power of k6 in different scenarios, we have created our test API with various example endpoints, which is available at &lt;a href=&quot;https://test-api.k6.io&quot;&gt;test-api.k6.io&lt;/a&gt;. These endpoints are available in the Postman collection:&lt;/p&gt;
 
@@ -62,15 +64,15 @@
 
 &lt;p&gt;The scenario is to test all the public and private APIs. For the private APIs, a user is created and its token is extracted. The extracted token is used to make other API calls. The order is very important in the private APIs, since you cannot delete a non-existing resource, for example. By the way, crocodile is our mascot.&lt;/p&gt;
 
-&lt;h3 id=&quot;our-test-api-postman-collection&quot;&gt;Our Test API Postman Collection&lt;/h3&gt;
+&lt;h2 id=&quot;our-test-api-postman-collection&quot;&gt;Our Test API Postman Collection&lt;/h2&gt;
 
 &lt;p&gt;To ease testing of our test API and demonstrate the usage of our Postman to k6 converter, I’ve created a Postman collection with almost all of our test API requests. You’ll see how you can access this Postman collection shortly.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*1IOClfhM1VmtqaSXUn4nzA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/test-api-postman-collection.png&quot; alt=&quot;Test API Postman collection&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This collection includes a set of collection variables, environment variables, pre-scripts, tests, authorization with two different mechanisms, and usages of the &lt;a href=&quot;https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/&quot;&gt;Postman Sandbox API&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;load-testing-our-test-api-with-the-postman-collection&quot;&gt;Load Testing Our Test API with The Postman Collection&lt;/h3&gt;
+&lt;h2 id=&quot;load-testing-our-test-api-with-the-postman-collection&quot;&gt;Load Testing Our Test API with The Postman Collection&lt;/h2&gt;
 
 &lt;p&gt;We have created a tool that converts your Postman collection to k6 script, which is called &lt;a href=&quot;https://github.com/loadimpact/postman-to-k6&quot;&gt;postman-to-k6&lt;/a&gt;. You can read more about its features in its &lt;a href=&quot;https://blog.loadimpact.com/new-postman-to-k6-converter-tool-with-support-for-pre-request-and-test-scripts&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
 
@@ -78,11 +80,11 @@
 
 &lt;p&gt;&lt;strong&gt;1. Optional: Clone the repository and skip to the step 5&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;I’ve created a repository for this article that contains the exported Postman collection, along with the converted script and related files. You can clone the repository and import the test-api.json and env.json files into the Postman application and possibly play with them if you want.&lt;/p&gt;
+&lt;p&gt;I’ve created a repository for this article that contains the exported Postman collection, along with the converted script and related files. You can clone the repository and import the &lt;code class=&quot;highlighter-rouge&quot;&gt;test-api.json&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;env.json&lt;/code&gt; files into the Postman application and possibly play with them if you want.&lt;/p&gt;
 
 &lt;p&gt;This repository contains everything that is needed for load testing our test API, so you can skip to step 4. When using your own collection, you should take all the steps to be able to have a k6 script out of your Postman collection, and to be able to run your load test with it.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone &amp;lt;https://github.com/k6io/example-postman-collection.git&amp;gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/k6io/example-postman-collection.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;2. Install Node.js (if you haven’t already done so)&lt;/strong&gt;:&lt;/p&gt;
@@ -93,38 +95,131 @@
 
 &lt;p&gt;The &lt;a href=&quot;https://github.com/loadimpact/postman-to-k6&quot;&gt;postman-to-k6&lt;/a&gt; tool is developed to help you convert the requests inside your Postman collections to k6 scripts, which are actually JavaScript code.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; postman-to-k6
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; postman-to-k6
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;4. Convert your exported Postman collection to k6 script&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;Assuming your exported collection is named test-api.json, you can run this command to convert it to a k6 script. The env.json includes all your environment variables that are exported from Postman.&lt;/p&gt;
+&lt;p&gt;Assuming your exported collection is named &lt;code class=&quot;highlighter-rouge&quot;&gt;test-api.json&lt;/code&gt;, you can run this command to convert it to a k6 script. The &lt;code class=&quot;highlighter-rouge&quot;&gt;env.json&lt;/code&gt; includes all your environment variables that are exported from Postman.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;postman-to-k6 test-api.json &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; env.json &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; k6-script.js
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;postman-to-k6 test-api.json &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; env.json &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; k6-script.js
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If you need more fine-tuning of your test (like we did above), like adding data or changing environment variables inside your code, just take a look at the Options section of the &lt;a href=&quot;https://github.com/loadimpact/postman-to-k6#options&quot;&gt;postman-to-k6 README&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The script generated by the converter should look like below. As you see, I’ve manually added the &lt;a href=&quot;https://k6.io/docs/using-k6/options#duration&quot;&gt;duration&lt;/a&gt; (of the test run) to be 1 minute and also added the &lt;a href=&quot;https://k6.io/docs/using-k6/options#vus&quot;&gt;virtual users (VU)&lt;/a&gt; count. These two options let the script run for a minute with 100 virtual users. These 100 VUs try to make as many requests as they can to test the server, which you’ll see in the next screenshot.&lt;/p&gt;
 
-&lt;p&gt;The generated script is a little bit different from normal k6 scripts, since it includes various abstractions to support different Postman functionality, but you can mix them with regular &lt;a href=&quot;https://docs.k6.io/docs/http-requests&quot;&gt;http requests&lt;/a&gt; from k6. Also, there is a libs directory beside the script that includes shims and libraries needed for the Postman scripts to work correctly.&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./libs/shim/core.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./libs/shim/urijs.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;URI&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./libs/urijs.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;group&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;maxRedirects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1m&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;vus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;postman&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;initial&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;BASE_URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://test-api.k6.io/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;test@example.com&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;PASSWORD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;superCroc2020&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;FIRSTNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;John&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;LASTNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Doe&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;EMAIL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;test@example.com&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;ACCESS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;REFRESH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;CROCID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Public APIs&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;postman&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]({&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;List all public crocodiles&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;3ddd46c4-1618-4883-82ff-1b1e3a5f1091&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/public/crocodiles/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;postman&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]({&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Get a single public crocodile&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;9625f17a-b739-4f91-af99-fba1d898953b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/public/crocodiles/1/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// NOTE: The rest of the requests can be accessed&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// from the repository in step 1&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The generated script is a little bit different from normal k6 scripts, since it includes various abstractions to support different Postman functionality, but you can mix them with regular &lt;a href=&quot;https://docs.k6.io/docs/http-requests&quot;&gt;http requests&lt;/a&gt; from k6. Also, there is a &lt;code class=&quot;highlighter-rouge&quot;&gt;libs&lt;/code&gt; directory beside the script that includes shims and libraries needed for the Postman scripts to work correctly.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;5. Install k6&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;p&gt;k6 supports various platforms, including Windows, Linux, macOS and docker. In order to &lt;a href=&quot;https://docs.k6.io/docs/installation&quot;&gt;install&lt;/a&gt; it, just grab an &lt;a href=&quot;https://dl.bintray.com/loadimpact/windows/k6-latest-amd64.msi&quot;&gt;Windows installer&lt;/a&gt; or a &lt;a href=&quot;https://hub.docker.com/r/loadimpact/k6&quot;&gt;docker image&lt;/a&gt; and run it on your machine. On Linux distributions, you can use &lt;a href=&quot;https://docs.k6.io/docs/installation#section-linux-deb-and-rpm-packages&quot;&gt;APT or YUM&lt;/a&gt;, and on macOS, you can use &lt;a href=&quot;https://docs.k6.io/docs/installation#section-mac-brew&quot;&gt;Homebrew&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;NOTE:&lt;/em&gt; Regarding installation on Windows, you can also use &lt;a href=&quot;https://chocolatey.org/packages/k6&quot;&gt;choco k6 package&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;NOTE: Regarding installation on Windows, you can also use &lt;a href=&quot;https://chocolatey.org/packages/k6&quot;&gt;choco k6 package&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;6. Run k6 with the generated script&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;p&gt;Now that you have your collections converted into a k6 script, you can invoke k6 like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;k6 run k6-script.js
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;k6 run k6-script.js
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The result of running the script is shown in the following console output:&lt;/p&gt;
 
-&lt;h3 id=&quot;remarks-about-using-the-postman-to-k6-converter&quot;&gt;Remarks about using the postman-to-k6 converter&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+          /&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;     |‾‾|  /‾‾/  /‾/   
+     /&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; /  &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;    |  |_/  /  / /    
+    /  &lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;    &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;   |      |  /  ‾‾&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; 
+   /          &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;  |  |‾&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;| &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; | 
+  / __________ &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; |__|  &lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;_&lt;span class=&quot;se&quot;&gt;\ \_&lt;/span&gt;__/ .io
+
+  execution: &lt;span class=&quot;nb&quot;&gt;local
+     &lt;/span&gt;output: -
+     script: k6-script.js
+
+    duration: 1m0s, iterations: -
+         vus: 100,  max: 100
+
+    &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[==========================================================]&lt;/span&gt; 1m0s / 1m0s
+
+    █ Public APIs
+
+    █ Registration and authentication
+
+    █ Private APIs
+
+    data_received..............: 8.8 MB 146 kB/s
+    data_sent..................: 4.8 MB 80 kB/s
+    group_duration.............: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;753.07ms &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;239.15ms &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;495ms    &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.06s    p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;1.37s    p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;1.73s
+    http_req_blocked...........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;12.31ms  &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;362ns    &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.52µs   &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.47s    p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;1.83µs   p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;1.96µs
+    http_req_connecting........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.95ms   &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0s       &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0s       &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;779.59ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;0s       p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;0s
+    http_req_duration..........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;211.11ms &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;104.42ms &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;183.12ms &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;924.43ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;304.25ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;404.24ms
+    http_req_receiving.........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1ms      &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;41.14µs  &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;169.38µs &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;130.94ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;328.31µs p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;2.22ms
+    http_req_sending...........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;205.91µs &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;38.06µs  &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;163.76µs &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;113.06ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;258.45µs p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;302.86µs
+    http_req_tls_handshaking...: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8.69ms   &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0s       &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0s       &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.43s    p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;0s       p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;0s
+    http_req_waiting...........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;209.9ms  &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;104.05ms &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;182.22ms &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;891.77ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;301.29ms p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;402.41ms
+    http_reqs..................: 26363  439.382653/s
+    iteration_duration.........: &lt;span class=&quot;nv&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.28s    &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.43s    &lt;span class=&quot;nv&quot;&gt;med&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.01s    &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6.55s    p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;90&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;2.86s    p&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;95&lt;span class=&quot;o&quot;&gt;)=&lt;/span&gt;3.64s
+    iterations.................: 2588   43.133267/s
+    vus........................: 100    &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100 &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100
+    vus_max....................: 100    &lt;span class=&quot;nv&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100 &lt;span class=&quot;nv&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;remarks-about-using-the-postman-to-k6-converter&quot;&gt;Remarks about using the postman-to-k6 converter&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;1️. Should we base our load tests on the Postman converter and our Postman collections?&lt;/strong&gt;&lt;/p&gt;
 
@@ -138,57 +233,140 @@
 
 &lt;p&gt;&lt;strong&gt;3. What adjustments did you make to the script to make it work?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;First, I removed the pre-script containing pm.sendRequest, because it is not supported by the converter. Then, I replaced the jsonData.hasOwnProperty syntax with the equivalent k6 syntax for &lt;a href=&quot;https://k6.io/docs/javascript-api/k6-http/response-k6-http&quot;&gt;extracting JSON response information&lt;/a&gt;: response.json(“selector”).&lt;/p&gt;
+&lt;p&gt;First, I removed the pre-script containing &lt;code class=&quot;highlighter-rouge&quot;&gt;pm.sendRequest&lt;/code&gt;, because it is not supported by the converter. Then, I replaced the &lt;code class=&quot;highlighter-rouge&quot;&gt;jsonData.hasOwnProperty&lt;/code&gt; syntax with the equivalent k6 syntax for &lt;a href=&quot;https://k6.io/docs/javascript-api/k6-http/response-k6-http&quot;&gt;extracting JSON response information&lt;/a&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;response.json(&quot;selector&quot;)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/0*TWNwoEeJEr0z9YUb.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/test-api-postman-pre-script.png&quot; alt=&quot;Test API Postman collection pre-script&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;postman-api-vs-k6-api&quot;&gt;Postman API vs. k6 API&lt;/h3&gt;
+&lt;h2 id=&quot;postman-api-vs-k6-api&quot;&gt;Postman API vs. k6 API&lt;/h2&gt;
 
 &lt;p&gt;Here’s a quick comparison of the &lt;a href=&quot;https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/&quot;&gt;Postman API&lt;/a&gt; versus the &lt;a href=&quot;https://k6.io/docs/javascript-api&quot;&gt;k6 API&lt;/a&gt;. To be fair, I have included features from Postman GUI application. Since k6 is scriptable from the start, you have the option to write the logic in JavaScript. Postman also supports javascript to do various tasks, but the focus is on exposing features via a richer set of GUI elements.&lt;/p&gt;
 
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Feature&lt;/th&gt;
+      &lt;th&gt;Postman API&lt;/th&gt;
+      &lt;th&gt;k6 API&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Importing external libraries&lt;/td&gt;
+      &lt;td&gt;Selected libraries&lt;/td&gt;
+      &lt;td&gt;Selected libraries plus bundled ones&lt;br /&gt;(non-browser, non-Node.js APIs)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Making requests&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Processing response&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Parametrization&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;REST&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GraphQL&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cookies&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Proxy&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SSL&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OpenAPI/Swagger&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(import directly)&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(via k6 generator in openapi-generator)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Checks&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(assertions)&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(Check API)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Groups&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(Collections)&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(Group API)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML parsing&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(needs library)&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(internal HTML API)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;File upload&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Test Lifecycle&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(only with scripts)&lt;/td&gt;
+      &lt;td&gt;✅&lt;br /&gt;(internal)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
 &lt;p&gt;As you saw above, there are many features supported by each API, each to some extent. Some features needs external libraries, some are internal. Both APIs are scriptable in JavaScript, and not everything is supported by both, due to the various browser and Node.js APIs used in the libraries.&lt;/p&gt;
 
-&lt;p&gt;Yet, there are some features only available on k6, which is partially due to the fact that the Postman is catered for API testing or API functional testing, but k6 is focused more on API load testing.&lt;/p&gt;
+&lt;p&gt;Yet, there are some features only available on k6, which is partially due to the fact that the Postman is catered for API testing or API functional testing, but k6 is focused more on &lt;a href=&quot;https://k6.io/docs/testing-guides/api-load-testing&quot;&gt;API load testing&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;functional-testing-vs-load-testing&quot;&gt;Functional testing vs. load testing&lt;/h4&gt;
+&lt;h3 id=&quot;functional-testing-vs-load-testing&quot;&gt;Functional testing vs. load testing&lt;/h3&gt;
 
 &lt;p&gt;Functional testing concerns with giving input to the system (as a black-box) via an API and examining the results, while load testing is basically doing the same thing as functional testing, but with additional &lt;strong&gt;load&lt;/strong&gt; on the input to the system.&lt;/p&gt;
 
 &lt;p&gt;Functional testing provides input on each endpoint, and the returned results are verified in terms of correctness against a set of specifications. In turn, load testing provides a huge amount of load on each endpoint, and rather tries to aggregate the metadata returned by all the responses.&lt;/p&gt;
 
-&lt;h4 id=&quot;load-testing-metrics-for-measuring-performance&quot;&gt;Load testing metrics for measuring performance&lt;/h4&gt;
+&lt;h3 id=&quot;load-testing-metrics-for-measuring-performance&quot;&gt;Load testing metrics for measuring performance&lt;/h3&gt;
 
 &lt;p&gt;Concerning the measurements, the metadata will include the time it took for the request to settle and the response to return, which are measure by various &lt;a href=&quot;https://k6.io/docs/using-k6/metrics&quot;&gt;metrics&lt;/a&gt;. For example you can measure the HTTP request duration of all requests and get their minimum, maximum, average, median, 90th and 95th percentiles.&lt;/p&gt;
 
-&lt;h4 id=&quot;passfail-a-test-with-thresholds&quot;&gt;Pass/fail a test with thresholds&lt;/h4&gt;
+&lt;h3 id=&quot;passfail-a-test-with-thresholds&quot;&gt;Pass/fail a test with thresholds&lt;/h3&gt;
 
 &lt;p&gt;You also have the option to pass/fail a test if it does/doesn’t reach certain &lt;a href=&quot;https://k6.io/docs/using-k6/thresholds&quot;&gt;threshold(s)&lt;/a&gt;. For example, you can specify that you want the average response time to be less than 500ms. If the average is below that, the test will fail, much like asserts in software testing.&lt;/p&gt;
 
-&lt;h4 id=&quot;filter-results-with-tags&quot;&gt;Filter results with tags&lt;/h4&gt;
+&lt;h3 id=&quot;filter-results-with-tags&quot;&gt;Filter results with tags&lt;/h3&gt;
 
 &lt;p&gt;Since you’re dealing with lots of different results from different endpoints, your life would be easier if you could filter the results. &lt;a href=&quot;https://k6.io/docs/using-k6/tags-and-groups#tags&quot;&gt;Tags&lt;/a&gt; are supported by k6 to fulfill this requirement.&lt;/p&gt;
 
-&lt;h4 id=&quot;load-testing-websocket-servers&quot;&gt;Load testing WebSocket servers&lt;/h4&gt;
+&lt;h3 id=&quot;load-testing-websocket-servers&quot;&gt;Load testing WebSocket servers&lt;/h3&gt;
 
 &lt;p&gt;In terms of protocol implementation, &lt;a href=&quot;https://k6.io/docs/using-k6/protocols/websockets&quot;&gt;WebSocket&lt;/a&gt; is one of the features available only in k6, compared to Postman, and you can load test your WebSocket server with it.&lt;/p&gt;
 
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;In this article I’ve tried to give a quick introduction to Postman, the postman-to-k6 converter and our k6 load testing tool. All these tools combined can help you turn your API requests in Postman into k6 script in order to load test your API. Many of the Postman features are supported by the postman-to-k6 tool.&lt;/p&gt;
 
-&lt;p&gt;Our ultimate goal is to streamline the process of onboarding you to our load testing tool, k6. In doing so, we have created a bunch of &lt;a href=&quot;https://k6.io/docs/integrations&quot;&gt;tools&lt;/a&gt; that can help you easily integrate load testing in your infrastructure.&lt;/p&gt;
+&lt;p&gt;Our ultimate goal is to streamline the process of onboarding you to our load testing tool, k6. In doing so, we have created a bunch of &lt;a href=&quot;https://k6.io/docs/integrations&quot;&gt;integrations&lt;/a&gt; that can help you start load testing in your infrastructure.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward, as is shown below. You need to feed your exported Postman collection to our postman-to-k6 converter, and use the generated k6 script to load test your own API.</summary></entry><entry><title type="html">Load Testing Your API with Swagger/OpenAPI and k6</title><link href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6" rel="alternate" type="text/html" title="Load Testing Your API with Swagger/OpenAPI and k6" /><published>2020-03-23T00:00:00+01:00</published><updated>2020-03-23T00:00:00+01:00</updated><id>https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6</id><content type="html" xml:base="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">&lt;p&gt;Throughout the years, there has been many attempts to devise &lt;a href=&quot;https://en.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages&quot;&gt;a universal format for defining Web API specifications&lt;/a&gt;. The objective was (and still is) to help stakeholders of the system to work with those APIs, without having access to the source code. Each new “universal” format came with the promise of being ubiquitous and all-encompassing, but eventually faded away due to various reasons, like &lt;a href=&quot;https://en.wikipedia.org/wiki/Open_Data_Protocol&quot;&gt;OData&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_Services_Description_Language&quot;&gt;WSDL&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Originally published at &lt;a href=&quot;https://k6.io/blog/load-testing-with-postman-collections&quot;&gt;https://k6.io&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward, as is shown below. You need to feed your exported Postman collection to our postman-to-k6 converter, and use the generated k6 script to load test your own API. # convert postman collection to k6 test $ postman-to-k6 test-api.json -e env.json -o k6-script.js # run load test $ k6 run --vus 100 --duration 5m k6-script.js Our Test API &amp;amp; Its Testing Scenario</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*Qe-NONu2psPiePB_MX1RjA.png" /><media:content medium="image" url="https://mostafa.dev/img/1*Qe-NONu2psPiePB_MX1RjA.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Load Testing Your API with Swagger/OpenAPI and k6</title><link href="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6" rel="alternate" type="text/html" title="Load Testing Your API with Swagger/OpenAPI and k6" /><published>2020-03-23T00:00:00+01:00</published><updated>2020-03-23T00:00:00+01:00</updated><id>https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6</id><content type="html" xml:base="https://mostafa.dev/blog/load-testing-your-api-with-swagger-openapi-and-k6">&lt;h4 id=&quot;overview&quot;&gt;Overview&lt;/h4&gt;
+&lt;p&gt;One of the major players in this field is &lt;a href=&quot;https://en.wikipedia.org/wiki/Swagger_(software)&quot;&gt;Swagger&lt;/a&gt;, developed by Tony Tam in 2011, which later was hired by the SmartBear Software, effectively &lt;a href=&quot;https://smartbear.com/news/news-releases/swagger-creator-tony-tam-joins-smartbear-software/&quot;&gt;acquiring the rights to the software&lt;/a&gt;. In 2015, the same company created a new organization under the sponsorship of the Linux Foundation and called it the OpenAPI Initiative. The new initiative has renamed the Swagger specification to &lt;a href=&quot;https://en.wikipedia.org/wiki/OpenAPI_Specification&quot;&gt;OpenAPI Specification (OAS)&lt;/a&gt; in 2016. This specification is generally used for developing, interacting and documenting APIs.&lt;/p&gt;
 
-&lt;p&gt;Throughout the years, there has been many attempts to devise &lt;a href=&quot;https://en.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages&quot;&gt;a universal format for defining Web API specifications&lt;/a&gt;. The objective was (and still is) to help stakeholders of the system to work with those APIs, without having access to the source code. Each new “universal” format came with the promise of being ubiquitous and all-encompassing, but eventually faded away due to various reasons, like &lt;a href=&quot;https://en.wikipedia.org/wiki/Open_Data_Protocol&quot;&gt;OData&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_Services_Description_Language&quot;&gt;WSDL&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;One of the major players in this field is &lt;a href=&quot;https://en.wikipedia.org/wiki/Swagger_%28software%29&quot;&gt;Swagger&lt;/a&gt;, developed by Tony Tam in 2011, which later was hired by the SmartBear Software, effectively &lt;a href=&quot;https://smartbear.com/news/news-releases/swagger-creator-tony-tam-joins-smartbear-software/&quot;&gt;acquiring the rights to the software&lt;/a&gt;. In 2015, the same company created a new organization under the sponsorship of the Linux Foundation and called it the OpenAPI Initiative. The new initiative has renamed the Swagger specification to &lt;a href=&quot;https://en.wikipedia.org/wiki/OpenAPI_Specification&quot;&gt;OpenAPI Specification (OAS)&lt;/a&gt; in 2016. This specification is generally used for developing, interacting and documenting APIs.&lt;/p&gt;
-
-&lt;p&gt;There are many uses-cases to OpenAPI. The first is to use it as a documentation for your APIs. Usually it is generated from the request handlers along with the schema for your database models and fields. The second is to use it as a means to generate server-side code, that is the actual API. This is particularly useful for those who want to go spec-first, rather than code-first. The third is to use as a means to generate client-side code. With this method, you’ll have stubs generated for all your requests, which can be used to make use of or even test your APIs.&lt;/p&gt;
+&lt;p&gt;There are many use-cases to OpenAPI. The first is to use it as a documentation for your APIs. Usually it is generated from the request handlers along with the schema for your database models and fields. The second is to use it as a means to generate server-side code, that is the actual API. This is particularly useful for those who want to go spec-first, rather than code-first. The third is to use as a means to generate client-side code. With this method, you’ll have stubs generated for all your requests, which can be used to make use of or even test your APIs.&lt;/p&gt;
 
 &lt;p&gt;Overall, the OpenAPI specification and the &lt;a href=&quot;https://github.com/OpenAPITools/openapi-generator&quot;&gt;openapi-generator project&lt;/a&gt; can help you generate a lot of integrations out of the box from your API specification. Imagine you could have a specification document that can help you generate your server-side code to serve API endpoints, your client-side code for testing and the documentation of your API for developers and testers.&lt;/p&gt;
 
-&lt;h4 id=&quot;swaggeropenapi-load-testing&quot;&gt;Swagger/OpenAPI load testing&lt;/h4&gt;
+&lt;h2 id=&quot;swaggeropenapi-load-testing&quot;&gt;Swagger/OpenAPI load testing&lt;/h2&gt;
 
 &lt;p&gt;Formerly, the idea of Swagger/OpenAPI load testing was taken less seriously by the developer community. It was due to the fact that only QA people used to work on performance testing. k6 takes load testing to a whole another level by letting &lt;strong&gt;developers&lt;/strong&gt; write their own load test scripts in JavaScript. With the introduction of new tools, like k6, and then the widespread use of Swagger/OpenAPI for API design and documentation, we felt the need that tools for transforming Swagger/OpenAPI specifications to scripts to be used for performance testing should exist.&lt;/p&gt;
 
@@ -196,127 +374,176 @@
 
 &lt;p&gt;By using this tool, as a Swagger/OpenAPI test generator, you can now generate your k6 load test scripts using the same specification documents you used for your APIs. We tried our best to convert &lt;em&gt;almost&lt;/em&gt; all the specification to k6 script, but the generated script should still be modified to make it runnable and suitable for your use case.&lt;/p&gt;
 
-&lt;p&gt;Once you have a working script, you can easily use it in your Continuous Integration (CI) platform to automate load testing. You can also use our SaaS offering, &lt;a href=&quot;https://k6.io/cloud&quot;&gt;k6 Cloud&lt;/a&gt;, that gives you the ability to run your load tests in a distributed environment from various regions, plus giving you detailed insights on the results of your test(s).&lt;/p&gt;
+&lt;p&gt;Once you have a working script, you can easily use it in your Continuous Integration (CI) platform to automate load testing. You can also use our &lt;a href=&quot;https://k6.io/cloud&quot;&gt;cloud load testing offering&lt;/a&gt;, that gives you the ability to run your load tests in a distributed environment from various regions, plus giving you detailed insights on the results of your test(s).&lt;/p&gt;
 
-&lt;h4 id=&quot;api-load-testing-with-swaggeropenapi-specification&quot;&gt;API load testing with Swagger/OpenAPI specification&lt;/h4&gt;
+&lt;h2 id=&quot;api-load-testing-with-swaggeropenapi-specification&quot;&gt;API load testing with Swagger/OpenAPI specification&lt;/h2&gt;
 
 &lt;p&gt;We have written a guide for &lt;a href=&quot;https://k6.io/docs/testing-guides/api-load-testing&quot;&gt;API load testing&lt;/a&gt; and since OpenAPI is concerned with APIs, we advise you to take a look at the guide. It will help you understand why you should load test your APIs. The guide gives you an overview of different approaches to API load testing. It includes various ways to create load test scripts, from writing one yourself, to using your existing Postman collections or HAR files and converting them to load test scripts. It also provides you with considerations you need to know while load testing your APIs.&lt;/p&gt;
 
-&lt;h4 id=&quot;generating-load-test-script-from-swaggeropenapi-specification&quot;&gt;Generating load test script from Swagger/OpenAPI specification&lt;/h4&gt;
+&lt;h2 id=&quot;generating-load-test-script-from-swaggeropenapi-specification&quot;&gt;Generating load test script from Swagger/OpenAPI specification&lt;/h2&gt;
 
 &lt;p&gt;There are various ways to install the &lt;a href=&quot;https://github.com/OpenAPITools/openapi-generator#1---installation&quot;&gt;openapi-generator&lt;/a&gt;. It is distributed in source code, so that you can build it yourself. You have lots of options to use binaries for your operating system. We recommend using the &lt;a href=&quot;https://hub.docker.com/r/openapitools/openapi-generator-cli/&quot;&gt;Docker image&lt;/a&gt;, which is going to be explained in this article.&lt;/p&gt;
 
 &lt;p&gt;I assume you have docker installed, otherwise have a look at the &lt;a href=&quot;https://docs.docker.com/install/&quot;&gt;installation&lt;/a&gt; instructions for your operating system. The following commands pulls the Docker image for you. You can also omit this command in favor of the next one, because it pulls the latest image for you, if you don’t have it on your machine.&lt;/p&gt;
 
-&lt;p&gt;$ docker pull openapitools/openapi-generator-cliThe next step is to run the command inside a container to convert the OpenAPI specification file for you. Assuming you are running Docker on Linux-based operating systems, the following command mounts your present working directory (e.g. /home/user/Desktop) to /local on the container. Also note that after conversion, the container is removed. The container runs the command inside it with the generate option, along with its parameters.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker pull openapitools/openapi-generator-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/local openapitools/openapi-generator-cli generate-i http://httpbin.test.loadimpact.com/spec.json &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; k6 &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; /local/k6-test/ &lt;span class=&quot;nt&quot;&gt;--skip-validate-spec&lt;/span&gt;
+&lt;p&gt;The next step is to run the command inside a container to convert the OpenAPI specification file for you. Assuming you are running Docker on Linux-based operating systems, the following command mounts your present working directory (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/user/Desktop&lt;/code&gt;) to &lt;code class=&quot;highlighter-rouge&quot;&gt;/local&lt;/code&gt; on the container. Also note that after conversion, the container is removed. The container runs the command inside it with the &lt;code class=&quot;highlighter-rouge&quot;&gt;generate&lt;/code&gt; option, along with its parameters.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/local openapitools/openapi-generator-cli generate &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; http://httpbin.test.loadimpact.com/spec.json &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; k6 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; /local/k6-test/
+    &lt;span class=&quot;nt&quot;&gt;--skip-validate-spec&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With the above command, we’ve converted the API specification document of the &lt;a href=&quot;https://httpbin.org/&quot;&gt;httpbin.org&lt;/a&gt; instance, that is hosted on our servers. The parameters are:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The -i parameter is used to feed the specification document to the generator. You can use a file for that purpose. This way you should make sure that it resides in the same directory on your host (/home/user/Desktop/myspec.json), and you address it from the container side: /local/myspec.json. You also have the option to specify a URL that points to a file. Note that the file can be in either JSON or YAML format.&lt;/li&gt;
-  &lt;li&gt;The -g parameter specifies the generator to use, that is k6.&lt;/li&gt;
-  &lt;li&gt;The -o parameter specifies the directory to store the generated files. After conversion, the files can be accessed from /home/user/Desktop/k6-test/ on your host.&lt;/li&gt;
-  &lt;li&gt;In case you get a lot of errors from validation, just skip them with –skip-validate-spec. These errors are often related to differences between Swagger and OpenAPI specification.
-    &lt;h4 id=&quot;load-testing-using-the-generated-script&quot;&gt;Load testing using the generated script&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;-i&lt;/code&gt; parameter is used to feed the specification document to the generator. You can use a file for that purpose. This way you should make sure that it resides in the same directory on your host (&lt;code class=&quot;highlighter-rouge&quot;&gt;/home/user/Desktop/myspec.json&lt;/code&gt;), and you address it from the container side: &lt;code class=&quot;highlighter-rouge&quot;&gt;/local/myspec.json&lt;/code&gt;. You also have the option to specify a URL that points to a file. Note that the file can be in either JSON or YAML format.&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;-g&lt;/code&gt; parameter specifies the generator to use, that is k6.&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt; parameter specifies the directory to store the generated files. After conversion, the files can be accessed from &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/user/Desktop/k6-test/&lt;/code&gt; on your host.&lt;/li&gt;
+  &lt;li&gt;In case you get a lot of errors from validation, just skip them with &lt;code class=&quot;highlighter-rouge&quot;&gt;--skip-validate-spec&lt;/code&gt;. These errors are often related to differences between Swagger and OpenAPI specification.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The script should definitely be cleaned up after conversion. The original script is too long to fit into this article, thus the following example is an snippet of the generated script. Extra comments and unneeded code has been removed for demonstration purposes and the n variable is initialized.&lt;/p&gt;
+&lt;h2 id=&quot;load-testing-using-the-generated-script&quot;&gt;Load testing using the generated script&lt;/h2&gt;
+
+&lt;p&gt;The script should definitely be cleaned up after conversion. The original script is too long to fit into this article, thus the following example is an snippet of the generated script. Extra comments and unneeded code has been removed for demonstration purposes and the &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; variable is initialized.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6/http&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BASE_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://httpbin.org/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SLEEP_DURATION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/absolute-redirect/{n}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BASE_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`/absolute-redirect/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Request No. 1&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SLEEP_DURATION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Running the above script has produced the following output:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/0*LB9Sr2Mt7bMEdiuy.png&quot; alt=&quot;&quot; /&gt;#### Considerations for the generated script&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/openapi-to-k6-output.png&quot; alt=&quot;k6 output&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;considerations-for-the-generated-script&quot;&gt;Considerations for the generated script&lt;/h2&gt;
 
 &lt;p&gt;Take these into consideration while converting your OpenAPI specification documents to k6 scripts:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The order of the requests follow the order in the specification document and may not always be correct. Replace them to match your request/response flow. For example, you first create a resource with POST, then you read it with GET.&lt;/li&gt;
+  &lt;li&gt;The order of the requests follow the order in the specification document and may not always be correct. Replace them to match your request/response flow. For example, you first create a resource with &lt;code class=&quot;highlighter-rouge&quot;&gt;POST&lt;/code&gt;, then you read it with &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;All requests belonging to the same path are grouped together with the k6 &lt;a href=&quot;https://k6.io/docs/using-k6/tags-and-groups&quot;&gt;group&lt;/a&gt; feature.&lt;/li&gt;
-  &lt;li&gt;A global sleep duration is defined with the SLEEP_DURATION variable and for each request, the value is applied using the k6 &lt;a href=&quot;https://k6.io/docs/javascript-api/k6/sleep-t&quot;&gt;sleep&lt;/a&gt; function. Change them to match the delay you need between the requests.&lt;/li&gt;
-  &lt;li&gt;Make sure the BASE_URL is correct.&lt;/li&gt;
-  &lt;li&gt;Initialize all variables that their value starts with “TODO_EDIT_THE_…”.&lt;/li&gt;
-  &lt;li&gt;Body parameters are in the form of { variable: “datatype” }. Change the datatype to the desired value. Nested body parameters follow the same pattern.&lt;/li&gt;
+  &lt;li&gt;A global sleep duration is defined with the &lt;code class=&quot;highlighter-rouge&quot;&gt;SLEEP_DURATION&lt;/code&gt; variable and for each request, the value is applied using the k6 &lt;a href=&quot;https://k6.io/docs/javascript-api/k6/sleep-t&quot;&gt;sleep&lt;/a&gt; function. Change them to match the delay you need between the requests.&lt;/li&gt;
+  &lt;li&gt;Make sure the &lt;code class=&quot;highlighter-rouge&quot;&gt;BASE_URL&lt;/code&gt; is correct.&lt;/li&gt;
+  &lt;li&gt;Initialize all variables that their value starts with &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;TODO_EDIT_THE_...&quot;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Body parameters are in the form of &lt;code class=&quot;highlighter-rouge&quot;&gt;{ variable: &quot;datatype&quot; }&lt;/code&gt;. Change the datatype to the desired value. Nested body parameters follow the same pattern.&lt;/li&gt;
   &lt;li&gt;For file upload endpoints that use &lt;a href=&quot;https://k6.io/docs/using-k6/multipart-requests-file-uploads&quot;&gt;multipart requests&lt;/a&gt;, replace the file name with your own.&lt;/li&gt;
   &lt;li&gt;You &lt;em&gt;may&lt;/em&gt; encounter undefined variables being used. Just add them manually. It may be due to differences between OpenAPI and Swagger specifications.&lt;/li&gt;
-  &lt;li&gt;We only use &lt;a href=&quot;https://k6.io/docs/using-k6/checks&quot;&gt;checks&lt;/a&gt; for the default and 200 OK responses for now. It is up to you to check for the rest.&lt;/li&gt;
-  &lt;li&gt;If you found any issues, please file it on &lt;a href=&quot;https://github.com/loadimpact/openapi-generator/issues&quot;&gt;issues&lt;/a&gt;.
-    &lt;h4 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;We only use &lt;a href=&quot;https://k6.io/docs/using-k6/checks&quot;&gt;checks&lt;/a&gt; for the default and &lt;code class=&quot;highlighter-rouge&quot;&gt;200 OK&lt;/code&gt; responses for now. It is up to you to check for the rest.&lt;/li&gt;
+  &lt;li&gt;If you found any issues, please file it on &lt;a href=&quot;https://github.com/loadimpact/openapi-generator/issues&quot;&gt;issues&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The k6 generator for OpenAPI was written to onboard users to k6. The tool is going to help users quickly generate a load test script out of their existing Swagger/OpenAPI specification documents. This auto-generation of the load test script will help streamline the API testing process, keeping on par with the latest changes to their APIs and specifications.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;&lt;em&gt;Originally published at &lt;a href=&quot;https://k6.io/blog/load-testing-your-api-with-swagger-openapi-and-k6&quot;&gt;https://k6.io&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Overview</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png" /><media:content medium="image" url="https://mostafa.dev/img/0*2_0U-DPmTzBEJspg.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">microVM: Another Level of Abstraction for Serverless Computing</title><link href="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing" rel="alternate" type="text/html" title="microVM: Another Level of Abstraction for Serverless Computing" /><published>2019-12-16T00:00:00+01:00</published><updated>2019-12-16T00:00:00+01:00</updated><id>https://mostafa.dev/blog/microvm--another-level-of-abstraction-for-serverless-computing</id><content type="html" xml:base="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing">&lt;p&gt;For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. Things are changed and merely providing basic storage and processing power is a thing of the past. Cloud services are so complicated today that each one of them needs proper training to just be able to use them. Distributed data-stores, load-balancers, storages, serverless and container automation and orchestration services are just a few example of the vast number of cloud computing services.&lt;/p&gt;
+&lt;p&gt;The k6 generator for OpenAPI was written to onboard users to k6. The tool is going to help users quickly generate a load test script out of their existing Swagger/OpenAPI specification documents. This auto-generation of the load test script will help streamline the API testing process, keeping on par with the latest changes to their APIs and specifications.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Generating k6 scripts from Swagger/OpenAPI specifications has never been easier. Using the newly built k6 generator, you can convert your API specification to a k6 script and use it to load test your API.</summary></entry><entry><title type="html">microVM: Another Level of Abstraction for Serverless Computing</title><link href="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing" rel="alternate" type="text/html" title="microVM: Another Level of Abstraction for Serverless Computing" /><published>2019-12-16T00:00:00+01:00</published><updated>2019-12-16T00:00:00+01:00</updated><id>https://mostafa.dev/blog/microvm--another-level-of-abstraction-for-serverless-computing</id><content type="html" xml:base="https://mostafa.dev/blog/microvm-another-level-of-abstraction-for-serverless-computing">&lt;p&gt;For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. Things are changed and merely providing basic storage and processing power is a thing of the past. Cloud services are so complicated today that each one of them needs proper training to just be able to use them. Distributed data-stores, load-balancers, storages, serverless and container automation and orchestration services are just a few example of the vast number of cloud computing services.&lt;/p&gt;
 
 &lt;p&gt;One can now have a software running on cloud services (Software-as-a-Service) with &lt;a href=&quot;https://en.wikipedia.org/wiki/High_availability#Percentage_calculation&quot;&gt;five-nine SLA&lt;/a&gt; hosted on multiple cloud providers, effectively providing high-availability across the globe, all controlled from a central location, automated and orchestrated with the latest cutting-edge technologies on the market. And the number of these technologies are ever-growing.&lt;/p&gt;
 
 &lt;p&gt;Most of the cloud providers today use open-source model to distribute their technologies and software. Examples of which are &lt;a href=&quot;https://github.com/kubernetes/kubernetes&quot;&gt;kubernetes&lt;/a&gt;, &lt;a href=&quot;https://github.com/docker/docker-ce&quot;&gt;docker&lt;/a&gt; and &lt;a href=&quot;https://github.com/firecracker-microvm/firecracker&quot;&gt;firecracker&lt;/a&gt;. Containerization and light-weight virtual machines are just two of the various ways to deploy applications on cloud. Each has its own pros and cons. But in this article I am going to present firecrack, a light-weight virtual machine, or microVM, management tool created by Amazon to run their serverless platform. In contrast to containerization, specifically docker, which uses a single shared Linux kernel with cgroups, namespaces, etc., microVMs use a separate Linux kernel virtualized on top of kernel-based virtual machine (KVM). The advantages of microVM are less memory overhead (5 MB), very minimal optimized kernel and security. The most interesting part is that it is written in &lt;a href=&quot;http://rust-lang.org/&quot;&gt;Rust&lt;/a&gt;, has an awesome &lt;a href=&quot;http://golang.org/&quot;&gt;Go&lt;/a&gt; SDK and many tools are already developed for it:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker&quot; title=&quot;https://github.com/firecracker-microvm/firecracker&quot;&gt;&lt;strong&gt;firecracker-microvm/firecracker&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;Our mission is to enable secure, multi-tenant, minimal-overhead execution of container and function workloads. Read…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-containerd&quot; title=&quot;https://github.com/firecracker-microvm/firecracker-containerd&quot;&gt;&lt;strong&gt;firecracker-microvm/firecracker-containerd&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;Automation Status Tests Lint This repository enables the use of a container runtime, containerd, to manage Firecracker…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-containerd&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-go-sdk&quot; title=&quot;https://github.com/firecracker-microvm/firecracker-go-sdk&quot;&gt;&lt;strong&gt;firecracker-microvm/firecracker-go-sdk&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;This package is a Go library to interact with the Firecracker API. It is designed as an abstraction of the…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-go-sdk&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firectl&quot; title=&quot;https://github.com/firecracker-microvm/firectl&quot;&gt;&lt;strong&gt;firecracker-microvm/firectl&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;Firectl is a basic command-line tool that lets you run arbitrary Firecracker MicroVMs via the command line. This lets…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firectl&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/weaveworks/ignite&quot; title=&quot;https://github.com/weaveworks/ignite&quot;&gt;&lt;strong&gt;weaveworks/ignite&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;Weave Ignite is an open source Virtual Machine (VM) manager with a container UX and built-in GitOps management…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/weaveworks/ignite&quot;&gt;&lt;/a&gt;There is a demo project demonstrating the abilities and features of microVM by showing how quickly it can run 4k microVMs in less than a minute:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker&quot;&gt;firecracker-microvm/firecracker&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-demo&quot; title=&quot;https://github.com/firecracker-microvm/firecracker-demo&quot;&gt;&lt;strong&gt;firecracker-microvm/firecracker-demo&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;This demo showcases Firecracker’s agility and high-density capabilities. It’s been run on an EC2 I3.metal host (the…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-demo&quot;&gt;&lt;/a&gt;Months ago, I’ve started experimenting with it and wrote a bunch of bash scripts and a simple README to be able to show how to download project binaries or build the project(s) from source and start using microVMs very quickly:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-containerd&quot;&gt;firecracker-microvm/firecracker-containerd&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/mostafa/firefighter&quot; title=&quot;https://github.com/mostafa/firefighter&quot;&gt;&lt;strong&gt;mostafa/firefighter&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;Firefighter is, for now, as set of scripts to download or build from source the firecracker and the firectl, download…&lt;/em&gt;github.com&lt;/a&gt;&lt;a href=&quot;https://github.com/mostafa/firefighter&quot;&gt;&lt;/a&gt;In order to use it, just clone the project somewhere on your disk and either run get_latest.sh or build_latest.sh. To get the latest binaries along with pre-built Debian and Alpine kernel and rootfs, you just need to have &lt;a href=&quot;https://curl.haxx.se/&quot;&gt;curl&lt;/a&gt; installed. But in order to build it from source code, you should have Rust compiler installed. The easiest way to install Rust compiler and toolchain, just download and install &lt;a href=&quot;https://rustup.rs/&quot;&gt;rustup&lt;/a&gt; installer to be able to easily install other things. A simple tutorial is present on Rust official website that provides instructions on how to do this. For building the latest version, I assume you have &lt;a href=&quot;http://debian.org/&quot;&gt;Debian GNU/Linux&lt;/a&gt; installed, because of APT.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-go-sdk&quot;&gt;firecracker-microvm/firecracker-go-sdk&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.rust-lang.org/tools/install&quot; title=&quot;https://www.rust-lang.org/tools/install&quot;&gt;&lt;strong&gt;Install Rust&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;Using rustup (Recommended) It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and…&lt;/em&gt;www.rust-lang.org&lt;/a&gt;&lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;&lt;/a&gt;Although building from source gives you full control and customizability, but for mere experimentation, just download the binaries and related files and you’re good to go!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firectl&quot;&gt;firecracker-microvm/firectl&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;git clone **&lt;a href=&quot;https://github.com/mostafa/firefighter&quot;&gt;**https://github.com/mostafa/firefighter**&lt;/a&gt;&lt;br /&gt;
-$ **cd firefighter&lt;/strong&gt;&lt;br /&gt;
-$ &lt;strong&gt;./get_latest.sh&lt;/strong&gt;This script downloads the latest firecracker, firectl and jailer binaries with a progress bar, along with Alpine and Debian kernel and rootfs in images directory.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/weaveworks/ignite&quot;&gt;weaveworks/ignite&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a demo project demonstrating the abilities and features of microVM by showing how quickly it can run 4k microVMs in less than a minute:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/firecracker-microvm/firecracker-demo&quot;&gt;firecracker-microvm/firecracker-demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Months ago, I’ve started experimenting with it and wrote a bunch of bash scripts and a simple README to be able to show how to download project binaries or build the project(s) from source and start using microVMs very quickly:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mostafa/firefighter&quot;&gt;mostafa/firefighter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to use it, just clone the project somewhere on your disk and either run get_latest.sh or build_latest.sh. To get the latest binaries along with pre-built Debian and Alpine kernel and rootfs, you just need to have &lt;a href=&quot;https://curl.haxx.se/&quot;&gt;curl&lt;/a&gt; installed. But in order to build it from source code, you should have Rust compiler installed. The easiest way to install Rust compiler and toolchain, just download and install &lt;a href=&quot;https://rustup.rs/&quot;&gt;rustup&lt;/a&gt; installer to be able to easily install other things. A simple tutorial is present on Rust official website that provides instructions on how to do this. For building the latest version, I assume you have &lt;a href=&quot;http://debian.org/&quot;&gt;Debian GNU/Linux&lt;/a&gt; installed, because of APT.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;Install Rust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Although building from source gives you full control and customizability, but for mere experimentation, just download the binaries and related files and you’re good to go!&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/mostafa/firefighter
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;firefighter
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./get_latest.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This script downloads the latest firecracker, firectl and jailer binaries with a progress bar, along with Alpine and Debian kernel and rootfs in images directory.&lt;/p&gt;
 
 &lt;p&gt;Running the following command with no option or with help would print usage instructions:&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;./run_microvm.sh&lt;/strong&gt;&lt;br /&gt;
-Usage:&lt;br /&gt;
-run_microvm.sh start &lt;distro-name&gt; | &lt;vmlinuz.bin&gt; &lt;rootfs.ext4&gt;  
-run\_microvm.sh stop  
-run\_microvm.sh config  
-run\_microvm.sh status  
-run\_microvm.sh helpAvailable distros:&lt;/rootfs.ext4&gt;&lt;/vmlinuz.bin&gt;&lt;/distro-name&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;debian&lt;/li&gt;
-  &lt;li&gt;alpineTo run an Alpine microVM, just run the following command, it needs root/sudo privilege:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./run_microvm.sh
+Usage:  
+run_microvm.sh start &amp;lt;distro-name&amp;gt; | &amp;lt;vmlinuz.bin&amp;gt; &amp;lt;rootfs.ext4&amp;gt;  
+run_microvm.sh stop  
+run_microvm.sh config  
+run_microvm.sh status  
+run_microvm.sh &lt;span class=&quot;nb&quot;&gt;help
 
-&lt;p&gt;$ **./run_microvm.sh start alpine&lt;br /&gt;
-**Giving read/write access to KVM to user&lt;br /&gt;
-[sudo] password for user:&lt;br /&gt;
-Booting kernel: images/alpine-vmlinuz.bin&lt;br /&gt;
-Image: images/alpine.ext4&lt;br /&gt;
-…&lt;br /&gt;
-Enable routing from/to MicroVM&lt;br /&gt;
-Run MicroVM&lt;br /&gt;
-…&lt;br /&gt;
-Welcome to Alpine Linux 3.8&lt;br /&gt;
-Kernel 4.14.55-84.37.amzn2.x86_64 on an x86_64 (ttyS0)localhost login:Using root as username and password, you can login to the microVM. Run the following commands inside the microVM to enable internet access:&lt;/p&gt;
+&lt;/span&gt;Available distros:  
+ - debian  
+ - alpine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;$ &lt;strong&gt;ip addr add 172.16.0.2/24 dev eth0&lt;/strong&gt;&lt;br /&gt;
-$ &lt;strong&gt;ip route add default via 172.16.0.1 dev eth0&lt;/strong&gt;&lt;br /&gt;
-$ &lt;strong&gt;echo “nameserver 8.8.8.8” &amp;gt; /etc/resolv.conf&lt;/strong&gt;&lt;br /&gt;
-$ **ping -c 3 google.com&lt;br /&gt;
-**PING google.com (172.217.20.46): 56 data bytes&lt;br /&gt;
-64 bytes from 172.217.20.46: seq=0 ttl=54 time=4.270 ms&lt;br /&gt;
-64 bytes from 172.217.20.46: seq=1 ttl=54 time=5.979 ms&lt;br /&gt;
-64 bytes from 172.217.20.46: seq=2 ttl=54 time=6.455 ms— google.com ping statistics —&lt;br /&gt;
-3 packets transmitted, 3 packets received, 0% packet loss&lt;br /&gt;
-round-trip min/avg/max = 4.270/5.568/6.455 msNow you can stop the microVM with the following command on another terminal:&lt;/p&gt;
+&lt;p&gt;To run an Alpine microVM, just run the following command, it needs root/sudo privilege:&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;./run_microvm.sh stop&lt;/strong&gt;That was it for now. You should figure out how you can leverage this to your advantage.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./run_microvm.sh start alpine  
+Giving &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;/write access to KVM to user  
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; password &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;user:  
+Booting kernel: images/alpine-vmlinuz.bin  
+Image: images/alpine.ext4  
+...  
+Enable routing from/to MicroVM  
+Run MicroVM  
+...  
+Welcome to Alpine Linux 3.8  
+Kernel 4.14.55-84.37.amzn2.x86_64 on an x86_64 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ttyS0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
-&lt;p&gt;It’s a simple open-source project and any feedback and contribution is welcome.&lt;/p&gt;
+localhost login:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Cover image credits: &lt;a href=&quot;https://firecracker-microvm.github.io/&quot;&gt;https://firecracker-microvm.github.io/&lt;/a&gt;&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. Things are changed and merely providing basic storage and processing power is a thing of the past. Cloud services are so complicated today that each one of them needs proper training to just be able to use them. Distributed data-stores, load-balancers, storages, serverless and container automation and orchestration services are just a few example of the vast number of cloud computing services.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*lNlcljTATMVw8oSloQT8tw.png" /><media:content medium="image" url="https://mostafa.dev/img/1*lNlcljTATMVw8oSloQT8tw.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">API &amp;amp; Backend Security</title><link href="https://mostafa.dev/blog/api-backend-security" rel="alternate" type="text/html" title="API &amp; Backend Security" /><published>2019-12-09T00:00:00+01:00</published><updated>2019-12-09T00:00:00+01:00</updated><id>https://mostafa.dev/blog/api---backend-security</id><content type="html" xml:base="https://mostafa.dev/blog/api-backend-security">&lt;p&gt;In my &lt;a href=&quot;https://medium.com/swlh/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps-41485b1a9518&quot;&gt;previous article&lt;/a&gt; about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old, but gold, &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project&quot;&gt;OWASP Code Review Project&lt;/a&gt; and the &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project&quot;&gt;OWASP Top 10 Project&lt;/a&gt; and to mention the tools of the trade using the simplest approach possible.&lt;/p&gt;
+&lt;p&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; as username and password, you can login to the microVM. Run the following commands inside the microVM to enable internet access:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ip addr add 172.16.0.2/24 dev eth0  
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ip route add default via 172.16.0.1 dev eth0  
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;nameserver 8.8.8.8&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /etc/resolv.conf  
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ping &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; 3 google.com  
+PING google.com &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;172.217.20.46&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: 56 data bytes  
+64 bytes from 172.217.20.46: &lt;span class=&quot;nb&quot;&gt;seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0 &lt;span class=&quot;nv&quot;&gt;ttl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;54 &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.270 ms  
+64 bytes from 172.217.20.46: &lt;span class=&quot;nb&quot;&gt;seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;nv&quot;&gt;ttl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;54 &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5.979 ms  
+64 bytes from 172.217.20.46: &lt;span class=&quot;nb&quot;&gt;seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;nv&quot;&gt;ttl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;54 &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6.455 ms
+
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt; google.com ping statistics &lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;  
+3 packets transmitted, 3 packets received, 0% packet loss  
+round-trip min/avg/max &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 4.270/5.568/6.455 ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you can stop the microVM with the following command on another terminal:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./run_microvm.sh stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That was it for now. You should figure out how you can leverage this to your advantage.&lt;/p&gt;
+
+&lt;p&gt;It’s a simple open-source project and any feedback and contribution is welcome.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. Things are changed and merely providing basic storage and processing power is a thing of the past. Cloud services are so complicated today that each one of them needs proper training to just be able to use them. Distributed data-stores, load-balancers, storages, serverless and container automation and orchestration services are just a few example of the vast number of cloud computing services.</summary></entry><entry><title type="html">API &amp;amp; Backend Security</title><link href="https://mostafa.dev/blog/api-backend-security" rel="alternate" type="text/html" title="API &amp; Backend Security" /><published>2019-12-09T00:00:00+01:00</published><updated>2019-12-09T00:00:00+01:00</updated><id>https://mostafa.dev/blog/api---backend-security</id><content type="html" xml:base="https://mostafa.dev/blog/api-backend-security">&lt;p&gt;In my &lt;a href=&quot;https://medium.com/swlh/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps-41485b1a9518&quot;&gt;previous article&lt;/a&gt; about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old, but gold, &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project&quot;&gt;OWASP Code Review Project&lt;/a&gt; and the &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project&quot;&gt;OWASP Top 10 Project&lt;/a&gt; and to mention the tools of the trade using the simplest approach possible.&lt;/p&gt;
 
 &lt;p&gt;Recently the new &lt;a href=&quot;https://www.owasp.org/index.php/OWASP_API_Security_Project&quot;&gt;OWASP API Security Top 10 2019&lt;/a&gt; is released, as a release candidate, which is a breath of fresh air into the field of security and penetration testing. It is a tribute to its old pal, &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_Backend_Security_Project&quot;&gt;OWASP Backend Security Project&lt;/a&gt;, which was released in 2008, or at least, I see it so, as the naming suggests. But deep down, they are two different guides and two different approaches to security. This new one deals with the Top 10 approach using scenarios, while the old one tries to present a multi-phase approach, with phases being development, hardening and testing.&lt;/p&gt;
 
