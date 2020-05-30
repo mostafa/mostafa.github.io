@@ -25,6 +25,8 @@
 
 
 
+  <meta property="og:image" content="https://mostafa.dev/assets/images/api-security-cover-image.png">
+
 
 
   <meta name="twitter:site" content="@mosimoradian">
@@ -33,8 +35,8 @@
   <meta name="twitter:url" content="https://medium.com/@mostafamoradian/api-backend-security-af79f0fc9e6a">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/api-security-cover-image.png">
   
 
   
@@ -135,7 +137,7 @@
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.4</span>
+          <span class="site-subtitle">Version 0.0.5</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -159,95 +161,32 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/api-security-cover-image.png" alt="API &amp; Backend Security" class="page__hero-image">
+  
+  
+    <span class="page__hero-caption">Credits: <a href="https://github.com/OWASP/API-Security/blob/76e4c0a4eae17da473d6723ecec92e7c64fff2ab/2019/en/dist/owasp-api-security-top-10.pdf">OWASP API Security Top 10 2019 PDF Cover - Dec 26, 2019</a>
+</span>
+  
+</div>
+
+
 
 
 
 <div id="main" role="main">
   
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name"></h3>
-    
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
 
 
   <div class="archive">
@@ -288,44 +227,671 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 <p>These are the things to consider while performing any kind of authentication and authorization and granting access:</p>
 
 <ul>
-  <li><strong>NEVER EVER TRUST USER INPUT! **</strong>’ or ‘1’=’1**
-<a href="https://github.com/marshmallow-code/marshmallow" title="https://github.com/marshmallow-code/marshmallow"><strong>marshmallow-code/marshmallow</strong><br />
-<em>marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from…</em>github.com</a><a href="https://github.com/marshmallow-code/marshmallow"></a><a href="https://github.com/marshmallow-code/webargs" title="https://github.com/marshmallow-code/webargs"><strong>marshmallow-code/webargs</strong><br />
-<em>Homepage: https://webargs.readthedocs.io/ webargs is a Python library for parsing and validating HTTP request objects…</em>github.com</a><a href="https://github.com/marshmallow-code/webargs"></a><a href="https://github.com/samuelcolvin/pydantic/" title="https://github.com/samuelcolvin/pydantic/"><strong>samuelcolvin/pydantic</strong><br />
-<em>Data validation and settings management using Python type hinting. Fast and extensible, pydantic plays nicely with your…</em>github.com</a><a href="https://github.com/samuelcolvin/pydantic/"></a><a href="https://github.com/pyeve/cerberus" title="https://github.com/pyeve/cerberus"><strong>pyeve/cerberus</strong><br />
-<em>Cerberus is a lightweight and extensible data validation library for Python. Cerberus provides type checking and other…</em>github.com</a><a href="https://github.com/pyeve/cerberus"></a><a href="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects" title="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects"><strong>Model instance reference | Django documentation | Django</strong><br />
-<em>This document describes the details of the API. It builds on the material presented in the and database query guides…</em>docs.djangoproject.com</a><a href="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects"></a><a href="https://github.com/Pylons/colander" title="https://github.com/Pylons/colander"><strong>Pylons/colander</strong><br />
-<em>An extensible package which can be used to: deserialize and validate a data structure composed of strings, mappings…</em>github.com</a><a href="https://github.com/Pylons/colander"></a><a href="https://github.com/keleshev/schema" title="https://github.com/keleshev/schema"><strong>keleshev/schema</strong><br />
-<em>schema is a library for validating Python data structures, such as those obtained from config-files, forms, external…</em>github.com</a><a href="https://github.com/keleshev/schema"></a><a href="https://github.com/schematics/schematics" title="https://github.com/schematics/schematics"><strong>schematics/schematics</strong><br />
-<em>Python Data Structures for Humans™. Project documentation: https://schematics.readthedocs.io/en/latest/ Schematics is a…</em>github.com</a><a href="https://github.com/schematics/schematics"></a><a href="https://github.com/podio/valideer" title="https://github.com/podio/valideer"><strong>podio/valideer</strong><br />
-<em>Lightweight data validation and adaptation Python library. - podio/valideer</em>github.com</a><a href="https://github.com/podio/valideer"></a><a href="https://github.com/alecthomas/voluptuous" title="https://github.com/alecthomas/voluptuous"><strong>alecthomas/voluptuous</strong><br />
-<em>Voluptuous, despite the name, is a Python data validation library. It is primarily intended for validating data coming…</em>github.com</a><a href="https://github.com/alecthomas/voluptuous"></a><a href="https://github.com/Julian/jsonschema" title="https://github.com/Julian/jsonschema"><strong>Julian/jsonschema</strong><br />
-<em>jsonschema is an implementation of JSON Schema for Python (supporting 2.7+ including Python 3). It can also be used…</em>github.com</a><a href="https://github.com/Julian/jsonschema"></a><a href="https://github.com/wesbos/burner-email-providers" title="https://github.com/wesbos/burner-email-providers"><strong>wesbos/burner-email-providers</strong><br />
-<em>Throw away email addresses (burner emails) are great for single use signups where you would like the content but rather…</em>github.com</a><a href="https://github.com/wesbos/burner-email-providers"></a>* Authenticate properly, either via SSO, SAML, social authentication or whatever method you choose to authenticate against!
-<a href="https://github.com/python-social-auth/social-core" title="https://github.com/python-social-auth/social-core"><strong>python-social-auth/social-core</strong><br />
-<em>Python Social Auth is an easy to setup social authentication/registration mechanism with support for several frameworks…</em>github.com</a><a href="https://github.com/python-social-auth/social-core"></a><a href="https://github.com/davesque/django-rest-framework-simplejwt" title="https://github.com/davesque/django-rest-framework-simplejwt"><strong>davesque/django-rest-framework-simplejwt</strong><br />
-<em>A JSON Web Token authentication plugin for the Django REST Framework. Simple JWT provides a JSON Web Token…</em>github.com</a><a href="https://github.com/davesque/django-rest-framework-simplejwt"></a><a href="https://github.com/pennersr/django-allauth" title="https://github.com/pennersr/django-allauth"><strong>pennersr/django-allauth</strong><br />
-<em>Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party…</em>github.com</a><a href="https://github.com/pennersr/django-allauth"></a><a href="https://github.com/IdentityPython/pysaml2" title="https://github.com/IdentityPython/pysaml2"><strong>IdentityPython/pysaml2</strong><br />
-<em>PySAML2 is a pure python implementation of SAML Version 2 Standard. It contains all necessary pieces for building a…</em>github.com</a><a href="https://github.com/IdentityPython/pysaml2"></a><a href="https://github.com/onelogin/python-saml" title="https://github.com/onelogin/python-saml"><strong>onelogin/python-saml</strong><br />
-<em>Add SAML support to your Python software using this library. Forget those complicated libraries and use the open source…</em>github.com</a><a href="https://github.com/onelogin/python-saml"></a>* Always use a rate limiting mechanism to disallow users from using a single pair of username and password to authenticate multiple time in a row. This helps prevent brute-force attacks and <a href="https://www.owasp.org/index.php/Credential_stuffing">credential stuffing</a>.
-<a href="https://github.com/tomasbasham/ratelimit" title="https://github.com/tomasbasham/ratelimit"><strong>tomasbasham/ratelimit</strong><br />
-<em>APIs are a very common way to interact with web services. As the need to consume data grows, so does the number of API…</em>github.com</a><a href="https://github.com/tomasbasham/ratelimit"></a><a href="https://github.com/RazerM/ratelimiter" title="https://github.com/RazerM/ratelimiter"><strong>RazerM/ratelimiter</strong><br />
-<em>Simple Python module providing rate limiting. This package provides the ratelimiter module, which ensures that an…</em>github.com</a><a href="https://github.com/RazerM/ratelimiter"></a><a href="https://github.com/alisaifee/flask-limiter" title="https://github.com/alisaifee/flask-limiter"><strong>alisaifee/flask-limiter</strong><br />
-<em>Flask-Limiter provides rate limiting features to flask routes. It has support for a configurable backend for storage…</em>github.com</a><a href="https://github.com/alisaifee/flask-limiter"></a><a href="https://github.com/jsocol/django-ratelimit" title="https://github.com/jsocol/django-ratelimit"><strong>jsocol/django-ratelimit</strong><br />
-<em>Cache-based rate-limiting for Django. Contribute to jsocol/django-ratelimit development by creating an account on…</em>github.com</a><a href="https://github.com/jsocol/django-ratelimit"></a><a href="https://www.django-rest-framework.org/api-guide/throttling/" title="https://www.django-rest-framework.org/api-guide/throttling/"><strong>Throttling</strong><br />
-<em>HTTP/1.1 420 Enhance Your Calm Twitter API rate limiting response Throttling is similar to permissions, in that it…</em>www.django-rest-framework.org</a><a href="https://www.django-rest-framework.org/api-guide/throttling/"></a><a href="https://github.com/jazzband/django-axes" title="https://github.com/jazzband/django-axes"><strong>jazzband/django-axes</strong><br />
-<em>Axes is a very simple way for you to keep track of failed login attempts for your login and administration views. The…</em>github.com</a><a href="https://github.com/jazzband/django-axes"></a><a href="https://github.com/jazzband/django-defender" title="https://github.com/jazzband/django-defender"><strong>jazzband/django-defender</strong><br />
-<em>A simple Django reusable app that blocks people from brute forcing login attempts. The goal is to make this as fast as…</em>github.com</a><a href="https://github.com/jazzband/django-defender"></a><a href="https://github.com/brutasse/django-ratelimit-backend" title="https://github.com/brutasse/django-ratelimit-backend"><strong>brutasse/django-ratelimit-backend</strong><br />
-<em>Rate-limit your login attempts at the authentication backend level. Login attempts are stored in the cache for 5…</em>github.com</a><a href="https://github.com/brutasse/django-ratelimit-backend"></a>* Make sure you keep track of IP address users are authenticating from, and limit users authenticating numerous times via the same IP address, thus preventing the same brute-force attack and also preventing man-in-the-middle attacks.</li>
+  <li><strong>NEVER EVER TRUST USER INPUT! **</strong>’ or ‘1’=’1**</li>
+</ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/marshmallow-code/marshmallow" target="_blank">https://github.com/marshmallow-code/marshmallow</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/marshmallow-code/marshmallow" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/10334301?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/marshmallow-code/marshmallow" target="_blank">marshmallow-code/marshmallow</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A lightweight library for converting complex objects to and from simple Python datatypes. - marshmallow-code/marshmallow</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/marshmallow-code/webargs" target="_blank">https://github.com/marshmallow-code/webargs</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/marshmallow-code/webargs" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/10334301?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/marshmallow-code/webargs" target="_blank">marshmallow-code/webargs</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A friendly library for parsing HTTP request arguments, with built-in support for popular web frameworks, including Flask, Django, Bottle, Tornado, Pyramid, webapp2, Falcon, and aiohttp. - marshmall...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/samuelcolvin/pydantic" target="_blank">https://github.com/samuelcolvin/pydantic</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/samuelcolvin/pydantic" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/4039449?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/samuelcolvin/pydantic" target="_blank">samuelcolvin/pydantic</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Data parsing and validation using Python type hints - samuelcolvin/pydantic</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/pyeve/cerberus" target="_blank">https://github.com/pyeve/cerberus</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/pyeve/cerberus" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/26229868?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/pyeve/cerberus" target="_blank">pyeve/cerberus</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Lightweight, extensible data validation library for Python - pyeve/cerberus</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects" target="_blank">https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://docs.djangoproject.com/en/2.2/ref/models/instances/#validating-objects" target="_blank">Model instance reference | Django documentation | Django</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The web framework for perfectionists with deadlines....</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://docs.djangoproject.com/" target="_blank">https://docs.djangoproject.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/Pylons/colander" target="_blank">https://github.com/Pylons/colander</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/Pylons/colander" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/452227?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/Pylons/colander" target="_blank">Pylons/colander</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A serialization/deserialization/validation library for strings, mappings and lists. - Pylons/colander</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/keleshev/schema" target="_blank">https://github.com/keleshev/schema</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/keleshev/schema" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/619158?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/keleshev/schema" target="_blank">keleshev/schema</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Schema validation just got Pythonic. Contribute to keleshev/schema development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/schematics/schematics" target="_blank">https://github.com/schematics/schematics</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/schematics/schematics" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/7866441?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/schematics/schematics" target="_blank">schematics/schematics</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Python Data Structures for Humans™. Contribute to schematics/schematics development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/podio/valideer" target="_blank">https://github.com/podio/valideer</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/podio/valideer" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/446761?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/podio/valideer" target="_blank">podio/valideer</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Lightweight data validation and adaptation Python library. - podio/valideer</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/alecthomas/voluptuous" target="_blank">https://github.com/alecthomas/voluptuous</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/alecthomas/voluptuous" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/41767?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/alecthomas/voluptuous" target="_blank">alecthomas/voluptuous</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">CONTRIBUTIONS ONLY: Voluptuous, despite the name, is a Python data validation library. - alecthomas/voluptuous</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/Julian/jsonschema" target="_blank">https://github.com/Julian/jsonschema</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/Julian/jsonschema" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/329822?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/Julian/jsonschema" target="_blank">Julian/jsonschema</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">An(other) implementation of JSON Schema for Python - Julian/jsonschema</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/wesbos/burner-email-providers" target="_blank">https://github.com/wesbos/burner-email-providers</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/wesbos/burner-email-providers" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/176013?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/wesbos/burner-email-providers" target="_blank">wesbos/burner-email-providers</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A list of temporary email providers. Contribute to wesbos/burner-email-providers development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li>Authenticate properly, either via SSO, SAML, social authentication or whatever method you choose to authenticate against!</li>
+</ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/python-social-auth/social-core" target="_blank">https://github.com/python-social-auth/social-core</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/python-social-auth/social-core" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/21279195?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/python-social-auth/social-core" target="_blank">python-social-auth/social-core</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Python Social Auth - Core. Contribute to python-social-auth/social-core development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/davesque/django-rest-framework-simplejwt" target="_blank">https://github.com/davesque/django-rest-framework-simplejwt</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/davesque/django-rest-framework-simplejwt" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/62027539?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/davesque/django-rest-framework-simplejwt" target="_blank">SimpleJWT/django-rest-framework-simplejwt</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A JSON Web Token authentication plugin for the Django REST Framework. - SimpleJWT/django-rest-framework-simplejwt</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/pennersr/django-allauth" target="_blank">https://github.com/pennersr/django-allauth</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/pennersr/django-allauth" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/201022?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/pennersr/django-allauth" target="_blank">pennersr/django-allauth</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication. - pennersr/django-allauth</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/IdentityPython/pysaml2" target="_blank">https://github.com/IdentityPython/pysaml2</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/IdentityPython/pysaml2" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/29101624?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/IdentityPython/pysaml2" target="_blank">IdentityPython/pysaml2</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Python implementation of SAML2. Contribute to IdentityPython/pysaml2 development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/onelogin/python-saml" target="_blank">https://github.com/onelogin/python-saml</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/onelogin/python-saml" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/263373?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/onelogin/python-saml" target="_blank">onelogin/python-saml</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Python SAML Toolkit. Contribute to onelogin/python-saml development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li>Always use a rate limiting mechanism to disallow users from using a single pair of username and password to authenticate multiple time in a row. This helps prevent brute-force attacks and <a href="https://www.owasp.org/index.php/Credential_stuffing">credential stuffing</a>.</li>
+</ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/tomasbasham/ratelimit" target="_blank">https://github.com/tomasbasham/ratelimit</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/tomasbasham/ratelimit" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/3389856?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/tomasbasham/ratelimit" target="_blank">tomasbasham/ratelimit</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">API Rate Limit Decorator. Contribute to tomasbasham/ratelimit development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/RazerM/ratelimiter" target="_blank">https://github.com/RazerM/ratelimiter</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/RazerM/ratelimiter" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/1337586?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/RazerM/ratelimiter" target="_blank">RazerM/ratelimiter</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Simple Python module providing rate limiting. Contribute to RazerM/ratelimiter development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/alisaifee/flask-limiter" target="_blank">https://github.com/alisaifee/flask-limiter</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/alisaifee/flask-limiter" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/79842?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/alisaifee/flask-limiter" target="_blank">alisaifee/flask-limiter</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Rate Limiting extension for Flask . Contribute to alisaifee/flask-limiter development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/jsocol/django-ratelimit" target="_blank">https://github.com/jsocol/django-ratelimit</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/jsocol/django-ratelimit" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/180459?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/jsocol/django-ratelimit" target="_blank">jsocol/django-ratelimit</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Cache-based rate-limiting for Django. Contribute to jsocol/django-ratelimit development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.django-rest-framework.org/api-guide/throttling/" target="_blank">https://www.django-rest-framework.org/api-guide/throttling/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.django-rest-framework.org/api-guide/throttling/" target="_blank">George Floyd</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Natosha McDade, Yassin Mohamed, Finan H. Berhe, Sean Reed, Steven Demarco Taylor, Ariane McCree, Terrance Franklin, Miles Hall, Darius Tarver, William Green, Samuel David Mallard, K...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.django-rest-framework.org/" target="_blank">https://www.django-rest-framework.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/jazzband/django-axes" target="_blank">https://github.com/jazzband/django-axes</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/jazzband/django-axes" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/15129049?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/jazzband/django-axes" target="_blank">jazzband/django-axes</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Keep track of failed login attempts in Django-powered sites. - jazzband/django-axes</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/jazzband/django-defender" target="_blank">https://github.com/jazzband/django-defender</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/jazzband/django-defender" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/15129049?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/jazzband/django-defender" target="_blank">jazzband/django-defender</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A simple super fast django reusable app that blocks people from brute forcing login attempts - jazzband/django-defender</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/brutasse/django-ratelimit-backend" target="_blank">https://github.com/brutasse/django-ratelimit-backend</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/brutasse/django-ratelimit-backend" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/31269?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/brutasse/django-ratelimit-backend" target="_blank">brutasse/django-ratelimit-backend</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Rate-limit your login attempts at the authentication backend level - brutasse/django-ratelimit-backend</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li>Make sure you keep track of IP address users are authenticating from, and limit users authenticating numerous times via the same IP address, thus preventing the same brute-force attack and also preventing man-in-the-middle attacks.</li>
   <li>Always use the most secure protocol or mechanism to authenticate users. There is always a trade-off between security and usability, so beware!</li>
-  <li>Authentication tokens are not as secure as they seem to be, since stolen tokens are the key to everything. So, always use some sort of expiry, like refreshing the token every once in a while.
-<a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" title="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/"><strong>Critical vulnerabilities in JSON Web Token libraries</strong><br />
-<em>TL;DR: If you are using node-jsonwebtoken, pyjwt, namshi/jose, php-jwt or jsjwt with asymmetric keys (RS256, RS384…</em>auth0.com</a><a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/"></a><a href="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities" title="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities"><strong>Common JWT security vulnerabilities and how to prevent them</strong><br />
-<em>The JSON Web Token has received a number of security reviews at the IETF and OIDF and is deemed sufficiently secure by…</em>connect2id.com</a><a href="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities"></a><a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/" title="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/"><strong>JWT Attack Walk-Through</strong><br />
-<em>There’s a well-known defect [1] with older versions of certain libraries where you can trick a JSON Web Token (JWT)…</em>www.nccgroup.trust</a><a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/"></a>* Use end-to-end encryption.
-<a href="https://github.com/pyca/cryptography" title="https://github.com/pyca/cryptography"><strong>pyca/cryptography</strong><br />
-<em>cryptography is a package which provides cryptographic recipes and primitives to Python developers. Our goal is for it…</em>github.com</a><a href="https://github.com/pyca/cryptography"></a><a href="https://github.com/dlitz/pycrypto" title="https://github.com/dlitz/pycrypto"><strong>dlitz/pycrypto</strong><br />
-<em>You can’t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…</em>github.com</a><a href="https://github.com/dlitz/pycrypto"></a>* Use strong hashing mechanism that support better randomness and salt.</li>
+  <li>Authentication tokens are not as secure as they seem to be, since stolen tokens are the key to everything. So, always use some sort of expiry, like refreshing the token every once in a while.</li>
+</ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" target="_blank">https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" target="_blank">
+          <img src="https://cdn.auth0.com/blog/illustrations/auth0.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/" target="_blank">Critical vulnerabilities in JSON Web Token libraries</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Which libraries are vulnerable to attacks and how to prevent them.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://auth0.com/" target="_blank">https://auth0.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities" target="_blank">https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://connect2id.com/products/nimbus-jose-jwt/vulnerabilities" target="_blank">Common JWT security vulnerabilities and how to prevent them | Connect2id </a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The JSON Web Token has received a number
+of security reviews at the IETF and OIDF and is deemed sufficiently secure by
+experts. But this doesn't make it foolproof. You, as a develop...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://connect2id.com/" target="_blank">https://connect2id.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/" target="_blank">https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2019/january/jwt-attack-walk-through/" target="_blank">JWT Attack Walk-Through</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">There’s a well-known defect with older versions of certain libraries where you can trick a JSON Web Token (JWT) consumer that expects tokens signed using asymmetric cryptography...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="https://www.nccgroup.com/" target="_blank">https://www.nccgroup.com/</a>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li>Use end-to-end encryption.</li>
+</ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/pyca/cryptography" target="_blank">https://github.com/pyca/cryptography</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/pyca/cryptography" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/5615737?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/pyca/cryptography" target="_blank">pyca/cryptography</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. - pyca/cryptography</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/dlitz/pycrypto" target="_blank">https://github.com/dlitz/pycrypto</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/dlitz/pycrypto" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/9419326?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/dlitz/pycrypto" target="_blank">pycrypto/pycrypto</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The Python Cryptography Toolkit. Contribute to pycrypto/pycrypto development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li>Use strong hashing mechanism that support better randomness and salt.</li>
   <li>Firewalls are dumb. Use them, but don’t trust them fully. The same applies for other defensive mechanisms.</li>
   <li>Misconfigurations are the root of all evil. Take it seriously!</li>
   <li>Use captcha and account lockout mechanisms, which is also mentioned above.</li>
@@ -335,11 +901,54 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
   <li>Never reply with meaningful sensitive information. For example, replying whether a user exists or not to a forget password request will help the attacker enumerate users existing on your API or website. Ambiguous messages and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204">204 No Content</a> status code help prevent this issue.</li>
   <li>Follow the guidelines in <a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html">OWASP Authentication Cheatsheet</a>.</li>
   <li><a href="https://cloud.google.com/endpoints/docs/openapi/when-why-api-key">API keys are for projects, authentication is for users</a>.</li>
-  <li>Use multi-factor authentication (MFA), where possible, but also beware of SIM swap attack which may cause issues:
-<a href="https://www.wired.com/story/sim-swap-attack-defend-phone/" title="https://www.wired.com/story/sim-swap-attack-defend-phone/"><strong>How to Protect Your Phone Against a SIM Swap Attack</strong><br />
-<em>Yes, remembering another PIN is a pain, especially when you’ll likely only need it every couple of years. But it’s…</em>www.wired.com</a><a href="https://www.wired.com/story/sim-swap-attack-defend-phone/"></a><a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju" title="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju"><strong>My SIM swap attack: How I almost lost $71K, and how to prevent it</strong><br />
-<em>On June 25th, I became a victim of SIM swapping, targeted along with dozens of other leaders in the blockchain…</em>hackernoon.com</a><a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju"></a>#### ✅ Authorization</li>
+  <li>Use multi-factor authentication (MFA), where possible, but also beware of SIM swap attack which may cause issues:</li>
 </ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.wired.com/story/sim-swap-attack-defend-phone/" target="_blank">https://www.wired.com/story/sim-swap-attack-defend-phone/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.wired.com/story/sim-swap-attack-defend-phone/" target="_blank">
+          <img src="https://media.wired.com/photos/5b7736f581d2b91bf5081ca1/191:100/w_1280,c_limit/How%2520to%2520protect%2520against%2520SIM%2520swap%2520attacks%2520(0-00-00-00).jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.wired.com/story/sim-swap-attack-defend-phone/" target="_blank">How to Protect Your Phone Against a SIM Swap Attack</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Your phone number is increasingly tied to your online identity. You need to do everything possible to protect it.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.wired.com/" target="_blank">https://www.wired.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju" target="_blank">https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju" target="_blank">
+          <img src="https://hackernoon.com/drafts/dn2ky3a26.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://hackernoon.com/my-sim-swap-attack-how-i-almost-lost-dollar71k-and-how-to-prevent-it-tj39q3aju" target="_blank">My SIM swap attack: How I almost lost $71K, and how to prevent it | Hacker Noon</a>
+        </h2>
+        <div class="jekyll-linkpreview-description"></div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://hackernoon.com/" target="_blank">https://hackernoon.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="-authorization">✅ Authorization</h4>
 
 <p>The second step is authorization, in which, the system decides whether the <em>authenticated user</em> is authorized to access a resource. Imagine you have a website selling stuff. You don’t want each user to be able to see what other users have ordered, well, for privacy reasons. So the object of concern here is the order history and only the <em>owner</em> of the order(s) can view it. If by some mechanism, other users can view each others’ order history, this makes your website insecure and untrustable.</p>
 
@@ -351,18 +960,249 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 
 <p>The hardest part is when one has more than one role or belongs to more than one group. In this case, the best approach is to take advantage of the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of least privilege (PLoP)</a>, meaning that the lowest permission(s) always win, or simply put, a user doesn’t need to have administrative access to view his order history. Also, make sure that you understand the <a href="https://en.wikipedia.org/wiki/Object-capability_model">object capability model</a> to its fullest.</p>
 
-<p><a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege" title="https://www.beyondtrust.com/blog/entry/what-is-least-privilege"><strong>What Is Least Privilege &amp; Why Do You Need It? | BeyondTrust</strong><br />
-<em>Least privilege is the concept and practice of restricting access rights for users, accounts, and computing processes…</em>www.beyondtrust.com</a><a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege"></a><a href="https://github.com/casbin/pycasbin" title="https://github.com/casbin/pycasbin"><strong>casbin/pycasbin</strong><br />
-<em>News: still worry about how to write the correct Casbin policy? Casbin online editor is coming to help! Try it at…</em>github.com</a><a href="https://github.com/casbin/pycasbin"></a><a href="https://github.com/YosaiProject/yosai" title="https://github.com/YosaiProject/yosai"><strong>YosaiProject/yosai</strong><br />
-<em>Yosai is a “security framework” that features authentication, authorization, and session management from a common…</em>github.com</a><a href="https://github.com/YosaiProject/yosai"></a><a href="https://github.com/shonenada/flask-rbac" title="https://github.com/shonenada/flask-rbac"><strong>shonenada/flask-rbac</strong><br />
-<em>You can’t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…</em>github.com</a><a href="https://github.com/shonenada/flask-rbac"></a><a href="https://github.com/dimagi/django-prbac" title="https://github.com/dimagi/django-prbac"><strong>dimagi/django-prbac</strong><br />
-<em>(Parameterized Role-Based Access Control) https://github.com/dimagi/django-prbac Role-based access control (RBAC) is…</em>github.com</a><a href="https://github.com/dimagi/django-prbac"></a><a href="https://github.com/klada/django-auth-rbac" title="https://github.com/klada/django-auth-rbac"><strong>klada/django-auth-rbac</strong><br />
-<em>An attempt of implementing role-based access control (ANSI/INCITS 359-2004) for Django Supported RBAC features: Core…</em>github.com</a><a href="https://github.com/klada/django-auth-rbac"></a><a href="https://github.com/django-guardian/django-guardian" title="https://github.com/django-guardian/django-guardian"><strong>django-guardian/django-guardian</strong><br />
-<em>django-guardian is an implementation of per object permissions [1] on top of Django’s authorization backend Online…</em>github.com</a><a href="https://github.com/django-guardian/django-guardian"></a><a href="https://github.com/sunscrapers/djoser" title="https://github.com/sunscrapers/djoser"><strong>sunscrapers/djoser</strong><br />
-<em>REST implementation of Django authentication system. djoser library provides a set of Django Rest Framework views to…</em>github.com</a><a href="https://github.com/sunscrapers/djoser"></a><a href="https://github.com/dfunckt/django-rules" title="https://github.com/dfunckt/django-rules"><strong>dfunckt/django-rules</strong><br />
-<em>rules is a tiny but powerful app providing object-level permissions to Django, without requiring a database. At its…</em>github.com</a><a href="https://github.com/dfunckt/django-rules"></a><a href="https://github.com/mgrouchy/django-stronghold" title="https://github.com/mgrouchy/django-stronghold"><strong>mgrouchy/django-stronghold</strong><br />
-<em>Get inside your stronghold and make all your Django views default login_required Stronghold is a very small and easy to…</em>github.com</a><a href="https://github.com/mgrouchy/django-stronghold"></a><a href="https://github.com/jazzband/django-authority" title="https://github.com/jazzband/django-authority"><strong>jazzband/django-authority</strong><br />
-<em>This is a Django app for per-object-permissions that includes a bunch of helpers to create custom permission checks…</em>github.com</a><a href="https://github.com/jazzband/django-authority"></a>#### ✅ Access</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege" target="_blank">https://www.beyondtrust.com/blog/entry/what-is-least-privilege</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege" target="_blank">
+          <img src="https://www.beyondtrust.com/og-icon.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.beyondtrust.com/blog/entry/what-is-least-privilege" target="_blank">What Is Least Privilege &amp; Why Do You Need It? | BeyondTrust</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Least privilege is the concept and practice of restricting access rights for users, accounts, and computing processes to only those resources absolutely required to perform routine, legitimate activities. This blog provides an in-depth overview of least privilege.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.beyondtrust.com/" target="_blank">https://www.beyondtrust.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/casbin/pycasbin" target="_blank">https://github.com/casbin/pycasbin</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/casbin/pycasbin" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/27810343?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/casbin/pycasbin" target="_blank">casbin/pycasbin</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">An authorization library that supports access control models like ACL, RBAC, ABAC in Python - casbin/pycasbin</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/YosaiProject/yosai" target="_blank">https://github.com/YosaiProject/yosai</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/YosaiProject/yosai" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/10434362?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/YosaiProject/yosai" target="_blank">YosaiProject/yosai</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A Security Framework for Python applications featuring Authorization (rbac permissions and roles), Authentication (2fa totp), Session Management and an extensive Audit Trail - YosaiProject/yosai</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/shonenada/flask-rbac" target="_blank">https://github.com/shonenada/flask-rbac</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/shonenada/flask-rbac" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/2056489?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/shonenada/flask-rbac" target="_blank">shonenada/flask-rbac</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Flask-RBAC. Contribute to shonenada/flask-rbac development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/dimagi/django-prbac" target="_blank">https://github.com/dimagi/django-prbac</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/dimagi/django-prbac" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/94514?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/dimagi/django-prbac" target="_blank">dimagi/django-prbac</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Contribute to dimagi/django-prbac development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/klada/django-auth-rbac" target="_blank">https://github.com/klada/django-auth-rbac</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/klada/django-auth-rbac" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/3250940?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/klada/django-auth-rbac" target="_blank">klada/django-auth-rbac</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">An attempt of implementing role-based access control for Django - klada/django-auth-rbac</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/django-guardian/django-guardian" target="_blank">https://github.com/django-guardian/django-guardian</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/django-guardian/django-guardian" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/12409049?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/django-guardian/django-guardian" target="_blank">django-guardian/django-guardian</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Per object permissions for Django. Contribute to django-guardian/django-guardian development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/sunscrapers/djoser" target="_blank">https://github.com/sunscrapers/djoser</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/sunscrapers/djoser" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/1218240?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/sunscrapers/djoser" target="_blank">sunscrapers/djoser</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">REST implementation of Django authentication system. - sunscrapers/djoser</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/dfunckt/django-rules" target="_blank">https://github.com/dfunckt/django-rules</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/dfunckt/django-rules" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/130359?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/dfunckt/django-rules" target="_blank">dfunckt/django-rules</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Awesome Django authorization, without the database - dfunckt/django-rules</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/mgrouchy/django-stronghold" target="_blank">https://github.com/mgrouchy/django-stronghold</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/mgrouchy/django-stronghold" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/71200?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/mgrouchy/django-stronghold" target="_blank">mgrouchy/django-stronghold</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Get inside your stronghold and make all your Django views default login_required - mgrouchy/django-stronghold</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/jazzband/django-authority" target="_blank">https://github.com/jazzband/django-authority</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/jazzband/django-authority" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/15129049?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/jazzband/django-authority" target="_blank">jazzband/django-authority</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A Django app that provides generic per-object-permissions for Django's auth app and helpers to create custom permission checks. - jazzband/django-authority</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="-access">✅ Access</h4>
 
 <p>Sometimes you have the user authenticated and authorized to access a resource, but the resouce itself needs some special permissions, like delete permissions. Users may be able to view their order history, but may (or should) not be able to change them. This boils down to the specific object-level permissions one resource may have.</p>
 
@@ -388,18 +1228,123 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 
 <p>There are cases like zip bombs that can explode your resources on the server, so just verify compression ratio of compressed files before accepting and extracting the file:</p>
 
-<p><a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life" title="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life"><strong>Ancient ZIP bomb attack given new lease of life</strong><br />
-<em>John Leyden 23 August 2019 at 15:46 UTC Decompression could give modern web apps a touch of the bends Researchers have…</em>portswigger.net</a><a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life"></a><a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes" title="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes"><strong>The Most Clever ‘Zip Bomb’ Ever Made Explodes a 46MB File to 4.5 Petabytes</strong><br />
-<em>In the roughly three decades since the Zip file format debuted, compressed files have been subject to widespread…</em>www.vice.com</a><a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes"></a><a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs" title="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs"><strong>danielmiessler/SecLists</strong><br />
-<em>SecLists is the security tester’s companion. It’s a collection of multiple types of lists used during security…</em>github.com</a><a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs"></a><a href="https://github.com/twbgc/sunzip" title="https://github.com/twbgc/sunzip"><strong>twbgc/sunzip</strong><br />
-<em>According to Cara Marie, an archive bomb a.k.a. A zip bomb is often employed to disable antivirus software, in order to…</em>github.com</a><a href="https://github.com/twbgc/sunzip"></a>#### API5:2019-Broken Function Level Authorization</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life" target="_blank">https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life" target="_blank">
+          <img src="https://portswigger.net/cms/images/1a/0c/a1bc2cb0d14c-twittercard-190823-zip-bomb-body-text.jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://portswigger.net/daily-swig/ancient-zip-bomb-attack-given-new-lease-of-life" target="_blank">Ancient ZIP bomb attack given new lease of life</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Decompression could give modern web apps a touch of the bends</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://portswigger.net/" target="_blank">https://portswigger.net/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes" target="_blank">https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes" target="_blank">
+          <img src="https://video-images.vice.com/articles/5d25f7ed997ddf00082030e7/lede/1562772175418-GettyImages-867206810-1.jpeg?crop=1xw:0.7491xh;0xw,0.0453xh&amp;resize=1200:*" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.vice.com/en_us/article/597vzx/the-most-clever-zip-bomb-ever-made-explodes-a-46mb-file-to-45-petabytes" target="_blank">The Most Clever 'Zip Bomb' Ever Made Explodes a 46MB File to 4.5 Petabytes</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Files so deeply compressed that they’re effectively malware have been around for decades—and a researcher just unveiled a brand-new Zip bomb that explodes a 46-megabyte file to 4.5 petabytes of data.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.vice.com/" target="_blank">https://www.vice.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs" target="_blank">https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/50654?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/danielmiessler/SecLists/tree/master/Payloads/Zip-Bombs" target="_blank">danielmiessler/SecLists</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">SecLists is the security tester&#39;s companion. It&#39;s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, ...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/twbgc/sunzip" target="_blank">https://github.com/twbgc/sunzip</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/twbgc/sunzip" target="_blank">
+          <img src="https://repository-images.githubusercontent.com/191539021/9b835100-a7e3-11e9-8710-c8e9327db28d" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/twbgc/sunzip" target="_blank">twbgc/sunzip</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Provide secure unzip against zip bomb :bomb:. Contribute to twbgc/sunzip development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="api52019-broken-function-level-authorization">API5:2019-Broken Function Level Authorization</h4>
 
 <p>We have already discussed object level authorization in <em>API1:2019-Broken Object Level Authorization</em>, which deal with unauthorized access to objects. Current vulnerability discusses a method by which the attacker is already authorized or is using a malicious input against an endpoint that requires little or no authorization, like anonymous users’ endpoints.</p>
 
 <p>A small change to a HTTP request method would make the endpoint vulnerable. For example, changing a GET request to POST would make the endpoint create or update a record with the same anonymous access rights. This also applies to the request URL, where you can simply change a /users to /admins and you’ll get all data relating to privileged admin users, which is horrible. Just keep in mind that almost everything in the request can be changed. Burp Suite is just one example, by which you can easily act as a proxy between client and the API and change the requests in between.</p>
 
-<p><a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite" title="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite"><strong>How to Use Burp Suite</strong><br />
-<em>Burp Suite is an integrated platform for performing security testing of web applications. It is designed to be used by…</em>support.portswigger.net</a><a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite"></a>The best mechanism to prevent most of these vulnerabilities is to tighten enforcement of authorization rules, by denying everything by default and then explicitly giving access rights to specific roles for access to every function. This is also one of the most important topics in firewall configuration, in which the last rule is to deny all, in case that no rule matches against the criteria of the packet, is is denied and obviously not passed through.</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite" target="_blank">https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite" target="_blank">
+          <img src="https://portswigger.net/content/images/logos/portswigger-twittercardlogo.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://support.portswigger.net/customer/portal/articles/1783101-how-to-use-burp-suite" target="_blank">How to Use Burp Suite</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">How to Use Burp Suite Burp Suite is an integrated platform for performing security testing of web applications. It is designed to be used by hands-on ...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://portswigger.net/" target="_blank">https://portswigger.net/</a>
+    </div>
+  </div>
+</div>
+
+<p>The best mechanism to prevent most of these vulnerabilities is to tighten enforcement of authorization rules, by denying everything by default and then explicitly giving access rights to specific roles for access to every function. This is also one of the most important topics in firewall configuration, in which the last rule is to deny all, in case that no rule matches against the criteria of the packet, is is denied and obviously not passed through.</p>
 
 <h4 id="api62019-mass-assignment">API6:2019-Mass Assignment</h4>
 
@@ -407,10 +1352,63 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 
 <p>Use white- and black-list feature to prevent some fields from being updated via requests.</p>
 
-<p><a href="https://docs.djangoproject.com/en/2.2/ref/validators/" title="https://docs.djangoproject.com/en/2.2/ref/validators/"><strong>Validators | Django documentation | Django</strong><br />
-<em>A validator is a callable that takes a value and raises a if it doesn’t meet some criteria. Validators can be useful…</em>docs.djangoproject.com</a><a href="https://docs.djangoproject.com/en/2.2/ref/validators/"></a><a href="https://www.django-rest-framework.org/api-guide/permissions/" title="https://www.django-rest-framework.org/api-guide/permissions/"><strong>Permissions</strong><br />
-<em>Authentication or identification by itself is not usually sufficient to gain access to information or code. For that…</em>www.django-rest-framework.org</a><a href="https://www.django-rest-framework.org/api-guide/permissions/"></a><a href="https://github.com/dbrgn/drf-dynamic-fields" title="https://github.com/dbrgn/drf-dynamic-fields"><strong>dbrgn/drf-dynamic-fields</strong><br />
-<em>This package provides a mixin that allows the user to dynamically select only a subset of fields per resource. Official…</em>github.com</a><a href="https://github.com/dbrgn/drf-dynamic-fields"></a>#### API7:2019-Security Misconfiguration</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://docs.djangoproject.com/en/2.2/ref/validators/" target="_blank">https://docs.djangoproject.com/en/2.2/ref/validators/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://docs.djangoproject.com/en/2.2/ref/validators/" target="_blank">Validators | Django documentation | Django</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The web framework for perfectionists with deadlines....</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://docs.djangoproject.com/" target="_blank">https://docs.djangoproject.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.django-rest-framework.org/api-guide/permissions/" target="_blank">https://www.django-rest-framework.org/api-guide/permissions/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.django-rest-framework.org/api-guide/permissions/" target="_blank">George Floyd</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Natosha McDade, Yassin Mohamed, Finan H. Berhe, Sean Reed, Steven Demarco Taylor, Ariane McCree, Terrance Franklin, Miles Hall, Darius Tarver, William Green, Samuel David Mallard, K...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.django-rest-framework.org/" target="_blank">https://www.django-rest-framework.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/dbrgn/drf-dynamic-fields" target="_blank">https://github.com/dbrgn/drf-dynamic-fields</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/dbrgn/drf-dynamic-fields" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/105168?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/dbrgn/drf-dynamic-fields" target="_blank">dbrgn/drf-dynamic-fields</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Dynamically select only a subset of fields per DRF resource, either using a whitelist or a blacklist. - dbrgn/drf-dynamic-fields</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="api72019-security-misconfiguration">API7:2019-Security Misconfiguration</h4>
 
 <p>As I said above, misconfigurations, specially security misconfigurations, are the root of all evil. Taking security configurations as granted is a grave mistake. Since security is always considered as an afterthought, try to get rid of the temptation to forego implementing security recommendations, like encryption, hashing, rate-limiting, CORS, TLS, etc.</p>
 
@@ -422,16 +1420,159 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
   <li>Use E2E encryption!</li>
   <li>Try to integrate automated configuration analysis and vulnerability assessment in your workflow.</li>
   <li>Never send stack traces produced by exceptions to the user (or potential attacker). Always validate the response against a schema.</li>
-  <li>Static analysis and linting will detect most of misconfigurations and bugs in the first place.
-<a href="https://docs.djangoproject.com/en/2.2/topics/security/" title="https://docs.djangoproject.com/en/2.2/topics/security/"><strong>Security in Django | Django documentation | Django</strong><br />
-<em>Edit description</em>docs.djangoproject.com</a><a href="https://docs.djangoproject.com/en/2.2/topics/security/"></a><a href="https://github.com/mattupstate/flask-security" title="https://github.com/mattupstate/flask-security"><strong>mattupstate/flask-security</strong><br />
-<em>You can’t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…</em>github.com</a><a href="https://github.com/mattupstate/flask-security"></a><a href="https://snyk.io/" title="https://snyk.io/"><strong>Snyk | Develop Fast. Stay Secure</strong><br />
-<em>Enabling more than 400,000 developers to continuously find and fix vulnerabilities in open source libraries and…</em>snyk.io</a><a href="https://snyk.io/"></a><a href="https://www.sqreen.com/" title="https://www.sqreen.com/"><strong>Application Security Management Platform | Sqreen</strong><br />
-<em>Ruby Node.js PHP Python Java Go .net $ echo “gem ‘sqreen’” » Gemfile $ bundle install $ echo “token: your token” &gt;…</em>www.sqreen.com</a><a href="https://www.sqreen.com/"></a><a href="https://detectify.com/" title="https://detectify.com/"><strong>Detectify: Leading Website Vulnerability Scanner</strong><br />
-<em>Detectify performs automated security tests on your web application and databases and scans your assets for…</em>detectify.com</a><a href="https://detectify.com/"></a><a href="https://arvan.cloud/" title="https://arvan.cloud/"><strong>ArvanCloud | Integrated Cloud Infrastructure</strong><br />
-<em>ArvanCloud offers integrated cloud services like CDN, Cloud DNS, Cloud Security, Cloud datacenter, Cloud storage, VoD…</em>arvan.cloud</a><a href="https://arvan.cloud/"></a><a href="https://semmle.com/" title="https://semmle.com/"><strong>Semmle - Code Analysis Platform for Securing Software</strong><br />
-<em>Automating variant analysis for product security CodeQL is a code analysis engine for product security teams to quickly…</em>semmle.com</a><a href="https://semmle.com/"></a>#### API8:2019-Injection</li>
+  <li>Static analysis and linting will detect most of misconfigurations and bugs in the first place.</li>
 </ul>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://docs.djangoproject.com/en/2.2/topics/security/" target="_blank">https://docs.djangoproject.com/en/2.2/topics/security/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://docs.djangoproject.com/en/2.2/topics/security/" target="_blank">Security in Django | Django documentation | Django</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The web framework for perfectionists with deadlines....</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://docs.djangoproject.com/" target="_blank">https://docs.djangoproject.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/mattupstate/flask-security" target="_blank">https://github.com/mattupstate/flask-security</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/mattupstate/flask-security" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/166176?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/mattupstate/flask-security" target="_blank">mattupstate/flask-security</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Quick and simple security for Flask applications. Contribute to mattupstate/flask-security development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://snyk.io/" target="_blank">https://snyk.io/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://snyk.io/" target="_blank">
+          <img src="https://snyk.io/wp-content/uploads/slack-imgs.com_.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://snyk.io/" target="_blank">Snyk | Develop Fast. Stay Secure</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Snyk helps you use open source and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet, RubyGems, PyPI and much more.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://snyk.io/" target="_blank">https://snyk.io/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.sqreen.com/" target="_blank">https://www.sqreen.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.sqreen.com/" target="_blank">
+          <img src="https://www.sqreen.com/assets/img/share/share.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.sqreen.com/" target="_blank">Application Security Management Platform | Sqreen</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Learn more about Sqreen's application security platform that helps teams protect applications, increase visibility and secure code.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.sqreen.com/" target="_blank">https://www.sqreen.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://detectify.com/" target="_blank">https://detectify.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://detectify.com/" target="_blank">
+          <img src="http://detectify-k8s.production.detectify.net/img/asset/bWFpbi9zb2NpYWxfaW1hZ2UucG5n?p=seo&amp;s=a43f1525cf55647faf8bdecb7d969363" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://detectify.com/" target="_blank">Leading website vulnerability scanner | Free 14 day trial</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Web security issues are a major pain, thankfully our website vulnerability scanner identifies issues before they become a problem. Find vulnerabilities before hackers do!</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://detectify.com/" target="_blank">https://detectify.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://arvan.cloud/" target="_blank">https://arvan.cloud/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://arvan.cloud/" target="_blank">
+          <img src="https://arvan.cloud/images/icons/logo-typo.jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://arvan.cloud/" target="_blank">ArvanCloud | Integrated Cloud Infrastructure</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">ArvanCloud offers integrated cloud services like CDN, Cloud DNS, Cloud Security, Cloud datacenter, Cloud storage, VoD, Live streaming, and video ads.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://arvan.cloud/" target="_blank">https://arvan.cloud/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://semmle.com/" target="_blank">https://semmle.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://semmle.com/" target="_blank">
+          <img src="https://semmle.com/assets/images/semmle_share_gfx.jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://semmle.com/" target="_blank">Semmle - Code Analysis Platform for Securing Software</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Semmle's code analysis platform helps teams find zero-days and automate variant analysis. Secure your code with continuous security analysis and automated code review.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://semmle.com/" target="_blank">https://semmle.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="api82019-injection">API8:2019-Injection</h4>
 
 <p>Injection, injection, injection! It is almost 2020 and we have have this injection issue! Neither OxMs nor any other pieces of software today can fully prevent it from being exploited. Well, there has been some advances in IDSes and cloud services to inspect and prevent such attacks, but it can still be exploited in the wide. Just keep in mind that NoSQL is also vulnerable to injection attacks.</p>
 
@@ -439,11 +1580,90 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 
 <p>These are some resources to learn more about ways to prevent injection:</p>
 
-<p><a href="https://realpython.com/prevent-python-sql-injection/" title="https://realpython.com/prevent-python-sql-injection/"><strong>Preventing SQL Injection Attacks With Python - Real Python</strong><br />
-<em>SQL injection attacks are one of the most common web application security risks. In this step-by-step tutorial, you’ll…</em>realpython.com</a><a href="https://realpython.com/prevent-python-sql-injection/"></a><a href="https://blog.sqreen.com/preventing-sql-injections-in-python/" title="https://blog.sqreen.com/preventing-sql-injections-in-python/"><strong>Preventing SQL injections in Python (and other vulnerabilities) - Sqreen Blog</strong><br />
-<em>Python is a wonderful language, ideal for beginners, and easy to scale up from starter projects to complex applications…</em>blog.sqreen.com</a><a href="https://blog.sqreen.com/preventing-sql-injections-in-python/"></a><a href="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection" title="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection"><strong>Reviewing Code for OS Injection</strong><br />
-<em>Injection flaws allow attackers to pass malicious code through a web application to another subsystem. Depending on the…</em>www.owasp.org</a><a href="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection"></a><a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python" title="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python"><strong>OWASP/CheatSheetSeries</strong><br />
-<em>XML eXternal Entity injection (XXE), which is now part of the OWASP Top 10 via the point A4, is a type of attack…</em>github.com</a><a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python"></a>#### API9:2019-Improper Assets Management</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://realpython.com/prevent-python-sql-injection/" target="_blank">https://realpython.com/prevent-python-sql-injection/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://realpython.com/prevent-python-sql-injection/" target="_blank">
+          <img src="https://files.realpython.com/media/How-to-Prevent-SQL-Injection-in-Python_Watermarked.3f547c31dbf9.jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://realpython.com/prevent-python-sql-injection/" target="_blank">Preventing SQL Injection Attacks With Python – Real Python</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">SQL injection attacks are one of the most common web application security risks. In this step-by-step tutorial, you'll learn how you can prevent Python SQL injection. You'll learn how to compose SQL queries with parameters, as well as how to safely execute those queries in your database.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://realpython.com/" target="_blank">https://realpython.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://blog.sqreen.com/preventing-sql-injections-in-python/" target="_blank">https://blog.sqreen.com/preventing-sql-injections-in-python/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://blog.sqreen.com/preventing-sql-injections-in-python/" target="_blank">
+          <img src="https://i0.wp.com/blog.sqreen.com/wp-content/uploads/2017/02/sqli-python-banner@2x.jpg?fit=1024%2C390&amp;ssl=1" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://blog.sqreen.com/preventing-sql-injections-in-python/" target="_blank">Preventing SQL injections in Python (and other vulnerabilities) - Sqreen Blog</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">How to prevent SQL injections in Python. Article explains how to identify security vulnerabilities in Python and how to protect applications from attacks</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://blog.sqreen.com/" target="_blank">https://blog.sqreen.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection" target="_blank">https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.owasp.org/index.php/Reviewing_Code_for_OS_Injection" target="_blank">OWASP Code Review Guide</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Virtual AppSec Days Summer of Security CFT is open! Apply Now...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://owasp.org/" target="_blank">https://owasp.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python" target="_blank">https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/155815?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md#python" target="_blank">OWASP/CheatSheetSeries</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The OWASP Cheat Sheet Series was created to provide a concise collection of high value information on specific application security topics. - OWASP/CheatSheetSeries</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="api92019-improper-assets-management">API9:2019-Improper Assets Management</h4>
 
 <p>APIs do not usually exist as a separate isolated entity, without having any relation or connection to its environment and outside world. They are literally living beings that sit there and listen to requests and eventually return a response. Yet they can be seen as assets to a company, making enough money for it to survive and grow. APIs and their belongings, like environments, accesses, …, should be seen as an inventory and shoud all be well-documented and accounted for. In turn, roles in the system and its data flow should also be documented. Security policies also need their own documentation.</p>
 
@@ -461,19 +1681,123 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 
 <p>These are some recommendations, but you know best!</p>
 
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" title="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"><strong>Logging</strong><br />
-<em>This cheat sheet is focused on providing developers with concentrated guidance on building application logging…</em>cheatsheetseries.owasp.org</a><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"></a><a href="https://grafana.com/" title="https://grafana.com/"><strong>Grafana: The open observability platform</strong><br />
-<em>The open observability platform Grafana is the open source analytics &amp; monitoring solution for every database Get…</em>grafana.com</a><a href="https://grafana.com/"></a><a href="https://www.elastic.co/what-is/elk-stack" title="https://www.elastic.co/what-is/elk-stack"><strong>ELK Stack: Elasticsearch, Logstash, Kibana | Elastic</strong><br />
-<em>What is the ELK Stack? The ELK Stack is an acronym for a combination of three widely used open source projects…</em>www.elastic.co</a><a href="https://www.elastic.co/what-is/elk-stack"></a><a href="https://www.datadoghq.com/" title="https://www.datadoghq.com/"><strong>Cloud Monitoring as a Service | Datadog</strong><br />
-<em>See metrics from all of your apps, tools &amp; services in one place with Datadog’s cloud monitoring as a service solution…</em>www.datadoghq.com</a><a href="https://www.datadoghq.com/"></a><a href="https://www.esecurityplanet.com/products/top-siem-products.html" title="https://www.esecurityplanet.com/products/top-siem-products.html"><strong>Top SIEM Products</strong><br />
-<em>Security Information and Event Management (SIEM) is a key enterprise security technology, with the ability to tie…</em>www.esecurityplanet.com</a><a href="https://www.esecurityplanet.com/products/top-siem-products.html"></a><a href="https://www.capterra.com/siem-software/" title="https://www.capterra.com/siem-software/"><strong>Best SIEM Software | 2019 Reviews of the Most Popular Tools &amp; Systems</strong><br />
-<em>Find and compare SIEM software. Free, interactive tool to quickly narrow your choices and contact multiple vendors.</em>www.capterra.com</a><a href="https://www.capterra.com/siem-software/"></a>#### Conclusion</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank">https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank">Logging  · OWASP Cheat Sheet Series</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">This cheat sheet is focused on providing developers with concentrated guidance on building application logging mechanisms, especially related to security logging....</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://cheatsheetseries.owasp.org/" target="_blank">https://cheatsheetseries.owasp.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://grafana.com/" target="_blank">https://grafana.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://grafana.com/" target="_blank">
+          <img src="https://grafana.com/static/img/grafana/redesign-dashboard_home.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://grafana.com/" target="_blank">Grafana: The open observability platform</a>
+        </h2>
+        <div class="jekyll-linkpreview-description"></div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://grafana.com/" target="_blank">https://grafana.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.elastic.co/what-is/elk-stack" target="_blank">https://www.elastic.co/what-is/elk-stack</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.elastic.co/what-is/elk-stack" target="_blank">ELK Stack: Elasticsearch, Logstash, Kibana | Elastic</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Add search to your app...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.elastic.co/" target="_blank">https://www.elastic.co/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.datadoghq.com/" target="_blank">https://www.datadoghq.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.datadoghq.com/" target="_blank">
+          <img src="https://imgix.datadoghq.com/img/og/OG_Homepage.png?fit=crop&amp;w=1200&amp;h=630" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.datadoghq.com/" target="_blank">Cloud Monitoring as a Service | Datadog</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">See metrics from all of your apps, tools &amp; services in one place with Datadog's cloud monitoring as a service solution. Try it for free.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.datadoghq.com/" target="_blank">https://www.datadoghq.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.esecurityplanet.com/products/top-siem-products.html" target="_blank">https://www.esecurityplanet.com/products/top-siem-products.html</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.esecurityplanet.com/products/top-siem-products.html" target="_blank">Top SIEM Products</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Security Information and Event Management (SIEM) is a key enterprise security technology, with the ability to tie systems together for a comprehensive view of IT security.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="https://www.esecurityplanet.com/" target="_blank">https://www.esecurityplanet.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.capterra.com/siem-software/" target="_blank">https://www.capterra.com/siem-software/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.capterra.com/siem-software/" target="_blank">Best SIEM Software | 2020 Reviews of the Most Popular Tools &amp; Systems</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Find and compare SIEM software. Free, interactive tool to quickly narrow your choices and contact multiple vendors.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.capterra.com/" target="_blank">https://www.capterra.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="conclusion">Conclusion</h4>
 
 <p>What I’ve tried to achieve in this long article was to inform you of the Top 10 list of vulnerabilities found in today’s APIs that threatens their existence. I’ve mentioned many Python packages, cheatsheets, related resources and software needed for the job. But the developer always knows best. Yeah, common sense can alleviate most of these.</p>
 
 <p>Try to take advice from experts in the field, specially those contributed to the making of the Top 10 list and <strong>NEVER EVER TRUST USER INPUT!</strong></p>
-
-<p>Cover image credits: <a href="https://github.com/OWASP/API-Security/blob/develop/2019/en/dist/owasp-api-security-top-10.pdf">OWASP API Security Top 10 2019 PDF cover</a></p>
 
 
 <ul class="taxonomy__index">
@@ -519,15 +1843,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">The very first developer relations online meetup of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on Yo...</p>
   </article>
 </div>
@@ -547,15 +1862,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  10 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">In this article, I’ll explain how to use a Postman collection I have created to load test our instance of our test API. The process is pretty straightforward...</p>
   </article>
 </div>
@@ -574,15 +1880,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 </a>
       
     </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  7 minute read
-
-</p>
     
     <p class="archive__item-excerpt" itemprop="description">Generating k6 scripts from Swagger/OpenAPI specifications has never been easier. Using the newly built k6 generator, you can convert your API specification t...</p>
   </article>
@@ -611,15 +1908,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  3 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">For years, cloud computing was a way to convince users and business to spend their money hosting their services on servers collocated on cloud data-centers. ...</p>
   </article>
 </div>
@@ -638,15 +1926,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 </a>
       
     </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  21 minute read
-
-</p>
     
     <p class="archive__item-excerpt" itemprop="description">In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old...</p>
   </article>
@@ -667,15 +1946,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  3 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it t...</p>
   </article>
 </div>
@@ -695,15 +1965,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  9 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Dja...</p>
   </article>
 </div>
@@ -722,15 +1983,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 </a>
       
     </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  19 minute read
-
-</p>
     
     <p class="archive__item-excerpt" itemprop="description">Disclaimer:
 </p>
@@ -752,15 +2004,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  6 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can...</p>
   </article>
 </div>
@@ -779,15 +2022,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 </a>
       
     </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  4 minute read
-
-</p>
     
     <p class="archive__item-excerpt" itemprop="description">Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in the first part of this series. Each test t...</p>
   </article>
@@ -808,15 +2042,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  7 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of content...</p>
   </article>
 </div>
@@ -836,15 +2061,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  9 minute read
-
-</p>
-    
     <p class="archive__item-excerpt" itemprop="description">Security is an illusion and being secure is a relative matter. This means you should always have an eye on your security from any perspective: Physical, huma...</p>
   </article>
 </div>
@@ -863,15 +2079,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 </a>
       
     </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  4 minute read
-
-</p>
     
     <p class="archive__item-excerpt" itemprop="description">More than 9 years ago, when I was studying towards a B.A. degree in German Language Translation Studies, I used to know and be a student of a great professor...</p>
   </article>
@@ -899,15 +2106,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 </a>
       
     </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  3 minute read
-
-</p>
     
     <p class="archive__item-excerpt" itemprop="description">More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom ...</p>
   </article>
@@ -1009,25 +2207,6 @@ API10:2019-Insufficient Logging &amp; Monitoring#### API1:2019-Broken Object Lev
 
 
 
-
-
-    
-  <script>
-    var disqus_config = function () {
-      this.page.url = "https://mostafa.dev/blog/api-backend-security";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/blog/api---backend-security"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-    };
-    (function() { /* DON'T EDIT BELOW THIS LINE */
-      var d = document, s = d.createElement('script');
-      s.src = 'https://mostafa-dev.disqus.com.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-  
 
 
 
