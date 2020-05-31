@@ -1698,10 +1698,14 @@ p > a { color: black !important; }
 
 .jekyll-linkpreview-title a { color: black !important; text-decoration: none !important; }
 
-.jekyll-linkpreview-description { line-height: 1.5; font-size: 13px; color: gray; text-overflow: ellipsis; /* Required for text-overflow to do anything */ white-space: wrap; overflow: hidden; }
+.jekyll-linkpreview-description { line-height: 1.5; font-size: 13px; color: gray; text-overflow: ellipsis; white-space: wrap; overflow: hidden; }
 
 .jekyll-linkpreview-footer { margin-top: -20px; font-size: 11px; }
 
 .jekyll-linkpreview-footer a { color: black !important; text-decoration: none !important; }
+
+.archive__item-title > a { text-decoration: none; color: black; }
+
+.archive__item-title > a:hover { text-decoration: underline; }
 
 /*# sourceMappingURL=main.css.map */
