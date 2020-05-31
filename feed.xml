@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://mostafa.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mostafa.dev/" rel="alternate" type="text/html" /><updated>2020-05-31T01:38:40+02:00</updated><id>https://mostafa.dev/feed.xml</id><title type="html">Mostafa’s personal blog</title><subtitle>Mostafa Moradian's personal website &amp; blog about software engineering, security and other related topics.</subtitle><author><name>Mostafa Moradian</name></author><entry><title type="html">DevRel Content Strategies</title><link href="https://mostafa.dev/blog/devrel-content-strategies" rel="alternate" type="text/html" title="DevRel Content Strategies" /><published>2020-05-15T00:00:00+02:00</published><updated>2020-05-15T00:00:00+02:00</updated><id>https://mostafa.dev/blog/devrel-content-strategies</id><content type="html" xml:base="https://mostafa.dev/blog/devrel-content-strategies">&lt;p&gt;The very first &lt;a href=&quot;https://devrel.events/developer-relations-online-event/&quot;&gt;developer relations online meetup&lt;/a&gt; of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who couldn’t attend.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://mostafa.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mostafa.dev/" rel="alternate" type="text/html" /><updated>2020-05-31T15:48:25+02:00</updated><id>https://mostafa.dev/feed.xml</id><title type="html">Mostafa’s personal blog</title><subtitle>Mostafa Moradian's personal website &amp; blog about software engineering, security and other related topics.</subtitle><author><name>Mostafa Moradian</name></author><entry><title type="html">DevRel Content Strategies</title><link href="https://mostafa.dev/blog/devrel-content-strategies" rel="alternate" type="text/html" title="DevRel Content Strategies" /><published>2020-05-15T00:00:00+02:00</published><updated>2020-05-15T00:00:00+02:00</updated><id>https://mostafa.dev/blog/devrel-content-strategies</id><content type="html" xml:base="https://mostafa.dev/blog/devrel-content-strategies">&lt;p&gt;The very first &lt;a href=&quot;https://devrel.events/developer-relations-online-event/&quot;&gt;developer relations online meetup&lt;/a&gt; of Stockholm was streamed live on Facebook on April 15, 2020. It was also recorded and later published on YouTube for those who couldn’t attend.&lt;/p&gt;
 
 &lt;p&gt;The event was organized and streamed by &lt;a href=&quot;https://twitter.com/iWozik&quot;&gt;Oleg Pridiuksson&lt;/a&gt;, who is a decade-old experienced developer advocate who worked for great companies like King and Unity. He is now a developer relations program consultant and basically founded the &lt;a href=&quot;https://www.eventbrite.com/o/developer-relations-events-26740448969&quot;&gt;Developer Relations Sweden&lt;/a&gt; meetup group.&lt;/p&gt;
 
@@ -2287,42 +2287,91 @@ experts. But this doesn't make it foolproof. You, as a develop...&lt;/div&gt;
 
 &lt;p&gt;Try to take advice from experts in the field, specially those contributed to the making of the Top 10 list and &lt;strong&gt;NEVER EVER TRUST USER INPUT!&lt;/strong&gt;&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">In my previous article about secure code review and penetration testing of Node.js and JavaScript apps, I tried to give the reader an introduction to the old, but gold, OWASP Code Review Project and the OWASP Top 10 Project and to mention the tools of the trade using the simplest approach possible.</summary></entry><entry><title type="html">Integrating k6 with Apache Kafka</title><link href="https://mostafa.dev/blog/integrating-k6-with-apache-kafka" rel="alternate" type="text/html" title="Integrating k6 with Apache Kafka" /><published>2019-11-22T00:00:00+01:00</published><updated>2019-11-22T00:00:00+01:00</updated><id>https://mostafa.dev/blog/integrating-k6-with-apache-kafka</id><content type="html" xml:base="https://mostafa.dev/blog/integrating-k6-with-apache-kafka">&lt;p&gt;Undoubtedly, &lt;a href=&quot;https://kafka.apache.org/&quot;&gt;Apache Kafka&lt;/a&gt; is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it to on-premise setups. It can be used to store and process millions of messages per second, so it makes it a perfect fit for distributed real-time data processing solutions. Although it provides very advanced features like stream-processing and horizontal scalability, it is very easy to use: you just have to send your messages to it (produce) and later pick them up (consume) for further processing. It has all the features you need from a modern distributed data store: communication interface, persistence, scalability, streaming and management. Once developed at LinkedIn for data processing, later donated to the Apache Software Foundation. I do highly recommend you to have a look at its &lt;a href=&quot;https://kafka.apache.org/documentation/&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://k6.io/&quot;&gt;k6&lt;/a&gt; is a free and open-source load testing tool built with unit-testing in mind, but for performance. It can produce hundreds of messages per second, as a result of testing a system or platform. These messages can be sent to a number of different destinations, like a JSON file or Apache Kafka, which works out of the box with zero dependency, other than the Apache Kafka setup itself.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://k6.io/open-source&quot;&gt;k6 OSS&lt;/a&gt; is an open-source load testing tool built with unit-testing in mind, but for performance. It can produce hundreds of messages per second, as a result of testing a system or platform. These messages can be sent to a number of different destinations, like a JSON file or Apache Kafka, which works out of the box with zero dependency, other than the Apache Kafka setup itself.&lt;/p&gt;
 
 &lt;p&gt;To be able to send messages from k6 to Apache Kafka, we’d go with &lt;a href=&quot;https://kafka.apache.org/documentation/#quickstart&quot;&gt;a very simple setup&lt;/a&gt;, with only one instance. In our scenario, k6 would act as a simple producer of JSON messages and we’ll try to consume message on terminal, using the built-in simple kafka consumer. Here I will use the official binary provided by Apache and would leave the docker setup up to you to try. To give you a clue, using Lenses.io’s &lt;a href=&quot;https://github.com/lensesio/fast-data-dev&quot;&gt;fast-data-dev&lt;/a&gt;, you can have a complete Docker environment with Kafka, ZooKeeper, Schema Registry, Kafka-Connect, Landoop Tools and more than 20 connectors in an easy to use package.&lt;/p&gt;
 
 &lt;p&gt;Since we’re using the binary package, no special installation is needed, and you can directly invoke the binary from the command line. I have used &lt;a href=&quot;https://www.debian.org/&quot;&gt;Debian GNU/Linux&lt;/a&gt; 10.2 to run these commands. Simply follow the instructions below:&lt;/p&gt;
 
-&lt;h3 id=&quot;1-download-and-extract-apache-kafka-platform-binaries&quot;&gt;1. Download and extract Apache Kafka platform binaries&lt;/h3&gt;
+&lt;h3 id=&quot;1-download-and-extract-apache-kafka-platform-binaries&quot;&gt;1. &lt;strong&gt;Download and extract Apache Kafka platform binaries&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;The current version as of this writing is 2.3.0, but you can choose your own desired version.&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;wget **&lt;a href=&quot;http://apache.mirrors.spacedump.net/kafka/2.3.0/kafka_2.12-2.3.0.tgz&quot;&gt;**http://apache.mirrors.spacedump.net/kafka/2.3.0/kafka_2.12-2.3.0.tgz**&lt;/a&gt;&lt;br /&gt;
-$ **tar xvf kafka_2.12-2.3.0.tgz&lt;/strong&gt;&lt;br /&gt;
-$ &lt;strong&gt;cd kafka_2.12-2.3.0&lt;/strong&gt;### 2. Start Apache ZooKeeper and Kafka&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget http://apache.mirrors.spacedump.net/kafka/2.3.0/kafka_2.12-2.3.0.tgz
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvf kafka_2.12-2.3.0.tgz
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;kafka_2.12-2.3.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-start-apache-zookeeper-and-kafka&quot;&gt;2. &lt;strong&gt;Start Apache ZooKeeper and Kafka&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;As you can see, when you start the ZooKeeper, it will start listening on all interfaces (0.0.0.0) on port &lt;strong&gt;2181&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;bin/zookeeper-server-start.sh config/zookeeper.properties&lt;/strong&gt;Now start Kafka server in a new terminal. It will connect to your local ZooKeeper instance on port 2181 and will start listening for new connections on port &lt;strong&gt;9092&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bin/zookeeper-server-start.sh config/zookeeper.properties
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;$ &lt;strong&gt;bin/kafka-server-start.sh config/server.properties&lt;/strong&gt;&lt;br /&gt;
-[2019-11-15 12:43:54,672] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)&lt;br /&gt;
-…&lt;br /&gt;
-[2019-11-15 12:43:55,366] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)&lt;br /&gt;
-…&lt;br /&gt;
-[2019-11-15 12:43:55,666] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)### 3. Create a topic to send k6 data to&lt;/p&gt;
+&lt;p&gt;Now start Kafka server in a new terminal. It will connect to your local ZooKeeper instance on port 2181 and will start listening for new connections on port &lt;strong&gt;9092&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bin/kafka-server-start.sh config/server.properties
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2019-11-15 12:43:54,672] INFO Connecting to zookeeper on localhost:2181 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kafka.server.KafkaServer&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2019-11-15 12:43:55,366] INFO Awaiting socket connections on 0.0.0.0:9092. &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kafka.network.Acceptor&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2019-11-15 12:43:55,666] INFO &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;KafkaServer &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0] started &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kafka.server.KafkaServer&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-create-a-topic-to-send-k6-data-to&quot;&gt;3. &lt;strong&gt;Create a topic to send k6 data to&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;On another terminal, create a topic, for example &lt;em&gt;k6-output&lt;/em&gt;, to receive k6 messages on. This topic would be a single partition topic with no replication.&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;bin/kafka-topics.sh –create –bootstrap-server localhost:9092 –replication-factor 1 –partitions 1 –topic k6-output&lt;/strong&gt;### 4. Start k6 with Kafka output&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bin/kafka-topics.sh &lt;span class=&quot;nt&quot;&gt;--create&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--bootstrap-server&lt;/span&gt; localhost:9092 &lt;span class=&quot;nt&quot;&gt;--replication-factor&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;--partitions&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; k6-output
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-start-k6-with-kafka-output&quot;&gt;4. &lt;strong&gt;Start k6 with Kafka output&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;Using the following script in a file named &lt;em&gt;scenario.js&lt;/em&gt;, we’ll start k6 to send its output to Kafka:&lt;/p&gt;
 
-&lt;p&gt;$ &lt;strong&gt;k6 run –logformat=raw –out kafka=brokers=localhost:9092,topic=k6-output,format=json scenario.js&lt;/strong&gt;### 5. Consume message on a terminal&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6/http&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;To view message of k6 output on your terminal, use the following built-in consumer:&lt;/p&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1m&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;vus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 
-&lt;p&gt;$ &lt;strong&gt;bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic k6-output&lt;/strong&gt;As you can see, we’ve sent our message with JSON format to Kafka, so you can write a simple JSON consumer in your own desired programming language (e.g. Python) and start consuming and using the data provided by k6 to Kafka. There are other possibilities, like using platforms that can import or consume data from Apache Kafka, like &lt;a href=&quot;https://spark.apache.org/&quot;&gt;Apache Spark&lt;/a&gt; or Kafka Connect from &lt;a href=&quot;https://www.confluent.io/product/confluent-platform/&quot;&gt;Confluent Platform&lt;/a&gt;, to name a few.&lt;/p&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://httpbin.org/get&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;status is 200&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://httpbin.org/bearer&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Authorization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Bearer da39a3ee5e6b4b0d3255bfef95601890afd80709&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;status is 200&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;is authenticated&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;authenticated&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://httpbin.org/base64/azYgaXMgYXdlc29tZSE=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;status is 200&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6 is awesome!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;k6 is awesome!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;k6 run &lt;span class=&quot;nt&quot;&gt;--logformat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;raw &lt;span class=&quot;nt&quot;&gt;--out&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;brokers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;localhost:9092,topic&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;k6-output,format&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;json scenario.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5-consume-messages-on-a-terminal&quot;&gt;5. &lt;strong&gt;Consume messages on a terminal&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;To view messages of k6 output on your terminal, use the following built-in consumer:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bin/kafka-console-consumer.sh &lt;span class=&quot;nt&quot;&gt;--bootstrap-server&lt;/span&gt; localhost:9092 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; k6-output
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, we’ve sent our messages with JSON format to Kafka, so you can write a simple JSON consumer in your own desired programming language (e.g. Python) and start consuming and using the data provided by k6 to Kafka. There are other possibilities, like using platforms that can import or consume data from Apache Kafka, like &lt;a href=&quot;https://spark.apache.org/&quot;&gt;Apache Spark&lt;/a&gt; or Kafka Connect from &lt;a href=&quot;https://www.confluent.io/product/confluent-platform/&quot;&gt;Confluent Platform&lt;/a&gt;, to name a few.&lt;/p&gt;
 
 &lt;p&gt;You can also use visualization platforms that has support for Kafka as input. I recommend reading the following articles about it:&lt;/p&gt;
 
@@ -2334,9 +2383,7 @@ $ &lt;strong&gt;cd kafka_2.12-2.3.0&lt;/strong&gt;### 2. Start Apache ZooKeeper 
 
 &lt;p&gt;I hope you’ve found this article helpful and were able to send your k6 output to Apache Kafka, an industry-proven technology.&lt;/p&gt;
 
-&lt;p&gt;If you have any suggestions or comments, I really like to hear from you.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Originally published at &lt;a href=&quot;https://blog.loadimpact.com/integrating-k6-with-apache-kafka&quot;&gt;https://blog.loadimpact.com&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it to on-premise setups. It can be used to store and process millions of messages per second, so it makes it a perfect fit for distributed real-time data processing solutions. Although it provides very advanced features like stream-processing and horizontal scalability, it is very easy to use: you just have to send your messages to it (produce) and later pick them up (consume) for further processing. It has all the features you need from a modern distributed data store: communication interface, persistence, scalability, streaming and management. Once developed at LinkedIn for data processing, later donated to the Apache Software Foundation. I do highly recommend you to have a look at its documentation.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/0*TDOUgQUzVFGShAHO.png" /><media:content medium="image" url="https://mostafa.dev/img/0*TDOUgQUzVFGShAHO.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Migration of Old Projects to Python 3</title><link href="https://mostafa.dev/blog/migration-of-old-projects-to-python-3" rel="alternate" type="text/html" title="Migration of Old Projects to Python 3" /><published>2019-08-03T00:00:00+02:00</published><updated>2019-08-03T00:00:00+02:00</updated><id>https://mostafa.dev/blog/migration-of-old-projects-to-python-3</id><content type="html" xml:base="https://mostafa.dev/blog/migration-of-old-projects-to-python-3">&lt;p&gt;A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Django 2.2. What at first seemed to be a piece of cake, turned out to be a Hydra, the multi-headed dragon, with its dependencies acting like an octopus.&lt;/p&gt;
+&lt;p&gt;If you have any suggestions or comments, I really like to hear from you.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Undoubtedly, Apache Kafka is one of the most prominent pieces of software existing in today’s distributed architectures, from cloud-providers supporting it to on-premise setups. It can be used to store and process millions of messages per second, so it makes it a perfect fit for distributed real-time data processing solutions. Although it provides very advanced features like stream-processing and horizontal scalability, it is very easy to use: you just have to send your messages to it (produce) and later pick them up (consume) for further processing. It has all the features you need from a modern distributed data store: communication interface, persistence, scalability, streaming and management. Once developed at LinkedIn for data processing, later donated to the Apache Software Foundation. I do highly recommend you to have a look at its documentation.</summary></entry><entry><title type="html">Migration of Old Projects to Python 3</title><link href="https://mostafa.dev/blog/migration-of-old-projects-to-python-3" rel="alternate" type="text/html" title="Migration of Old Projects to Python 3" /><published>2019-08-03T00:00:00+02:00</published><updated>2019-08-03T00:00:00+02:00</updated><id>https://mostafa.dev/blog/migration-of-old-projects-to-python-3</id><content type="html" xml:base="https://mostafa.dev/blog/migration-of-old-projects-to-python-3">&lt;p&gt;A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Django 2.2. What at first seemed to be a piece of cake, turned out to be a Hydra, the multi-headed dragon, with its dependencies acting like an octopus.&lt;/p&gt;
 
 &lt;p&gt;I should admit that it was no easy task. I remember days I was banging my head to get that tiny fix to work as expected. But it all went well, hopefully, and I was able to migrate the project into an almost stable piece of code that just works.&lt;/p&gt;
 
@@ -2352,7 +2399,9 @@ $ &lt;strong&gt;cd kafka_2.12-2.3.0&lt;/strong&gt;### 2. Start Apache ZooKeeper 
 
 &lt;h3 id=&quot;methodology&quot;&gt;Methodology&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*p6cylSLFAjRPht0oIuvWJA.png&quot; alt=&quot;&quot; /&gt;Planning involves knowing the extent you wish your project to be updated. Sometimes you want to stick with an LTS version of some library and other times you want the latest cutting-edge features. This trade-off of stability versus trendiness is what to look for while planning for the migration.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/python-old-project-migration-life-cycle.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Planning involves knowing the extent you wish your project to be updated. Sometimes you want to stick with an LTS version of some library and other times you want the latest cutting-edge features. This trade-off of stability versus trendiness is what to look for while planning for the migration.&lt;/p&gt;
 
 &lt;p&gt;This planning should also take into account the business side, although the focus of this article is on the engineering complications. Some changes should be organized and changed with the help of different departments. Otherwise it just won’t work. You’re going to deliver the same value or more to the customer, while decreasing technical debt and maintenance costs.&lt;/p&gt;
 
@@ -2390,7 +2439,7 @@ $ &lt;strong&gt;cd kafka_2.12-2.3.0&lt;/strong&gt;### 2. Start Apache ZooKeeper 
 
 &lt;h4 id=&quot;4-run-2to3-on-your-code-base&quot;&gt;4. Run 2to3 on your code-base&lt;/h4&gt;
 
-&lt;p&gt;After upgrading to the latest versions supported on Python 2.7 and testing to see if everything’s in order, now is the time to run the 2to3 tool on your code-base. This is a tool provided as part of the Python standard library to read the Python 2.x source code and transform them into a valid Python 3.x source code, through the so-called &lt;a href=&quot;https://docs.python.org/3.7/library/2to3.html#fixers&quot;&gt;&lt;em&gt;fixers&lt;/em&gt;&lt;/a&gt;. Fixers are changes to the syntax and semantics of the source code from Python 2.x to 3.x. For example, in Python 2.x, it is not necessary to have parenthesis around the print function, but such functions no longer exist in Python 3.x. So the *print *fixer converts print function to print() all over your source code. Test again and again and make sure not to mess things up by not using branching.&lt;/p&gt;
+&lt;p&gt;After upgrading to the latest versions supported on Python 2.7 and testing to see if everything’s in order, now is the time to run the 2to3 tool on your code-base. This is a tool provided as part of the Python standard library to read the Python 2.x source code and transform them into a valid Python 3.x source code, through the so-called &lt;a href=&quot;https://docs.python.org/3.7/library/2to3.html#fixers&quot;&gt;&lt;em&gt;fixers&lt;/em&gt;&lt;/a&gt;. Fixers are changes to the syntax and semantics of the source code from Python 2.x to 3.x. For example, in Python 2.x, it is not necessary to have parenthesis around the print function, but such functions no longer exist in Python 3.x. So the &lt;em&gt;print&lt;/em&gt; fixer converts print function to print() all over your source code. Test again and again and make sure not to mess things up by not using branching.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; a &lt;a href=&quot;https://www.reddit.com/r/Python/comments/clugax/migration_of_old_projects_to_python_3_how_to_deal/evyutsc?utm_source=share&amp;amp;utm_medium=web2x&quot;&gt;user on reddit commented&lt;/a&gt; that we could use &lt;a href=&quot;https://pypi.org/project/modernize/&quot;&gt;modernize&lt;/a&gt; instead, to be able to spot more conversion errors, specially Unicode-related ones.&lt;/p&gt;
 
@@ -2414,25 +2463,31 @@ $ &lt;strong&gt;cd kafka_2.12-2.3.0&lt;/strong&gt;### 2. Start Apache ZooKeeper 
 
 &lt;h4 id=&quot;7-upgrade-django-and-drf-to-latest-version&quot;&gt;7. Upgrade Django and DRF to latest version&lt;/h4&gt;
 
-&lt;p&gt;The Django &lt;a href=&quot;https://docs.djangoproject.com/en/dev/internals/release-process/&quot;&gt;release process&lt;/a&gt; is a good resource for knowing what to use and when to deprecate and get rid of old versions. The release roadmap on &lt;a href=&quot;https://www.djangoproject.com/download/&quot;&gt;Django download page&lt;/a&gt; will give you a very quick view into the lifetime of each version.&lt;/p&gt;
+&lt;p&gt;The Django &lt;a href=&quot;https://docs.djangoproject.com/en/dev/internals/release-process/&quot;&gt;release process&lt;/a&gt; is a good resource for knowing what to use and when to deprecate and get rid of old versions. The release roadmap on &lt;a href=&quot;https://www.djangoproject.com/download/&quot;&gt;Django download page&lt;/a&gt; will give you a very quick view into the lifetime of each version. This roadmap is frequently updated as releases become available. Below you can see two different version:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*aI2NZdsLaxzzu_fT8-0FNA.png&quot; alt=&quot;&quot; /&gt;Credits: &lt;a href=&quot;https://www.djangoproject.com/download/&quot;&gt;https://www.djangoproject.com/download/&lt;/a&gt;As of now, the latest LTS version of Django that only supports Python 3.x is 2.2.x and the latest version of DRF is 3.10.x.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/django-release-roadmap-old.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/django-release-roadmap-new.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;Credits: &lt;a href=&quot;https://www.djangoproject.com/download/&quot;&gt;https://www.djangoproject.com/download/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As of now, the latest LTS version of Django that only supports Python 3.x is 2.2.x and the latest version of DRF is 3.10.x.&lt;/p&gt;
 
 &lt;p&gt;If you could eventually pass step 6, you can almost easily upgrade these versions and test if everything holds together.&lt;/p&gt;
 
 &lt;p&gt;Upgrading Django from 1.11.x to 2.x is a lot more painful than I thought it would be and it needs more time to be invested to get everything work correctly. There are removals, deprecations and changes that you should be aware of, to not break your system. Consider doing the upgrade step by step, otherwise you’ll be in big trouble hunting multiple unrelated bugs and the whole process would quickly become exhausting.&lt;/p&gt;
 
-&lt;p&gt;I hope you got an overview of what to expect while upgrading your Django and DRF application to the latest versions supported by Python 3.7. If you have any questions, comments or improvements, I’ll be really glad to hear them.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Django 2.2. What at first seemed to be a piece of cake, turned out to be a Hydra, the multi-headed dragon, with its dependencies acting like an octopus.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*S_BW9ZtWNkv502m_E5Ij2Q.png" /><media:content medium="image" url="https://mostafa.dev/img/1*S_BW9ZtWNkv502m_E5Ij2Q.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Employment Contract</title><link href="https://mostafa.dev/blog/employment-contract" rel="alternate" type="text/html" title="Employment Contract" /><published>2019-07-16T00:00:00+02:00</published><updated>2019-07-16T00:00:00+02:00</updated><id>https://mostafa.dev/blog/employment-contract</id><content type="html" xml:base="https://mostafa.dev/blog/employment-contract">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I hope you got an overview of what to expect while upgrading your Django and DRF application to the latest versions supported by Python 3.7. If you have any questions, comments or improvements, I’ll be really glad to hear them.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">A while ago I’ve self-assigned the daunting task of migrating an ancient API project written in Python 2.7 and Django to the latest stable Python 3.7 and Django 2.2. What at first seemed to be a piece of cake, turned out to be a Hydra, the multi-headed dragon, with its dependencies acting like an octopus.</summary></entry><entry><title type="html">Employment Contract</title><link href="https://mostafa.dev/blog/employment-contract" rel="alternate" type="text/html" title="Employment Contract" /><published>2019-07-16T00:00:00+02:00</published><updated>2019-07-16T00:00:00+02:00</updated><id>https://mostafa.dev/blog/employment-contract</id><content type="html" xml:base="https://mostafa.dev/blog/employment-contract">&lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;I am not an attorney, a lawyer or an advocate whatsoever, so seek the help of a professional on your case before signing anything.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;I tried my best to be as anonymous as possible about the attributions and references in this article and I strongly deny any attributions.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;*I try to be as fair and as informative as possible to both parties, and I take no responsibility on any of the views expressed in this article. *USE THEM AT YOUR OWN RISK!&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Views expressed in this articles are solely those of the author.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Always try to seek clarification if you don’t understand a clause.&lt;/em&gt;&lt;/strong&gt;
-    &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Always try to seek clarification if you don’t understand a clause.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
 &lt;p&gt;There are, &lt;em&gt;at least&lt;/em&gt;, two sides (or parties) to each employment contract. The employer who gives you an offer after &lt;em&gt;careful&lt;/em&gt; consideration and the employee, that you are, who want to weigh your options and eventually negotiate, sign or reject the contract (or the offer) altogether.&lt;/p&gt;
 
@@ -2466,9 +2521,11 @@ Your initial responsibilities is/will be, but not limited to:&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;To work in the team …&lt;/li&gt;
     &lt;li&gt;To do this and that …&lt;/li&gt;
-    &lt;li&gt;To make sure everything is OK …#### 2. Reporting Structure&lt;/li&gt;
+    &lt;li&gt;To make sure everything is OK …&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
+
+&lt;h4 id=&quot;2-reporting-structure&quot;&gt;2. Reporting Structure&lt;/h4&gt;
 
 &lt;p&gt;Some companies are hierarchical and some are flat, or so they say. In every possible organization, there will be a way to report to a higher authority on the matter. It would be your mentor, manager, leader, CTO, CEO or anyone else who is responsible and in charge for making sure that you are doing good and are happy with your job and task. They are the ones you should trust and try not to hide information from, even if you’ve made a mistake. Telling them that you’ve done something great or made a mistake, is the key to the prosperity of the whole company. Otherwise this debt will amass and would lead to losing the job or even the chance of company being dissolved.&lt;/p&gt;
 
@@ -2487,10 +2544,10 @@ Your initial responsibilities is/will be, but not limited to:&lt;/p&gt;
   &lt;li&gt;&lt;strong&gt;Type of work&lt;/strong&gt;: office-based, &lt;a href=&quot;https://en.wikipedia.org/wiki/Telecommuting&quot;&gt;remote&lt;/a&gt;, work from home (WFH) are some possible combinations of types of works you can do to fulfill your responsibility. Office-based is the most obvious one, which you should “go to work” every single morning and usually come back in the evening. Remote and WFH jobs are those you either work from overseas or work from home. Usually a mix of these is also possible, in which, you come to work on certain days and you have the option to work from home on the others.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Relocation support&lt;/strong&gt;: If you live far from the company you’ve applied for, they may try to help you move to the nearest location to the company’s office. Either the company’s human resources (HR) team handles the relocation or they seek the help of another &lt;a href=&quot;https://en.wikipedia.org/wiki/Relocation_service&quot;&gt;relocation services&lt;/a&gt; company dedicated to help you with relocation, either with or without your family.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Visa sponsorship&lt;/strong&gt;: people in certain countries need visas to to be able to travel and work in a foreign country. Some companies offer this and would help you along the process.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Work permit&lt;/strong&gt;: along with the sponsorship of the visa, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Work_permit&quot;&gt;work permit&lt;/a&gt; is usually needed to be accompanied by the visa, in order for the employee to be able to work legally for the company in a foreign country.
-    &lt;h4 id=&quot;4-background-check&quot;&gt;4. Background Check&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Work permit&lt;/strong&gt;: along with the sponsorship of the visa, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Work_permit&quot;&gt;work permit&lt;/a&gt; is usually needed to be accompanied by the visa, in order for the employee to be able to work legally for the company in a foreign country.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4 id=&quot;4-background-check&quot;&gt;4. Background Check&lt;/h4&gt;
 
 &lt;p&gt;Depending on the country and company, there would be a background check on your profile. This is what happens when you are going to work for high-profile companies or companies that are working in the security industry. This is not something secretive and the company must seek your permission to do this. Along with your offer of employment, you will be presented with another form to sign to give consent about it. The form should include everything they try to do to do background check, like the name of the security consultation company, what they look for and how they’ll perform this action. This is not something to worry about, unless you have something to hide. Be aware and prepared,since almost all your claims will be verified. These are usually checked: where you worked, who you worked with, your qualifications and certifications and all other related pieces of information.&lt;/p&gt;
 
@@ -2514,8 +2571,10 @@ Your initial responsibilities is/will be, but not limited to:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;All information obtained in the course of work with COMPANY-X shall be deemed to be strictly confidential.&lt;br /&gt;
-No such information shall be divulged to any third party, or use for any purpose other than on the performance of your duties.#### 8. Non-Disclosure Agreement, a.k.a. NDA&lt;/p&gt;
+No such information shall be divulged to any third party, or use for any purpose other than on the performance of your duties.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h4 id=&quot;8-non-disclosure-agreement-aka-nda&quot;&gt;8. Non-Disclosure Agreement, a.k.a. NDA&lt;/h4&gt;
 
 &lt;p&gt;Almost always, a &lt;a href=&quot;https://en.wikipedia.org/wiki/Non-disclosure_agreement&quot;&gt;NDA&lt;/a&gt; follows the main contract, which is a type of amendment or appendix to the main contract. NDA is a legal contract between parties in the contract that outlines the confidentiality of information, knowledge or material that is shared between the parties by the means of the contract. It goes on by defining different terms that apply to the sharing of these confidential trade secrets. As noted above, confidential information which are obtained from the company by any means by either parties, belong to the same company, unless the company explicitly confirms that it can be shared with third-parties. For example, you cannot share details of your tech-stack with the world, unless the company confirms it &lt;em&gt;in writing&lt;/em&gt; that you can.&lt;/p&gt;
 
@@ -2595,16 +2654,24 @@ No such information shall be divulged to any third party, or use for any purpose
 
 &lt;p&gt;You have chosen not to accept the offer or you may have been offered a more luxurious contract from another company. Go thank them that they offered you this, and kindly reject it. May you leave happily ever after.&lt;/p&gt;
 
-&lt;p&gt;Last but not least, I do highly appreciate your feedback on this article and would like to hear about it. Hope you enjoyed reading the article as much as I enjoyed writing it.&lt;/p&gt;
-
-&lt;p&gt;Cover image credits: &lt;a href=&quot;http://www.freepik.com&quot;&gt;freepik.com&lt;/a&gt;&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Disclaimer:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*qA9WpN7JtTveqfwHEYGbWA.jpeg" /><media:content medium="image" url="https://mostafa.dev/img/1*qA9WpN7JtTveqfwHEYGbWA.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Beginner’s Guide to Load Testing with k6</title><link href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="alternate" type="text/html" title="Beginner’s Guide to Load Testing with k6" /><published>2019-07-09T00:00:00+02:00</published><updated>2019-07-09T00:00:00+02:00</updated><id>https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3</id><content type="html" xml:base="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3">&lt;p&gt;Now that you know &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d&quot;&gt;the basics&lt;/a&gt; and have defined your &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723&quot;&gt;performance goals&lt;/a&gt;, it is now time to write your load-test script and run it using k6. Since k6 scripts can be written in JavaScript, you can easily write them if you have a minimum knowledge of this programming language.&lt;/p&gt;
+&lt;p&gt;Last but not least, I do highly appreciate your feedback on this article and would like to hear about it. Hope you enjoyed reading the article as much as I enjoyed writing it.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, that you are, who want to weigh your options and eventually negotiate, sign or reject the contract (or the offer) altogether.</summary></entry><entry><title type="html">Beginner’s Guide to Load Testing with k6 — Part 3</title><link href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="alternate" type="text/html" title="Beginner’s Guide to Load Testing with k6 — Part 3" /><published>2019-07-09T00:00:00+02:00</published><updated>2019-07-09T00:00:00+02:00</updated><id>https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3</id><content type="html" xml:base="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-3">&lt;p&gt;Now that you know &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d&quot;&gt;the basics&lt;/a&gt; and have defined your &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723&quot;&gt;performance goals&lt;/a&gt;, it is now time to write your load-test script and run it using k6. Since k6 scripts can be written in JavaScript, you can easily write them if you have a minimum knowledge of this programming language.&lt;/p&gt;
 
 &lt;h4 id=&quot;k6-test-life-cycle&quot;&gt;k6 Test Life-cycle&lt;/h4&gt;
 
 &lt;p&gt;There are three parts in each test script (actually there is more), which is depicted in the below screenshot:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*KHnZgPqBbs0HYg_PWeNITA.png&quot; alt=&quot;&quot; /&gt;Different parts of the k6 script1. &lt;strong&gt;&lt;em&gt;Imports&lt;/em&gt;&lt;/strong&gt;: This is obviously where you can import &lt;a href=&quot;https://docs.k6.io/docs/init-context&quot;&gt;k6 Script API&lt;/a&gt;, and other &lt;a href=&quot;https://docs.k6.io/docs/modules&quot;&gt;JavaScript modules&lt;/a&gt; (libraries) that you desire to make use of. These modules can be loaded using various methods: &lt;a href=&quot;https://docs.k6.io/docs/modules#section-npm-modules&quot;&gt;bundled NPM modules&lt;/a&gt; on your local machine (browserified, but browser APIs are not supported) and &lt;a href=&quot;https://docs.k6.io/docs/modules#section-remote-modules&quot;&gt;remote modules&lt;/a&gt; (from a URL, even CDNJS and GitHub). &lt;em&gt;Hint&lt;/em&gt;: Make sure to make the libraries available to the &lt;a href=&quot;https://hub.docker.com/r/loadimpact/k6&quot;&gt;dockerized version of k6&lt;/a&gt; via mounted volumes, otherwise your script does not find the imports.&lt;/p&gt;
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part3-script-parts.png&quot; alt=&quot;Different parts of the k6 script&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      Different parts of the k6 script
+
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
 &lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Imports&lt;/em&gt;&lt;/strong&gt;: This is obviously where you can import &lt;a href=&quot;https://docs.k6.io/docs/init-context&quot;&gt;k6 Script API&lt;/a&gt;, and other &lt;a href=&quot;https://docs.k6.io/docs/modules&quot;&gt;JavaScript modules&lt;/a&gt; (libraries) that you desire to make use of. These modules can be loaded using various methods: &lt;a href=&quot;https://k6.io/docs/using-k6/modules#bundling-node-modules&quot;&gt;bundled NPM modules&lt;/a&gt; on your local machine (browserified, but browser APIs are not supported) and &lt;a href=&quot;https://docs.k6.io/docs/modules#section-remote-modules&quot;&gt;remote modules&lt;/a&gt; (from a URL, even CDNJS and GitHub). &lt;em&gt;Hint&lt;/em&gt;: Make sure to make the libraries available to the &lt;a href=&quot;https://hub.docker.com/r/loadimpact/k6&quot;&gt;dockerized version of k6&lt;/a&gt; via mounted volumes, otherwise your script does not find the imports.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Init code&lt;/em&gt;&lt;/strong&gt;: This is the part of the script that is outside the exported “&lt;em&gt;default&lt;/em&gt;” function. It is usually used to provide options to the whole test, how to run the test, how to distribute it on the cloud, etc. Obviously, it is used for initialization of the whole test itself.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;VU code&lt;/em&gt;&lt;/strong&gt;: k6 supports a feature called virtual users. This means that you can use &lt;em&gt;separate&lt;/em&gt; “smart” virtual users to test your system. The code in this section which is inside the exported “&lt;em&gt;default&lt;/em&gt;” function, is ran over and over inside each VU and the aggregated results of all these VUs are processed and reported by k6. This is where you define your test scenario, which is thoroughly explained further in this article.
 There are other stages in &lt;a href=&quot;https://docs.k6.io/docs/test-life-cycle&quot;&gt;the life-cycle of a k6 test&lt;/a&gt;, which includes &lt;em&gt;setup&lt;/em&gt; and &lt;em&gt;tear-down&lt;/em&gt;, which, clearly, are separate from the init and VU code.&lt;/li&gt;
@@ -2616,21 +2683,36 @@ There are other stages in &lt;a href=&quot;https://docs.k6.io/docs/test-life-cyc
 
 &lt;p&gt;No matter where you run the k6, it provides you with the same experience. Here’s the help of the k6 command:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*VnQokWG3VNbPH_0Xj2YyBA.png&quot; alt=&quot;&quot; /&gt;k6 helpThe format of running k6 is like “k6 [command]”, which you can then pass your desired command and let it run by k6. Basic available commands, as of version 0.25.1, is as follows. Plus you can get help for each command with this combination:&lt;/p&gt;
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part3-k6-command.png&quot; alt=&quot;k6 help&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      k6 help
 
-&lt;p&gt;k6 &lt;command /&gt; –help* &lt;strong&gt;help&lt;/strong&gt;: shows the above help, well, obviously.&lt;/p&gt;
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;The format of running k6 is like “k6 [command]”, which you can then pass your desired command and let it run by k6. Basic available commands, as of version 0.25.1, is as follows. Plus you can get help for each command with this combination:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;k6 &amp;lt;&lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--help&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;help&lt;/strong&gt;: shows the above help, well, obviously.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;pause&lt;/strong&gt;: pause a running test.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;resume&lt;/strong&gt;: resume a paused test.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;run&lt;/strong&gt;: run a test with various flags, e.g.–*paused *to run a script in paused mode.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;stats&lt;/strong&gt;: shows statistics about the currently running or paused test entailing number of VUs.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;: show the status of current k6 instance, either running, paused, tainted and the number of VUs.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;version&lt;/strong&gt;: guess what?
-These are more advanced commands that I will try to cover in the coming articles:&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;version&lt;/strong&gt;: guess what?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are more advanced commands that I will try to cover in the coming articles:&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;archive&lt;/strong&gt;: creates a bundled &lt;em&gt;tar&lt;/em&gt; file of your script along with all the dependencies, which you can later use with “k6 run”.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;login&lt;/strong&gt;: authenticates with &lt;a href=&quot;https://loadimpact.com/insights/&quot;&gt;Load Impact Insights&lt;/a&gt; cloud service and provides an authentication token to be used by k6.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;login&lt;/strong&gt;: authenticates with &lt;a href=&quot;https://k6.io/cloud&quot;&gt;k6 Cloud&lt;/a&gt; service and provides an authentication token to be used by k6.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;cloud&lt;/strong&gt;: runs your authenticated test on the k6 cloud service.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;convert&lt;/strong&gt;: browsers can log requests/responses as HAR (HTTP Archive) files, which you can then convert the HAR file using k6. k6 creates a script from the HAR file, which you can edit and run locally or on the cloud.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;inspect&lt;/strong&gt;: basically outputs the consolidated script options for that script or .tar bundle.&lt;/li&gt;
@@ -2647,15 +2729,74 @@ Each of these commands has a rich set of options/flags to pass in order to contr
 &lt;ol&gt;
   &lt;li&gt;A user checks of the API is up, hence checking the heart beat of our API and then tries to send further messages.&lt;/li&gt;
   &lt;li&gt;Then they try to create a token to be able to access other parts of our API or the private areas.&lt;/li&gt;
-  &lt;li&gt;Finally they try to access an endpoint of our API.
-[heart-beat]-&amp;gt;[generate-token]-&amp;gt;[get-list-of-users]You also want to add some more criteria and thresholds, to be able to discern more meaningful results from the k6. Although some information, like threshold is new in this article, I’ll try to explain them completely in the upcoming article. You want this scenario to be tested by 100 individual users, starting with 10 users, ramping up to 100 and the gradually down to 0, and to keep the response time of all request below 500ms.&lt;/li&gt;
+  &lt;li&gt;Finally they try to access an endpoint of our API.&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[heart-beat]-&amp;gt;[generate-token]-&amp;gt;[get-list-of-users]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You also want to add some more criteria and thresholds, to be able to discern more meaningful results from the k6. Although some information, like threshold is new in this article, I’ll try to explain them completely in the upcoming article. You want this scenario to be tested by 100 individual users, starting with 10 users, ramping up to 100 and the gradually down to 0, and to keep the response time of all request below 500ms.&lt;/p&gt;
 
 &lt;p&gt;The script would be something like this:&lt;/p&gt;
 
-&lt;p&gt;Example of k6 scenario scriptI have used &lt;a href=&quot;https://httpbin.org&quot;&gt;httpbin.org&lt;/a&gt; as a kitchen-sink for testing k6 with this script. The results of running test for five minutes is as follows:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; check, group, &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; from &lt;span class=&quot;s1&quot;&gt;'k6'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+import http from &lt;span class=&quot;s1&quot;&gt;'k6/http'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*yY9iJKP_KEcuweo78xfXfA.png&quot; alt=&quot;&quot; /&gt;Output of k6 scenario scriptThe output start with the logo of the k6 being printed to the screen. After that comes the method of execution, being “local” in my case. The output is redirected to the terminal and the name of the script is “test.js”.&lt;/p&gt;
+&lt;span class=&quot;nb&quot;&gt;export let &lt;/span&gt;options &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  max_vus: 100,
+  vus: 100,
+  stages: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; duration: &lt;span class=&quot;s2&quot;&gt;&quot;30s&quot;&lt;/span&gt;, target: 10 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; duration: &lt;span class=&quot;s2&quot;&gt;&quot;4m&quot;&lt;/span&gt;, target: 100 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; duration: &lt;span class=&quot;s2&quot;&gt;&quot;30s&quot;&lt;/span&gt;, target: 0 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
+  thresholds: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;RTT&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;avg&amp;lt;500&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;default &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  group&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'v1 API testing'&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    group&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'heart-beat'&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://httpbin.org/get&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      check&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;status is 200&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; r.status &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; 200 &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    group&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'login'&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://httpbin.org/bearer&quot;&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        headers: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Authorization&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;Bearer da39a3ee5e6b4b0d3255bfef95601890afd80709&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      check&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;status is 200&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; r.status &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; 200,
+        &lt;span class=&quot;s2&quot;&gt;&quot;is authenticated&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; r.json&lt;span class=&quot;o&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;authenticated&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    group&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'access an endpoint'&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://httpbin.org/base64/azYgaXMgYXdlc29tZSE=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      check&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;status is 200&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; r.status &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; 200,
+        &lt;span class=&quot;s2&quot;&gt;&quot;k6 is awesome!&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; r.body &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;k6 is awesome!&quot;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I have used &lt;a href=&quot;https://httpbin.org&quot;&gt;httpbin.org&lt;/a&gt; as a kitchen-sink for testing k6 with this script. The results of running test for five minutes is as follows:&lt;/p&gt;
+
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part3-k6-output.png&quot; alt=&quot;Output of k6 scenario script&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      Output of k6 scenario script
+
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;The output start with the logo of the k6 being printed to the screen. After that comes the method of execution, being “local” in my case. The output is redirected to the terminal and the name of the script is “test.js”.&lt;/p&gt;
 
 &lt;p&gt;Duration and iterations are empty, since they are automatically calculated from the stages. The number of (max) VUs are 100 and the progress bar shows that it is done in five minutes.&lt;/p&gt;
 
@@ -2673,9 +2814,9 @@ Each of these commands has a rich set of options/flags to pass in order to contr
 
 &lt;p&gt;In this article I tried my best to show you how to write a pretty simple test scenario script and how to run to the load test using k6.&lt;/p&gt;
 
-&lt;p&gt;In the next article I’ll try to turn concepts I’ve talked about on &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723&quot;&gt;the second article&lt;/a&gt; — Performance Goals and k6 Metrics — into features supported by k6 that you can use to have a successful load or acceptance testing.&lt;/p&gt;
+&lt;p&gt;In the next article I’ll try to turn concepts I’ve talked about on &lt;a href=&quot;/blog/beginner-s-guide-to-load-testing-with-k6-part-2&quot;&gt;the second article&lt;/a&gt; — Performance Goals and k6 Metrics — into features supported by k6 that you can use to have a successful load or acceptance testing.&lt;/p&gt;
 
-&lt;p&gt;As always, I do welcome your feedback. Please don’t hesitate to write your comments, questions and feedback below.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can be written in JavaScript, you can easily write them if you have a minimum knowledge of this programming language.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*yY9iJKP_KEcuweo78xfXfA.png" /><media:content medium="image" url="https://mostafa.dev/img/1*yY9iJKP_KEcuweo78xfXfA.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Beginner’s Guide to Load Testing with k6</title><link href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="alternate" type="text/html" title="Beginner’s Guide to Load Testing with k6" /><published>2019-06-19T00:00:00+02:00</published><updated>2019-06-19T00:00:00+02:00</updated><id>https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-2</id><content type="html" xml:base="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-2">&lt;p&gt;Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d&quot;&gt;the first part of this series&lt;/a&gt;. Each test type tries to answer a set of questions to make the performance testing process more goal-oriented. This means that just running tests is not enough, you have to have a set of goals to reach.&lt;/p&gt;
+&lt;p&gt;As always, I do welcome your feedback. Please don’t hesitate to write your comments, questions and feedback below.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Now that you know the basics and have defined your performance goals, it is now time to write your load-test script and run it using k6. Since k6 scripts can be written in JavaScript, you can easily write them if you have a minimum knowledge of this programming language.</summary></entry><entry><title type="html">Beginner’s Guide to Load Testing with k6 — Part 2</title><link href="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="alternate" type="text/html" title="Beginner’s Guide to Load Testing with k6 — Part 2" /><published>2019-06-19T00:00:00+02:00</published><updated>2019-06-19T00:00:00+02:00</updated><id>https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-2</id><content type="html" xml:base="https://mostafa.dev/blog/beginner-s-guide-to-load-testing-with-k6-part-2">&lt;p&gt;Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d&quot;&gt;the first part of this series&lt;/a&gt;. Each test type tries to answer a set of questions to make the performance testing process more goal-oriented. This means that just running tests is not enough, you have to have a set of goals to reach.&lt;/p&gt;
 
 &lt;p&gt;Since we’re testing an API or a website, the following goals may be relevant, in which you can choose either one or more:&lt;/p&gt;
 
@@ -2688,13 +2829,13 @@ The general idea is to measure how a system or system of systems behave(s) under
 &lt;/ul&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;*Speed&lt;/em&gt; ***can be measured by time it takes for request to be handled by the server and how much time it takes for this request/response to happen.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; can be measured by time it takes for request to be handled by the server and how much time it takes for this request/response to happen.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt; can be measured by how well the system scales if the load is increased and by measuring if it sustains over a period of time under this load.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Stability&lt;/strong&gt; can be measured by how well the system sustains the load and to see if it stands against a high number of errors and events and still stays responsive and stable.&lt;/li&gt;
-  &lt;li&gt;**Resiliency **can be measured by how the system recovers from crashes and down-times and responds to requests, after putting too much or too frequent load on it and eventually crashing the system.
-    &lt;h4 id=&quot;rerunning-tests-to-verify-the-results&quot;&gt;Rerunning Tests to Verify the Results&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;**Resiliency **can be measured by how the system recovers from crashes and down-times and responds to requests, after putting too much or too frequent load on it and eventually crashing the system.&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h4 id=&quot;rerunning-tests-to-verify-the-results&quot;&gt;Rerunning Tests to Verify the Results&lt;/h4&gt;
 
 &lt;p&gt;You can rerun the tests to see if they hold almost the same results during different tests and compare the tests to see if they deviate.&lt;/p&gt;
 
@@ -2704,17 +2845,165 @@ The general idea is to measure how a system or system of systems behave(s) under
 
 &lt;p&gt;k6 supports a set of built-in and custom metrics that can be used to measure various things and to either achieve the above mentioned goals or prove them wrong. The metrics that can be used to define custom metrics are: &lt;a href=&quot;https://docs.k6.io/docs/counter-k6metrics&quot;&gt;Counter&lt;/a&gt;, &lt;a href=&quot;https://docs.k6.io/docs/gauge-k6metrics&quot;&gt;Gauge&lt;/a&gt;, &lt;a href=&quot;https://docs.k6.io/docs/rate-k6metrics&quot;&gt;Rate&lt;/a&gt; and &lt;a href=&quot;https://docs.k6.io/docs/trend-k6metrics&quot;&gt;Trend&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*4vdPNtvMGfnuls5_7rG8mQ.png&quot; alt=&quot;&quot; /&gt;k6 built-in metricsAs you’ve probably seen above, these following tables describes reported built-in metrics, present on all tests:&lt;/p&gt;
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part2-metrics.png&quot; alt=&quot;k6 built-in metrics&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      k6 built-in metrics
 
-&lt;p&gt;k6 built-in metrics, &lt;strong&gt;Credits&lt;/strong&gt;: &lt;a href=&quot;https://docs.k6.io/docs/result-metrics#section-built-in-metrics&quot;&gt;https://docs.k6.io/docs/result-metrics#section-built-in-metrics&lt;/a&gt;k6 HTTP-specific built-in metrics, &lt;strong&gt;Credits&lt;/strong&gt;: &lt;a href=&quot;https://docs.k6.io/docs/result-metrics#section-http-specific-built-in-metrics&quot;&gt;https://docs.k6.io/docs/result-metrics#section-http-specific-built-in-metrics&lt;/a&gt;#### Custom (non-built-in) Metrics&lt;/p&gt;
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;As you’ve probably seen above, these following tables describes reported built-in metrics, present on all tests:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;metric&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;vus&lt;/td&gt;
+      &lt;td&gt;Gauge&lt;/td&gt;
+      &lt;td&gt;Current number of active virtual users&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;vus_max&lt;/td&gt;
+      &lt;td&gt;Gauge&lt;/td&gt;
+      &lt;td&gt;Max possible number of virtual users (VU resources are preallocated to ensure performance will not be affected when scaling up the load level)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;iterations&lt;/td&gt;
+      &lt;td&gt;Counter&lt;/td&gt;
+      &lt;td&gt;The aggregate number of times the VUs in the test have executed the JS script (the default function). Or in case the test is not using a JS script but accessing a single URL the number of times the VUs have requested that URL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;data_received&lt;/td&gt;
+      &lt;td&gt;Counter&lt;/td&gt;
+      &lt;td&gt;The amount of received data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;data_sent&lt;/td&gt;
+      &lt;td&gt;Counter&lt;/td&gt;
+      &lt;td&gt;The amount of data sent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;checks&lt;/td&gt;
+      &lt;td&gt;Rate&lt;/td&gt;
+      &lt;td&gt;Number of failed checks.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Credits: &lt;a href=&quot;https://docs.k6.io/docs/result-metrics#section-built-in-metrics&quot;&gt;k6 built-in metrics&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;metric&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;description&lt;/th&gt;
+      &lt;th&gt;datatype&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_reqs&lt;/td&gt;
+      &lt;td&gt;Counter&lt;/td&gt;
+      &lt;td&gt;How many HTTP requests has k6 generated in total&lt;/td&gt;
+      &lt;td&gt;integer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_blocked&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent blocked (waiting for a free TCP connection slot) before initiating request&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_looking_up&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent looking up remote host name in DNS&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_connecting&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent establishing TCP connection to remote host&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_tls_handshaking&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent handshaking TLS session with remote host&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_sending&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent sending data to remote host&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_waiting&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent waiting for response from remote host (a.k.a. time to first byte or TTFB)&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_receiving&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Time spent receiving response data from remote host&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http_req_duration&lt;/td&gt;
+      &lt;td&gt;Trend&lt;/td&gt;
+      &lt;td&gt;Total time for the request. It’s equal to http_req_sending + http_req_waiting + http_req_receiving (i.e. how long did the remote server take to process the request and respond (without the initial DNS lookup/connection times)&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Credits: &lt;a href=&quot;https://docs.k6.io/docs/result-metrics#section-http-specific-built-in-metrics&quot;&gt;k6 HTTP-specific built-in metrics&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;custom-non-built-in-metrics&quot;&gt;Custom (non-built-in) Metrics&lt;/h4&gt;
 
 &lt;h4 id=&quot;1-counter&quot;&gt;1. Counter&lt;/h4&gt;
 
 &lt;p&gt;This is a simple cumulative counter that can be used to measure any cumulative value like number of errors during the test.&lt;/p&gt;
 
-&lt;p&gt;k6 Counter metricAs you can see in the above example, it counts the number of 404 errors that are returned by the test. The result is evident in the screenshot below:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; Counter &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; from &lt;span class=&quot;s2&quot;&gt;&quot;k6/metrics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+import http from &lt;span class=&quot;s2&quot;&gt;&quot;k6/http&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*caIiiiUAjcSD49mVuBGJfA.png&quot; alt=&quot;&quot; /&gt;Results of k6 Counter metricSince it is a beginner’s guide, I try to stick with simple examples, but you can extend and customize them to your specific case.&lt;/p&gt;
+var myErrorCounter &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new Counter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;my_error_counter&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;default &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://test.loadimpact.com/404&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res.status &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; 404&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    myErrorCounter.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;k6 Counter metric&lt;/p&gt;
+
+&lt;p&gt;As you can see in the above example, it counts the number of 404 errors that are returned by the test. The result is evident in the screenshot below:&lt;/p&gt;
+
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part2-k6-counter-metric-result.png&quot; alt=&quot;Results of k6 Counter metric&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      Results of k6 Counter metric
+
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;Since it is a beginner’s guide, I try to stick with simple examples, but you can extend and customize them to your specific case.&lt;/p&gt;
 
 &lt;h4 id=&quot;2-gauge&quot;&gt;2. Gauge&lt;/h4&gt;
 
@@ -2724,24 +3013,93 @@ The general idea is to measure how a system or system of systems behave(s) under
 
 &lt;p&gt;If you run the following code, you’ll see that it catches the latest error code, which is 404.&lt;/p&gt;
 
-&lt;p&gt;k6 Gauge metricThe result of the test is presented in the screenshot below.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; Gauge &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; from &lt;span class=&quot;s2&quot;&gt;&quot;k6/metrics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+import http from &lt;span class=&quot;s2&quot;&gt;&quot;k6/http&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*i1cKpSpRMgjMy9wg_-eZ1Q.png&quot; alt=&quot;&quot; /&gt;Results of k6 Gauge metric#### 3. Rate&lt;/p&gt;
+var myGauge &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new Gauge&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;my_gauge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;default &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://test.loadimpact.com/404&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  myGauge.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res.status&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;k6 Gauge metric&lt;/p&gt;
+
+&lt;p&gt;The result of the test is presented in the screenshot below.&lt;/p&gt;
+
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part2-k6-gauge-metric-result.png&quot; alt=&quot;Results of k6 Gauge metric&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      Results of k6 Gauge metric
+
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;3-rate&quot;&gt;3. Rate&lt;/h4&gt;
 
 &lt;p&gt;This built-in metric keeps the rate between non-zero and zero/false values. For example if you add two false and one true value, the percentage becomes 33%.&lt;/p&gt;
 
 &lt;p&gt;It can be used to keep track of the rate of successful request/responses and compare them with errors.&lt;/p&gt;
 
-&lt;p&gt;In the following piece of code, you can see that I added res.error_code as a measure to see how many errors I’ll catch.&lt;/p&gt;
+&lt;p&gt;In the following piece of code, you can see that I added &lt;code class=&quot;highlighter-rouge&quot;&gt;res.error_code&lt;/code&gt; as a measure to see how many errors I’ll catch.&lt;/p&gt;
 
-&lt;p&gt;k6 Rate metricBelow is the result of the test, which is 100% errors.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; Rate &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; from &lt;span class=&quot;s2&quot;&gt;&quot;k6/metrics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+import http from &lt;span class=&quot;s2&quot;&gt;&quot;k6/http&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*OiuMqAnYlA_Ir-oLZK61xg.png&quot; alt=&quot;&quot; /&gt;Results of k6 Rate metric#### 4. Trend&lt;/p&gt;
+var myRate &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new Rate&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;my_rate&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;This metric allows you to statistically calculate your custom value. It will give you minimum, maximum, average and percentiles, as is evident in the above screenshots for http_req* requests.&lt;/p&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;default &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://test.loadimpact.com/404&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  myRate.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res.error_code&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;k6 Rate metricThe above example of rate metric shows how to calculate the sending and receiving time without taking into account the waiting time. The result is shown below:&lt;/p&gt;
+&lt;p&gt;k6 Rate metric&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/1*Ls79S9pcf_T5xKEPvh_qrA.png&quot; alt=&quot;&quot; /&gt;Results of k6 Rate metricIn this part, I’ve tried to describe the goals of performance testing and how one can use metrics to achieve those goals. In the next sections, I’ll try to go more in-depth and present you more details on how to define custom metrics and how to use them.&lt;/p&gt;
+&lt;p&gt;Below is the result of the test, which is 100% errors.&lt;/p&gt;
 
-&lt;p&gt;Now that you have a good grasp of performance goals and k6 metrics, you can move to &lt;a href=&quot;https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-ff155885b6db&quot;&gt;the next article&lt;/a&gt;, in which I try to show you how to write and run a k6 script.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in the first part of this series. Each test type tries to answer a set of questions to make the performance testing process more goal-oriented. This means that just running tests is not enough, you have to have a set of goals to reach.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mostafa.dev/img/1*PGbRNYX0UqKvho2X0ROzAg.png" /><media:content medium="image" url="https://mostafa.dev/img/1*PGbRNYX0UqKvho2X0ROzAg.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part2-k6-rate-metric-result.png&quot; alt=&quot;Results of k6 Rate metric&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      Results of k6 Rate metric
+
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;4-trend&quot;&gt;4. Trend&lt;/h4&gt;
+
+&lt;p&gt;This metric allows you to statistically calculate your custom value. It will give you minimum, maximum, average and percentiles, as is evident in the above screenshots for &lt;code class=&quot;highlighter-rouge&quot;&gt;http_req*&lt;/code&gt; requests.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; Trend &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; from &lt;span class=&quot;s2&quot;&gt;&quot;k6/metrics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+import http from &lt;span class=&quot;s2&quot;&gt;&quot;k6/http&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+var myTrend &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new Trend&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;my_trend&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;default &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;res &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://test.loadimpact.com/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  myTrend.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;res.timings.sending + res.timings.receiving&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;k6 Trend metric&lt;/p&gt;
+
+&lt;p&gt;The above example of trend metric shows how to calculate the sending and receiving time without taking into account the waiting time. The result is shown below:&lt;/p&gt;
+
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/assets/images/k6-beginner-articles-part2-k6-trend-metric-result.png&quot; alt=&quot;Results of k6 Trend metric&quot; /&gt;
+  
+    &lt;figcaption&gt;
+      Results of k6 Trend metric
+
+    &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;p&gt;In this part, I’ve tried to describe the goals of performance testing and how one can use metrics to achieve those goals. In the next sections, I’ll try to go more in-depth and present you more details on how to define custom metrics and how to use them.&lt;/p&gt;
+
+&lt;p&gt;Now that you have a good grasp of performance goals and k6 metrics, you can move to &lt;a href=&quot;/blog/beginner-s-guide-to-load-testing-with-k6-part-3&quot;&gt;the next article&lt;/a&gt;, in which I try to show you how to write and run a k6 script.&lt;/p&gt;</content><author><name>Mostafa Moradian</name></author><summary type="html">Performance testing is an umbrella term for a group of tests that encompasses many types of tests, as discussed in the first part of this series. Each test type tries to answer a set of questions to make the performance testing process more goal-oriented. This means that just running tests is not enough, you have to have a set of goals to reach.</summary></entry></feed>

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Beginner’s Guide to Load Testing with k6 - Mostafa’s personal blog</title>
-<meta name="description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6 ">
+<!-- begin _includes/seo.html --><title>Beginner’s Guide to Load Testing with k6 — Part 3 - Mostafa’s personal blog</title>
+<meta name="description" content="How to Write &amp; Run a Basic Load Test Using k6 ">
 
 
   <meta name="author" content="Mostafa Moradian">
@@ -19,24 +19,26 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mostafa's personal blog">
-<meta property="og:title" content="Beginner’s Guide to Load Testing with k6">
+<meta property="og:title" content="Beginner’s Guide to Load Testing with k6 — Part 3">
 <meta property="og:url" content="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-ff155885b6db">
 
 
-  <meta property="og:description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6 ">
+  <meta property="og:description" content="How to Write &amp; Run a Basic Load Test Using k6 ">
 
 
+
+  <meta property="og:image" content="https://mostafa.dev/assets/images/k6-beginner-articles-part3-cover-image.png">
 
 
 
   <meta name="twitter:site" content="@mosimoradian">
-  <meta name="twitter:title" content="Beginner’s Guide to Load Testing with k6">
-  <meta name="twitter:description" content="Part 3 — How to Write &amp; Run a Basic Load Test Using k6 ">
+  <meta name="twitter:title" content="Beginner’s Guide to Load Testing with k6 — Part 3">
+  <meta name="twitter:description" content="How to Write &amp; Run a Basic Load Test Using k6 ">
   <meta name="twitter:url" content="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-ff155885b6db">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/k6-beginner-articles-part3-cover-image.png">
   
 
   
@@ -60,7 +62,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mostafa Moradian",
+      "name": null,
       "url": "https://mostafa.dev/",
       "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
     
@@ -133,11 +135,11 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/avatar.jpeg" alt=""></a>
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.5</span>
+          <span class="site-subtitle">Version 0.1.0</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -161,6 +163,24 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/k6-beginner-articles-part3-cover-image.png" alt="Beginner’s Guide to Load Testing with k6 — Part 3" class="page__hero-image">
+  
+  
+</div>
+
+
 
 
 
@@ -170,7 +190,7 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">Beginner’s Guide to Load Testing with k6</h1>
+      <h1 id="page-title" class="page__title">Beginner’s Guide to Load Testing with k6 — Part 3</h1>
     
     <p>Now that you know <a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d">the basics</a> and have defined your <a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723">performance goals</a>, it is now time to write your load-test script and run it using k6. Since k6 scripts can be written in JavaScript, you can easily write them if you have a minimum knowledge of this programming language.</p>
 
@@ -178,8 +198,18 @@
 
 <p>There are three parts in each test script (actually there is more), which is depicted in the below screenshot:</p>
 
-<p><img src="/img/1*KHnZgPqBbs0HYg_PWeNITA.png" alt="" />Different parts of the k6 script1. <strong><em>Imports</em></strong>: This is obviously where you can import <a href="https://docs.k6.io/docs/init-context">k6 Script API</a>, and other <a href="https://docs.k6.io/docs/modules">JavaScript modules</a> (libraries) that you desire to make use of. These modules can be loaded using various methods: <a href="https://docs.k6.io/docs/modules#section-npm-modules">bundled NPM modules</a> on your local machine (browserified, but browser APIs are not supported) and <a href="https://docs.k6.io/docs/modules#section-remote-modules">remote modules</a> (from a URL, even CDNJS and GitHub). <em>Hint</em>: Make sure to make the libraries available to the <a href="https://hub.docker.com/r/loadimpact/k6">dockerized version of k6</a> via mounted volumes, otherwise your script does not find the imports.</p>
+<figure class="">
+  <img src="/assets/images/k6-beginner-articles-part3-script-parts.png" alt="Different parts of the k6 script" />
+  
+    <figcaption>
+      Different parts of the k6 script
+
+    </figcaption>
+  
+</figure>
+
 <ol>
+  <li><strong><em>Imports</em></strong>: This is obviously where you can import <a href="https://docs.k6.io/docs/init-context">k6 Script API</a>, and other <a href="https://docs.k6.io/docs/modules">JavaScript modules</a> (libraries) that you desire to make use of. These modules can be loaded using various methods: <a href="https://k6.io/docs/using-k6/modules#bundling-node-modules">bundled NPM modules</a> on your local machine (browserified, but browser APIs are not supported) and <a href="https://docs.k6.io/docs/modules#section-remote-modules">remote modules</a> (from a URL, even CDNJS and GitHub). <em>Hint</em>: Make sure to make the libraries available to the <a href="https://hub.docker.com/r/loadimpact/k6">dockerized version of k6</a> via mounted volumes, otherwise your script does not find the imports.</li>
   <li><strong><em>Init code</em></strong>: This is the part of the script that is outside the exported “<em>default</em>” function. It is usually used to provide options to the whole test, how to run the test, how to distribute it on the cloud, etc. Obviously, it is used for initialization of the whole test itself.</li>
   <li><strong><em>VU code</em></strong>: k6 supports a feature called virtual users. This means that you can use <em>separate</em> “smart” virtual users to test your system. The code in this section which is inside the exported “<em>default</em>” function, is ran over and over inside each VU and the aggregated results of all these VUs are processed and reported by k6. This is where you define your test scenario, which is thoroughly explained further in this article.
 There are other stages in <a href="https://docs.k6.io/docs/test-life-cycle">the life-cycle of a k6 test</a>, which includes <em>setup</em> and <em>tear-down</em>, which, clearly, are separate from the init and VU code.</li>
@@ -191,21 +221,36 @@ There are other stages in <a href="https://docs.k6.io/docs/test-life-cycle">the 
 
 <p>No matter where you run the k6, it provides you with the same experience. Here’s the help of the k6 command:</p>
 
-<p><img src="/img/1*VnQokWG3VNbPH_0Xj2YyBA.png" alt="" />k6 helpThe format of running k6 is like “k6 [command]”, which you can then pass your desired command and let it run by k6. Basic available commands, as of version 0.25.1, is as follows. Plus you can get help for each command with this combination:</p>
+<figure class="">
+  <img src="/assets/images/k6-beginner-articles-part3-k6-command.png" alt="k6 help" />
+  
+    <figcaption>
+      k6 help
 
-<p>k6 <command /> –help* <strong>help</strong>: shows the above help, well, obviously.</p>
+    </figcaption>
+  
+</figure>
+
+<p>The format of running k6 is like “k6 [command]”, which you can then pass your desired command and let it run by k6. Basic available commands, as of version 0.25.1, is as follows. Plus you can get help for each command with this combination:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>k6 &lt;<span class="nb">command</span><span class="o">&gt;</span> <span class="nt">--help</span>
+</code></pre></div></div>
+
 <ul>
+  <li><strong>help</strong>: shows the above help, well, obviously.</li>
   <li><strong>pause</strong>: pause a running test.</li>
   <li><strong>resume</strong>: resume a paused test.</li>
   <li><strong>run</strong>: run a test with various flags, e.g.–*paused *to run a script in paused mode.</li>
   <li><strong>stats</strong>: shows statistics about the currently running or paused test entailing number of VUs.</li>
   <li><strong>status</strong>: show the status of current k6 instance, either running, paused, tainted and the number of VUs.</li>
-  <li>
-    <p><strong>version</strong>: guess what?
-These are more advanced commands that I will try to cover in the coming articles:</p>
-  </li>
+  <li><strong>version</strong>: guess what?</li>
+</ul>
+
+<p>These are more advanced commands that I will try to cover in the coming articles:</p>
+
+<ul>
   <li><strong>archive</strong>: creates a bundled <em>tar</em> file of your script along with all the dependencies, which you can later use with “k6 run”.</li>
-  <li><strong>login</strong>: authenticates with <a href="https://loadimpact.com/insights/">Load Impact Insights</a> cloud service and provides an authentication token to be used by k6.</li>
+  <li><strong>login</strong>: authenticates with <a href="https://k6.io/cloud">k6 Cloud</a> service and provides an authentication token to be used by k6.</li>
   <li><strong>cloud</strong>: runs your authenticated test on the k6 cloud service.</li>
   <li><strong>convert</strong>: browsers can log requests/responses as HAR (HTTP Archive) files, which you can then convert the HAR file using k6. k6 creates a script from the HAR file, which you can edit and run locally or on the cloud.</li>
   <li><strong>inspect</strong>: basically outputs the consolidated script options for that script or .tar bundle.</li>
@@ -222,15 +267,74 @@ Each of these commands has a rich set of options/flags to pass in order to contr
 <ol>
   <li>A user checks of the API is up, hence checking the heart beat of our API and then tries to send further messages.</li>
   <li>Then they try to create a token to be able to access other parts of our API or the private areas.</li>
-  <li>Finally they try to access an endpoint of our API.
-[heart-beat]-&gt;[generate-token]-&gt;[get-list-of-users]You also want to add some more criteria and thresholds, to be able to discern more meaningful results from the k6. Although some information, like threshold is new in this article, I’ll try to explain them completely in the upcoming article. You want this scenario to be tested by 100 individual users, starting with 10 users, ramping up to 100 and the gradually down to 0, and to keep the response time of all request below 500ms.</li>
+  <li>Finally they try to access an endpoint of our API.</li>
 </ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[heart-beat]-&gt;[generate-token]-&gt;[get-list-of-users]
+</code></pre></div></div>
+
+<p>You also want to add some more criteria and thresholds, to be able to discern more meaningful results from the k6. Although some information, like threshold is new in this article, I’ll try to explain them completely in the upcoming article. You want this scenario to be tested by 100 individual users, starting with 10 users, ramping up to 100 and the gradually down to 0, and to keep the response time of all request below 500ms.</p>
 
 <p>The script would be something like this:</p>
 
-<p>Example of k6 scenario scriptI have used <a href="https://httpbin.org">httpbin.org</a> as a kitchen-sink for testing k6 with this script. The results of running test for five minutes is as follows:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> check, group, <span class="nb">sleep</span> <span class="o">}</span> from <span class="s1">'k6'</span><span class="p">;</span>
+import http from <span class="s1">'k6/http'</span><span class="p">;</span>
 
-<p><img src="/img/1*yY9iJKP_KEcuweo78xfXfA.png" alt="" />Output of k6 scenario scriptThe output start with the logo of the k6 being printed to the screen. After that comes the method of execution, being “local” in my case. The output is redirected to the terminal and the name of the script is “test.js”.</p>
+<span class="nb">export let </span>options <span class="o">=</span> <span class="o">{</span>
+  max_vus: 100,
+  vus: 100,
+  stages: <span class="o">[</span>
+    <span class="o">{</span> duration: <span class="s2">"30s"</span>, target: 10 <span class="o">}</span>,
+    <span class="o">{</span> duration: <span class="s2">"4m"</span>, target: 100 <span class="o">}</span>,
+    <span class="o">{</span> duration: <span class="s2">"30s"</span>, target: 0 <span class="o">}</span>
+  <span class="o">]</span>,
+  thresholds: <span class="o">{</span>
+    <span class="s2">"RTT"</span>: <span class="o">[</span><span class="s2">"avg&lt;500"</span><span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nb">export </span>default <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+  group<span class="o">(</span><span class="s1">'v1 API testing'</span>, <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+    group<span class="o">(</span><span class="s1">'heart-beat'</span>, <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+      <span class="nb">let </span>res <span class="o">=</span> http.get<span class="o">(</span><span class="s2">"https://httpbin.org/get"</span><span class="o">)</span><span class="p">;</span>
+      check<span class="o">(</span>res, <span class="o">{</span> <span class="s2">"status is 200"</span>: <span class="o">(</span>r<span class="o">)</span> <span class="o">=&gt;</span> r.status <span class="o">===</span> 200 <span class="o">})</span><span class="p">;</span>
+    <span class="o">})</span><span class="p">;</span>
+
+    group<span class="o">(</span><span class="s1">'login'</span>, <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+      <span class="nb">let </span>res <span class="o">=</span> http.get<span class="o">(</span><span class="s2">"https://httpbin.org/bearer"</span>, <span class="o">{</span>
+        headers: <span class="o">{</span> <span class="s2">"Authorization"</span>: <span class="s2">"Bearer da39a3ee5e6b4b0d3255bfef95601890afd80709"</span> <span class="o">}</span>
+      <span class="o">})</span><span class="p">;</span>
+      check<span class="o">(</span>res, <span class="o">{</span>
+        <span class="s2">"status is 200"</span>: <span class="o">(</span>r<span class="o">)</span> <span class="o">=&gt;</span> r.status <span class="o">===</span> 200,
+        <span class="s2">"is authenticated"</span>: <span class="o">(</span>r<span class="o">)</span> <span class="o">=&gt;</span> r.json<span class="o">()[</span><span class="s2">"authenticated"</span><span class="o">]</span> <span class="o">===</span> <span class="nb">true</span>
+      <span class="o">})</span><span class="p">;</span>
+    <span class="o">})</span><span class="p">;</span>
+
+    group<span class="o">(</span><span class="s1">'access an endpoint'</span>, <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+      <span class="nb">let </span>res <span class="o">=</span> http.get<span class="o">(</span><span class="s2">"https://httpbin.org/base64/azYgaXMgYXdlc29tZSE="</span><span class="o">)</span><span class="p">;</span>
+      check<span class="o">(</span>res, <span class="o">{</span>
+        <span class="s2">"status is 200"</span>: <span class="o">(</span>r<span class="o">)</span> <span class="o">=&gt;</span> r.status <span class="o">===</span> 200,
+        <span class="s2">"k6 is awesome!"</span>: <span class="o">(</span>r<span class="o">)</span> <span class="o">=&gt;</span> r.body <span class="o">===</span> <span class="s2">"k6 is awesome!"</span>
+      <span class="o">})</span><span class="p">;</span>
+    <span class="o">})</span><span class="p">;</span>
+  <span class="o">})</span><span class="p">;</span>
+  <span class="nb">sleep</span><span class="o">(</span>1<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>I have used <a href="https://httpbin.org">httpbin.org</a> as a kitchen-sink for testing k6 with this script. The results of running test for five minutes is as follows:</p>
+
+<figure class="">
+  <img src="/assets/images/k6-beginner-articles-part3-k6-output.png" alt="Output of k6 scenario script" />
+  
+    <figcaption>
+      Output of k6 scenario script
+
+    </figcaption>
+  
+</figure>
+
+<p>The output start with the logo of the k6 being printed to the screen. After that comes the method of execution, being “local” in my case. The output is redirected to the terminal and the name of the script is “test.js”.</p>
 
 <p>Duration and iterations are empty, since they are automatically calculated from the stages. The number of (max) VUs are 100 and the progress bar shows that it is done in five minutes.</p>
 
@@ -248,7 +352,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
 
 <p>In this article I tried my best to show you how to write a pretty simple test scenario script and how to run to the load test using k6.</p>
 
-<p>In the next article I’ll try to turn concepts I’ve talked about on <a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723">the second article</a> — Performance Goals and k6 Metrics — into features supported by k6 that you can use to have a successful load or acceptance testing.</p>
+<p>In the next article I’ll try to turn concepts I’ve talked about on <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2">the second article</a> — Performance Goals and k6 Metrics — into features supported by k6 that you can use to have a successful load or acceptance testing.</p>
 
 <p>As always, I do welcome your feedback. Please don’t hesitate to write your comments, questions and feedback below.</p>
 
@@ -437,8 +541,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
-</p>
+    <p class="archive__item-excerpt" itemprop="description">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, th...</p>
   </article>
 </div>
 
@@ -452,7 +555,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 3
 </a>
       
     </h2>
@@ -471,7 +574,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 2
 </a>
       
     </h2>
@@ -490,7 +593,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 1
 </a>
       
     </h2>
@@ -628,7 +731,7 @@ Each of these commands has a rich set of options/flags to pass in order to contr
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Mostafa's personal blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>The Story of Farhang, A Bilingual Dictionary Production System - Mostafa’s personal blog</title>
-<meta name="description" content="Second Version of Farhang Dictionary Production System ">
+<meta name="description" content="In this article, I’ll explain the story of Farhang dictionary writing system, which I’ve developed to generate a 2700-pages German-Persian dictionary. ">
 
 
   <meta name="author" content="Mostafa Moradian">
@@ -23,20 +23,22 @@
 <meta property="og:url" content="https://medium.com/@mostafamoradian/the-story-of-farhang-a-bilingual-dictionary-production-system-6bb5058a6b04">
 
 
-  <meta property="og:description" content="Second Version of Farhang Dictionary Production System ">
+  <meta property="og:description" content="In this article, I’ll explain the story of Farhang dictionary writing system, which I’ve developed to generate a 2700-pages German-Persian dictionary. ">
 
 
+
+  <meta property="og:image" content="https://mostafa.dev/assets/images/farhang-ui.png">
 
 
 
   <meta name="twitter:site" content="@mosimoradian">
   <meta name="twitter:title" content="The Story of Farhang, A Bilingual Dictionary Production System">
-  <meta name="twitter:description" content="Second Version of Farhang Dictionary Production System ">
+  <meta name="twitter:description" content="In this article, I’ll explain the story of Farhang dictionary writing system, which I’ve developed to generate a 2700-pages German-Persian dictionary. ">
   <meta name="twitter:url" content="https://medium.com/@mostafamoradian/the-story-of-farhang-a-bilingual-dictionary-production-system-6bb5058a6b04">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/farhang-ui.png">
   
 
   
@@ -60,7 +62,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mostafa Moradian",
+      "name": null,
       "url": "https://mostafa.dev/",
       "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
     
@@ -133,11 +135,11 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/avatar.jpeg" alt=""></a>
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.5</span>
+          <span class="site-subtitle">Version 0.1.0</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -161,6 +163,27 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/farhang-ui.png" alt="The Story of Farhang, A Bilingual Dictionary Production System" class="page__hero-image">
+  
+  
+    <span class="page__hero-caption">Second Version of Farhang Dictionary Production System
+</span>
+  
+</div>
+
+
 
 
 
@@ -200,11 +223,41 @@
 
 <p>Then I came across LaTeX and XeTeX. By creating a somewhat simple class file in TeX, I was able to produce bilingual dictionaries with qualities of those very well-known dictionaries like Cambridge, Oxford, Longman, Duden and Langenscheidt.</p>
 
-<p><img src="/img/1*7_jI1birc8h5A0Ne9UFUQw.png" alt="" />TeX File Used to Produce PDF Output<img src="/img/1*eE-nHeP2LYif-HxFXEGEfQ.png" alt="" />First Page of the Dictionary in PDF (Letter A)The dictionary was typeset with the first version of the Farhang DPS, which was developed on Linux. Later when editing the dictionary, I faced many problems with the SQL approach, then I migrated the data into a document-oriented NoSQL database, MongoDB. This choice allowed me to have a better locality of information inside a document with nested information inside the document itself, thus avoiding SQL JOINS and their constraints.</p>
+<figure class="">
+  <img src="/assets/images/farhang-tex-file.png" alt="TeX File Used to Produce PDF Output" />
+  
+    <figcaption>
+      TeX File Used to Produce PDF Output
+
+    </figcaption>
+  
+</figure>
+
+<figure class="">
+  <img src="/assets/images/farhang-letter-A.png" alt="First Page of the Dictionary in PDF (Letter A)" />
+  
+    <figcaption>
+      First Page of the Dictionary in PDF (Letter A)
+
+    </figcaption>
+  
+</figure>
+
+<p>The dictionary was typeset with the first version of the Farhang DPS, which was developed on Linux. Later when editing the dictionary, I faced many problems with the SQL approach, then I migrated the data into a document-oriented NoSQL database, MongoDB. This choice allowed me to have a better locality of information inside a document with nested information inside the document itself, thus avoiding SQL JOINS and their constraints.</p>
 
 <p>Also I changed the development environment to use Windows and the Visual Studio. I used C# and MongoDB to develop <a href="https://github.com/mostafa/farhang">the second version of Farhang</a>. I used Mercurial (hg) to do version control on my code which I later migrated the repository into Git, so that I can make it FOSS and publish it on GitHub.</p>
 
-<p><img src="/img/1*s0zXMPDVM60gfEIkrIQ-zg.png" alt="" />Second Version of Farhang DPSIn 2018, the <a href="https://www.langenscheidt.com/deutsch-daf/selbstlernen-woerterbuch/langenscheidt-handwoerterbuch-deutsch-persisch-hardcover">hard-cover version</a> was published by Langenscheidt Verlag in Germany. It is also planned to be published as a Mobile App and hard-cover version in my own country, too. The dictionary is around 2700 pages.</p>
+<figure class="">
+  <img src="/assets/images/farhang-ui.png" alt="Second Version of Farhang DPS" />
+  
+    <figcaption>
+      Second Version of Farhang DPS
+
+    </figcaption>
+  
+</figure>
+
+<p>In 2018, the <a href="https://www.langenscheidt.com/deutsch-daf/selbstlernen-woerterbuch/langenscheidt-handwoerterbuch-deutsch-persisch-hardcover">hard-cover version</a> was published by Langenscheidt Verlag in Germany. It is also planned to be published as a Mobile App and hard-cover version in my own country, too. The dictionary is around 2700 pages.</p>
 
 <p>There were days of sweat and tears to review and edit the data and generate new files which were then used by different applications to produce output PDF files, and it was a very painstaking and arduous set of tasks to make all this possible for the language learners and translators to use this treasure to find their ways through the texts.</p>
 
@@ -393,8 +446,7 @@
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
-</p>
+    <p class="archive__item-excerpt" itemprop="description">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, th...</p>
   </article>
 </div>
 
@@ -408,7 +460,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 3
 </a>
       
     </h2>
@@ -427,7 +479,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 2
 </a>
       
     </h2>
@@ -446,7 +498,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 1
 </a>
       
     </h2>
@@ -584,7 +636,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Mostafa's personal blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

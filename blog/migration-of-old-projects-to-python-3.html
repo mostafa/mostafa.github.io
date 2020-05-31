@@ -27,6 +27,8 @@
 
 
 
+  <meta property="og:image" content="https://mostafa.dev/assets/images/python-old-project-migration-cover-image.png">
+
 
 
   <meta name="twitter:site" content="@mosimoradian">
@@ -35,8 +37,8 @@
   <meta name="twitter:url" content="https://medium.com/swlh/migration-of-old-projects-to-python-3-ca4b8b59d59b">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/python-old-project-migration-cover-image.png">
   
 
   
@@ -60,7 +62,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mostafa Moradian",
+      "name": null,
       "url": "https://mostafa.dev/",
       "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
     
@@ -133,11 +135,11 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/avatar.jpeg" alt=""></a>
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.5</span>
+          <span class="site-subtitle">Version 0.1.0</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -161,6 +163,24 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/python-old-project-migration-cover-image.png" alt="Migration of Old Projects to Python 3" class="page__hero-image">
+  
+  
+</div>
+
+
 
 
 
@@ -188,7 +208,9 @@
 
 <h3 id="methodology">Methodology</h3>
 
-<p><img src="/img/1*p6cylSLFAjRPht0oIuvWJA.png" alt="" />Planning involves knowing the extent you wish your project to be updated. Sometimes you want to stick with an LTS version of some library and other times you want the latest cutting-edge features. This trade-off of stability versus trendiness is what to look for while planning for the migration.</p>
+<p><img src="/assets/images/python-old-project-migration-life-cycle.png" alt="" /></p>
+
+<p>Planning involves knowing the extent you wish your project to be updated. Sometimes you want to stick with an LTS version of some library and other times you want the latest cutting-edge features. This trade-off of stability versus trendiness is what to look for while planning for the migration.</p>
 
 <p>This planning should also take into account the business side, although the focus of this article is on the engineering complications. Some changes should be organized and changed with the help of different departments. Otherwise it just won’t work. You’re going to deliver the same value or more to the customer, while decreasing technical debt and maintenance costs.</p>
 
@@ -226,7 +248,7 @@
 
 <h4 id="4-run-2to3-on-your-code-base">4. Run 2to3 on your code-base</h4>
 
-<p>After upgrading to the latest versions supported on Python 2.7 and testing to see if everything’s in order, now is the time to run the 2to3 tool on your code-base. This is a tool provided as part of the Python standard library to read the Python 2.x source code and transform them into a valid Python 3.x source code, through the so-called <a href="https://docs.python.org/3.7/library/2to3.html#fixers"><em>fixers</em></a>. Fixers are changes to the syntax and semantics of the source code from Python 2.x to 3.x. For example, in Python 2.x, it is not necessary to have parenthesis around the print function, but such functions no longer exist in Python 3.x. So the *print *fixer converts print function to print() all over your source code. Test again and again and make sure not to mess things up by not using branching.</p>
+<p>After upgrading to the latest versions supported on Python 2.7 and testing to see if everything’s in order, now is the time to run the 2to3 tool on your code-base. This is a tool provided as part of the Python standard library to read the Python 2.x source code and transform them into a valid Python 3.x source code, through the so-called <a href="https://docs.python.org/3.7/library/2to3.html#fixers"><em>fixers</em></a>. Fixers are changes to the syntax and semantics of the source code from Python 2.x to 3.x. For example, in Python 2.x, it is not necessary to have parenthesis around the print function, but such functions no longer exist in Python 3.x. So the <em>print</em> fixer converts print function to print() all over your source code. Test again and again and make sure not to mess things up by not using branching.</p>
 
 <p><em>Update:</em> a <a href="https://www.reddit.com/r/Python/comments/clugax/migration_of_old_projects_to_python_3_how_to_deal/evyutsc?utm_source=share&amp;utm_medium=web2x">user on reddit commented</a> that we could use <a href="https://pypi.org/project/modernize/">modernize</a> instead, to be able to spot more conversion errors, specially Unicode-related ones.</p>
 
@@ -250,9 +272,15 @@
 
 <h4 id="7-upgrade-django-and-drf-to-latest-version">7. Upgrade Django and DRF to latest version</h4>
 
-<p>The Django <a href="https://docs.djangoproject.com/en/dev/internals/release-process/">release process</a> is a good resource for knowing what to use and when to deprecate and get rid of old versions. The release roadmap on <a href="https://www.djangoproject.com/download/">Django download page</a> will give you a very quick view into the lifetime of each version.</p>
+<p>The Django <a href="https://docs.djangoproject.com/en/dev/internals/release-process/">release process</a> is a good resource for knowing what to use and when to deprecate and get rid of old versions. The release roadmap on <a href="https://www.djangoproject.com/download/">Django download page</a> will give you a very quick view into the lifetime of each version. This roadmap is frequently updated as releases become available. Below you can see two different version:</p>
 
-<p><img src="/img/1*aI2NZdsLaxzzu_fT8-0FNA.png" alt="" />Credits: <a href="https://www.djangoproject.com/download/">https://www.djangoproject.com/download/</a>As of now, the latest LTS version of Django that only supports Python 3.x is 2.2.x and the latest version of DRF is 3.10.x.</p>
+<p><img src="/assets/images/django-release-roadmap-old.png" alt="" /></p>
+
+<p><img src="/assets/images/django-release-roadmap-new.png" alt="" /></p>
+
+<p class="text-center">Credits: <a href="https://www.djangoproject.com/download/">https://www.djangoproject.com/download/</a></p>
+
+<p>As of now, the latest LTS version of Django that only supports Python 3.x is 2.2.x and the latest version of DRF is 3.10.x.</p>
 
 <p>If you could eventually pass step 6, you can almost easily upgrade these versions and test if everything holds together.</p>
 
@@ -445,8 +473,7 @@
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
-</p>
+    <p class="archive__item-excerpt" itemprop="description">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, th...</p>
   </article>
 </div>
 
@@ -460,7 +487,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 3
 </a>
       
     </h2>
@@ -479,7 +506,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 2
 </a>
       
     </h2>
@@ -498,7 +525,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 1
 </a>
       
     </h2>
@@ -636,7 +663,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Mostafa's personal blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

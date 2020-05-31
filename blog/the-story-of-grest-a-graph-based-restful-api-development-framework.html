@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>The Story of gREST, A Graph-based Restful API Development Framework - Mostafa’s personal blog</title>
-<meta name="description" content="More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) Python, I tried to look for frameworks written in Python. Many options came to mind, including Django, Flask, Tornado and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships. ">
+<meta name="description" content="In this article, I’ll explain the story of gREST, which I’ve developed to generate RESTful API endpoints on top of Neo4j graphs. ">
 
 
   <meta name="author" content="Mostafa Moradian">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://medium.com/@mostafamoradian/the-story-of-grest-a-graph-base-restful-api-development-framework-e1f93b8a850d">
 
 
-  <meta property="og:description" content="More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) Python, I tried to look for frameworks written in Python. Many options came to mind, including Django, Flask, Tornado and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships. ">
+  <meta property="og:description" content="In this article, I’ll explain the story of gREST, which I’ve developed to generate RESTful API endpoints on top of Neo4j graphs. ">
 
 
 
@@ -31,7 +31,7 @@
 
   <meta name="twitter:site" content="@mosimoradian">
   <meta name="twitter:title" content="The Story of gREST, A Graph-based Restful API Development Framework">
-  <meta name="twitter:description" content="More than a year ago, I was looking for a framework to build my services with which can support graph-based databases, namely Neo4j, and give me the freedom to customize it however I wanted. As my main language of choice was (and is) Python, I tried to look for frameworks written in Python. Many options came to mind, including Django, Flask, Tornado and many others. One of the biggest challenges I have faced was that none of them supported graph-based databases natively, meaning that they help the developer quickly get up and running with minimum amount of code. At that time I had to use one of the available Object-Graph Mappers (OGM) and would have to write my own set of functions to handle CRUD on database models. Such a simple thing for many other SQL and some NoSQL databases would lead to thousands of lines of code to handle creation, deletion and modification of nodes and their relationships. ">
+  <meta name="twitter:description" content="In this article, I’ll explain the story of gREST, which I’ve developed to generate RESTful API endpoints on top of Neo4j graphs. ">
   <meta name="twitter:url" content="https://medium.com/@mostafamoradian/the-story-of-grest-a-graph-base-restful-api-development-framework-e1f93b8a850d">
 
   
@@ -60,7 +60,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mostafa Moradian",
+      "name": null,
       "url": "https://mostafa.dev/",
       "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
     
@@ -133,11 +133,11 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/avatar.jpeg" alt=""></a>
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.5</span>
+          <span class="site-subtitle">Version 0.1.0</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -192,7 +192,17 @@
 
 <p>It’s more than a year from the time I created my initial commit of the project and as per analytics, it has been downloaded more than 36,000 times and growing.</p>
 
-<p><img src="/img/1*AWJ2K9fdgc8sIhaCeopOqg.png" alt="" />Download count of the gREST framework according to the Google BigQuery results on the the-psf:pypi datasetAs I have twitted about it when I’ve made the project public, it has also been featured on the <a href="https://neo4j.com/blog/this-week-neo4j-29-april-2017/">Neo4j’s blog</a>.</p>
+<figure class="">
+  <img src="/assets/images/grest-download-stats.png" alt="Download count of the gREST framework according to the Google BigQuery results on the the-psf:pypi dataset" />
+  
+    <figcaption>
+      Download count of the gREST framework according to the Google BigQuery results on the the-psf:pypi dataset
+
+    </figcaption>
+  
+</figure>
+
+<p>As I have twitted about it when I’ve made the project public, it has also been featured on the <a href="https://neo4j.com/blog/this-week-neo4j-29-april-2017/">Neo4j’s blog</a>.</p>
 
 <p>Last but not least, I tried my best to fix bugs and make improvements to the initial idea of gREST, but it needs the help of the community to be further developed. I also hope that it continues to serve the community well. My next article would be a tutorial on making a simple restful API using gREST.</p>
 
@@ -383,8 +393,7 @@
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
-</p>
+    <p class="archive__item-excerpt" itemprop="description">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, th...</p>
   </article>
 </div>
 
@@ -398,7 +407,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 3
 </a>
       
     </h2>
@@ -417,7 +426,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 2
 </a>
       
     </h2>
@@ -436,7 +445,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 1
 </a>
       
     </h2>
@@ -574,7 +583,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Mostafa's personal blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

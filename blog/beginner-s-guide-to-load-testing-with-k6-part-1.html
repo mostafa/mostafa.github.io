@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Beginner’s Guide to Load Testing with k6 - Mostafa’s personal blog</title>
+<!-- begin _includes/seo.html --><title>Beginner’s Guide to Load Testing with k6 — Part 1 - Mostafa’s personal blog</title>
 <meta name="description" content="Part 1 — The Prelude ">
 
 
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mostafa's personal blog">
-<meta property="og:title" content="Beginner’s Guide to Load Testing with k6">
+<meta property="og:title" content="Beginner’s Guide to Load Testing with k6 — Part 1">
 <meta property="og:url" content="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d">
 
 
@@ -27,16 +27,18 @@
 
 
 
+  <meta property="og:image" content="https://mostafa.dev/assets/images/k6-beginner-articles-part1-cover-image.png">
+
 
 
   <meta name="twitter:site" content="@mosimoradian">
-  <meta name="twitter:title" content="Beginner’s Guide to Load Testing with k6">
+  <meta name="twitter:title" content="Beginner’s Guide to Load Testing with k6 — Part 1">
   <meta name="twitter:description" content="Part 1 — The Prelude ">
   <meta name="twitter:url" content="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/k6-beginner-articles-part1-cover-image.png">
   
 
   
@@ -60,7 +62,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mostafa Moradian",
+      "name": null,
       "url": "https://mostafa.dev/",
       "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
     
@@ -133,11 +135,11 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/avatar.jpeg" alt=""></a>
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.5</span>
+          <span class="site-subtitle">Version 0.1.0</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -161,6 +163,27 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/k6-beginner-articles-part1-cover-image.png" alt="Beginner’s Guide to Load Testing with k6 — Part 1" class="page__hero-image">
+  
+  
+    <span class="page__hero-caption">Credits: <a href="https://grafana.com/dashboards/2587">k6 Load Testing Results by dcadwallader</a>
+</span>
+  
+</div>
+
+
 
 
 
@@ -170,15 +193,19 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">Beginner’s Guide to Load Testing with k6</h1>
+      <h1 id="page-title" class="page__title">Beginner’s Guide to Load Testing with k6 — Part 1</h1>
     
     <p><em>Update: This article is part of a series on load testing. I will try to regularly publish related topics in this series. I won’t repeat this table of contents on every single article, so please check this very first one to get new updates. Also I will try to link articles together, so that you can easily follow the next one in the series. Ever since, these has been published:</em></p>
 
 <blockquote>
-  <p><a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-85ec614d2f0d">Part 1 — The Prelude</a>
-<a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723">Part 2 — Performance Goals and k6 Metrics</a>
-<a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-ff155885b6db">Part 3 — How to Write &amp; Run a Load Test Using k6</a>Let’s start with some questions:</p>
+  <p><a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1">Part 1 — The Prelude</a></p>
+
+  <p><a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2">Part 2 — Performance Goals and k6 Metrics</a></p>
+
+  <p><a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3">Part 3 — How to Write &amp; Run a Load Test Using k6</a></p>
 </blockquote>
+
+<p>Let’s start with some questions:</p>
 
 <ul>
   <li>Have you ever thought about ways to find out if your infrastructure setup could stand under high loads of users?</li>
@@ -194,9 +221,39 @@ You are not alone in that. I remember days when I was the lead developer of a te
 
 <p>But later we didn’t use the tool, since there was no clear way to integrate it into our CI/CD process at that time, and we didn’t have enough time to learn and use it. We wanted something more developer-friendly, more integrable to our workflow, and easier to learn. Nowadays, it has been improved very much and it integrates with CI/CD pipelines easily.</p>
 
-<p>Now, I am working for a company, <a href="https://loadimpact.com/">Load Impact</a>, which deals with load and performance testing as their core business. They have a FOSS, easily scriptable tool (JavaScript), called <a href="https://k6.io/">k6</a>, which can be used for load testing. They also offer a cloud service on top of <em>the same exact tool</em>, for provisioning and running the tests, from different regions of the world (<a href="https://loadimpact.com/cloud-execution/">Cloud Execution</a>), and it finally give you a nice dashboard (<a href="https://loadimpact.com/insights/">Insights</a>) with analyzed results of the tests with shiny charts. It also has good <a href="https://loadimpact.com/integrations/">integrations</a> with CI/CD tools and platforms.</p>
+<p>Now, I am working for a company, <a href="https://loadimpact.com/">Load Impact</a>, which deals with load and performance testing as their core business. They have a FOSS, easily scriptable tool (JavaScript), called <a href="https://k6.io/">k6</a>, which can be used for load testing. They also offer a cloud service on top of <em>the same exact tool</em>, for provisioning and running the tests, from different regions of the world <a href="https://loadimpact.com/cloud-execution/">Cloud Execution</a>, and it finally give you a nice <a href="https://k6.io/cloud">dashboard</a> with analyzed results of the tests with shiny charts. It also has good <a href="https://k6.io/docs/integrations#continuous-integration-and-continuous-delivery">integrations</a> with CI/CD tools and platforms.</p>
 
-<p><img src="/img/1*DgpDE9wBwxVKtmTk_BLnzA.png" alt="" /><strong>Left</strong>: load test script written in JavaScript, <strong>Right</strong>: Cloud service of Load Impact (Insights), <strong>Credits</strong>: <a href="https://loadimpact.com/">https://loadimpact.com/</a>Enough said! Let’s dive deep into what load testing is and how we can use k6 for doing load testing on our infrastructure. I will try to write more about the cloud service in the future, too.</p>
+<p>Load test script written in JavaScript:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import http from <span class="s1">'k6/http'</span><span class="p">;</span>
+import <span class="o">{</span> check, <span class="nb">sleep</span> <span class="o">}</span> from <span class="s1">'k6'</span><span class="p">;</span>
+
+<span class="nb">export let </span>options <span class="o">=</span> <span class="o">{</span>
+  stages: <span class="o">[</span>
+    <span class="o">{</span> duration: <span class="s1">'30s'</span>, target: 20 <span class="o">}</span>,
+    <span class="o">{</span> duration: <span class="s1">'1m30s'</span>, target: 10 <span class="o">}</span>,
+    <span class="o">{</span> duration: <span class="s1">'20s'</span>, target: 0 <span class="o">}</span>,
+  <span class="o">]</span>,
+<span class="o">}</span><span class="p">;</span>
+
+<span class="nb">export </span>default <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nb">let </span>res <span class="o">=</span> http.get<span class="o">(</span><span class="s1">'https://httpbin.org/'</span><span class="o">)</span><span class="p">;</span>
+  check<span class="o">(</span>res, <span class="o">{</span> <span class="s1">'status was 200'</span>: r <span class="o">=&gt;</span> r.status <span class="o">==</span> 200 <span class="o">})</span><span class="p">;</span>
+  <span class="nb">sleep</span><span class="o">(</span>1<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<figure class="">
+  <img src="/assets/images/cloud-stub.webp" alt="k6 Cloud Dashboard" />
+  
+    <figcaption>
+      k6 Cloud Dashboard
+
+    </figcaption>
+  
+</figure>
+
+<p>Enough said! Let’s dive deep into what load testing is and how we can use k6 for doing load testing on our infrastructure. I will try to write more about the cloud service in the future, too.</p>
 
 <h4 id="what-is-loadperformance-testing">What is Load/Performance Testing?</h4>
 
@@ -222,29 +279,53 @@ The most common purpose of performance testing is to find out how reliable, stab
 
 <p>The easiest possible way to use k6 is to install it on your machine using a <a href="https://docs.k6.io/docs/installation">official prebuilt binary version</a>. k6 supports Microsoft Windows with an <em>MSI</em> installer, GNU/Linux with an <em>APT</em> repository and Apple macOS using <em>brew</em>.</p>
 
-<p>There is also <a href="https://hub.docker.com/r/loadimpact/k6/">a official docker image</a>. It is not recommended for beginners to build from source, but you always have the option to do that.</p>
+<p>There is also <a href="https://hub.docker.com/r/loadimpact/k6/">an official docker image</a>. It is not recommended for beginners to build from source, but you always have the option to do that.</p>
 
 <p>You can then run your installed k6 command with the following script:</p>
 
-<p>A sample test script for k6Once you have saved this script somewhere accessible to k6, naming it script.js or your own desired file name, you can run it with 10 *virtual users *(VU) and over a period of 30 seconds, as follows:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> check <span class="o">}</span> from <span class="s2">"k6"</span><span class="p">;</span>
+import http from <span class="s2">"k6/http"</span><span class="p">;</span>
 
-<p>k6 run -u 10 -d 30s script.jsIt basically runs k6 on your machine using 10 virtual users over the course of 30 seconds, and it checks to see if the test URL returns <em>200 (OK)</em> in all tests.</p>
+<span class="nb">export </span>default <span class="k">function</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nb">let </span>res <span class="o">=</span> http.get<span class="o">(</span><span class="s2">"https://test.loadimpact.com/"</span><span class="o">)</span><span class="p">;</span>
+  check<span class="o">(</span>res, <span class="o">{</span>
+    <span class="s2">"is status 200"</span>: <span class="o">(</span>r<span class="o">)</span> <span class="o">=&gt;</span> r.status <span class="o">===</span> 200
+  <span class="o">})</span><span class="p">;</span>
+<span class="o">}</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>A sample test script for k6</p>
+
+<p>Once you have saved this script somewhere accessible to k6, naming it <code class="highlighter-rouge">script.js</code> or your own desired file name, you can run it with 10 <em>virtual users</em> (VU) and over a period of 30 seconds, as follows:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>k6 run <span class="nt">-u</span> 10 <span class="nt">-d</span> 30s script.js
+</code></pre></div></div>
+
+<p>It basically runs k6 on your machine using 10 virtual users over the course of 30 seconds, and it checks to see if the test URL returns <em>200 (OK)</em> in all tests.</p>
 
 <p>The output of running this command would be as below. I recommend you to have a look at it to better understand different metrics, checks and other key-values. This output will be thoroughly explained in the next articles.</p>
 
-<p>By interpreting the current output, you can see that the script is <em>locally executed *for the *duration of 30 seconds *and spawned *10 separate virtual users (vus)</em> to test the URL. You can also see the highlighted green checked item, “<em>is status 200</em>”, that signifies that our <em>check has passed for 100% of the cases</em>, meaning all cases.</p>
+<p>By interpreting the current output, you can see that the script is <em>locally executed</em> for the <em>duration of 30 seconds</em> and spawned <em>10 separate virtual users (vus)</em> to test the URL. You can also see the highlighted green checked item, “<em>is status 200</em>”, that signifies that our <em>check has passed for 100% of the cases</em>, meaning all cases.</p>
 
-<p>The total data sent and received in 2775 requests is also present. For each HTTP requests, there is a <em>http_req_** metric (key) with 5 different values, each corresponding to the *average, minimum, median, maximum, 90th percentile and 95th percentile</em> of all the requests.</p>
+<p>The total data sent and received in 2775 requests is also present. For each HTTP requests, there is a <em>http_req_</em> metric (key) with 5 different values, each corresponding to the <em>average, minimum, median, maximum, 90th percentile and 95th percentile</em> of all the requests.</p>
 
-<p><img src="/img/1*aSlAqLfzEWVTy4j49n5QYg.png" alt="" />Terminal output of the sample test script for k6This was a very short introduction to performance/load testing and the k6 tool. I will try to write more advanced load testing articles to show you how to load test your website and/or API.</p>
+<figure class="">
+  <img src="/assets/images/k6-beginner-articles-part1-k6-output.png" alt="Terminal output of the sample test script for k6" />
+  
+    <figcaption>
+      Terminal output of the sample test script for k6
+
+    </figcaption>
+  
+</figure>
+
+<p>This was a very short introduction to performance/load testing and the k6 tool. I will try to write more advanced load testing articles to show you how to load test your website and/or API.</p>
 
 <p>This series will continue with more in-depth performance/load testing articles assuming the readers don’t have previous experience on this topic.</p>
 
-<p><a href="https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-73d55ee23723">In the next article in this series</a>, I will try to talk about performance goals and k6 metrics, which are the building blocks of load testing.</p>
+<p><a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2">In the next article in this series</a>, I will try to talk about performance goals and k6 metrics, which are the building blocks of load testing.</p>
 
 <p>As always, I do really appreciate your suggestions, comments and inputs on this. And I would like to thank Pepe Cano and Robin Gustafsson for their valuable comments and suggestions on this article and the series.</p>
-
-<p>Cover image credits: <a href="https://grafana.com/dashboards/2587">https://grafana.com/dashboards/2587</a></p>
 
 
 <ul class="taxonomy__index">
@@ -431,8 +512,7 @@ The most common purpose of performance testing is to find out how reliable, stab
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
-</p>
+    <p class="archive__item-excerpt" itemprop="description">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, th...</p>
   </article>
 </div>
 
@@ -446,7 +526,7 @@ The most common purpose of performance testing is to find out how reliable, stab
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 3
 </a>
       
     </h2>
@@ -465,7 +545,7 @@ The most common purpose of performance testing is to find out how reliable, stab
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 2
 </a>
       
     </h2>
@@ -484,7 +564,7 @@ The most common purpose of performance testing is to find out how reliable, stab
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 1
 </a>
       
     </h2>
@@ -622,7 +702,7 @@ The most common purpose of performance testing is to find out how reliable, stab
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Mostafa's personal blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

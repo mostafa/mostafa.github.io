@@ -27,6 +27,8 @@
 
 
 
+  <meta property="og:image" content="https://mostafa.dev/assets/images/code-review-js-code.jpg">
+
 
 
   <meta name="twitter:site" content="@mosimoradian">
@@ -35,8 +37,8 @@
   <meta name="twitter:url" content="https://medium.com/swlh/secure-code-review-and-penetration-testing-of-node-js-and-javascript-apps-41485b1a9518">
 
   
-    <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mostafa.dev/assets/images/code-review-js-code.jpg">
   
 
   
@@ -60,7 +62,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mostafa Moradian",
+      "name": null,
       "url": "https://mostafa.dev/",
       "sameAs": ["https://twitter.com/MosiMoradian","https://instagram.com/mostafa_moradian","https://www.linkedin.com/in/mostafa-moradian","https://www.medium.com/@mostafamoradian","https://www.github.com/mostafa"]
     
@@ -133,11 +135,11 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/img/avatar.jpeg" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/avatar.jpeg" alt=""></a>
         
         <a class="site-title" href="/">
           Mostafa's personal blog
-          <span class="site-subtitle">Version 0.0.5</span>
+          <span class="site-subtitle">Version 0.1.0</span>
         </a>
         <ul class="visible-links"></ul>
         
@@ -161,6 +163,27 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/code-review-js-code.jpg" alt="Secure Code Review and Penetration Testing of Node.js and JavaScript Apps" class="page__hero-image">
+  
+  
+    <span class="page__hero-caption">Credits: <a href="https://www.bleepingcomputer.com/news/security/javascript-web-apps-and-servers-vulnerable-to-redos-attacks/">JavaScript Web Apps and Servers Vulnerable to ReDoS Attacks</a>
+</span>
+  
+</div>
+
+
 
 
 
@@ -181,16 +204,20 @@
 <h3 id="a-secure-code-review"><strong>A. Secure Code Review</strong></h3>
 
 <blockquote>
-  <p>Security code review is the process of auditing the source code for an application to verify that the proper security controls are present, that they work as intended, and that they have been invoked in all the right places. Code review is a way of ensuring that the application has been developed so as to be “self-defending” in its given environment. — <a href="https://www.owasp.org/index.php/Code_Review_Introduction">OWASP Code Review Introduction</a>As you see, it’s all about auditing, verification and analysis. The OWASP community has proposed a good starting point to do this job. It is called “<a href="https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project">The OWASP Code Review Project</a>”. It is an technical guide to help the code reviewers find the most flaws under a unified framework.</p>
+  <p>Security code review is the process of auditing the source code for an application to verify that the proper security controls are present, that they work as intended, and that they have been invoked in all the right places. Code review is a way of ensuring that the application has been developed so as to be “self-defending” in its given environment. — <a href="https://www.owasp.org/index.php/Code_Review_Introduction">OWASP Code Review Introduction</a></p>
 </blockquote>
+
+<p>As you see, it’s all about auditing, verification and analysis. The OWASP community has proposed a good starting point to do this job. It is called “<a href="https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project">The OWASP Code Review Project</a>”. It is an technical guide to help the code reviewers find the most flaws under a unified framework.</p>
 
 <p>Two versions of this technical guide is published and version 2.0 being the most recent one, which was published 14 July 2017. The second version, which is thoroughly updated, consists of an introduction to the subject matter, a methodology and a set of technical references for the “OWASP Top 10” things to look for while reviewing code. Various diagrams, methods, risk models and techniques has been discussed. It is argued that the code review process should be a integrated into the Software Development Life-cycle (SDLC), from pre-commit to post-commit phases. Then a risk-based approach to code review has been proposed which tries to anlayze risk with different techniques. A set of code review preparation steps follows a set of static analysis tools. The last part show the S-SDLC as an “Application Threat Modeling” approach which consists of three steps:</p>
 
 <blockquote>
   <p>Step 1: Decompose the application.<br />
 Step 2: Determine and rank threats.<br />
-Step 3: Determine countermeasures and mitigation.Some tools for threat modeling has also been discussed. Lastly, a set of metrics are shown that can help the reviewer with quality and security characteristics of the code-base. Thereafter the code crawling practice is briefly introduced.</p>
+Step 3: Determine countermeasures and mitigation.</p>
 </blockquote>
+
+<p>Some tools for threat modeling has also been discussed. Lastly, a set of metrics are shown that can help the reviewer with quality and security characteristics of the code-base. Thereafter the code crawling practice is briefly introduced.</p>
 
 <p>The technical reference section consists of the top 10 topics to consider while reviewing code:</p>
 
@@ -204,16 +231,20 @@ A6-Sensitive Data Exposure<br />
 A7-Missing Functional Level Access Control<br />
 A8-Cross-Site Request Forgery (CSRF)<br />
 A9-Using Components with Known Vulnerabilities<br />
-A10-Unvalidated Redirects and ForwardsThis list is partly on par with what is known as the “OWASP Top 10 Project”, with some minor differences, which I do recommend both of these guides to anyone who wants to review code systematically, find flaws and eventually secure the system.</p>
+A10-Unvalidated Redirects and Forwards</p>
 </blockquote>
+
+<p>This list is partly on par with what is known as the “OWASP Top 10 Project”, with some minor differences, which I do recommend both of these guides to anyone who wants to review code systematically, find flaws and eventually secure the system.</p>
 
 <h3 id="b-penetration-testing"><strong>B. Penetration Testing</strong></h3>
 
 <p>The second part, after reviewing code, is the penetration testing, which also consists of a set of steps to find and pinpoint vulnerabilities and weaknesses from an attacker’s point of view. Basically, you hack to secure!</p>
 
 <blockquote>
-  <p>A penetration test, colloquially known as a pen test, is an authorized simulated cyber-attack on a computer system, performed to evaluate the security of the system. — <a href="https://en.wikipedia.org/wiki/Penetration_test">Wikipedia, Penetration test</a>Under the “<a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10 Project</a>”, three different versions of a set of guidelines has been published up until now, with the most recent one being the 2017 version.</p>
+  <p>A penetration test, colloquially known as a pen test, is an authorized simulated cyber-attack on a computer system, performed to evaluate the security of the system. — <a href="https://en.wikipedia.org/wiki/Penetration_test">Wikipedia, Penetration test</a></p>
 </blockquote>
+
+<p>Under the “<a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10 Project</a>”, three different versions of a set of guidelines has been published up until now, with the most recent one being the 2017 version.</p>
 
 <p>This guide consists of top 10 vulnerabilities to look for while testing an application/system:</p>
 
@@ -232,14 +263,117 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
 
 <p>There are a set of cheat sheets from the OWASP community that you can read to get an overview of what to expect while securing or testing a system:</p>
 
-<p><a href="https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets" title="https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets"><strong>OWASP/CheatSheetSeries</strong><br />
-<em>The OWASP Cheat Sheet Series was created to provide a concise collection of high value information on specific…</em>github.com</a><a href="https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets"></a>#### Recommended Books:</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets" target="_blank">https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/155815?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets" target="_blank">OWASP/CheatSheetSeries</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">The OWASP Cheat Sheet Series was created to provide a concise collection of high value information on specific application security topics. - OWASP/CheatSheetSeries</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
 
-<p><a href="https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370/" title="https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370/"><strong>Defensive Security Handbook</strong><br />
-<em>Despite the increase of high-profile hacks, record-breaking data leaks, and ransomware attacks, many organizations…</em>www.oreilly.com</a><a href="https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370/"></a><a href="https://www.oreilly.com/library/view/securing-node-applications/9781491982426/" title="https://www.oreilly.com/library/view/securing-node-applications/9781491982426/"><strong>Securing Node Applications</strong><br />
-<em>Security incidents are indeed on the rise, but according to one authoritative analysis, 85% of all successful exploits…</em>www.oreilly.com</a><a href="https://www.oreilly.com/library/view/securing-node-applications/9781491982426/"></a><a href="https://github.com/getify/You-Dont-Know-JS" title="https://github.com/getify/You-Dont-Know-JS"><strong>getify/You-Dont-Know-JS</strong><br />
-<em>A book series on JavaScript. @YDKJS on twitter. Contribute to getify/You-Dont-Know-JS development by creating an…</em>github.com</a><a href="https://github.com/getify/You-Dont-Know-JS"></a><a href="https://exploringjs.com/" title="https://exploringjs.com/"><strong>Exploring JS: JavaScript books for programmers</strong><br />
-<em>Dr. Axel Rauschmayer Blogger ( 2ality), book author, trainer</em>exploringjs.com</a><a href="https://exploringjs.com/"></a>### C. Where to Look for Vulnerability Listings</p>
+<h4 id="recommended-books">Recommended Books:</h4>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370" target="_blank">https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370" target="_blank">
+          <img src="https://www.oreilly.com/library/cover/9781491960370/" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.oreilly.com/library/view/defensive-security-handbook/9781491960370" target="_blank">Defensive Security Handbook</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Despite the increase of high-profile hacks, record-breaking data leaks, and ransomware attacks, many organizations don’t have the budget to establish or outsource an information security (InfoSec) program, forcing them to …  - Selection from Defensive Security Handbook [Book]</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.oreilly.com/" target="_blank">https://www.oreilly.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.oreilly.com/library/view/securing-node-applications/9781491982426/" target="_blank">https://www.oreilly.com/library/view/securing-node-applications/9781491982426/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.oreilly.com/library/view/securing-node-applications/9781491982426/" target="_blank">
+          <img src="https://www.oreilly.com/library/cover/9781491982426/" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.oreilly.com/library/view/securing-node-applications/9781491982426/" target="_blank">Securing Node Applications</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Security incidents are indeed on the rise, but according to one authoritative analysis, 85% of all successful exploits focus on the top ten security vulnerabilities. In this report, author Chetan …  - Selection from Securing Node Applications [Book]</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.oreilly.com/" target="_blank">https://www.oreilly.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">https://github.com/getify/You-Dont-Know-JS</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/150330?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">getify/You-Dont-Know-JS</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A book series on JavaScript. @YDKJS on twitter. Contribute to getify/You-Dont-Know-JS development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://exploringjs.com/" target="_blank">https://exploringjs.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://exploringjs.com/" target="_blank">Exploring JS: JavaScript books for programmers</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">
+    Axel has been writing about the future of JavaScript since early 2011.
+
+    ...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://exploringjs.com/" target="_blank">https://exploringjs.com/</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="c-where-to-look-for-vulnerability-listings">C. Where to Look for Vulnerability Listings</h3>
 
 <p>There are many databases that list vulnerabilities and their information and relations. For example, if it is an open-source project, you need to visit the “Issues” section, either on GitHub, GitLab or elsewhere.</p>
 
@@ -247,19 +381,133 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
 
 <p>If it is a proprietary project, you usually should look for public databases, like the company’s website or these websites:</p>
 
-<p><a href="https://www.exploit-db.com/" title="https://www.exploit-db.com/"><strong>Offensive Security’s Exploit Database Archive</strong><br />
-<em>The Exploit Database - Exploits, Shellcode, 0days, Remote Exploits, Local Exploits, Web Apps, Vulnerability Reports…</em>www.exploit-db.com</a><a href="https://www.exploit-db.com/"></a><a href="https://cve.mitre.org/" title="https://cve.mitre.org/"><strong>CVE - Common Vulnerabilities and Exposures (CVE)</strong><br />
-<em>Common Vulnerabilities and Exposures (CVE®) is a list of entries - each containing an identification number, a…</em>cve.mitre.org</a><a href="https://cve.mitre.org/"></a><a href="https://www.cvedetails.com/" title="https://www.cvedetails.com/"><strong>CVE security vulnerability database. Security vulnerabilities, exploits, references and more</strong><br />
-<em>CVEdetails.com is a free CVE security vulnerability database/information source. You can view CVE vulnerability…</em>www.cvedetails.com</a><a href="https://www.cvedetails.com/"></a><a href="https://nvd.nist.gov/" title="https://nvd.nist.gov/"><strong>NVD - Home</strong><br />
-<em>NVD is the U.S. government repository of standards based vulnerability management data represented using the Security…</em>nvd.nist.gov</a><a href="https://nvd.nist.gov/"></a>### D. Programming Knowledge and Experience</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.exploit-db.com/" target="_blank">https://www.exploit-db.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.exploit-db.com/" target="_blank">Offensive Security’s Exploit Database Archive</a>
+        </h2>
+        <div class="jekyll-linkpreview-description"></div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.exploit-db.com/" target="_blank">https://www.exploit-db.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://cve.mitre.org/" target="_blank">https://cve.mitre.org/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://cve.mitre.org/" target="_blank">CVE -
+
+Common Vulnerabilities and Exposures (CVE)
+</a>
+        </h2>
+        <div class="jekyll-linkpreview-description"> Common Vulnerabilities and Exposures...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://cve.mitre.org/" target="_blank">https://cve.mitre.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.cvedetails.com/" target="_blank">https://www.cvedetails.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.cvedetails.com/" target="_blank">CVE security vulnerability database. Security vulnerabilities, exploits, references and more</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">
+					www.cvedetails.com
+				 provides an easy to use web interface to CVE vulnerability data.
+				You can browse for vendors, products and versions and view cve entries, vulnerabil...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.cvedetails.com/" target="_blank">https://www.cvedetails.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://nvd.nist.gov/" target="_blank">https://nvd.nist.gov/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://nvd.nist.gov/" target="_blank">
+	NVD - Home
+</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">This is a potential security issue, you are being redirected to https://nvd.nist.gov...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://nvd.nist.gov/" target="_blank">https://nvd.nist.gov/</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="d-programming-knowledge-and-experience">D. Programming Knowledge and Experience</h3>
 
 <p>It should never be underestimated that for great code review, one needs great programming skills, or at least, an understanding of what is used on the project. Since JavaScript ecosystem has been evolved over the years and many libraries, engines and practices has been developed, one can easily get lost in this vast amount of information.</p>
 
 <p>I do recommend you to have a look at these two gold mines:</p>
 
-<p><a href="https://github.com/sorrycc/awesome-javascript" title="https://github.com/sorrycc/awesome-javascript"><strong>sorrycc/awesome-javascript</strong><br />
-<em>🐢 A collection of awesome browser-side JavaScript libraries, resources and shiny things. - sorrycc/awesome-javascript</em>github.com</a><a href="https://github.com/sorrycc/awesome-javascript"></a><a href="https://github.com/sindresorhus/awesome-nodejs" title="https://github.com/sindresorhus/awesome-nodejs"><strong>sindresorhus/awesome-nodejs</strong><br />
-<em>zap: Delightful Node.js packages and resources. Contribute to sindresorhus/awesome-nodejs development by creating an…</em>github.com</a><a href="https://github.com/sindresorhus/awesome-nodejs"></a>### E. Tools of the Trade</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/sorrycc/awesome-javascript" target="_blank">https://github.com/sorrycc/awesome-javascript</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/sorrycc/awesome-javascript" target="_blank">
+          <img src="https://avatars0.githubusercontent.com/u/35128?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/sorrycc/awesome-javascript" target="_blank">sorrycc/awesome-javascript</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">🐢 A collection of awesome browser-side  JavaScript libraries, resources and shiny things. - sorrycc/awesome-javascript</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank">https://github.com/sindresorhus/awesome-nodejs</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/170270?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank">sindresorhus/awesome-nodejs</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">:zap: Delightful Node.js packages and resources. Contribute to sindresorhus/awesome-nodejs development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="e-tools-of-the-trade">E. Tools of the Trade</h3>
 
 <p>Now that we have a solid ground in terms of methodology and knowledge to work on, we should look at the available tools that can help an reviewer/attacker do their job.</p>
 
@@ -269,57 +517,684 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
 
 <h4 id="for-counting-lines-of-code-in-your-project-go-with-these-two">For counting lines of code in your project, go with these two:</h4>
 
-<p><a href="https://www.npmjs.com/package/@intrinsic/loc" title="https://www.npmjs.com/package/@intrinsic/loc"><strong>@intrinsic/loc</strong><br />
-<em>Compare the amount code in your application vs. in its <code class="highlighter-rouge">node\_modules</code> folder</em>www.npmjs.com</a><a href="https://www.npmjs.com/package/@intrinsic/loc"></a><a href="https://www.npmjs.com/package/cloc" title="https://www.npmjs.com/package/cloc"><strong>cloc</strong><br />
-<em>An npm module for distributing cloc by Al Danial https://github.com/AlDanial/cloc</em>www.npmjs.com</a><a href="https://www.npmjs.com/package/cloc"></a>#### For auditing your code to see if there are any known vulnerabilities, have these a try:</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.npmjs.com/package/cloc" target="_blank">https://www.npmjs.com/package/cloc</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.npmjs.com/package/cloc" target="_blank">
+          <img src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.npmjs.com/package/cloc" target="_blank">cloc</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">An npm module for distributing cloc by Al Danial https://github.com/AlDanial/cloc</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.npmjs.com/" target="_blank">https://www.npmjs.com/</a>
+    </div>
+  </div>
+</div>
 
-<p><a href="https://snyk.io/" title="https://snyk.io/"><strong>Open Source Security Platform | Snyk</strong><br />
-<em>Snyk helps you use open source and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet…</em>snyk.io</a><a href="https://snyk.io/"></a><a href="https://github.com/OSSIndex/auditjs" title="https://github.com/OSSIndex/auditjs"><strong>OSSIndex/auditjs</strong><br />
-<em>Audits an NPM package.json file to identify known vulnerabilities. - OSSIndex/auditjs</em>github.com</a><a href="https://github.com/OSSIndex/auditjs"></a><a href="https://github.com/ajinabraham/NodeJsScan" title="https://github.com/ajinabraham/NodeJsScan"><strong>ajinabraham/NodeJsScan</strong><br />
-<em>NodeJsScan is a static security code scanner for Node.js applications. - ajinabraham/NodeJsScan</em>github.com</a><a href="https://github.com/ajinabraham/NodeJsScan"></a><a href="https://github.com/RetireJS/retire.js" title="https://github.com/RetireJS/retire.js"><strong>RetireJS/retire.js</strong><br />
-<em>scanner detecting the use of JavaScript libraries with known vulnerabilities - RetireJS/retire.js</em>github.com</a><a href="https://github.com/RetireJS/retire.js"></a><a href="https://codeclimate.com/" title="https://codeclimate.com/"><strong>Engineering Metrics to Improve Continuous Delivery Practices | Velocity</strong><br />
-<em>Code Climate provides automated code review for your apps, letting you fix quality and security issues before they hit…</em>codeclimate.com</a><a href="https://codeclimate.com/"></a>#### For linting and static analysis of your code inside your editor, look at these:</p>
+<h4 id="for-auditing-your-code-to-see-if-there-are-any-known-vulnerabilities-have-these-a-try">For auditing your code to see if there are any known vulnerabilities, have these a try:</h4>
 
-<p><a href="https://github.com/dustinspecker/awesome-eslint" title="https://github.com/dustinspecker/awesome-eslint"><strong>dustinspecker/awesome-eslint</strong><br />
-<em>A list of awesome ESLint plugins, configs, etc. Contribute to dustinspecker/awesome-eslint development by creating an…</em>github.com</a><a href="https://github.com/dustinspecker/awesome-eslint"></a><a href="https://github.com/eslint/eslint" title="https://github.com/eslint/eslint"><strong>eslint/eslint</strong><br />
-<em>A fully pluggable tool for identifying and reporting on patterns in JavaScript - eslint/eslint</em>github.com</a><a href="https://github.com/eslint/eslint"></a><a href="https://github.com/nickdeis/eslint-plugin-no-secrets" title="https://github.com/nickdeis/eslint-plugin-no-secrets"><strong>nickdeis/eslint-plugin-no-secrets</strong><br />
-<em>An eslint plugin to find strings that might be secrets/credentials - nickdeis/eslint-plugin-no-secrets</em>github.com</a><a href="https://github.com/nickdeis/eslint-plugin-no-secrets"></a><a href="https://github.com/nodesecurity/eslint-plugin-security" title="https://github.com/nodesecurity/eslint-plugin-security"><strong>nodesecurity/eslint-plugin-security</strong><br />
-<em>ESLint rules for Node Security. Contribute to nodesecurity/eslint-plugin-security development by creating an account on…</em>github.com</a><a href="https://github.com/nodesecurity/eslint-plugin-security"></a><a href="https://github.com/Rantanen/eslint-plugin-xss" title="https://github.com/Rantanen/eslint-plugin-xss"><strong>Rantanen/eslint-plugin-xss</strong><br />
-<em>ESLint plugin for XSS detection. Contribute to Rantanen/eslint-plugin-xss development by creating an account on GitHub.</em>github.com</a><a href="https://github.com/Rantanen/eslint-plugin-xss"></a><a href="https://github.com/SonarSource/eslint-plugin-sonarjs" title="https://github.com/SonarSource/eslint-plugin-sonarjs"><strong>SonarSource/eslint-plugin-sonarjs</strong><br />
-<em>SonarJS rules for ESLint. Contribute to SonarSource/eslint-plugin-sonarjs development by creating an account on GitHub.</em>github.com</a><a href="https://github.com/SonarSource/eslint-plugin-sonarjs"></a><a href="https://github.com/mozfreddyb/eslint-config-scanjs" title="https://github.com/mozfreddyb/eslint-config-scanjs"><strong>mozfreddyb/eslint-config-scanjs</strong><br />
-<em>umbrella config to achieve scanjs-like functionality through eslint - mozfreddyb/eslint-config-scanjs</em>github.com</a><a href="https://github.com/mozfreddyb/eslint-config-scanjs"></a>#### Useful JavaScript libraries for secure development:</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://snyk.io/" target="_blank">https://snyk.io/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://snyk.io/" target="_blank">
+          <img src="https://snyk.io/wp-content/uploads/slack-imgs.com_.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://snyk.io/" target="_blank">Snyk | Develop Fast. Stay Secure</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Snyk helps you use open source and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet, RubyGems, PyPI and much more.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://snyk.io/" target="_blank">https://snyk.io/</a>
+    </div>
+  </div>
+</div>
 
-<p><a href="https://www.defensivejs.com/" title="https://www.defensivejs.com/"><strong>Defensive JavaScript</strong><br />
-<em>DJS is a defensive subset of JavaScript: code in this subset runs independently of the rest of the JavaScript…</em>www.defensivejs.com</a><a href="https://www.defensivejs.com/"></a>#### There are a bunch of cloud services that offer security as a service:</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/OSSIndex/auditjs" target="_blank">https://github.com/OSSIndex/auditjs</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/OSSIndex/auditjs" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/33330803?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/OSSIndex/auditjs" target="_blank">sonatype-nexus-community/auditjs</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Audits an NPM package.json file to identify known vulnerabilities. - sonatype-nexus-community/auditjs</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
 
-<p><a href="https://www.cloudflare.com/" title="https://www.cloudflare.com/"><strong>Cloudflare - The Web Performance &amp; Security Company | Cloudflare</strong><br />
-<em>Register for Internet Summit 2018 Cloudflare’s Anycast network keeps your website, app, or API online and running…</em>www.cloudflare.com</a><a href="https://www.cloudflare.com/"></a><a href="https://www.sqreen.com/" title="https://www.sqreen.com/"><strong>Application Security Management Platform | Sqreen</strong><br />
-<em>Sqreen’s Application Security Management Platform offers a modern approach to security in production for web…</em>www.sqreen.com</a><a href="https://www.sqreen.com/"></a><a href="https://detectify.com/" title="https://detectify.com/"><strong>Leading Website Vulnerability Scanner | Detectify</strong><br />
-<em>Detectify is a website vulnerability scanner that performs tests to identify security issues on your website. Let us…</em>detectify.com</a><a href="https://detectify.com/"></a><a href="https://semmle.com/" title="https://semmle.com/"><strong>Semmle - Code Analysis Platform for Securing Software</strong><br />
-<em>Automating variant analysis for product security CodeQL is a code analysis engine for product security teams to quickly…</em>semmle.com</a><a href="https://semmle.com/"></a>Most of what I recommended up until now was about secure code review. The following tools are useful for penetration testing:</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/ajinabraham/NodeJsScan" target="_blank">https://github.com/ajinabraham/NodeJsScan</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/ajinabraham/NodeJsScan" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/4301109?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/ajinabraham/NodeJsScan" target="_blank">ajinabraham/nodejsscan</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">nodejsscan is a static security code scanner for Node.js applications. - ajinabraham/nodejsscan</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
 
-<p><a href="http://sqlmap.org/" title="http://sqlmap.org/"><strong>sqlmap: automatic SQL injection and database takeover tool</strong><br />
-<em>sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection…</em>sqlmap.org</a><a href="http://sqlmap.org/"></a><a href="https://portswigger.net/burp" title="https://portswigger.net/burp"><strong>Burp Suite Scanner | PortSwigger</strong><br />
-<em>PortSwigger offers Burp Suite for security testing &amp; scanning. Choose from a wide range of security tools &amp; identify…</em>portswigger.net</a><a href="https://portswigger.net/burp"></a><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" title="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project"><strong>OWASP Zed Attack Proxy Project - OWASP</strong><br />
-<em>The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and is actively maintained by…</em>www.owasp.org</a><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project"></a><a href="https://github.com/loadimpact/k6" title="https://github.com/loadimpact/k6"><strong>loadimpact/k6</strong><br />
-<em>A modern load testing tool, using Go and JavaScript - https://k6.io - loadimpact/k6</em>github.com</a><a href="https://github.com/loadimpact/k6"></a><a href="https://nmap.org/" title="https://nmap.org/"><strong>Nmap: the Network Mapper - Free Security Scanner</strong><br />
-<em>Nmap Free Security Scanner, Port Scanner, &amp; Network Exploration Tool. Download open source software for Linux, Windows…</em>nmap.org</a><a href="https://nmap.org/"></a><a href="https://www.getpostman.com/" title="https://www.getpostman.com/"><strong>Postman | API Development Environment</strong><br />
-<em>Postman is the only complete API development environment used by more than 6 million developers and 200,000 companies…</em>www.getpostman.com</a><a href="https://www.getpostman.com/"></a>#### <strong>Guidelines and best practices:</strong></p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/RetireJS/retire.js" target="_blank">https://github.com/RetireJS/retire.js</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/RetireJS/retire.js" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/10753675?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/RetireJS/retire.js" target="_blank">RetireJS/retire.js</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">scanner detecting the use of JavaScript libraries with known vulnerabilities - RetireJS/retire.js</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
 
-<p><a href="https://github.com/Checkmarx/JS-SCP" title="https://github.com/Checkmarx/JS-SCP"><strong>Checkmarx/JS-SCP</strong><br />
-<em>JavaScript Web Application Secure Coding Practices is available for online reading or download in pdf, MOBI and ePub…</em>github.com</a><a href="https://github.com/Checkmarx/JS-SCP"></a><a href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content" title="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content"><strong>OWASP Secure Coding Practices-Quick Reference Guide</strong><br />
-<em>Main The Secure Coding Practices Quick Reference Guide is a technology agnostic set of general software security coding…</em>owasp.org</a><a href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content"></a><a href="https://www.veracode.com/security/javascript-security" title="https://www.veracode.com/security/javascript-security"><strong>JavaScript Security</strong><br />
-<em>JavaScript is a high-level, interpreted programming language that has been widely used since its release in 1995…</em>www.veracode.com</a><a href="https://www.veracode.com/security/javascript-security"></a><a href="https://security.berkeley.edu/secure-coding-practice-guidelines" title="https://security.berkeley.edu/secure-coding-practice-guidelines"><strong>Secure Coding Practice Guidelines</strong><br />
-<em>UC Berkeley security policy mandates compliance with Minimum Security Standard for Electronic Information for devices…</em>security.berkeley.edu</a><a href="https://security.berkeley.edu/secure-coding-practice-guidelines"></a><a href="https://www.javascriptjanuary.com/blog/defensive-javascript" title="https://www.javascriptjanuary.com/blog/defensive-javascript"><strong>Defensive JavaScript - JavaScript January</strong><br />
-<em>That’s a fine change, but you shouldn’t remove the code that checks the inputs. TypeScript makes pragmatic assumptions…</em>www.javascriptjanuary.com</a><a href="https://www.javascriptjanuary.com/blog/defensive-javascript"></a><a href="https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/" title="https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/"><strong>Comparing React and Angular secure coding practices | Snyk</strong><br />
-<em>Welcome to Snyk’s State of JavaScript frameworks security report 2019, this section of the report is about Angular and…</em>snyk.io</a><a href="https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/"></a><a href="https://github.com/lirantal/awesome-nodejs-security" title="https://github.com/lirantal/awesome-nodejs-security"><strong>lirantal/awesome-nodejs-security</strong><br />
-<em>Awesome Node.js Security resources. Contribute to lirantal/awesome-nodejs-security development by creating an account…</em>github.com</a><a href="https://github.com/lirantal/awesome-nodejs-security"></a>Now is your time to sharpen your swords ⚔️ and test them to be ready for attack. Be sure not to cut your fingers. 😉</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://codeclimate.com/" target="_blank">https://codeclimate.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://codeclimate.com/" target="_blank">
+          <img src="https://d341kum51qu34d.cloudfront.net/images/cc_purple_logo-76e0820e.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://codeclimate.com/" target="_blank">Engineering Metrics to Improve Continuous Delivery Practices | Velocity</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Code Climate provides automated code review for your apps, letting you fix quality and security issues before they hit production. We check every commit, branch and pull request for changes in quality and potential vulnerabilities. If an issue is found, you're notified immediately - it's that simple.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://codeclimate.com/" target="_blank">https://codeclimate.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="for-linting-and-static-analysis-of-your-code-inside-your-editor-look-at-these">For linting and static analysis of your code inside your editor, look at these:</h4>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/dustinspecker/awesome-eslint" target="_blank">https://github.com/dustinspecker/awesome-eslint</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/dustinspecker/awesome-eslint" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/2449282?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/dustinspecker/awesome-eslint" target="_blank">dustinspecker/awesome-eslint</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A list of awesome ESLint plugins, configs, etc. Contribute to dustinspecker/awesome-eslint development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/eslint/eslint" target="_blank">https://github.com/eslint/eslint</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/eslint/eslint" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/6019716?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/eslint/eslint" target="_blank">eslint/eslint</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Find and fix problems in your JavaScript code. Contribute to eslint/eslint development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/nickdeis/eslint-plugin-no-secrets" target="_blank">https://github.com/nickdeis/eslint-plugin-no-secrets</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/nickdeis/eslint-plugin-no-secrets" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/4594128?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/nickdeis/eslint-plugin-no-secrets" target="_blank">nickdeis/eslint-plugin-no-secrets</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">An eslint plugin to find strings that might be secrets/credentials - nickdeis/eslint-plugin-no-secrets</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/nodesecurity/eslint-plugin-security" target="_blank">https://github.com/nodesecurity/eslint-plugin-security</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/nodesecurity/eslint-plugin-security" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/4229593?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/nodesecurity/eslint-plugin-security" target="_blank">nodesecurity/eslint-plugin-security</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">ESLint rules for Node Security. Contribute to nodesecurity/eslint-plugin-security development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/Rantanen/eslint-plugin-xss" target="_blank">https://github.com/Rantanen/eslint-plugin-xss</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/Rantanen/eslint-plugin-xss" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/385385?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/Rantanen/eslint-plugin-xss" target="_blank">Rantanen/eslint-plugin-xss</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">ESLint plugin for XSS detection. Contribute to Rantanen/eslint-plugin-xss development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/SonarSource/eslint-plugin-sonarjs" target="_blank">https://github.com/SonarSource/eslint-plugin-sonarjs</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/SonarSource/eslint-plugin-sonarjs" target="_blank">
+          <img src="https://avatars3.githubusercontent.com/u/545988?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/SonarSource/eslint-plugin-sonarjs" target="_blank">SonarSource/eslint-plugin-sonarjs</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">SonarJS rules for ESLint. Contribute to SonarSource/eslint-plugin-sonarjs development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/mozfreddyb/eslint-config-scanjs" target="_blank">https://github.com/mozfreddyb/eslint-config-scanjs</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/mozfreddyb/eslint-config-scanjs" target="_blank">
+          <img src="https://avatars1.githubusercontent.com/u/5418775?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/mozfreddyb/eslint-config-scanjs" target="_blank">mozfreddyb/eslint-config-scanjs</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">umbrella config to achieve scanjs-like functionality through eslint - mozfreddyb/eslint-config-scanjs</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="useful-javascript-libraries-for-secure-development">Useful JavaScript libraries for secure development:</h4>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.defensivejs.com/" target="_blank">https://www.defensivejs.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.defensivejs.com/" target="_blank">Defensive JavaScript home</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">
+ DJS is a defensive subset of JavaScript: code in this
+ subset runs independently of the rest of the JavaScript environment.
+ When propertly wrapped, DJS code can run safely on unt...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.defensivejs.com/" target="_blank">https://www.defensivejs.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="there-are-a-bunch-of-cloud-services-that-offer-security-as-a-service">There are a bunch of cloud services that offer security as a service:</h4>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.cloudflare.com/" target="_blank">https://www.cloudflare.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.cloudflare.com/" target="_blank">
+          <img src="https://www.cloudflare.com/resources/images/slt3lc6tev37/6M2RKpWajAIy2h6kwYAbVd/52ea0afc2052080d6bb766cc4d7b045a/network-map-gradient-165.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.cloudflare.com/" target="_blank">Cloudflare - The Web Performance &amp; Security Company
+
+ | Cloudflare </a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site.
+</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.cloudflare.com/" target="_blank">https://www.cloudflare.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.sqreen.com/" target="_blank">https://www.sqreen.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.sqreen.com/" target="_blank">
+          <img src="https://www.sqreen.com/assets/img/share/share.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.sqreen.com/" target="_blank">Application Security Management Platform | Sqreen</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Learn more about Sqreen's application security platform that helps teams protect applications, increase visibility and secure code.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.sqreen.com/" target="_blank">https://www.sqreen.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://detectify.com/" target="_blank">https://detectify.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://detectify.com/" target="_blank">
+          <img src="http://detectify-k8s.production.detectify.net/img/asset/bWFpbi9zb2NpYWxfaW1hZ2UucG5n?p=seo&amp;s=a43f1525cf55647faf8bdecb7d969363" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://detectify.com/" target="_blank">Leading website vulnerability scanner | Free 14 day trial</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Web security issues are a major pain, thankfully our website vulnerability scanner identifies issues before they become a problem. Find vulnerabilities before hackers do!</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://detectify.com/" target="_blank">https://detectify.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://semmle.com/" target="_blank">https://semmle.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://semmle.com/" target="_blank">
+          <img src="https://semmle.com/assets/images/semmle_share_gfx.jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://semmle.com/" target="_blank">Semmle - Code Analysis Platform for Securing Software</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Semmle's code analysis platform helps teams find zero-days and automate variant analysis. Secure your code with continuous security analysis and automated code review.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://semmle.com/" target="_blank">https://semmle.com/</a>
+    </div>
+  </div>
+</div>
+
+<p>Most of what I recommended up until now was about secure code review. The following tools are useful for penetration testing:</p>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="http://sqlmap.org/" target="_blank">http://sqlmap.org/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="http://sqlmap.org/" target="_blank">sqlmap: automatic SQL injection and database takeover tool</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers. It comes with a pow...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//http://sqlmap.org/" target="_blank">http://sqlmap.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://portswigger.net/burp" target="_blank">https://portswigger.net/burp</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://portswigger.net/burp" target="_blank">
+          <img src="https://portswigger.net/content/images/logos/burpsuite-twittercard.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://portswigger.net/burp" target="_blank">Burp Suite - Cybersecurity Software from PortSwigger</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Burp Suite is a leading range of cybersecurity tools, brought to you by PortSwigger. Find out more, and request your free trial of Burp today.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://portswigger.net/" target="_blank">https://portswigger.net/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">OWASP ZAP Zed Attack Proxy | OWASP</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Virtual AppSec Days Summer of Security CFT is open! Apply Now...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://owasp.org/" target="_blank">https://owasp.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/loadimpact/k6" target="_blank">https://github.com/loadimpact/k6</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/loadimpact/k6" target="_blank">
+          <img src="https://repository-images.githubusercontent.com/54400687/29992200-7069-11ea-85c9-3824e56625b2" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/loadimpact/k6" target="_blank">loadimpact/k6</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">A modern load testing tool, using Go and JavaScript - https://k6.io - loadimpact/k6</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://nmap.org/" target="_blank">https://nmap.org/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://nmap.org/" target="_blank">Nmap: the Network Mapper - Free Security Scanner</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Nmap ("Network Mapper") is a free and open source
+(license) utility for
+network discovery and security auditing.  Many systems and network
+administrators also find it useful for tas...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://nmap.org/" target="_blank">https://nmap.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.getpostman.com/" target="_blank">https://www.getpostman.com/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.getpostman.com/" target="_blank">
+          <img src="https://assets.getpostman.com/common-share/postman-platform-for-api-development-social-card.jpg" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.getpostman.com/" target="_blank">Postman | The Collaboration Platform for API Development</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Simplify each step of building an API and streamline collaboration so you can create better APIs—faster</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.postman.com/" target="_blank">https://www.postman.com/</a>
+    </div>
+  </div>
+</div>
+
+<h4 id="guidelines-and-best-practices"><strong>Guidelines and best practices:</strong></h4>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/Checkmarx/JS-SCP" target="_blank">https://github.com/Checkmarx/JS-SCP</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/Checkmarx/JS-SCP" target="_blank">
+          <img src="https://avatars2.githubusercontent.com/u/15811295?s=400&amp;v=4" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/Checkmarx/JS-SCP" target="_blank">Checkmarx/JS-SCP</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">JavaScript Secure Coding Practices guide. Contribute to Checkmarx/JS-SCP development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content" target="_blank">https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content" target="_blank">OWASP Secure Coding Practices-Quick Reference Guide</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Virtual AppSec Days Summer of Security CFT is open! Apply Now...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://owasp.org/" target="_blank">https://owasp.org/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.veracode.com/security/javascript-security" target="_blank">https://www.veracode.com/security/javascript-security</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.veracode.com/security/javascript-security" target="_blank">
+          <img src="https://www.veracode.com/sites/default/files/01-og.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.veracode.com/security/javascript-security" target="_blank">JavaScript Security</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">What Is JavaScript?</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.veracode.com/" target="_blank">https://www.veracode.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://security.berkeley.edu/secure-coding-practice-guidelines" target="_blank">https://security.berkeley.edu/secure-coding-practice-guidelines</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-body-nog">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://security.berkeley.edu/secure-coding-practice-guidelines" target="_blank">Secure Coding Practice Guidelines | Information Security Office</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">UC Berkeley security policy mandates compliance with Minimum Security Standard for Electronic Information for devices handling covered data.  The recommendations below are provided ...</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://security.berkeley.edu/" target="_blank">https://security.berkeley.edu/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://www.javascriptjanuary.com/blog/defensive-javascript" target="_blank">https://www.javascriptjanuary.com/blog/defensive-javascript</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.javascriptjanuary.com/blog/defensive-javascript" target="_blank">
+          <img src="http://static1.squarespace.com/static/5a20387690bccee5e702f9c7/5a203c6c9140b733ae1d4f36/5c303fbf8a922d58228879db/1547029525327/scott-webb-274694-unsplash.jpg?format=1500w" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.javascriptjanuary.com/blog/defensive-javascript" target="_blank">Defensive JavaScript  — JavaScript January</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Many thanks to Google’s      Mike Samuel      for contributing this article on JavaScript security.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://www.javascriptjanuary.com/" target="_blank">https://www.javascriptjanuary.com/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/" target="_blank">https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/" target="_blank">
+          <img src="https://snyk.io/wp-content/uploads/JavaScript-Report-feature-03.png" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://snyk.io/blog/comparing-react-and-angular-secure-coding-practices/" target="_blank">Comparing React and Angular secure coding practices | Snyk</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Welcome to Snyk's State of JavaScript frameworks security report 2019, this section of the report is about Angular and React projects overall security posture.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://snyk.io/" target="_blank">https://snyk.io/</a>
+    </div>
+  </div>
+</div>
+
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://github.com/lirantal/awesome-nodejs-security" target="_blank">https://github.com/lirantal/awesome-nodejs-security</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://github.com/lirantal/awesome-nodejs-security" target="_blank">
+          <img src="https://repository-images.githubusercontent.com/154401464/6dddbd80-bb7f-11e9-9b3e-48be8ddc23c3" />
+        </a>
+      </div>
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://github.com/lirantal/awesome-nodejs-security" target="_blank">lirantal/awesome-nodejs-security</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">Awesome Node.js Security resources. Contribute to lirantal/awesome-nodejs-security development by creating an account on GitHub.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//https://github.com/" target="_blank">https://github.com/</a>
+    </div>
+  </div>
+</div>
+
+<p>Now is your time to sharpen your swords ⚔️ and test them to be ready for attack. Be sure not to cut your fingers. 😉</p>
 
 <p>Although I have presented ways to review code and penetration test on JavaScript and Node.js, the same principles and practices apply to other languages, too. You just have to look up the information on that language.</p>
 
 <p>Finally, your comments and suggestions are much appreciated.</p>
-
-<p>Cover image credits: <a href="https://www.bleepingcomputer.com/news/security/javascript-web-apps-and-servers-vulnerable-to-redos-attacks/">https://www.bleepingcomputer.com/news/security/javascript-web-apps-and-servers-vulnerable-to-redos-attacks/</a></p>
 
 
 <ul class="taxonomy__index">
@@ -506,8 +1381,7 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Disclaimer:
-</p>
+    <p class="archive__item-excerpt" itemprop="description">There are, at least, two sides (or parties) to each employment contract. The employer who gives you an offer after careful consideration and the employee, th...</p>
   </article>
 </div>
 
@@ -521,7 +1395,7 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-3" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 3
 </a>
       
     </h2>
@@ -540,7 +1414,7 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-2" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 2
 </a>
       
     </h2>
@@ -559,7 +1433,7 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6
+        <a href="/blog/beginner-s-guide-to-load-testing-with-k6-part-1" rel="permalink">Beginner’s Guide to Load Testing with k6 — Part 1
 </a>
       
     </h2>
@@ -697,7 +1571,7 @@ A10:2017-Insufficient Logging &amp; MonitoringAll these security risks may not b
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Mostafa Moradian. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Mostafa's personal blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
