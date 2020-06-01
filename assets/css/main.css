@@ -1708,4 +1708,16 @@ p > a { color: black !important; }
 
 .archive__item-title > a:hover { text-decoration: underline; }
 
+.recent_post__wrapper { padding-top: 0.7em; padding-bottom: 1em; margin-bottom: 1em; margin-left: 5em; margin-right: 5em; margin-top: 1em; border-radius: 4px; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px; }
+
+p.recent_post__date_format { font-size: 9pt; font-style: italic; margin: 0px; padding: 0.5em 2em 0px 2em; }
+
+.recent_post__wrapper > img { object-fit: cover; object-position: center; margin: 0px; padding: 0px 1em 0px 1em; height: 10em; width: 100%; }
+
+h2.archive__item-title { margin: 0.5em 0.7em; padding: 0px; }
+
+p.archive__item-excerpt { margin: 0px 1.2em; }
+
+.pagination { display: flex; justify-content: center; align-items: center; padding: 0em; margin: 0em; }
+
 /*# sourceMappingURL=main.css.map */
